@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const FooterContainer = styled.footer`
   width: 100%;
   padding: 2rem 0;
-  background: #fff;
+  background: #000;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,7 +13,7 @@ const FooterContainer = styled.footer`
 `;
 
 const FooterText = styled.p`
-  color: #666;
+  color: #fff;
   font-size: 0.9rem;
   font-weight: 400;
   margin: 0;
