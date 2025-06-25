@@ -1,0 +1,38 @@
+.header-recent-work {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0;
+  margin-bottom: 3rem;
+}
+
+.scroll-float {
+  overflow: hidden;
+}
+
+.scroll-float-text {
+  display: inline-block;
+  font-size: 2.5rem;
+  font-weight: 400;
+  text-align: center;
+  line-height: 1.5;
+  color: #222;
+  letter-spacing: -0.02em;
+}
+
+.char {
+  display: inline-block;
+}
+
+.recent-projects-title {
+  font-size: 2.5rem;
+  font-weight: 400;
+  color: #222;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.split-parent {
+  overflow: hidden;
+} 

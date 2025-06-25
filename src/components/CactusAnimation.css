@@ -1,0 +1,23 @@
+/* Remove global styles that might interfere */
+.cactus-animation-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.cactus-animation-svg {
+  width: 100%;
+  height: auto;
+  max-width: 500px;
+  max-height: 500px;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  visibility: visible !important;
+  opacity: 1 !important;
+} 

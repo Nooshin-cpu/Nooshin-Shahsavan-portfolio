@@ -1,0 +1,54 @@
+.card-spotlight {
+  position: relative;
+  border-radius: 1.5rem;
+  border: 1px solid #222;
+  background-color: #111;
+  padding: 2rem;
+  overflow: hidden;
+  --mouse-x: 50%;
+  --mouse-y: 50%;
+  --spotlight-color: rgba(255, 255, 255, 0.05);
+}
+
+.card-spotlight::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at var(--mouse-x) var(--mouse-y), var(--spotlight-color), transparent 80%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+.card-spotlight:hover::before,
+.card-spotlight:focus-within::before {
+  opacity: 0.6;
+}
+
+/* Styles for the SpotlightCard when used as the front face of the FlipCard */
+.front-face-spotlight {
+    padding: 0; /* Remove padding when used as front face */
+    /* Ensure the pseudo-element covers the full area - already handled by top/left/right/bottom 0 */
+    /* May need to adjust border-radius if different from FlipCard's inner border-radius */
+}
+
+/* Optional: Add padding to the content *inside* the spotlight card if needed for inner spacing */
+.front-face-spotlight > * {
+    padding: 2rem; /* Example: Add padding to the direct children */
+    box-sizing: border-box; /* Include padding in element's total width and height */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Style for the heading inside the front face spotlight card */
+.front-face-spotlight h3 {
+    font-size: 1.8rem; /* Increase font size */
+    /* Add any other text styling here */
+} 
