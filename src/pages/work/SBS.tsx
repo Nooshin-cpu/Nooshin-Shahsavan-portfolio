@@ -21,6 +21,7 @@ import SbsMock8 from '../../components/SetbysetiComs/SbsMock8';
 import SbsMock9 from '../../components/SetbysetiComs/SbsMock9';
 import SbsMock10 from '../../components/SetbysetiComs/SbsMock10';
 import SbsMock12 from '../../components/SetbysetiComs/SbsMock12';
+import MenuWork from '../../components/MenuWork';
 
 const MainContainer = styled.div`
   width: 100vw;
@@ -50,6 +51,7 @@ const Sbs: React.FC = () => (
     <SbsMock10/>
     <SbsMock12/>
     {/* You can add more S.B.S. sections/components below */}
+    <MenuWork />
   </MainContainer>
 );
 

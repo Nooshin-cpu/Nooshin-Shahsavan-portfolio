@@ -16,6 +16,7 @@ import FinalLookMakingSchedule from "./FinalLookMakingSchedule";
 import FinalLookDayOff from "./FinalLookDayOff";
 import KeyTakeawaySection from "./KeyTakeawaySection";
 import StickyMenu from "../../components/StickyMenu";
+import MenuWork from '../../components/MenuWork';
 
 // Global style with dark mode support
 const GlobalStyle = createGlobalStyle`
@@ -502,6 +503,7 @@ const Workday: React.FC = () => (
         </div>
 
         <KeyTakeawaySection />
+        <MenuWork />
       </ContentWrapper>
     </PageContainer>
   </PageBg>

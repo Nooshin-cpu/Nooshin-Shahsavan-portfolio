@@ -15,8 +15,7 @@ import ZarStory from "../../components/zar/ZarStory";
 import ZarMock6 from "../../components/zar/ZarMock6";
 import ZarMock7 from "../../components/zar/ZarMock7";
 import ZarMock8 from "../../components/zar/ZarMock8";
-
-
+import MenuWork from '../../components/MenuWork';
 
 const Zar: React.FC = () => (
   <div>
@@ -35,6 +34,7 @@ const Zar: React.FC = () => (
     <ZarMock6/>
     <ZarMock7/>
     <ZarMock8/>
+    <MenuWork />
   </div>
 );
 

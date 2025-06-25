@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import FlowingMenu from '../components/FlowingMenu';
+import MenuWork from '../components/MenuWork';
 
 // Import work images
 import work1 from '../assets/work/work1.png';
@@ -244,6 +245,7 @@ const Work: React.FC = () => {
           ))}
         </WorkGrid>
       </WorkSection>
+      <MenuWork />
     </>
   );
 };

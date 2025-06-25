@@ -16,6 +16,7 @@ import Deli12 from '../../components/deli/Deli12';
 import Deli13 from '../../components/deli/Deli13';
 import Deli14 from '../../components/deli/Deli14';
 import Deli15 from '../../components/deli/Deli15';
+import MenuWork from '../../components/MenuWork';
 
 const Delicato: React.FC = () => {
   return (
@@ -35,6 +36,7 @@ const Delicato: React.FC = () => {
       <Deli13 />
       <Deli14 />
       <Deli15 />
+      <MenuWork />
     </>
   );
 };
