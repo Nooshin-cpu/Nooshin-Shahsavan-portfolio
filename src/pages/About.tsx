@@ -9,12 +9,14 @@ import { IonIcon } from '@ionic/react';
 import { logoLinkedin, mail, document } from 'ionicons/icons';
 import man8 from '../assets/about/man-8.jpg';
 import CactusAnimation from '../components/CactusAnimation';
+import Skill from '../components/Skill';
+import WhyCactus from '../components/WhyCactus';
 
 // Import images for ImageTrail
 import man1 from '../assets/about/man-1.jpg';
 import man2 from '../assets/about/man-2.jpg';
 import man3 from '../assets/about/man-3.jpg';
-import man4 from '../assets/about/man-4.jpg';
+import man4 from '../assets/about/man-4.jpeg';
 import man5 from '../assets/about/man-5.jpg';
 import man6 from '../assets/about/man-6.jpg';
 import man7 from '../assets/about/man-7.jpg';
@@ -44,8 +46,29 @@ const ImageTrailSection = styled.div`
   background: ${({ theme }) => theme.background};
   z-index: 0;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+`;
+
+const ImageTrailTitle = styled.h2`
+  font-size: 3rem;
+  font-weight: bold;
+  color: ${({ theme }) => theme.text};
+  margin-bottom: 2rem;
+  text-align: center;
+  z-index: 2;
+  position: relative;
+
+  @media (max-width: 768px) {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
 `;
 
 const CenteredOverlayText = styled.div`
@@ -53,11 +76,11 @@ const CenteredOverlayText = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: ${({ theme }) => theme.text}; /* Use theme-aware text color */
+  color: ${({ theme }) => theme.text};
   font-size: 1.5rem;
-  opacity: 0.5; /* Set opacity to 50% */
-  z-index: 1; /* Ensure it's above the image trail but below the grid */
-  pointer-events: none; /* Allow mouse events to pass through to the image trail */
+  opacity: 0.5;
+  z-index: 1;
+  pointer-events: none;
   text-align: center;
 
   @media (max-width: 768px) {
@@ -511,72 +534,17 @@ const About: React.FC = () => {
           </AboutTextColumn>
         </AboutGrid>
       </Section>
-
+      
+      <Skill />
+      <WhyCactus />
+      
       <Section>
         <ImageTrailSection>
-          <CenteredOverlayText>Drag the mouse to see me 🥰</CenteredOverlayText>
+          <ImageTrailTitle>My interests and I</ImageTrailTitle>
+          <CenteredOverlayText>Move your mouse to discover me 🥰</CenteredOverlayText>
           <ImageTrail items={images} variant={1} />
         </ImageTrailSection>
       </Section>
-
-      <Section style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '4rem 0' }}>
-        <Title>Skills</Title>
-        <SkillsGrid>
-          <FlipCard
-            frontContent={<h3>Visual Language</h3>}
-            backContent={visualLanguageSkills}
-          />
-          <FlipCard
-            frontContent={<h3>Productivity Software</h3>}
-            backContent={productivitySoftware}
-          />
-          <FlipCard
-            frontContent={<h3>Web Development</h3>}
-            backContent={webSkills}
-          />
-        </SkillsGrid>
-      </Section>
-
-      <ContactSection>
-        <ContactGrid>
-          <ContactInfoColumn>
-            <ContactHeading>Say Hi!</ContactHeading>
-            <ContactText>
-              Feel free to reach out with any questions about my projects! I'm here and ready to collaborate with you on any interesting Graphic design project!
-            </ContactText>
-            <IconContainer>
-              <IconLink 
-                href="https://www.linkedin.com/in/nooshin-shahsavan-237b68243/" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                title="Visit my LinkedIn"
-                aria-label="My LinkedIn profile"
-              >
-                <IonIcon icon={logoLinkedin} />
-              </IconLink>
-              <IconLink 
-                href="mailto:nooshin-shahsavan.ca@gmail.com" 
-                title="Send me an email"
-                aria-label="Email me"
-              >
-                <IonIcon icon={mail} />
-              </IconLink>
-              <IconLink 
-                href="/Resume-Nooshin-Sahahsavan.pdf" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                title="View my resume"
-                aria-label="My resume"
-              >
-                <IonIcon icon={document} />
-              </IconLink>
-            </IconContainer>
-          </ContactInfoColumn>
-          <AnimationColumn>
-            <CactusAnimation />
-          </AnimationColumn>
-        </ContactGrid>
-      </ContactSection>
     </AboutContainer>
   );
 };

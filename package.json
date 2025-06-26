@@ -24,7 +24,7 @@
     "matter-js": "^0.20.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-icons": "^5.5.0",
+    "react-icons": "^4.12.0",
     "react-router-dom": "^6.16.0",
     "spiritjs": "^3.1.17",
     "styled-components": "^6.0.8",
