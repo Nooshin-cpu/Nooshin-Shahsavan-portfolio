@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import Header from '../components/Header';
 import FlowingMenu from '../components/FlowingMenu';
 import MenuWork from '../components/MenuWork';
 
@@ -11,8 +12,8 @@ import work3 from '../assets/work/work3.png';
 import work6 from '../assets/work/work6.png';
 import work4 from '../assets/work/work4.png';
 import work5 from '../assets/work/work5.png';
-  import work7 from '../assets/work/work7.png';
-  import workday from '../assets/work/workday.png';
+import work7 from '../assets/work/work7.png';
+import workday from '../assets/work/workday.png';
 
 const HeroSection = styled.section`
   width: 100%;
@@ -209,43 +210,12 @@ const Work: React.FC = () => {
 
   return (
     <>
+      <Header />
       <HeroSection>
         <MenuContainer>
           <FlowingMenu items={menuItems} />
         </MenuContainer>
       </HeroSection>
-
-      <WorkSection>
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          style={{ color: 'var(--accent1)', fontSize: '2.5rem', marginBottom: '2rem' }}
-        >
-          Featured Projects
-        </motion.h2>
-        <WorkGrid
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-        >
-          {projects.map((project) => (
-            <ProjectCard
-              key={project.id}
-              to={project.path}
-              whileHover={{ scale: 1.02 }}
-              transition={{ duration: 0.2 }}
-            >
-              <ProjectImage />
-              <ProjectContent>
-                <h3>{project.title}</h3>
-                <p>{project.description}</p>
-              </ProjectContent>
-            </ProjectCard>
-          ))}
-        </WorkGrid>
-      </WorkSection>
-      <MenuWork />
     </>
   );
 };

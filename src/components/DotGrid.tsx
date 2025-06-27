@@ -34,6 +34,15 @@ interface Dot {
   velocityY: number;
 }
 
+// Add debounce utility at the top
+function debounce<T extends (...args: any[]) => void>(func: T, wait: number) {
+  let timeout: ReturnType<typeof setTimeout>;
+  return (...args: Parameters<T>) => {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => func(...args), wait);
+  };
+}
+
 const DotGrid = forwardRef<{ triggerShockwave: (pageX: number, pageY: number) => void }, DotGridProps>(({
   dotSize = 16,
   gap = 32,
@@ -109,8 +118,9 @@ const DotGrid = forwardRef<{ triggerShockwave: (pageX: number, pageY: number) =>
   }, [dotSize, gap, baseColor]);
 
   useEffect(() => {
+    const debouncedBuildGrid = debounce(buildGrid, 150);
     buildGrid();
-    const ro = new ResizeObserver(buildGrid);
+    const ro = new ResizeObserver(debouncedBuildGrid);
     if (containerRef.current) ro.observe(containerRef.current);
     return () => ro.disconnect();
   }, [buildGrid]);

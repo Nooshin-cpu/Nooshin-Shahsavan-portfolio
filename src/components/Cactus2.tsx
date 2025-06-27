@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import './Cactus2.css';
 
@@ -10,6 +10,56 @@ declare global {
 
 const Cactus2: React.FC = () => {
   const svgRef = useRef<SVGSVGElement>(null);
+  const sayHiRef = useRef<SVGTextElement>(null);
+  const [showSayHi, setShowSayHi] = useState(false);
+
+  const startSayHiAnimation = () => {
+    console.log('Starting Say Hi animation...');
+    
+    // Make sure the text element exists
+    if (!sayHiRef.current) {
+      console.error('Say Hi text element not found');
+      return;
+    }
+    
+    // Set initial state - start visible but small
+    gsap.set(sayHiRef.current, { 
+      opacity: 1, 
+      scale: 0.5, 
+      x: 535,
+      y: 250
+    });
+    
+    // Create a repeating animation for "Say Hi!" text
+    const sayHiTimeline = gsap.timeline({ repeat: -1, repeatDelay: 2 });
+    
+    sayHiTimeline
+      .to(sayHiRef.current, { 
+        opacity: 1, 
+        scale: 1.2, 
+        y: 230,
+        duration: 0.5,
+        ease: "back.out(1.7)"
+      })
+      .to(sayHiRef.current, { 
+        opacity: 0, 
+        scale: 0.8,
+        y: 210,
+        duration: 0.5,
+        delay: 0.5
+      });
+    
+    console.log('Say Hi animation timeline created');
+  };
+
+  useEffect(() => {
+    // Start Say Hi animation immediately
+    const timer = setTimeout(() => {
+      startSayHiAnimation();
+    }, 1000); // Start after 1 second
+
+    return () => clearTimeout(timer);
+  }, []);
 
   useEffect(() => {
     // Load Spirit.js if not already loaded
@@ -34,7 +84,8 @@ const Cactus2: React.FC = () => {
             loop: true,
             path: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/693612/cactus.json'
           }).then(() => {
-            gsap.set(svgRef.current, { autoAlpha: 1 });
+            // SVG is already visible now, no need to set autoAlpha
+            console.log('Spirit animation loaded successfully');
           }).catch((error: any) => {
             console.error('Failed to load Spirit animation:', error);
           });
@@ -54,11 +105,15 @@ const Cactus2: React.FC = () => {
       if (svgRef.current) {
         gsap.killTweensOf(svgRef.current);
       }
+      if (sayHiRef.current) {
+        gsap.killTweensOf(sayHiRef.current);
+      }
     };
   }, []);
 
   return (
     <div className="cactus2-container">
+      <h2 className="cactus2-title">Say Hi!</h2>
       <svg 
         ref={svgRef}
         width="833px" 
@@ -217,6 +272,24 @@ const Cactus2: React.FC = () => {
             <circle data-spirit-id="burst-bubble-1" fill="#5BD0FB" cx="394.5" cy="266.5" r="6" />
           </g>
         </g>
+        
+        {/* "Say Hi!" text */}
+        <text
+          ref={sayHiRef}
+          x="535"
+          y="250"
+          fontSize="24"
+          fontWeight="bold"
+          fill="white"
+          textAnchor="middle"
+          style={{
+            pointerEvents: 'none',
+            userSelect: 'none',
+            filter: "drop-shadow(2px 2px 4px rgba(0,0,0,0.8))"
+          }}
+        >
+          Say Hi!
+        </text>
       </svg>
     </div>
   );

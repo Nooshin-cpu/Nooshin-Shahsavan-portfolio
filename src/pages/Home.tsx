@@ -5,7 +5,7 @@ import DotGrid from '../components/DotGrid.tsx';
 import RotatingText from '../components/RotatingText';
 import HoverImage from '../components/HoverImage';
 import man1Image from '../assets/home/icons/man1.png';
-import FallingText from '../components/FallingText';
+
 import ProjectGrid from '../components/ProjectGrid';
 import { DefaultTheme } from '../styles/theme';
 import RecentWorks from '../components/RecentWorks';
@@ -361,18 +361,8 @@ const Home: React.FC = () => {
         </HeroContent>
       </HeroSection>
 
-      <FallingTextSection>
-        <FallingTextContainer>
-          <FallingText
-            text="Welcome to my portfolio! I'm a designer who translates brands to visuals"
-            trigger="scroll"
-            gravity={0.5}
-            fontSize="2rem"
-            
-            backgroundColor="transparent"
-          />
-        </FallingTextContainer>
-      </FallingTextSection>
+  
+    
       <HeaderRecentWork text="Recent Projects" />
       <RecentWorks />
       <CactusSection>

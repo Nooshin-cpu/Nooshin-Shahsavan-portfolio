@@ -1,23 +1,24 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import Tilt from "react-parallax-tilt";
 import sbsHomeVideo from '../assets/home/sbs-home.mp4';
 import deli12Img from '../assets/home/deli12.jpg';
 import veenHomeVideo from '../assets/home/veen-home.mp4';
-import workdayPhoneImg from '../assets/work/workday-phone.png';
+import workdayPhoneImg from '../assets/home/workhome.png';
 
 // Images and videos should be placed in src/assets/home
 const items = [
   {
     type: "video",
     src: sbsHomeVideo,
-    label: "Branding",
+    label: "Branding/Print",
     
     details: [
-      { label: "Role", value: "Brand Designer" },
-      { label: "Tools", value: "Adobe Illustrator, Photoshop" },
-      { label: "Timeline", value: "2 weeks" },
-      { label: "Year", value: "2024" },
+      { label: "Project Title:", value: "S.B.S.Clothing brand" },
+      { label: "Description:", value: " I created custom graphics for S.B.S, a casual streetwear brand based in Vancouver that celebrates freedom, fun, and not taking life too seriously. " },
+      { label: "Timeline", value: "3 weeks" },
+      { label: "Year", value: "2023" },
     ],
   },
   {
@@ -26,8 +27,8 @@ const items = [
     label: "Branding",
     
     details: [
-      { label: "Role", value: "Brand Designer" },
-      { label: "Tools", value: "Adobe Illustrator, Photoshop" },
+      { label: "Project Title:", value: "Delicato. Interior design company" },
+      { label: "Description:", value: "Delicato is a small interior design company from Italy that relies on classical architecture in its designs. " },
       { label: "Timeline", value: "2 weeks" },
       { label: "Year", value: "2024" },
     ],
@@ -35,12 +36,12 @@ const items = [
   {
     type: "image",
     src: workdayPhoneImg,
-    label: "Branding",
+    label: "UX-UI",
     
     details: [
-      { label: "Role", value: "Brand Designer" },
-      { label: "Tools", value: "Adobe Illustrator, Photoshop" },
-      { label: "Timeline", value: "2 weeks" },
+      { label: "Project Title:", value: "Workday App" },
+      { label: "Description:", value: "Workday is a self - service portal , and Workday mobile app , designed to make it easy for employees to ac..." },
+      { label: "Timeline", value: "4 weeks" },
       { label: "Year", value: "2024" },
     ],
   },
@@ -50,8 +51,8 @@ const items = [
     label: "Branding",
     
     details: [
-      { label: "Role", value: "Brand Designer" },
-      { label: "Tools", value: "Adobe Illustrator, Photoshop" },
+      { label: "Project Title", value: "Veen Photography Studio" },
+      { label: "Description:", value: "I created the full brand identity for a family photography studio—from logo and color palette to Instagram templates and business cards." },
       { label: "Timeline", value: "2 weeks" },
       { label: "Year", value: "2024" },
     ],
@@ -60,12 +61,14 @@ const items = [
 
 const styles = `
 .recent-works-title {
-  font-size: 2.5rem;
-  color: #222;
+  font-size: 2.8rem;
+  color: #ffffff;
+  margin-top: 4rem;
   margin-bottom: 3rem;
   text-align: center;
-  font-weight: 400;
-  letter-spacing: -0.02em;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  font-family: 'Montserrat', 'Arial', sans-serif;
 }
 .recent-works-grid {
   display: grid;
@@ -77,6 +80,50 @@ const styles = `
   margin: 0 auto;
   padding: 32px 0;
 }
+@media (max-width: 900px) {
+  .recent-works-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    gap: 24px;
+    padding: 24px 0;
+  }
+  .recent-works-title {
+    font-size: 2rem;
+    margin-top: 2.5rem;
+    margin-bottom: 2rem;
+  }
+}
+@media (max-width: 600px) {
+  .recent-works-grid {
+    gap: 16px;
+    padding: 12px 0;
+  }
+  .work-item {
+    min-width: 0;
+    border-radius: 6px;
+  }
+  .recent-works-title {
+    font-size: 1.3rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.2rem;
+  }
+  .overlay-content {
+    font-size: 0.72rem;
+    padding: 12px 8px;
+  }
+  .work-label {
+    font-size: 0.85rem;
+    top: 10px;
+    left: 10px;
+  }
+  .work-info-box {
+    font-size: 0.85rem;
+    padding: 10px 10px;
+    left: 8px;
+    right: 8px;
+    bottom: 8px;
+  }
+}
 .work-item {
   position: relative;
   background: #e0e0e0;
@@ -87,6 +134,11 @@ const styles = `
   flex-direction: column;
   justify-content: flex-start;
   min-width: 200px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  transition: box-shadow 0.3s ease;
+}
+.work-item:hover {
+  box-shadow: 0 12px 60px rgba(0,0,0,0.3);
 }
 .work-label {
   position: absolute;
@@ -115,7 +167,7 @@ const styles = `
   transition: transform 0.3s ease;
 }
 .work-item:hover .work-media {
-  transform: scale(1.05);
+  transform: scale(1.15);
 }
 .center-main-text {
   position: absolute;
@@ -171,12 +223,38 @@ const styles = `
   opacity: 0;
   transition: opacity 0.5s 0.25s;
   color: #222;
-  font-size: 1.1rem;
-  font-weight: 600;
-  text-align: center;
-  padding: 30px 30px;
+  font-size: 0.80rem;
+  font-weight: 500;
+  text-align: left;
+  padding: 22px 22px;
   border-radius: 12px;
   background: rgba(255,255,255,0.08);
+}
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  margin-top: 1.1em;
+  padding: 0.45em 1.1em;
+  background: #222;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1em;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.cta-button:hover, .cta-button:focus {
+  background: #444;
+  color: #fff;
+}
+.cta-arrow {
+  display: inline-block;
+  width: 1.1em;
+  height: 1.1em;
+  vertical-align: middle;
 }
 .work-item:hover .overlay,
 .work-item:focus-within .overlay {
@@ -203,25 +281,33 @@ const styles = `
   transition: transform 0.3s ease;
 }
 .work-item:hover .work-media.workday-fit {
-  transform: scale(1.05);
+  transform: scale(1.15);
 }
 `;
 
 const detailsToString = (details: { label: string, value: string }[]) => (
   <>
-    <span><b>Role:</b> {details[0].value}</span>
-    <span><b>Tools:</b> {details[1].value}</span>
+    <span><b>Project Title:</b> {details[0].value}</span>
+    <span><b>Description:</b> {details[1].value}</span>
     <span><b>Timeline:</b> {details[2].value}</span>
     <span><b>Year:</b> {details[3].value}</span>
   </>
 );
 
-const overlayToString = (details: { label: string, value: string }[]) => (
-  <div>
-    <div><b>Role:</b> {details[0].value}</div>
-    <div><b>Tools:</b> {details[1].value}</div>
+const overlayToString = (details: { label: string, value: string }[], link: string) => (
+  <div style={{ textAlign: 'left', fontSize: '0.95rem', lineHeight: '1.5' }}>
+    <div><b>Project Title:</b> {details[0].value}</div>
+    <div><b>Description:</b> {details[1].value}</div>
     <div><b>Timeline:</b> {details[2].value}</div>
     <div><b>Year:</b> {details[3].value}</div>
+    <Link to={link} className="cta-button">
+      View
+      <span className="cta-arrow" aria-hidden="true">
+        <svg width="1em" height="1em" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M7 5l5 5-5 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+      </span>
+    </Link>
   </div>
 );
 
@@ -233,6 +319,27 @@ const RecentWorks: React.FC = () => {
       transition: {
         staggerChildren: 0.2,
         delayChildren: 0.1
+      }
+    }
+  };
+
+  const titleVariants = {
+    hidden: { 
+      opacity: 0, 
+      y: -50,
+      scale: 0.8,
+      rotateX: -15
+    },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      scale: 1,
+      rotateX: 0,
+      transition: {
+        duration: 1.2,
+        ease: "easeOut",
+        type: "spring",
+        stiffness: 100
       }
     }
   };
@@ -254,9 +361,31 @@ const RecentWorks: React.FC = () => {
     }
   };
 
+  const overlayVariants = {
+    hidden: { opacity: 0, scale: 0.8, y: 20 },
+    visible: { 
+      opacity: 1, 
+      scale: 1, 
+      y: 0,
+      transition: {
+        duration: 0.4,
+        ease: "easeOut"
+      }
+    }
+  };
+
   return (
     <>
       <style>{styles}</style>
+      <motion.h2 
+        className="recent-works-title"
+        variants={titleVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-50px" }}
+      >
+        Recent Works
+      </motion.h2>
       <motion.div 
         className="recent-works-grid"
         variants={containerVariants}
@@ -266,114 +395,178 @@ const RecentWorks: React.FC = () => {
       >
         {/* Top left: SBS */}
         <motion.div variants={itemVariants}>
-          <Link to="/work/sbs" className="work-item" tabIndex={0}>
-            <div className="work-label">{items[0].label}</div>
-            <div className="work-media-container">
-              {items[0].type === "image" ? (
-                <img src={items[0].src} alt={items[0].label} className="work-media" />
-              ) : (
-                <video
-                  src={items[0].src}
-                  className="work-media"
-                  controls={false}
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                />
-              )}
-            </div>
-            <div className="overlay">
-              <div className="overlay-content">
-                {overlayToString(items[0].details)}
+          <Tilt
+            tiltMaxAngleX={20}
+            tiltMaxAngleY={20}
+            scale={1.08}
+            glareEnable={true}
+            glareMaxOpacity={0.4}
+            glareColor="#ffffff"
+            glarePosition="all"
+            glareBorderRadius="8px"
+          >
+            <Link to="/work/sbs" className="work-item" tabIndex={0}>
+              <div className="work-label">{items[0].label}</div>
+              <div className="work-media-container">
+                {items[0].type === "image" ? (
+                  <img src={items[0].src} alt={items[0].label} className="work-media" />
+                ) : (
+                  <video
+                    src={items[0].src}
+                    className="work-media"
+                    controls={false}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                  />
+                )}
               </div>
-            </div>
-          </Link>
+              <div className="overlay">
+                <motion.div 
+                  className="overlay-content"
+                  variants={overlayVariants}
+                  initial="hidden"
+                  whileHover="visible"
+                >
+                  {overlayToString(items[0].details, "/work/sbs")}
+                </motion.div>
+              </div>
+            </Link>
+          </Tilt>
         </motion.div>
         
         {/* Top right: Delicato */}
         <motion.div variants={itemVariants}>
-          <Link to="/work/delicato" className="work-item" tabIndex={0}>
-            <div className="work-label">{items[1].label}</div>
-            <div className="work-media-container">
-              {items[1].type === "image" ? (
-                <img src={items[1].src} alt={items[1].label} className="work-media" />
-              ) : (
-                <video
-                  src={items[1].src}
-                  className="work-media"
-                  controls={false}
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                />
-              )}
-            </div>
-            <div className="overlay">
-              <div className="overlay-content">
-                {overlayToString(items[1].details)}
+          <Tilt
+            tiltMaxAngleX={20}
+            tiltMaxAngleY={20}
+            scale={1.08}
+            glareEnable={true}
+            glareMaxOpacity={0.4}
+            glareColor="#ffffff"
+            glarePosition="all"
+            glareBorderRadius="8px"
+          >
+            <Link to="/work/delicato" className="work-item" tabIndex={0}>
+              <div className="work-label">{items[1].label}</div>
+              <div className="work-media-container">
+                {items[1].type === "image" ? (
+                  <img src={items[1].src} alt={items[1].label} className="work-media" />
+                ) : (
+                  <video
+                    src={items[1].src}
+                    className="work-media"
+                    controls={false}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                  />
+                )}
               </div>
-            </div>
-          </Link>
+              <div className="overlay">
+                <motion.div 
+                  className="overlay-content"
+                  variants={overlayVariants}
+                  initial="hidden"
+                  whileHover="visible"
+                >
+                  {overlayToString(items[1].details, "/work/delicato")}
+                </motion.div>
+              </div>
+            </Link>
+          </Tilt>
         </motion.div>
         
         {/* Bottom left: Workday */}
         <motion.div variants={itemVariants}>
-          <Link to="/work/workday" className="work-item" tabIndex={0}>
-            <div className="work-label">{items[2].label}</div>
-            <div className="work-media-container">
-              {items[2].type === "image" ? (
-                <img
-                  src={items[2].src}
-                  alt={items[2].label}
-                  className="work-media workday-fit"
-                />
-              ) : (
-                <video
-                  src={items[2].src}
-                  className="work-media"
-                  controls={false}
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                />
-              )}
-            </div>
-            <div className="overlay">
-              <div className="overlay-content">
-                {overlayToString(items[2].details)}
+          <Tilt
+            tiltMaxAngleX={20}
+            tiltMaxAngleY={20}
+            scale={1.08}
+            glareEnable={true}
+            glareMaxOpacity={0.4}
+            glareColor="#ffffff"
+            glarePosition="all"
+            glareBorderRadius="8px"
+          >
+            <Link to="/work/workday" className="work-item" tabIndex={0}>
+              <div className="work-label">{items[2].label}</div>
+              <div className="work-media-container">
+                {items[2].type === "image" ? (
+                  <img
+                    src={items[2].src}
+                    alt={items[2].label}
+                    className="work-media workday-fit"
+                  />
+                ) : (
+                  <video
+                    src={items[2].src}
+                    className="work-media"
+                    controls={false}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                  />
+                )}
               </div>
-            </div>
-          </Link>
+              <div className="overlay">
+                <motion.div 
+                  className="overlay-content"
+                  variants={overlayVariants}
+                  initial="hidden"
+                  whileHover="visible"
+                >
+                  {overlayToString(items[2].details, "/work/workday")}
+                </motion.div>
+              </div>
+            </Link>
+          </Tilt>
         </motion.div>
         
         {/* Bottom right: Veen */}
         <motion.div variants={itemVariants}>
-          <Link to="/work/veen" className="work-item" tabIndex={0}>
-            <div className="work-label">{items[3].label}</div>
-            <div className="work-media-container">
-              {items[3].type === "image" ? (
-                <img src={items[3].src} alt={items[3].label} className="work-media" />
-              ) : (
-                <video
-                  src={items[3].src}
-                  className="work-media"
-                  controls={false}
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                />
-              )}
-            </div>
-            <div className="overlay">
-              <div className="overlay-content">
-                {overlayToString(items[3].details)}
+          <Tilt
+            tiltMaxAngleX={20}
+            tiltMaxAngleY={20}
+            scale={1.08}
+            glareEnable={true}
+            glareMaxOpacity={0.4}
+            glareColor="#ffffff"
+            glarePosition="all"
+            glareBorderRadius="8px"
+          >
+            <Link to="/work/veen" className="work-item" tabIndex={0}>
+              <div className="work-label">{items[3].label}</div>
+              <div className="work-media-container">
+                {items[3].type === "image" ? (
+                  <img src={items[3].src} alt={items[3].label} className="work-media" />
+                ) : (
+                  <video
+                    src={items[3].src}
+                    className="work-media"
+                    controls={false}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                  />
+                )}
               </div>
-            </div>
-          </Link>
+              <div className="overlay">
+                <motion.div 
+                  className="overlay-content"
+                  variants={overlayVariants}
+                  initial="hidden"
+                  whileHover="visible"
+                >
+                  {overlayToString(items[3].details, "/work/veen")}
+                </motion.div>
+              </div>
+            </Link>
+          </Tilt>
         </motion.div>
       </motion.div>
     </>

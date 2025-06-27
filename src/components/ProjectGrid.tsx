@@ -102,7 +102,7 @@ const CardContent = styled.div`
   }
 
   p {
-    font-size: 1.2rem;
+    font-size: 1rem;
     opacity: 0.9;
     margin: 0;
     color: rgba(255, 255, 255, 0.9);
