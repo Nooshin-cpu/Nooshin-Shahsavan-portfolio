@@ -1,31 +1,17 @@
-import React, { createContext, useContext, useEffect, useState } from 'react';
+import React, { createContext, useContext } from 'react';
 import { ThemeProvider as StyledThemeProvider } from 'styled-components';
-import { lightTheme, darkTheme } from '../styles/theme';
+import { normalTheme } from '../styles/theme';
 
 type ThemeContextType = {
-  isDarkMode: boolean;
-  toggleTheme: () => void;
+  // No toggle needed, just the theme
 };
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [isDarkMode, setIsDarkMode] = useState(() => {
-    const savedTheme = localStorage.getItem('theme');
-    return savedTheme === 'dark';
-  });
-
-  useEffect(() => {
-    localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
-  }, [isDarkMode]);
-
-  const toggleTheme = () => {
-    setIsDarkMode(!isDarkMode);
-  };
-
   return (
-    <ThemeContext.Provider value={{ isDarkMode, toggleTheme }}>
-      <StyledThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
+    <ThemeContext.Provider value={{}}>
+      <StyledThemeProvider theme={normalTheme}>
         {children}
       </StyledThemeProvider>
     </ThemeContext.Provider>

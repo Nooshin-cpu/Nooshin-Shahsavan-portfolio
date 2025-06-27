@@ -27,6 +27,7 @@ const AboutContainer = styled.div`
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
+  background: #000000 !important;
 `;
 
 const Section = styled.section`
@@ -37,13 +38,14 @@ const Section = styled.section`
   position: relative;
   z-index: 1;
   padding: 4rem 0;
+  background: #000000 !important;
 `;
  
 const ImageTrailSection = styled.div`
   width: 100%;
   height: 100vh;
   position: relative;
-  background: ${({ theme }) => theme.background};
+  background: #000000 !important;
   z-index: 0;
   display: flex;
   flex-direction: column;
@@ -541,7 +543,7 @@ const About: React.FC = () => {
       <Section>
         <ImageTrailSection>
           <ImageTrailTitle>My interests and I</ImageTrailTitle>
-          <CenteredOverlayText>Move your mouse to discover me 🥰</CenteredOverlayText>
+          <CenteredOverlayText>Drag the mouse to see me 🥰</CenteredOverlayText>
           <ImageTrail items={images} variant={1} />
         </ImageTrailSection>
       </Section>

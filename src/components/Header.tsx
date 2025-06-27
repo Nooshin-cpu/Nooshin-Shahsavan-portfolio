@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { useTheme } from '../context/ThemeContext';
 
 const HeaderContainer = styled.header`
   position: fixed;
@@ -60,24 +59,7 @@ const NavLink = styled(Link)`
   }
 `;
 
-const ThemeToggle = styled.button`
-  padding: 0.5rem;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: ${({ theme }) => theme.cardBackground};
-  color: ${({ theme }) => theme.text};
-  transition: ${({ theme }) => theme.transition};
-
-  &:hover {
-    transform: scale(1.1);
-  }
-`;
-
 const Header: React.FC = () => {
-  const { isDarkMode, toggleTheme } = useTheme();
-
   return (
     <HeaderContainer>
       <Nav>
@@ -87,9 +69,6 @@ const Header: React.FC = () => {
           <NavLink to="/about">About</NavLink>
           <NavLink to="/work">Work</NavLink>
           <NavLink to="/resume">Resume</NavLink>
-          <ThemeToggle onClick={toggleTheme}>
-            {isDarkMode ? '🌞' : '🌙'}
-          </ThemeToggle>
         </NavLinks>
       </Nav>
     </HeaderContainer>

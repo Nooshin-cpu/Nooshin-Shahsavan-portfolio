@@ -22,7 +22,7 @@ const PageWrapper = styled.main`
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
-  background: var(--background, #fff);
+  background: #000000 !important;
   position: relative;
 `;
 
@@ -47,7 +47,7 @@ const HeroSection = styled.section`
   align-items: center;
   text-align: center;
   padding: 2rem;
-  background-color: var(--background);
+  background-color: #000000 !important;
   position: relative;
   padding-top: 80px;
 `;
@@ -181,7 +181,7 @@ const FallingTextSection = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: ${({ theme }) => theme.background};
+  background: #000000 !important;
   position: relative;
   z-index: 5;
   padding: 4rem 0;
@@ -291,7 +291,7 @@ const Home: React.FC = () => {
           }}
           dotSize={5}
           gap={15}
-          baseColor={theme.background === '#FEF86A' ? '#000000' : '#ffffff'}
+          baseColor="#ffffff"
           activeColor="#4CAF50"
           proximity={120}
           shockRadius={250}
