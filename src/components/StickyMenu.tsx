@@ -11,10 +11,9 @@ const StickyWrapper = styled.div`
 `;
 
 const MenuBox = styled.div`
-  background: #fff;
+  background: transparent;
   border-radius: 14px;
   padding: 12px 0;
-  box-shadow: 0 6px 32px 0 rgba(0,0,0,0.16), 0 1.5px 8px 0 rgba(0,0,0,0.10);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,51 +23,63 @@ const MenuBox = styled.div`
 
 const IconContainer = styled.a<{ $hovered: boolean }>`
   position: relative;
-  background: #13291b;
-  border-radius: 8px;
+  background: #000000;
+  border-radius: 12px;
+  border: 2px solid #ffffff;
   margin: 8px 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
-  color: #fff;
-  transition: background 0.18s, box-shadow 0.18s, transform 0.18s, font-size 0.18s;
+  width: 48px;
+  height: 48px;
+  color: #ffffff;
+  transition: all 0.2s cubic-bezier(.4,2,.6,1);
   box-sizing: border-box;
   cursor: pointer;
   font-size: 1.45rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.18);
 
   ${({ $hovered }) =>
     $hovered &&
     `
-      font-size: 2.05rem;
-      box-shadow: 0 2px 8px rgba(35,66,42,0.15);
-      transform: scale(1.18);
+      background: #222222;
+      border-color: #2ee0ff;
+      transform: scale(1.08);
+      box-shadow: 0 0 16px rgba(46, 224, 255, 0.5);
       z-index: 1;
     `
   }
 
   &:hover {
-    background: #23422a;
+    background: #222222;
+    border-color: #2ee0ff;
+    transform: scale(1.08);
+    box-shadow: 0 0 16px rgba(46, 224, 255, 0.5);
+  }
+
+  &:active {
+    transform: scale(0.98);
   }
 `;
 
 const Tooltip = styled.div<{ visible: boolean }>`
   display: ${({ visible }) => (visible ? "block" : "none")};
   position: absolute;
-  left: 45px;
+  left: 55px;
   top: 50%;
   transform: translateY(-50%);
-  background: #222;
-  color: #fff;
-  padding: 7px 16px;
-  border-radius: 6px;
-  font-size: 0.97rem;
+  background: rgba(0, 0, 0, 0.9);
+  color: #ffffff;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 0.9rem;
   font-weight: 500;
   white-space: nowrap;
   pointer-events: none;
   opacity: 0.96;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
 `;
 
 const menu = [

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import ScrambledText from '../components/ScrambledText';
 import ImageTrail from '../components/ImageTrail';
-import FlipCard from '../components/FlipCard';
+
 import DecryptedText from '../components/DecryptedText';
 import { IonIcon } from '@ionic/react';
 import { logoLinkedin, mail, document } from 'ionicons/icons';
@@ -11,6 +11,7 @@ import man8 from '../assets/about/man-8.jpg';
 import CactusAnimation from '../components/CactusAnimation';
 import Skill from '../components/skill';
 import WhyCactus from '../components/WhyCactus';
+import StickyMenu from '../components/StickyMenu';
 
 // Import images for ImageTrail
 import man1 from '../assets/about/man-1.jpg';
@@ -442,7 +443,14 @@ const About: React.FC = () => {
   const imageX = useTransform(scrollYProgress, [0.15, 0.25], [50, 0]);
   const imageRotate = useTransform(scrollYProgress, [0.15, 0.25], [5, 0]);
 
-  const aboutText = "Hi! my name is Nooshin. I'm originally from Iran and have been living in Vancouver for nearly two years. With a background in Graphic Design and over a decade of teaching Adobe software and design in high schools, I also worked with a small import/export firm to build their social media presence. After moving to Canada, I enrolled in BCIT's New Media Design and Web Development program to learn how design systems work here. Along the way, I gained skills in UX/UI, marketing, and web development, and began freelancing to help clients elevate their brands. I'm proficient in Adobe Creative Suite and Figma, and I enjoy creating design solutions that are both functional and visually engaging. Outside of work, I love spending time with my family and exploring the city for creative inspiration.";
+  const aboutText = `Hi! I'm Nooshin.
+I'm originally from Iran and have been living in Vancouver for nearly two years. I hold both a Bachelor's and Master's degree in Graphic Design from my home country, and I recently completed a diploma in New Media Design and Web Development at BCIT.
+
+Throughout my career, I've taught graphic design software, worked as a graphic and brand designer—both as part of a creative team and as a freelancer.
+
+My skills include graphic design, UX/UI, marketing, and web development. I'm passionate about crafting design solutions that are not only functional but also visually engaging.
+
+In my free time, I enjoy caring for my plants, spending quality time with my family, and going for walks to unwind and find inspiration.`;
 
   const images = [man1, man2, man3, man5, man6, man7];
 
@@ -478,7 +486,8 @@ const About: React.FC = () => {
 
   return (
     <AboutContainer>
-      <Section style={{ background: '#0a0a0a', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+      <StickyMenu />
+      <Section style={{ background: '#191c24', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
         <AboutGrid>
           <AboutImageColumn>
             <StickyImageWrapper>
@@ -502,15 +511,18 @@ const About: React.FC = () => {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
             >
-              <h2>About Me</h2>
-              <ScrambledText
-                radius={100}
-                duration={1.2}
-                speed={0.5}
-                scrambleChars=".:"
-              >
-                {aboutText}
-              </ScrambledText>
+              <h2>Who I am?</h2>
+              {aboutText.split('\n\n').map((paragraph, idx) => (
+                <ScrambledText
+                  key={idx}
+                  radius={100}
+                  duration={1.2}
+                  speed={0.5}
+                  scrambleChars=".:"
+                >
+                  <p style={{ marginBottom: '0.7em' }}>{paragraph}</p>
+                </ScrambledText>
+              ))}
             </AboutTextContent>
           </AboutTextColumn>
         </AboutGrid>
