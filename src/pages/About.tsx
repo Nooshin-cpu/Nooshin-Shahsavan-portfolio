@@ -12,12 +12,14 @@ import CactusAnimation from '../components/CactusAnimation';
 import Skill from '../components/skill';
 import WhyCactus from '../components/WhyCactus';
 import StickyMenu from '../components/StickyMenu';
+import Footer from '../components/Footer';
 
 // Import images for ImageTrail
 import man1 from '../assets/about/man-1.jpg';
 import man2 from '../assets/about/man-2.jpg';
 import man3 from '../assets/about/man-3.jpg';
-// import man4 from '../assets/about/man-4.jpeg';
+import man4 from '../assets/about/man-4.jpeg';
+
 import man5 from '../assets/about/man-5.jpg';
 import man6 from '../assets/about/man-6.jpg';
 import man7 from '../assets/about/man-7.jpg';
@@ -455,35 +457,7 @@ In my free time, I enjoy caring for my plants, spending quality time with my fam
   const images = [man1, man2, man3, man5, man6, man7];
 
   // Define content for flip cards
-  const visualLanguageSkills = (
-    <ul>
-      <li><DecryptedText text="Photoshop" sequential={true} speed={30} revealDirection="start" useOriginalCharsOnly={false}/></li>
-      <li><DecryptedText text="Illustrator" sequential={true} speed={30} revealDirection="start" useOriginalCharsOnly={false}/></li>
-      <li><DecryptedText text="InDesign" sequential={true} speed={30} revealDirection="start" useOriginalCharsOnly={false}/></li>
-      <li><DecryptedText text="Premier Pro" sequential={true} speed={30} revealDirection="start" useOriginalCharsOnly={false}/></li>
-      <li><DecryptedText text="Dimension" sequential={true} speed={30} revealDirection="start" useOriginalCharsOnly={false}/></li>
-      <li><DecryptedText text="Figma" sequential={true} speed={30} revealDirection="start" useOriginalCharsOnly={false}/></li>
-    </ul>
-  );
-
-  const productivitySoftware = (
-    <ul>
-      <li><DecryptedText text="Microsoft Word" sequential={true} speed={30} revealDirection="start" useOriginalCharsOnly={false}/></li>
-      <li><DecryptedText text="Excel" sequential={true} speed={30} revealDirection="start" useOriginalCharsOnly={false}/></li>
-      <li><DecryptedText text="PowerPoint" sequential={true} speed={30} revealDirection="start" useOriginalCharsOnly={false}/></li>
-    </ul>
-  );
-
-  const webSkills = (
-    <ul>
-      <li><DecryptedText text="HTML" sequential={true} speed={30} revealDirection="start" useOriginalCharsOnly={false}/></li>
-      <li><DecryptedText text="CSS" sequential={true} speed={30} revealDirection="start" useOriginalCharsOnly={false}/></li>
-      <li><DecryptedText text="ReactJS" sequential={true} speed={30} revealDirection="start" useOriginalCharsOnly={false}/></li>
-      <li><DecryptedText text="WordPress" sequential={true} speed={30} revealDirection="start" useOriginalCharsOnly={false}/></li>
-      <li><DecryptedText text="Webflow" sequential={true} speed={30} revealDirection="start" useOriginalCharsOnly={false}/></li>
-    </ul>
-  );
-
+  
   return (
     <AboutContainer>
       <StickyMenu />
@@ -527,11 +501,8 @@ In my free time, I enjoy caring for my plants, spending quality time with my fam
           </AboutTextColumn>
         </AboutGrid>
       </Section>
-      
       <Skill />
-      
       <WhyCactus />
-      
       <Section>
         <ImageTrailSection>
           <ImageTrailTitle>My interests and I</ImageTrailTitle>
@@ -539,6 +510,7 @@ In my free time, I enjoy caring for my plants, spending quality time with my fam
           <ImageTrail items={images} variant={1} />
         </ImageTrailSection>
       </Section>
+      <Footer />
     </AboutContainer>
   );
 };

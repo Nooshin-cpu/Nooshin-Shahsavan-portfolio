@@ -10,6 +10,8 @@ const FooterContainer = styled.footer`
   align-items: center;
   text-align: center;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
+  z-index: 10;
+  position: relative;
 `;
 
 const FooterText = styled.p`

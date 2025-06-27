@@ -17,7 +17,7 @@ const skillIcons = [
 ];
 
 // Circle groupings
-const adobeIdxs = [0, 1, 2, 3, 4];         // 5 icons, biggest circle
+const adobeIdxs = [0, 1, 2, 3, 4, 5];         // 6 icons, biggest circle
 const officeIdxs = [10, 9, 11];            // Excel, CSS, Word (see below)
 const codeIdxs = [7, 8, 6];                // HTML, CSS, React (see below)
 
@@ -116,7 +116,7 @@ const SkillBubbles: React.FC = () => {
 .skill-bubbles-outer {
   position: relative;
   width: 100vw;
-  height: 120vh; /* Increased height for more vertical space */
+  height: 120vh;
   min-height: 1100px;
   overflow: hidden;
   background: #191c24;
@@ -124,6 +124,18 @@ const SkillBubbles: React.FC = () => {
   justify-content: center;
   align-items: center;
   z-index: 1;
+}
+@media (max-width: 900px) {
+  .skill-bubbles-outer {
+    height: 90vh;
+    min-height: 600px;
+  }
+}
+@media (max-width: 600px) {
+  .skill-bubbles-outer {
+    height: 70vh;
+    min-height: 400px;
+  }
 }
 .skills-title {
   position: absolute;
@@ -139,6 +151,16 @@ const SkillBubbles: React.FC = () => {
   text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8);
   pointer-events: none;
 }
+@media (max-width: 900px) {
+  .skills-title {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 600px) {
+  .skills-title {
+    font-size: 1.2rem;
+  }
+}
 .orbit {
   position: absolute;
   left: 50%; top: 50%;
@@ -153,18 +175,27 @@ const SkillBubbles: React.FC = () => {
   box-sizing: border-box;
 }
 .orbit-outer {
-  width: ${OUTER_RADIUS * 2}px; height: ${OUTER_RADIUS * 2}px;
+  width: 680px; height: 680px;
   border-width: 3.2px;
 }
 .orbit-middle {
-  width: ${MIDDLE_RADIUS * 2}px; height: ${MIDDLE_RADIUS * 2}px;
+  width: 440px; height: 440px;
   border-width: 2.2px;
 }
 .orbit-inner {
-  width: ${INNER_RADIUS * 2}px; height: ${INNER_RADIUS * 2}px;
+  width: 220px; height: 220px;
   border-width: 1.6px;
 }
-
+@media (max-width: 900px) {
+  .orbit-outer { width: 420px; height: 420px; }
+  .orbit-middle { width: 270px; height: 270px; }
+  .orbit-inner { width: 120px; height: 120px; }
+}
+@media (max-width: 600px) {
+  .orbit-outer { width: 220px; height: 220px; }
+  .orbit-middle { width: 140px; height: 140px; }
+  .orbit-inner { width: 60px; height: 60px; }
+}
 .orbit-parent {
   position: absolute;
   left: 50%; top: 50%;
@@ -179,11 +210,9 @@ const SkillBubbles: React.FC = () => {
 .orbit-parent-outer { animation-direction: normal;}
 .orbit-parent-middle { animation-direction: reverse;}
 .orbit-parent-inner { animation-direction: normal;}
-
 @keyframes orbit-rotate-parent {
   100% { transform: translate(-50%, -50%) rotate(360deg);}
 }
-
 /* Place icon at edge of orbit */
 .bubble {
   position: absolute;
@@ -202,12 +231,17 @@ const SkillBubbles: React.FC = () => {
   will-change: transform, box-shadow, background;
   z-index: 3;
 }
+@media (max-width: 900px) {
+  .bubble { width: 64px; height: 64px; }
+}
+@media (max-width: 600px) {
+  .bubble { width: 36px; height: 36px; }
+}
 .bubble-img {
-  width: 80px; height: 80px;
+  width: 70%;
+  height: 70%;
   object-fit: contain;
-  user-select: none;
   pointer-events: none;
-  filter: brightness(1.1) contrast(1.1);
 }
 @keyframes bubble-float {
   0% { scale: 1; }
@@ -217,7 +251,7 @@ const SkillBubbles: React.FC = () => {
 }
 .bubble:hover {
   box-shadow: 0 16px 48px 0 rgba(255, 255, 255, 0.2), 0 2px 16px 0 rgba(255, 255, 255, 0.1);
-  background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+  background: linear-gradient(135deg,rgb(54, 230, 236) 0%,rgb(69, 158, 160) 100%);
   transition: background 0.6s, box-shadow 0.3s;
 }
       `}</style>
