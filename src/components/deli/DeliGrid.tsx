@@ -5,12 +5,12 @@ import deli5 from '../../assets/deli/deli5.mp4';
 
 const Section = styled.section`
   width: 100vw;
-  min-height: 100vh;
-  background: #fff;
+  background: transparent;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 4rem 0;
+  padding: 2rem 0;
+  box-sizing: border-box;
 `;
 
 const GridContainer = styled.div`
@@ -20,28 +20,34 @@ const GridContainer = styled.div`
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
   padding: 0 2rem;
+  box-sizing: border-box;
   @media (max-width: 900px) {
     grid-template-columns: 1fr;
-    gap: 4rem;
+    gap: 1.5rem;
+    padding: 0 0.5rem;
   }
 `;
 
 const VideoWrapper = styled.div`
   width: 100%;
-  height: 700px;
   display: flex;
   justify-content: center;
   align-items: center;
+  box-sizing: border-box;
 `;
 
 const VideoContainer = styled.div`
-  width: 70%;
-  height: 70%;
-  max-width: 500px;
-  max-height: 500px;
+  width: 100%;
+  max-width: 600px;
+  aspect-ratio: 1 / 1;
   display: flex;
   justify-content: center;
   align-items: center;
+  box-sizing: border-box;
+  @media (max-width: 900px) {
+    max-width: 100vw;
+    aspect-ratio: 1 / 1;
+  }
 `;
 
 const StyledVideo = styled.video`
@@ -49,6 +55,8 @@ const StyledVideo = styled.video`
   height: 100%;
   object-fit: cover;
   display: block;
+  border-radius: 16px;
+  box-sizing: border-box;
 `;
 
 const DeliGrid: React.FC = () => {

@@ -8,6 +8,10 @@ const FullWrapper = styled.div`
   background: #9ed4d1;
   display: flex;
   justify-content: center;
+  @media (max-width: 900px) {
+    min-height: 60vw;
+    padding: 0;
+  }
 `;
 
 const Section = styled.section`
@@ -18,6 +22,10 @@ const Section = styled.section`
   align-items: center;
   justify-content: center;
   font-family: 'Inter', Arial, Helvetica, sans-serif;
+  @media (max-width: 900px) {
+    min-height: 60vw;
+    padding: 0;
+  }
 `;
 
 const ContentRow = styled.div`
@@ -32,6 +40,8 @@ const ContentRow = styled.div`
     flex-direction: column;
     align-items: stretch;
     width: 98vw;
+    min-height: 40vw;
+    padding: 0 2vw;
   }
 `;
 
@@ -48,6 +58,8 @@ const LeftCol = styled.div`
     max-width: 100vw;
     margin-right: 0;
     margin-bottom: 4vw;
+    min-width: 0;
+    padding: 0 2vw;
   }
 `;
 
@@ -87,6 +99,10 @@ const BigTitle = styled.h1`
   line-height: 1.07;
   letter-spacing: -1px;
   text-transform: uppercase;
+  @media (max-width: 900px) {
+    font-size: 2rem;
+    margin-bottom: 1.2rem;
+  }
 `;
 
 const OverviewText = styled.p`
@@ -98,13 +114,14 @@ const OverviewText = styled.p`
   max-width: 620px;
   @media (max-width: 900px) {
     max-width: 100vw;
+    font-size: 0.98rem;
   }
 `;
 
 const VideoCol = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: flex-start;
   min-width: 320px;
   flex: 1 1 0;
   max-width: 480px;
@@ -116,6 +133,8 @@ const VideoCol = styled.div`
     max-width: 100vw;
     height: auto;
     margin-bottom: 3vw;
+    min-width: 0;
+    padding: 0 2vw;
   }
 `;
 
@@ -133,6 +152,7 @@ const VideoFrame = styled.div`
     height: 70vw;
     max-width: 97vw;
     max-height: none;
+    background: transparent;
   }
 `;
 
@@ -144,6 +164,12 @@ const StyledVideo = styled.video`
   box-shadow: none;
   object-fit: cover;
   display: block;
+  @media (max-width: 900px) {
+    width: 100vw;
+    height: auto;
+    max-height: 60vw;
+    object-fit: contain;
+  }
 `;
 
 const InfoText = styled.div`
@@ -151,14 +177,16 @@ const InfoText = styled.div`
   font-size: 0.80rem;
   font-weight: 400;
   margin-top: 1.6vw;
-  margin-right: 8vw;
+  margin-right: 0;
   text-align: left;
   line-height: 1.28;
+  align-self: flex-start;
   @media (max-width: 900px) {
     margin-top: 2vw;
-    margin-right: 0;
     text-align: left;
     font-size: 0.93rem;
+    padding: 0 2vw;
+    align-self: flex-start;
   }
 `;
 

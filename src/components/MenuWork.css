@@ -21,6 +21,30 @@
     display: flex;
     gap: 32px;
     justify-content: center;
+    /* Responsive horizontal scroll */
+  }
+  
+  @media (max-width: 900px) {
+    .menu-work-grid {
+      overflow-x: auto;
+      overflow-y: hidden;
+      flex-wrap: nowrap;
+      white-space: nowrap;
+      gap: 20px;
+      justify-content: flex-start;
+      padding: 0 12px 12px 12px;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none; /* Firefox */
+    }
+    .menu-work-grid::-webkit-scrollbar {
+      display: none;
+    }
+    .menu-work-cube {
+      min-width: 96px;
+      width: 96px;
+      height: 96px;
+      flex: 0 0 auto;
+    }
   }
   
   .menu-work-cube {

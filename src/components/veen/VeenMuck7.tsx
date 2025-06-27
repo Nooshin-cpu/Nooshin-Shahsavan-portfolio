@@ -10,6 +10,12 @@ const Section = styled.section`
   justify-content: center;
   align-items: center;
   padding: 2rem;
+  @media (max-width: 900px) {
+    height: auto;
+    min-height: 60vw;
+    padding: 0;
+    margin: 0;
+  }
 `;
 
 const ImageContainer = styled.div`
@@ -27,8 +33,13 @@ const StyledImage = styled.img`
   object-fit: contain;
   display: block;
   @media (max-width: 900px) {
-    width: 90%;
-    height: 70%;
+    width: 100vw;
+    height: auto;
+    max-width: 100vw;
+    max-height: 70vh;
+    object-fit: contain;
+    margin: 0;
+    padding: 0;
   }
 `;
 

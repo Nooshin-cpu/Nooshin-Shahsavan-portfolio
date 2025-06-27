@@ -4,39 +4,41 @@ import story from "../../assets/deli/deli1.mp4";
 
 const FullWrapper = styled.div`
   width: 100vw;
-  min-height: 100vh;
-  background:rgb(255, 255, 255);
+  background: rgb(255, 255, 255);
   display: flex;
   justify-content: center;
+  box-sizing: border-box;
 `;
 
 const Section = styled.section`
   width: 100vw;
-  min-height: 100vh;
-  background:rgb(255, 255, 255);
+  background: rgb(255, 255, 255);
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: 'Inter', Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+  padding: 2rem 0;
 `;
 
 const ContentRow = styled.div`
   width: 70vw;
   max-width: 1200px;
-  min-height: 60vh;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   justify-content: space-between;
+  box-sizing: border-box;
   @media (max-width: 900px) {
     flex-direction: column;
     align-items: stretch;
     width: 98vw;
+    padding: 0 0.5rem;
   }
 `;
 
 const LeftCol = styled.div`
-  min-width: 320px;
+  min-width: 220px;
   max-width: 460px;
   flex: 1 1 0;
   display: flex;
@@ -44,10 +46,12 @@ const LeftCol = styled.div`
   justify-content: flex-start;
   align-items: flex-start;
   margin-right: 4vw;
+  box-sizing: border-box;
   @media (max-width: 900px) {
     max-width: 100vw;
     margin-right: 0;
-    margin-bottom: 4vw;
+    margin-bottom: 2vw;
+    padding: 0 0.5rem;
   }
 `;
 
@@ -104,32 +108,34 @@ const OverviewText = styled.p`
 
 const VideoCol = styled.div`
   flex: 1 1 0;
-  min-width: 320px;
+  min-width: 220px;
   max-width: 480px;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: flex-start;
   justify-content: flex-start;
+  box-sizing: border-box;
   @media (max-width: 900px) {
     max-width: 100vw;
     align-items: center;
+    padding: 0 0.5rem;
   }
 `;
 
 const VideoFrame = styled.div`
-  width: 32vw;
-  height: 100%;
+  width: 100%;
   max-width: 420px;
-  max-height: none;
+  aspect-ratio: 16 / 9;
   background: #dddddd;
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 12px;
+  box-sizing: border-box;
   @media (max-width: 900px) {
-    width: 87vw;
-    height: 70vw;
+    width: 97vw;
     max-width: 97vw;
-    max-height: none;
+    aspect-ratio: 16 / 9;
   }
 `;
 
@@ -138,6 +144,8 @@ const StyledVideo = styled.video`
   height: 100%;
   object-fit: cover;
   display: block;
+  border-radius: 12px;
+  box-sizing: border-box;
 `;
 
 const InfoText = styled.div`
@@ -145,9 +153,15 @@ const InfoText = styled.div`
   color: #717070;
   font-weight: 400;
   line-height: 1.6;
-  text-align: right;
+  text-align: left;
+  align-self: flex-start;
+  margin-top: 1rem;
+  box-sizing: border-box;
   @media (max-width: 900px) {
-    text-align: center;
+    text-align: left;
+    align-self: flex-start;
+    margin-top: 1rem;
+    padding: 0 0.5rem;
   }
 `;
 

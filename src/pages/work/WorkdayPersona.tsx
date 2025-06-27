@@ -19,7 +19,6 @@ const SectionCard = styled.section`
   border-radius: 10px;
   box-shadow: 0 8px 32px #0002, 0 2px 10px #0001;
   width: 60vw;
-  aspect-ratio: 1.406 / 1;
   margin: 4vw auto 2vw auto;
   display: flex;
   flex-direction: column;
@@ -27,12 +26,20 @@ const SectionCard = styled.section`
   justify-content: center;
   padding: 0;
   font-family: 'Montserrat', sans-serif;
+  box-sizing: border-box;
+  min-height: 400px;
+  @media (max-width: 1200px) {
+    width: 80vw;
+  }
   @media (max-width: 900px) {
     width: 95vw;
-    aspect-ratio: unset;
-    border-radius: 10px;
-    min-height: 520px;
-    padding: 0;
+    border-radius: 8px;
+    min-height: auto;
+    margin: 2vw auto 1vw auto;
+  }
+  @media (max-width: 600px) {
+    width: 98vw;
+    margin: 1vw auto 0.5vw auto;
   }
 `;
 
@@ -48,6 +55,10 @@ const ContentRow = styled.div`
     flex-direction: column;
     align-items: center;
     min-height: 0;
+    margin-top: 1rem;
+  }
+  @media (max-width: 600px) {
+    margin-top: 0.5rem;
   }
 `;
 
@@ -56,17 +67,23 @@ const PersonaImg = styled.img`
   height: 370px;
   object-fit: cover;
   border-radius: 4px;
-  
   margin-right: 2vw;
-  margin-left:20px;
+  margin-left: 20px;
   background: #fff;
   box-shadow: 0 8px 32px #0002, 0 2px 10px #0001;
+  flex-shrink: 0;
   @media (max-width: 900px) {
     width: 80vw;
-    height: 270px;
+    max-width: 400px;
+    height: auto;
+    aspect-ratio: 340/370;
     margin-bottom: 2vw;
     margin-right: 0;
-    
+    margin-left: 0;
+  }
+  @media (max-width: 600px) {
+    width: 90vw;
+    max-width: 350px;
   }
 `;
 
@@ -74,9 +91,16 @@ const ScenarioBox = styled.div`
   flex: 1;
   min-width: 270px;
   display: flex;
-  
   flex-direction: column;
   justify-content: flex-start;
+  @media (max-width: 900px) {
+    min-width: 0;
+    width: 100%;
+    padding: 0 1rem;
+  }
+  @media (max-width: 600px) {
+    padding: 0 0.8rem;
+  }
 `;
 
 const AgeText = styled.div`
@@ -84,6 +108,10 @@ const AgeText = styled.div`
   font-size: 1rem;
   font-weight: 700;
   margin-bottom: 16px;
+  @media (max-width: 600px) {
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+  }
 `;
 
 const ScenarioTitle = styled.h2`
@@ -92,7 +120,12 @@ const ScenarioTitle = styled.h2`
   font-weight: 700;
   margin: 0 0 1.6rem 0;
   @media (max-width: 900px) {
-    font-size: 22px;
+    font-size: 20px;
+    text-align: center;
+  }
+  @media (max-width: 600px) {
+    font-size: 18px;
+    margin-bottom: 1.2rem;
   }
 `;
 
@@ -106,6 +139,12 @@ const ScenarioDescription = styled.p`
   @media (max-width: 900px) {
     font-size: 0.98rem;
     margin-bottom: 1.2rem;
+    text-align: center;
+    max-width: 100%;
+  }
+  @media (max-width: 600px) {
+    font-size: 0.9rem;
+    line-height: 1.5;
   }
 `;
 
@@ -119,6 +158,15 @@ const ThoughtBox = styled.div`
   box-shadow: 0 4px 14px #0001;
   max-width: 510px;
   font-style: italic;
+  @media (max-width: 900px) {
+    max-width: 100%;
+    text-align: center;
+  }
+  @media (max-width: 600px) {
+    font-size: 0.75rem;
+    padding: 0.8rem 1rem;
+    margin-top: 1rem;
+  }
 `;
 
 const ButtonRow = styled.div`
@@ -135,6 +183,12 @@ const ButtonRow = styled.div`
     gap: 1.5rem;
     align-items: center;
     margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+  @media (max-width: 600px) {
+    gap: 1rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
   }
 `;
 
@@ -151,6 +205,15 @@ const PersonaButton = styled.button<{ active?: boolean }>`
   cursor: pointer;
   transition: background 0.16s, color 0.16s, box-shadow 0.16s;
   outline: none;
+  @media (max-width: 900px) {
+    width: 80%;
+    max-width: 300px;
+  }
+  @media (max-width: 600px) {
+    font-size: 0.9rem;
+    padding: 1rem 2rem;
+    width: 90%;
+  }
   &:hover, &:focus {
     background: #3e2ffc;
     color: #fff;
@@ -188,6 +251,11 @@ const ModalContent = styled.div`
   align-items: flex-end;
   @media (max-width: 800px) {
     padding: 1vw 3vw 2vw 3vw;
+    border-radius: 16px;
+  }
+  @media (max-width: 600px) {
+    padding: 1vw 2vw 1.5vw 2vw;
+    border-radius: 12px;
   }
 `;
 
@@ -198,7 +266,10 @@ const ModalImage = styled.img`
   box-shadow: 0 8px 30px #0002;
   margin-bottom: 12px;
   background: #fff;
-  display: block;
+  @media (max-width: 600px) {
+    border-radius: 12px;
+    margin-bottom: 8px;
+  }
 `;
 
 const CloseButton = styled.button`
@@ -218,6 +289,11 @@ const CloseButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
+  @media (max-width: 600px) {
+    width: 36px;
+    height: 36px;
+    font-size: 1.5rem;
+  }
   &:hover {
     background: #190fd3;
   }
@@ -253,10 +329,10 @@ const WorkdayPersona: React.FC = () => {
             <AgeText>Sara 18 years old</AgeText>
             <ScenarioTitle>User Scenario</ScenarioTitle>
             <ScenarioDescription>
-              Sara, a first-year psychology student and part-time cashier, struggles to check her weekly schedule in the Workday app. She needs to see all her shifts at once to plan her schoolwork but can only view one day at a time. Requesting time off is also frustrating — the tiny fonts make it hard to use, and she has to constantly check the app for approval updates. She often thinks, “I just want to see my week at a glance” and “Why can’t I get a simple notification?”
+              Sara, a first-year psychology student and part-time cashier, struggles to check her weekly schedule in the Workday app. She needs to see all her shifts at once to plan her schoolwork but can only view one day at a time. Requesting time off is also frustrating — the tiny fonts make it hard to use, and she has to constantly check the app for approval updates. She often thinks, "I just want to see my week at a glance" and "Why can't I get a simple notification?"
             </ScenarioDescription>
             <ThoughtBox>
-              She often thinks, “I just want to see my week at a glance” and “Why can’t I get a simple notification?”
+              She often thinks, "I just want to see my week at a glance" and "Why can't I get a simple notification?"
             </ThoughtBox>
           </ScenarioBox>
         </ContentRow>

@@ -37,7 +37,10 @@ const StickyMenuContainer = styled.div`
   z-index: 1000;
   
   @media (max-width: 768px) {
-    display: none;
+    left: 1rem;
+    top: auto;
+    bottom: 2rem;
+    transform: none;
   }
 `;
 

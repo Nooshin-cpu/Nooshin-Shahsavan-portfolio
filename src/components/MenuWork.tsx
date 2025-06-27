@@ -69,6 +69,12 @@ const MenuWork: React.FC = () => {
       ? [workItems[currentIdx], ...workItems.filter((_, i) => i !== currentIdx)]
       : workItems;
 
+  const handleCubeClick = (link: string) => {
+    navigate(link);
+    // Scroll to top of the page
+    window.scrollTo(0, 0);
+  };
+
   return (
     <div className="menu-work-container">
       <h2 className="menu-work-title">Choose Next work to see</h2>
@@ -77,7 +83,7 @@ const MenuWork: React.FC = () => {
           <div
             key={item.link}
             className={`menu-work-cube${idx === 0 ? ' active' : ''}`}
-            onClick={() => navigate(item.link)}
+            onClick={() => handleCubeClick(item.link)}
             tabIndex={0}
             role="button"
             aria-label={`Go to ${item.alt}`}
@@ -90,6 +96,22 @@ const MenuWork: React.FC = () => {
             </div>
           </div>
         ))}
+      </div>
+      <div
+        className="menu-work-top-btn"
+        title="Scroll to top"
+        tabIndex={0}
+        role="button"
+        aria-label="Scroll to top"
+        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+      >
+        <span className="menu-work-top-icon">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="14" cy="14" r="13" stroke="white" strokeWidth="2.5" fill="black" />
+            <polyline points="9,17 14,12 19,17" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </span>
       </div>
     </div>
   );

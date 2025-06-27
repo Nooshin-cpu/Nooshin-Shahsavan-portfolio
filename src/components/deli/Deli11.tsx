@@ -9,6 +9,12 @@ const Section = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
+  @media (max-width: 900px) {
+    height: auto;
+    min-height: 60vw;
+    padding: 0;
+    margin: 0;
+  }
 `;
 
 const VideoContainer = styled.div`
@@ -18,12 +24,30 @@ const VideoContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  @media (max-width: 900px) {
+    width: 100vw;
+    height: auto;
+    min-height: 40vw;
+    aspect-ratio: auto;
+    padding: 0;
+    margin: 0;
+  }
 `;
 
 const Video = styled.video`
-  width: 30%;
-  height:100vh;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
+  @media (max-width: 900px) {
+    width: 100vw;
+    height: auto;
+    max-width: 100vw;
+    max-height: 40vh;
+    object-fit: cover;
+    margin: 0 auto;
+    padding: 0;
+    display: block;
+  }
 `;
 
 const Deli11: React.FC = () => {

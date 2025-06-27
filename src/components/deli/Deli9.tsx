@@ -10,28 +10,59 @@ const Section = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
+  border: 4px solid green; /* Debug border */
+  @media (max-width: 900px) {
+    height: auto;
+    min-height: 40vw;
+    padding: 0;
+    margin: 0;
+  }
 `;
 
 const GridContainer = styled.div`
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
   gap: 0;
+  @media (max-width: 900px) {
+    height: auto;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    margin: 0;
+    padding: 0;
+  }
 `;
 
 const ImageColumn = styled.div`
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   position: relative;
   overflow: hidden;
+  @media (max-width: 900px) {
+    width: 100vw;
+    height: auto;
+    min-height: 40vw;
+    margin: 0;
+    padding: 0;
+  }
 `;
 
 const Image = styled.img`
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   object-fit: cover;
+  @media (max-width: 900px) {
+    width: 100vw;
+    height: auto;
+    max-width: 100vw;
+    max-height: 90vh;
+    object-fit: cover;
+    margin: 0;
+    padding: 0;
+    display: block;
+  }
 `;
 
 const Deli9: React.FC = () => {

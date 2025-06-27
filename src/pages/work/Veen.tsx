@@ -31,6 +31,7 @@ const Veen: React.FC = () => {
       <VeenMuck4/>
       <VeenMuck7/>
 
+      <MenuWork />
     </div>
   );
 };

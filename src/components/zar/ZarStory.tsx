@@ -11,6 +11,12 @@ const MockSection = styled.section`
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  box-sizing: border-box;
+  @media (max-width: 900px) {
+    height: auto;
+    min-height: unset;
+    padding: 0;
+  }
 `;
 
 const CenteredVideoWrapper = styled.div`
@@ -19,6 +25,14 @@ const CenteredVideoWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  box-sizing: border-box;
+  @media (max-width: 900px) {
+    width: 100vw;
+    height: auto;
+    max-width: 100vw;
+    max-height: 70vh;
+    padding: 0;
+  }
 `;
 
 const FullVideo = styled.video`
@@ -27,6 +41,17 @@ const FullVideo = styled.video`
   object-fit: contain;
   display: block;
   background: #460863;
+  box-sizing: border-box;
+  @media (max-width: 900px) {
+    width: 100vw;
+    height: auto;
+    max-width: 100vw;
+    max-height: 70vh;
+    object-fit: contain;
+    margin: 0;
+    padding: 0;
+    display: block;
+  }
 `;
 
 const ZarStory: React.FC = () => (

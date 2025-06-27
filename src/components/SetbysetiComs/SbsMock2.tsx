@@ -12,6 +12,13 @@ const MockSection2 = styled.section`
   align-items: center;
   overflow: hidden;
   flex-direction: row;
+  @media (max-width: 900px) {
+    flex-direction: column;
+    height: auto;
+    min-height: 60vw;
+    padding: 0;
+    margin: 0;
+  }
 `;
 
 const LeftImgContainer = styled.div`
@@ -21,6 +28,15 @@ const LeftImgContainer = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  @media (max-width: 900px) {
+    margin-left: 0;
+    width: 100vw;
+    height: auto;
+    justify-content: center;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding: 0;
+  }
 `;
 
 const RightImgContainer = styled.div`
@@ -29,7 +45,16 @@ const RightImgContainer = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  margin-left: 10px; /* 10px margin between images */
+  margin-left: 10px;
+  @media (max-width: 900px) {
+    width: 100vw;
+    height: auto;
+    margin-left: 0;
+    justify-content: center;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding: 0;
+  }
 `;
 
 const FullImg = styled.img`
@@ -37,6 +62,15 @@ const FullImg = styled.img`
   height: 100%;
   object-fit: cover;
   display: block;
+  @media (max-width: 900px) {
+    width: 100vw;
+    max-width: 100vw;
+    height: auto;
+    max-height: 70vh;
+    object-fit: contain;
+    margin: 0 auto;
+    padding: 0;
+  }
 `;
 
 const SbsMock2: React.FC = () => (

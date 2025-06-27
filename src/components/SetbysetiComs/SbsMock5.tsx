@@ -11,6 +11,11 @@ const MockSection5 = styled.section`
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  @media (max-width: 900px) {
+    height: auto;
+    min-height: 60vw;
+    padding: 0;
+  }
 `;
 
 const FullImg = styled.img`
@@ -18,6 +23,15 @@ const FullImg = styled.img`
   height: 70%;
   object-fit: cover;
   display: block;
+  @media (max-width: 900px) {
+    width: 100vw;
+    max-width: 100vw;
+    height: auto;
+    max-height: 70vh;
+    object-fit: contain;
+    margin: 0 auto;
+    padding: 0;
+  }
 `;
 
 const SbsMock5: React.FC = () => (

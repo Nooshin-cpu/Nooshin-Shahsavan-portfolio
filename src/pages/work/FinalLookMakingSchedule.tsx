@@ -12,11 +12,21 @@ const Container = styled.section`
   font-family: 'Montserrat', sans-serif;
   padding: 2.5rem 3vw 2.5rem 3vw;
   min-height: 700px;
+  box-sizing: border-box;
+  @media (max-width: 1200px) {
+    width: 80vw;
+  }
   @media (max-width: 900px) {
     width: 95vw;
     border-radius: 16px;
-    padding: 1.2rem 0.7rem 1.2rem 0.7rem;
+    padding: 1.5rem 1rem 1.5rem 1rem;
     max-width: 100vw;
+    min-height: auto;
+  }
+  @media (max-width: 600px) {
+    width: 98vw;
+    border-radius: 12px;
+    padding: 1.2rem 0.8rem 1.2rem 0.8rem;
   }
 `;
 
@@ -25,6 +35,9 @@ const Label = styled.div`
   font-size: 1.15rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
+  @media (max-width: 600px) {
+    font-size: 1rem;
+  }
 `;
 
 const FlowTitle = styled.h1`
@@ -32,6 +45,14 @@ const FlowTitle = styled.h1`
   font-size: 2.3rem;
   font-weight: 900;
   margin: 0 0 2.5rem 0;
+  @media (max-width: 900px) {
+    font-size: 2rem;
+    text-align: center;
+  }
+  @media (max-width: 600px) {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+  }
 `;
 
 const FlexRow = styled.div`
@@ -42,6 +63,10 @@ const FlexRow = styled.div`
   gap: 2rem;
   @media (max-width: 900px) {
     flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+  }
+  @media (max-width: 600px) {
     gap: 1rem;
   }
 `;
@@ -49,6 +74,10 @@ const FlexRow = styled.div`
 const TextColumn = styled.div`
   flex: 1 1 0;
   min-width: 0;
+  @media (max-width: 900px) {
+    flex: none;
+    width: 100%;
+  }
 `;
 
 const VideoWrapper = styled.div`
@@ -57,6 +86,11 @@ const VideoWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  @media (max-width: 900px) {
+    flex: none;
+    width: 100%;
+    align-items: center;
+  }
 `;
 
 const VideoContainer = styled.div`
@@ -65,6 +99,9 @@ const VideoContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  @media (max-width: 900px) {
+    align-items: center;
+  }
 `;
 
 const StyledVideo = styled.video`
@@ -74,6 +111,12 @@ const StyledVideo = styled.video`
   border-radius: 0;
   box-shadow: none;
   display: block;
+  @media (max-width: 900px) {
+    max-width: 500px;
+  }
+  @media (max-width: 600px) {
+    max-width: 100%;
+  }
 `;
 
 const ControlsContainer = styled.div`
@@ -83,6 +126,13 @@ const ControlsContainer = styled.div`
   margin-top: 8px;
   gap: 12px;
   user-select: none;
+  @media (max-width: 900px) {
+    max-width: 500px;
+  }
+  @media (max-width: 600px) {
+    gap: 8px;
+    margin-top: 6px;
+  }
 `;
 
 const PlayPauseButton = styled.button`
@@ -99,6 +149,11 @@ const PlayPauseButton = styled.button`
   justify-content: center;
   outline: none;
   transition: background 0.2s;
+  @media (max-width: 600px) {
+    width: 32px;
+    height: 32px;
+    font-size: 1.2rem;
+  }
   &:hover {
     background: #362bb5;
   }
@@ -110,6 +165,9 @@ const Slider = styled.input.attrs({ type: "range" })`
   margin: 0 8px;
   accent-color: #483efc;
   height: 4px;
+  @media (max-width: 600px) {
+    margin: 0 4px;
+  }
 `;
 
 const Time = styled.span`
@@ -117,6 +175,10 @@ const Time = styled.span`
   color: #333;
   min-width: 44px;
   text-align: right;
+  @media (max-width: 600px) {
+    font-size: 0.85rem;
+    min-width: 36px;
+  }
 `;
 
 function formatTime(sec: number) {

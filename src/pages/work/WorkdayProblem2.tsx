@@ -18,7 +18,6 @@ const SectionCard = styled.section`
   border-radius: 10px;
   box-shadow: 0 8px 32px #0002, 0 2px 10px #0001;
   width: 60vw;
-  aspect-ratio: 1.406 / 1;
   margin: 4vw auto 2vw auto;
   display: flex;
   flex-direction: row;
@@ -26,13 +25,21 @@ const SectionCard = styled.section`
   justify-content: center;
   padding: 0;
   font-family: 'Montserrat', sans-serif;
+  box-sizing: border-box;
+  min-height: 400px;
+  @media (max-width: 1200px) {
+    width: 80vw;
+  }
   @media (max-width: 900px) {
     width: 95vw;
-    aspect-ratio: unset;
     flex-direction: column;
-    border-radius: 10px;
-    min-height: 520px;
-    padding: 0;
+    border-radius: 8px;
+    min-height: auto;
+    margin: 2vw auto 1vw auto;
+  }
+  @media (max-width: 600px) {
+    width: 98vw;
+    margin: 1vw auto 0.5vw auto;
   }
 `;
 
@@ -48,6 +55,11 @@ const LeftContent = styled.div`
     padding: 2.5rem 1.2rem 2rem 1.2rem;
     align-items: center;
     width: 100%;
+    min-width: 0;
+    flex: none;
+  }
+  @media (max-width: 600px) {
+    padding: 2rem 1rem 1.5rem 1rem;
   }
 `;
 
@@ -64,6 +76,10 @@ const RightContent = styled.div`
     width: 100%;
     min-width: 0;
     justify-content: center;
+    flex: none;
+  }
+  @media (max-width: 600px) {
+    padding: 0 0 1.5rem 0;
   }
 `;
 
@@ -73,6 +89,9 @@ const ProblemIndex = styled.div`
   font-weight: 700;
   margin-bottom: 0.8rem;
   font-family: 'Montserrat', sans-serif;
+  @media (max-width: 600px) {
+    font-size: 0.9rem;
+  }
 `;
 
 const ProblemTitle = styled.h2`
@@ -82,10 +101,14 @@ const ProblemTitle = styled.h2`
   margin: 0 0 1.2rem 0;
   font-family: 'Montserrat', sans-serif;
   text-align: left;
-  @media (max-width: 700px) {
+  @media (max-width: 900px) {
     text-align: center;
     width: 100%;
-    font-size: 22px;
+    font-size: 20px;
+  }
+  @media (max-width: 600px) {
+    font-size: 18px;
+    margin-bottom: 1rem;
   }
 `;
 
@@ -101,6 +124,11 @@ const ProblemText = styled.p`
   @media (max-width: 900px) {
     text-align: center;
     font-size: 0.98rem;
+    max-width: 100%;
+  }
+  @media (max-width: 600px) {
+    font-size: 0.9rem;
+    line-height: 1.5;
   }
 `;
 
@@ -115,9 +143,14 @@ const VideoPlaceholder = styled.div`
   justify-content: center;
   overflow: hidden;
   border: 1.5px solid #eee;
+  @media (max-width: 900px) {
+    width: 200px;
+    height: 420px;
+  }
   @media (max-width: 600px) {
     width: 170px;
     height: 350px;
+    border-radius: 12px;
   }
 `;
 
@@ -126,6 +159,9 @@ const StyledVideo = styled.video`
   height: 100%;
   object-fit: cover;
   border-radius: 18px;
+  @media (max-width: 600px) {
+    border-radius: 12px;
+  }
 `;
 
 const WorkdayProblem2: React.FC = () => (
@@ -136,7 +172,7 @@ const WorkdayProblem2: React.FC = () => (
         <ProblemIndex>Problem 2</ProblemIndex>
         <ProblemTitle>Finding the Time Off Option</ProblemTitle>
         <ProblemText>
-          Requesting time off is difficult because the option is buried inside the “My Schedule” web page with no clear label or icon. On mobile, the text is tiny and unreadable without zooming, which breaks the layout and makes navigation harder. The “Time Off” button is barely visible, hidden in the top-right corner.
+          Requesting time off is difficult because the option is buried inside the "My Schedule" web page with no clear label or icon. On mobile, the text is tiny and unreadable without zooming, which breaks the layout and makes navigation harder. The "Time Off" button is barely visible, hidden in the top-right corner.
         </ProblemText>
       </LeftContent>
       <RightContent>

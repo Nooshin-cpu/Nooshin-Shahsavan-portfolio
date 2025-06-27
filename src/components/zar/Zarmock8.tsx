@@ -11,6 +11,12 @@ const MockSection = styled.section`
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  box-sizing: border-box;
+  @media (max-width: 900px) {
+    height: auto;
+    min-height: unset;
+    padding: 0;
+  }
 `;
 
 const FullImg = styled.img`
@@ -18,6 +24,17 @@ const FullImg = styled.img`
   height: 100vh;
   object-fit: cover;
   display: block;
+  box-sizing: border-box;
+  @media (max-width: 900px) {
+    width: 100vw;
+    height: auto;
+    max-width: 100vw;
+    max-height: 90vh;
+    object-fit: cover;
+    margin: 0;
+    padding: 0;
+    display: block;
+  }
 `;
 
 const Zarmock8: React.FC = () => (

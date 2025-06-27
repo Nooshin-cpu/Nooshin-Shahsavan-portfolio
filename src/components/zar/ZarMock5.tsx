@@ -11,6 +11,11 @@ const MockSection = styled.section`
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  box-sizing: border-box;
+  @media (max-width: 900px) {
+    min-height: unset;
+    padding: 0;
+  }
 `;
 
 const FullImg = styled.img`
@@ -18,6 +23,17 @@ const FullImg = styled.img`
   height: auto;
   object-fit: cover;
   display: block;
+  box-sizing: border-box;
+  @media (max-width: 900px) {
+    width: 100vw;
+    max-width: 100vw;
+    max-height: 90vh;
+    height: auto;
+    object-fit: cover;
+    margin: 0;
+    padding: 0;
+    display: block;
+  }
 `;
 
 const ZarMock5: React.FC = () => (

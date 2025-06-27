@@ -15,7 +15,6 @@ import SolutionDayOffNotification from "./SolutionDayOffNotification";
 import FinalLookMakingSchedule from "./FinalLookMakingSchedule";
 import FinalLookDayOff from "./FinalLookDayOff";
 import KeyTakeawaySection from "./KeyTakeawaySection";
-import StickyMenu from "../../components/StickyMenu";
 import MenuWork from '../../components/MenuWork';
 import '../../components/MenuWork.css';
 
@@ -40,6 +39,7 @@ const PageBg = styled.div`
   width: 100vw;
   background: #191c24;
   transition: background 0.2s;
+  overflow-x: hidden;
 `;
 
 // Common Card container
@@ -48,15 +48,20 @@ const SectionCard = styled.section<{ $white?: boolean }>`
   border-radius: 10px;
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3), 0 2px 3px rgba(0, 0, 0, 0.2);
   width: 60vw;
-  aspect-ratio: 1.406 / 1;
   margin: 4vw auto 2vw auto;
   font-family: 'Montserrat', sans-serif;
+  box-sizing: border-box;
+  @media (max-width: 1200px) {
+    width: 80vw;
+  }
   @media (max-width: 900px) {
     width: 95vw;
-    aspect-ratio: unset;
-    border-radius: 10px;
-    min-height: 520px;
-    padding: 0;
+    margin: 2vw auto 1vw auto;
+    border-radius: 8px;
+  }
+  @media (max-width: 600px) {
+    width: 98vw;
+    margin: 1vw auto 0.5vw auto;
   }
 `;
 
@@ -68,11 +73,17 @@ const Page1Card = styled(SectionCard).attrs({ $white: true })`
   justify-content: flex-start;
   padding: 3.5rem 3vw;
   gap: 4vw;
+  min-height: 400px;
   @media (max-width: 900px) {
     flex-direction: column;
-    align-items: stretch;
-    padding: 2rem 0.7rem;
-    gap: 2vw;
+    align-items: center;
+    padding: 2rem 1rem;
+    gap: 2rem;
+    min-height: auto;
+  }
+  @media (max-width: 600px) {
+    padding: 1.5rem 0.8rem;
+    gap: 1.5rem;
   }
 `;
 
@@ -81,13 +92,21 @@ const PhoneMockup = styled.img`
   width: 340px;
   min-width: 220px;
   max-width: 38vw;
+  height: auto;
   border-radius: 32px;
   box-shadow: 0 8px 40px #0002, 0 2px 6px #0001;
   background: #fff;
+  flex-shrink: 0;
   @media (max-width: 900px) {
+    width: 60vw;
+    max-width: 300px;
+    min-width: 200px;
+    margin: 0 auto;
+  }
+  @media (max-width: 600px) {
     width: 70vw;
-    max-width: 95vw;
-    margin: 0 auto 2vw auto;
+    max-width: 250px;
+    min-width: 180px;
   }
 `;
 
@@ -97,6 +116,10 @@ const Content = styled.div`
   flex-direction: column;
   justify-content: center;
   min-width: 280px;
+  @media (max-width: 900px) {
+    min-width: 0;
+    width: 100%;
+  }
 `;
 
 const Title = styled.h1`
@@ -105,6 +128,14 @@ const Title = styled.h1`
   font-weight: 700;
   letter-spacing: 1px;
   margin: 0 0 1.6rem 0;
+  @media (max-width: 900px) {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+  @media (max-width: 600px) {
+    font-size: 1.6rem;
+    margin-bottom: 1.2rem;
+  }
 `;
 
 const OverviewLabel = styled.h2`
@@ -113,11 +144,21 @@ const OverviewLabel = styled.h2`
   font-weight: 700;
   margin-bottom: 0.65rem;
   margin-top: 0;
+  @media (max-width: 900px) {
+    font-size: 1.6rem;
+    text-align: center;
+  }
+  @media (max-width: 600px) {
+    font-size: 1.4rem;
+  }
 `;
 
 const OverviewContainer = styled.div`
   max-width: 520px;
   width: 100%;
+  @media (max-width: 900px) {
+    max-width: 100%;
+  }
 `;
 
 const OverviewText = styled.p`
@@ -128,6 +169,15 @@ const OverviewText = styled.p`
   margin-bottom: 2.2rem;
   margin-top: 0;
   text-align: left;
+  @media (max-width: 900px) {
+    font-size: 15px;
+    text-align: center;
+    line-height: 1.6;
+  }
+  @media (max-width: 600px) {
+    font-size: 14px;
+    margin-bottom: 1.8rem;
+  }
 `;
 
 const Divider = styled.hr`
@@ -144,7 +194,7 @@ const RoleGrid = styled.div`
   gap: 1.6rem;
   width: 100%;
   max-width: 520px;
-  @media (max-width: 700px) {
+  @media (max-width: 900px) {
     flex-direction: column;
     gap: 0.75rem;
     max-width: 100%;
@@ -156,6 +206,9 @@ const RoleItem = styled.div`
   display: flex;
   flex-direction: column;
   min-width: 0;
+  @media (max-width: 900px) {
+    text-align: center;
+  }
 `;
 
 const RoleLabel = styled.span`
@@ -164,6 +217,9 @@ const RoleLabel = styled.span`
   color: #333;
   letter-spacing: 0.5px;
   margin-bottom: 0.16rem;
+  @media (max-width: 600px) {
+    font-size: 0.9rem;
+  }
 `;
 
 const RoleValue = styled.span`
@@ -171,6 +227,9 @@ const RoleValue = styled.span`
   font-size: 14px;
   font-weight: 400;
   white-space: pre-line;
+  @media (max-width: 600px) {
+    font-size: 13px;
+  }
 `;
 
 // --- PAGE 2: PROBLEM AT A GLANCE ---
@@ -182,6 +241,14 @@ const Page2Card = styled(SectionCard).attrs({ $white: true })`
   padding: 3rem 2vw 2.5rem 2vw;
   margin-top: 0;
   gap: 0;
+  min-height: 400px;
+  @media (max-width: 900px) {
+    padding: 2rem 1rem 1.5rem 1rem;
+    min-height: auto;
+  }
+  @media (max-width: 600px) {
+    padding: 1.5rem 0.8rem 1rem 0.8rem;
+  }
 `;
 
 const ProblemTitle = styled.h2`
@@ -191,6 +258,12 @@ const ProblemTitle = styled.h2`
   margin-bottom: 0.6rem;
   margin-top: 0;
   text-align: center;
+  @media (max-width: 900px) {
+    font-size: 1.8rem;
+  }
+  @media (max-width: 600px) {
+    font-size: 1.6rem;
+  }
 `;
 
 const ProblemSubTitle = styled.h3`
@@ -200,6 +273,10 @@ const ProblemSubTitle = styled.h3`
   margin-bottom: 2.2rem;
   margin-top: 0;
   text-align: center;
+  @media (max-width: 600px) {
+    font-size: 0.9rem;
+    margin-bottom: 1.8rem;
+  }
 `;
 
 const ProblemDivider = styled.hr`
@@ -207,6 +284,10 @@ const ProblemDivider = styled.hr`
   border-top: 2px solid #483efc;
   width: 60%;
   margin: 0 auto 2rem auto;
+  @media (max-width: 600px) {
+    width: 80%;
+    margin-bottom: 1.5rem;
+  }
 `;
 
 const CardRow = styled.div`
@@ -220,6 +301,10 @@ const CardRow = styled.div`
     flex-direction: column;
     gap: 1.5rem;
     align-items: center;
+  }
+  @media (max-width: 600px) {
+    gap: 1rem;
+    margin-top: 1.5rem;
   }
 `;
 
@@ -236,9 +321,15 @@ const ProblemCard = styled.div`
   align-items: center;
   justify-content: center;
   transition: box-shadow 0.2s;
+  box-sizing: border-box;
   @media (max-width: 1000px) {
     width: 90%;
     max-width: 340px;
+  }
+  @media (max-width: 600px) {
+    width: 95%;
+    padding: 1.8rem 1rem 1.2rem 1rem;
+    border-radius: 12px;
   }
 `;
 
@@ -249,6 +340,11 @@ const CardIcon = styled.img`
   margin-bottom: 1.4rem;
   margin-top: 0.1rem;
   display: block;
+  @media (max-width: 600px) {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 1.2rem;
+  }
 `;
 
 const CardText = styled.div`
@@ -257,6 +353,10 @@ const CardText = styled.div`
   font-weight: 700;
   text-align: center;
   margin-top: 0.2rem;
+  line-height: 1.4;
+  @media (max-width: 600px) {
+    font-size: 0.75rem;
+  }
 `;
 
 // --- PAGE 3: PROBLEM 1 DETAIL ---
@@ -266,9 +366,12 @@ const Page3Card = styled(SectionCard)`
   align-items: center;
   justify-content: center;
   padding: 0;
+  min-height: 400px;
+  @media (max-width: 900px) {
+    flex-direction: column;
+    min-height: auto;
+  }
 `;
-
-// ... (rest of the code remains unchanged) ...
 
 const LeftContent = styled.div`
   flex: 1.2;
@@ -282,6 +385,11 @@ const LeftContent = styled.div`
     padding: 2.5rem 1.2rem 2rem 1.2rem;
     align-items: center;
     width: 100%;
+    min-width: 0;
+    flex: none;
+  }
+  @media (max-width: 600px) {
+    padding: 2rem 1rem 1.5rem 1rem;
   }
 `;
 
@@ -298,6 +406,10 @@ const RightContent = styled.div`
     width: 100%;
     min-width: 0;
     justify-content: center;
+    flex: none;
+  }
+  @media (max-width: 600px) {
+    padding: 0 0 1.5rem 0;
   }
 `;
 
@@ -307,6 +419,9 @@ const ProblemIndex = styled.div`
   font-weight: 700;
   margin-bottom: 0.8rem;
   font-family: 'Montserrat', sans-serif;
+  @media (max-width: 600px) {
+    font-size: 14px;
+  }
 `;
 
 const ProblemDetailTitle = styled.h2`
@@ -316,10 +431,14 @@ const ProblemDetailTitle = styled.h2`
   margin: 0 0 1.2rem 0;
   font-family: 'Montserrat', sans-serif;
   text-align: left;
-  @media (max-width: 700px) {
+  @media (max-width: 900px) {
     text-align: center;
     width: 100%;
-    font-size:22px;
+    font-size: 20px;
+  }
+  @media (max-width: 600px) {
+    font-size: 18px;
+    margin-bottom: 1rem;
   }
 `;
 
@@ -335,6 +454,11 @@ const ProblemText = styled.p`
   @media (max-width: 900px) {
     text-align: center;
     font-size: 0.98rem;
+    max-width: 100%;
+  }
+  @media (max-width: 600px) {
+    font-size: 0.9rem;
+    line-height: 1.5;
   }
 `;
 
@@ -349,9 +473,14 @@ const VideoPlaceholder = styled.div`
   justify-content: center;
   overflow: hidden;
   border: 1.5px solid #eee;
+  @media (max-width: 900px) {
+    width: 200px;
+    height: 420px;
+  }
   @media (max-width: 600px) {
     width: 170px;
     height: 350px;
+    border-radius: 12px;
   }
 `;
 
@@ -360,6 +489,9 @@ const StyledVideo = styled.video`
   height: 100%;
   object-fit: cover;
   border-radius: 18px;
+  @media (max-width: 600px) {
+    border-radius: 12px;
+  }
 `;
 
 const PageContainer = styled.div`
@@ -406,6 +538,9 @@ const ContentWrapper = styled.div`
     margin-left: 0;
     padding: 1rem;
   }
+  @media (max-width: 600px) {
+    padding: 0.5rem;
+  }
 `;
 
 const menuItems = [
@@ -421,7 +556,6 @@ const Workday: React.FC = () => (
   <PageBg>
     <GlobalStyle />
     <PageContainer>
-      <StickyMenu items={menuItems} />
       <ContentWrapper>
         <div id="overview">
           <Page1Card>
@@ -505,9 +639,11 @@ const Workday: React.FC = () => (
         </div>
 
         <KeyTakeawaySection />
-        <MenuWork />
       </ContentWrapper>
     </PageContainer>
+    <div style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
+      <MenuWork />
+    </div>
   </PageBg>
 );
 

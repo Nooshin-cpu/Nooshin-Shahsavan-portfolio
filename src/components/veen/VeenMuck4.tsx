@@ -4,14 +4,21 @@ import mveen2 from '../../assets/veen/mveen2.jpg';
 import mveen5 from '../../assets/veen/mveen5.png';
 
 const Container = styled.div`
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   display: grid;
-  
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
   overflow: hidden;
   background: #fffdd0;
+  @media (max-width: 900px) {
+    height: auto;
+    min-height: 60vw;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    margin: 0;
+    padding: 0;
+  }
 `;
 
 const ImageContainer = styled.div`
@@ -22,6 +29,12 @@ const ImageContainer = styled.div`
   justify-content: center;
   overflow: hidden;
   padding: 2rem;
+  @media (max-width: 900px) {
+    padding: 0;
+    height: auto;
+    min-height: 40vw;
+    margin: 0;
+  }
 `;
 
 const Image = styled.img`
@@ -30,8 +43,13 @@ const Image = styled.img`
   object-fit: contain;
   object-position: center;
   @media (max-width: 900px) {
-    width: 90%;
-    height: 90%;
+    width: 100vw;
+    height: auto;
+    max-width: 100vw;
+    max-height: 70vh;
+    object-fit: contain;
+    margin: 0;
+    padding: 0;
   }
 `;
 

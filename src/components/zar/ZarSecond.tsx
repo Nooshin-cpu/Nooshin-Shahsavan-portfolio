@@ -4,31 +4,33 @@ import strategyImg from "../../assets/zar/moodboard-zar.png";
 
 const Section = styled.section`
   width: 100vw;
-  min-height: 100vh;
   background: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: 'Inter', Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+  padding: 2rem 0;
 `;
 
 const ContentRow = styled.div`
   width: 70vw;
   max-width: 1200px;
-  min-height: 60vh;
   display: flex;
   flex-direction: row;
   align-items: flex-end;
   justify-content: space-between;
+  box-sizing: border-box;
   @media (max-width: 900px) {
     flex-direction: column;
     align-items: center;
     width: 98vw;
+    padding: 0 0.5rem;
   }
 `;
 
 const TextBlock = styled.div`
-  min-width: 320px;
+  min-width: 220px;
   max-width: 460px;
   flex: 1 1 0;
   display: flex;
@@ -36,10 +38,12 @@ const TextBlock = styled.div`
   justify-content: flex-end;
   align-items: flex-start;
   margin-right: 4vw;
+  box-sizing: border-box;
   @media (max-width: 900px) {
     max-width: 100vw;
     margin-right: 0;
-    margin-bottom: 4vw;
+    margin-bottom: 2vw;
+    padding: 0 0.5rem;
   }
 `;
 
@@ -69,32 +73,35 @@ const ImgBlock = styled.div`
   flex-direction: column;
   align-items: flex-end;
   justify-content: flex-end;
-  min-width: 320px;
+  min-width: 220px;
   flex: 1 1 0;
   max-width: 480px;
   height: 100%;
+  box-sizing: border-box;
   @media (max-width: 900px) {
     align-items: center;
     width: 100vw;
     max-width: 100vw;
     height: auto;
-    margin-bottom: 3vw;
+    margin-bottom: 2vw;
+    padding: 0 0.5rem;
   }
 `;
 
 const Img = styled.img`
-  width: 32vw;
-  height: 100%;
+  width: 100%;
   max-width: 420px;
-  max-height: none;
+  height: auto;
   object-fit: cover;
   background: #dddddd;
   display: block;
+  border-radius: 12px;
+  box-sizing: border-box;
   @media (max-width: 900px) {
-    width: 87vw;
-    height: 70vw;
+    width: 97vw;
     max-width: 97vw;
-    max-height: none;
+    height: auto;
+    min-height: 180px;
   }
 `;
 
@@ -147,7 +154,7 @@ const ZarSecond: React.FC = () => (
         <MainTextBlock>
           <BigTitle>Strategy</BigTitle>
           <Desc>
-          ZAR’s brand strategy is built on the fusion of heritage and modernity. The core idea is to position saffron not just as a spice, but as a luxury cultural experience. By emphasizing authenticity, elegance, and Persian roots, the brand aims to connect emotionally with both traditional consumers and a new generation of global customers who value quality and story-driven products .The strategy focuses on three key pillars: Cultural Authenticity – Highlighting ZAR’s Persian origin through storytelling, visuals, and design elements that reflect the history and beauty of saffron Premium Positioning  Using high-end packaging, refined typography, and a sophisticated color palette to communicate quality and exclusivity. Modern Appeal – Blending minimal design with rich cultural cues to attract modern consumers who appreciate aesthetics, transparency, and meaningful branding .ZAR aims to standout in the global spice market by being more than a product it’s a symbol of tradition, beauty, and luxury.
+          ZAR's brand strategy is built on the fusion of heritage and modernity. The core idea is to position saffron not just as a spice, but as a luxury cultural experience. By emphasizing authenticity, elegance, and Persian roots, the brand aims to connect emotionally with both traditional consumers and a new generation of global customers who value quality and story-driven products .The strategy focuses on three key pillars: Cultural Authenticity – Highlighting ZAR's Persian origin through storytelling, visuals, and design elements that reflect the history and beauty of saffron Premium Positioning  Using high-end packaging, refined typography, and a sophisticated color palette to communicate quality and exclusivity. Modern Appeal – Blending minimal design with rich cultural cues to attract modern consumers who appreciate aesthetics, transparency, and meaningful branding .ZAR aims to standout in the global spice market by being more than a product it's a symbol of tradition, beauty, and luxury.
 
 
           </Desc>

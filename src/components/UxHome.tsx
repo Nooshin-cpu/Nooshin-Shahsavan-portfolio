@@ -364,46 +364,46 @@ const UxHome: React.FC<{ setSelectedProject: (val: 'branding' | 'uxui' | 'funpro
       >
         {items.map((item, idx) => (
           <motion.div key={idx} variants={itemVariants}>
-            <Tilt
-              tiltMaxAngleX={20}
-              tiltMaxAngleY={20}
-              scale={1.08}
-              glareEnable={true}
-              glareMaxOpacity={0.4}
-              glareColor="#ffffff"
-              glarePosition="all"
-              glareBorderRadius="8px"
-            >
+          <Tilt
+            tiltMaxAngleX={20}
+            tiltMaxAngleY={20}
+            scale={1.08}
+            glareEnable={true}
+            glareMaxOpacity={0.4}
+            glareColor="#ffffff"
+            glarePosition="all"
+            glareBorderRadius="8px"
+          >
               <Link to="/work/uxui" className="work-item" tabIndex={0}>
                 <div className="work-label">{item.label}</div>
-                <div className="work-media-container">
+              <div className="work-media-container">
                   {item.type === "image" ? (
                     <img src={item.src} alt={item.label} className="work-media" />
-                  ) : (
-                    <video
+                ) : (
+                  <video
                       src={item.src}
-                      className="work-media"
-                      controls={false}
-                      autoPlay
-                      loop
-                      muted
-                      playsInline
-                    />
-                  )}
-                </div>
-                <div className="overlay">
-                  <motion.div 
-                    className="overlay-content"
-                    variants={overlayVariants}
-                    initial="hidden"
-                    whileHover="visible"
-                  >
+                    className="work-media"
+                    controls={false}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                  />
+                )}
+              </div>
+              <div className="overlay">
+                <motion.div 
+                  className="overlay-content"
+                  variants={overlayVariants}
+                  initial="hidden"
+                  whileHover="visible"
+                >
                     {overlayToString(item.details, "/work/uxui")}
-                  </motion.div>
-                </div>
-              </Link>
-            </Tilt>
-          </motion.div>
+                </motion.div>
+              </div>
+            </Link>
+          </Tilt>
+        </motion.div>
         ))}
       </motion.div>
     </>

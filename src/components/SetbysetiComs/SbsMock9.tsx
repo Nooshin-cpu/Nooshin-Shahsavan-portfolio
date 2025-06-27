@@ -13,6 +13,13 @@ const Section = styled.section`
   justify-content: stretch;
   align-items: stretch;
   overflow: hidden;
+  @media (max-width: 900px) {
+    flex-direction: column;
+    height: auto;
+    min-height: 60vw;
+    padding: 0;
+    margin: 0;
+  }
 `;
 
 const Col = styled.div`
@@ -21,8 +28,17 @@ const Col = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #000;
+  background: transparent;
   overflow: hidden;
+  @media (max-width: 900px) {
+    height: auto;
+    min-height: 30vw;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+  }
 `;
 
 const FullImg = styled.img`
@@ -30,7 +46,16 @@ const FullImg = styled.img`
   height: 50%;
   object-fit: cover;
   display: block;
-  background: #000;
+  background: transparent;
+  @media (max-width: 900px) {
+    width: 100vw;
+    max-width: 100vw;
+    height: auto;
+    max-height: 70vh;
+    object-fit: contain;
+    margin: 0;
+    padding: 0;
+  }
 `;
 
 const FullVideo = styled.video`
@@ -38,7 +63,16 @@ const FullVideo = styled.video`
   height: 50%;
   object-fit: cover;
   display: block;
-  background: #000;
+  background: transparent;
+  @media (max-width: 900px) {
+    width: 100vw;
+    max-width: 100vw;
+    height: auto;
+    max-height: 70vh;
+    object-fit: contain;
+    margin: 0;
+    padding: 0;
+  }
 `;
 
 const SbsMock9: React.FC = () => (

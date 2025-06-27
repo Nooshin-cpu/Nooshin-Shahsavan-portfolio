@@ -6,31 +6,33 @@ import logo3 from '../../assets/zar/logo-zar-2.png';
 
 const Section = styled.section`
   width: 100vw;
-  min-height: 100vh;
-  background:rgb(255, 255, 255);
+  background: rgb(255, 255, 255);
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: 'Inter', Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+  padding: 2rem 0;
 `;
 
 const ContentRow = styled.div`
   width: 70vw;
   max-width: 1200px;
-  min-height: 60vh;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   justify-content: space-between;
+  box-sizing: border-box;
   @media (max-width: 900px) {
     flex-direction: column;
     align-items: stretch;
     width: 98vw;
+    padding: 0 0.5rem;
   }
 `;
 
 const LeftCol = styled.div`
-  min-width: 320px;
+  min-width: 220px;
   max-width: 460px;
   flex: 1 1 0;
   display: flex;
@@ -38,10 +40,12 @@ const LeftCol = styled.div`
   justify-content: flex-start;
   align-items: flex-start;
   margin-right: 4vw;
+  box-sizing: border-box;
   @media (max-width: 900px) {
     max-width: 100vw;
     margin-right: 0;
-    margin-bottom: 4vw;
+    margin-bottom: 2vw;
+    padding: 0 0.5rem;
   }
 `;
 
@@ -95,9 +99,11 @@ const RightCol = styled.div`
   flex-direction: column;
   align-items: flex-start;
   position: relative;
+  box-sizing: border-box;
   @media (max-width: 900px) {
     min-width: 0;
     align-items: center;
+    padding: 0 0.5rem;
   }
 `;
 
@@ -105,10 +111,15 @@ const MediaLayout = styled.div`
   position: relative;
   width: 580px;
   height: 420px;
+  box-sizing: border-box;
   @media (max-width: 900px) {
-    width: 94vw;
-    height: 80vw;
+    width: 100vw;
+    height: auto;
     min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
   }
 `;
 
@@ -119,12 +130,14 @@ const Img1 = styled.img`
   width: 180px;
   height: 180px;
   object-fit: contain;
+  box-sizing: border-box;
   @media (max-width: 900px) {
     position: static;
-    width: 45vw;
-    height: 22vw;
+    width: 80vw;
+    height: auto;
+    max-width: 300px;
     display: block;
-    margin: 0 auto 2vw auto;
+    margin: 0 auto;
   }
 `;
 
@@ -135,12 +148,14 @@ const StyledVideo = styled.video`
   width: 400px;
   height: 320px;
   object-fit: contain;
+  box-sizing: border-box;
   @media (max-width: 900px) {
     position: static;
-    width: 85vw;
-    height: 34vw;
+    width: 90vw;
+    height: auto;
+    max-width: 400px;
     display: block;
-    margin: 0 auto 2vw auto;
+    margin: 0 auto;
   }
 `;
 
@@ -151,10 +166,12 @@ const Img2 = styled.img`
   width: 180px;
   height: 180px;
   object-fit: contain;
+  box-sizing: border-box;
   @media (max-width: 900px) {
     position: static;
-    width: 45vw;
-    height: 22vw;
+    width: 80vw;
+    height: auto;
+    max-width: 300px;
     display: block;
     margin: 0 auto;
   }
@@ -172,10 +189,10 @@ const ZarThird: React.FC = () => (
           <BigTitle>Design</BigTitle>
           <OverviewText>
             {"\n"}Primary Logo
-            {"\n"}The primary logo features a custom-designed wordmark “ZAR” with elegant, elongated letterforms that blend modern minimalism with a subtle nod to classical calligraphy. The sharp angles and fluid curves symbolize both precision and beauty—reflecting the premium nature of the saffron brand.
+            {"\n"}The primary logo features a custom-designed wordmark "ZAR" with elegant, elongated letterforms that blend modern minimalism with a subtle nod to classical calligraphy. The sharp angles and fluid curves symbolize both precision and beauty—reflecting the premium nature of the saffron brand.
            
             {"\n"}Submark
-            {"\n"}The submark introduces a stylized saffron flower illustration entwinedwith organic lines, surrounded by the words “ZAR,” “SAFFRON,” “PREMIUM,” andthe year “1988.” This mark emphasizes authenticity and heritage, adding anartisanal touch that celebrates tradition and craftsmanship.
+            {"\n"}The submark introduces a stylized saffron flower illustration entwinedwith organic lines, surrounded by the words "ZAR," "SAFFRON," "PREMIUM," andthe year "1988." This mark emphasizes authenticity and heritage, adding anartisanal touch that celebrates tradition and craftsmanship.
           </OverviewText>
         </MainTextBlock>
       </LeftCol>
