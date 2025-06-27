@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import FlowingMenu from '../components/FlowingMenu';
-import MenuWork from '../components/MenuWork';
+
 
 // Import work images
 import work1 from '../assets/work/work1.png';
@@ -13,7 +13,7 @@ import work6 from '../assets/work/work6.png';
 import work4 from '../assets/work/work4.png';
 import work5 from '../assets/work/work5.png';
 import work7 from '../assets/work/work7.png';
-import workday from '../assets/work/workday.png';
+import workhome from '../assets/home/workhome.png';
 
 const HeroSection = styled.section`
   width: 100%;
@@ -162,23 +162,19 @@ const Work: React.FC = () => {
     { 
       link: '/work/workday', 
       text: 'workday-UX/UI', 
-      image: 'workday-phone' 
+      image: workhome
     },
     { 
       link: '/work/project6', 
-      text: 'Project Six', 
+      text: 'UX-UI-2', 
       image: 'https://picsum.photos/600/400?random=6' 
     },
     { 
       link: '/work/project7', 
-      text: 'Project Seven', 
+      text: 'Fun Projects', 
       image: 'https://picsum.photos/600/400?random=7' 
     },
-    { 
-      link: '/work/project8', 
-      text: 'Project Eight', 
-      image: 'https://picsum.photos/600/400?random=8' 
-    }
+  
   ];
 
   const projects = [

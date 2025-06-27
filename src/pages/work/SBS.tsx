@@ -14,14 +14,14 @@ import SbsMock5 from '../../components/SetbysetiComs/SbsMock5';
 import SbsMock6 from '../../components/SetbysetiComs/SbsMock6';
 import SbsMock7 from '../../components/SetbysetiComs/SbsMock7';
 import SbsMock71 from '../../components/SetbysetiComs/SbsMock71';
-
-
+import MenuWork from '../../components/MenuWork';
+import '../../components/MenuWork.css';
 
 import SbsMock8 from '../../components/SetbysetiComs/SbsMock8';
 import SbsMock9 from '../../components/SetbysetiComs/SbsMock9';
 import SbsMock10 from '../../components/SetbysetiComs/SbsMock10';
 import SbsMock12 from '../../components/SetbysetiComs/SbsMock12';
-import MenuWork from '../../components/MenuWork';
+
 
 const MainContainer = styled.div`
   width: 100vw;

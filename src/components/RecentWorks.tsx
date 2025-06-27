@@ -5,7 +5,7 @@ import Tilt from "react-parallax-tilt";
 import sbsHomeVideo from '../assets/home/sbs-home.mp4';
 import deli12Img from '../assets/home/deli12.jpg';
 import veenHomeVideo from '../assets/home/veen-home.mp4';
-import workdayPhoneImg from '../assets/home/workhome.png';
+import box2Img from '../assets/zar/box-2.jpg';
 
 // Images and videos should be placed in src/assets/home
 const items = [
@@ -16,7 +16,7 @@ const items = [
     
     details: [
       { label: "Project Title:", value: "S.B.S.Clothing brand" },
-      { label: "Description:", value: " I created custom graphics for S.B.S, a casual streetwear brand based in Vancouver that celebrates freedom, fun, and not taking life too seriously. " },
+      { label: "Description:", value: " S.B.S is a clothing brand based in Vancouver. Their goal is to design affordable fashion for partygoers. I designed their logo, print materials, and social media visuals. " },
       { label: "Timeline", value: "3 weeks" },
       { label: "Year", value: "2023" },
     ],
@@ -35,13 +35,13 @@ const items = [
   },
   {
     type: "image",
-    src: workdayPhoneImg,
-    label: "UX-UI",
+    src: box2Img,
+    label: "Branding",
     
     details: [
-      { label: "Project Title:", value: "Workday App" },
-      { label: "Description:", value: "Workday is a self - service portal , and Workday mobile app , designed to make it easy for employees to ac..." },
-      { label: "Timeline", value: "4 weeks" },
+      { label: "Project Title:", value: "Zar" },
+      { label: "Description:", value: "Zar is an Iranian saffron product that started its activity in 1988. I worked on their branding and packaging design." },
+      { label: "Timeline", value: "2 weeks" },
       { label: "Year", value: "2024" },
     ],
   },
@@ -52,7 +52,7 @@ const items = [
     
     details: [
       { label: "Project Title", value: "Veen Photography Studio" },
-      { label: "Description:", value: "I created the full brand identity for a family photography studio—from logo and color palette to Instagram templates and business cards." },
+      { label: "Description:", value: "Veen is a photography studio based in Vancouver, targeting families and children. I handled their social media and branding." },
       { label: "Timeline", value: "2 weeks" },
       { label: "Year", value: "2024" },
     ],
@@ -283,6 +283,12 @@ const styles = `
 .work-item:hover .work-media.workday-fit {
   transform: scale(1.15);
 }
+.work-media.cover-fit {
+  object-fit: cover !important;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+}
 `;
 
 const detailsToString = (details: { label: string, value: string }[]) => (
@@ -377,15 +383,6 @@ const RecentWorks: React.FC = () => {
   return (
     <>
       <style>{styles}</style>
-      <motion.h2 
-        className="recent-works-title"
-        variants={titleVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-50px" }}
-      >
-        Recent Works
-      </motion.h2>
       <motion.div 
         className="recent-works-grid"
         variants={containerVariants}
@@ -498,7 +495,7 @@ const RecentWorks: React.FC = () => {
                   <img
                     src={items[2].src}
                     alt={items[2].label}
-                    className="work-media workday-fit"
+                    className="work-media cover-fit"
                   />
                 ) : (
                   <video

@@ -17,6 +17,8 @@ import FinalLookDayOff from "./FinalLookDayOff";
 import KeyTakeawaySection from "./KeyTakeawaySection";
 import StickyMenu from "../../components/StickyMenu";
 import MenuWork from '../../components/MenuWork';
+import '../../components/MenuWork.css';
+
 
 // Global style with dark mode support
 const GlobalStyle = createGlobalStyle`

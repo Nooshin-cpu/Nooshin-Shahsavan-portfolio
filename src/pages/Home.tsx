@@ -13,6 +13,9 @@ import StickyMenu from '../components/StickyMenu';
 import Cactus2 from '../components/Cactus2';
 import Footer from '../components/Footer';
 import HeaderRecentWork from '../components/HeaderRecentWork';
+import MenuProjects from '../components/MenuProjects';
+import UxHome from '../components/UxHome';
+import FunHome from '../components/FunHome';
 
 
 // Styled-components
@@ -238,6 +241,7 @@ const Home: React.FC = () => {
   const [isHoveringName, setIsHoveringName] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [popupPosition, setPopupPosition] = useState({ x: 0, y: 0 });
+  const [selectedProject, setSelectedProject] = useState<'branding' | 'uxui' | 'funproj'>('branding');
 
   // Debounced hide for popup to avoid flicker
   const hoverTimeout = useRef<number | null>(null);
@@ -363,8 +367,11 @@ const Home: React.FC = () => {
 
   
     
+      <MenuProjects selected={selectedProject} onSelect={setSelectedProject} />
       <HeaderRecentWork text="Recent Projects" />
-      <RecentWorks />
+      {selectedProject === 'branding' && <RecentWorks />}
+      {selectedProject === 'uxui' && <UxHome setSelectedProject={setSelectedProject} />}
+      {selectedProject === 'funproj' && <FunHome setSelectedProject={setSelectedProject} />}
       <CactusSection>
         <Cactus2 />
       </CactusSection>

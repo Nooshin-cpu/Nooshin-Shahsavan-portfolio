@@ -16,6 +16,7 @@ import ZarMock6 from "../../components/zar/ZarMock6";
 import ZarMock7 from "../../components/zar/ZarMock7";
 import ZarMock8 from "../../components/zar/ZarMock8";
 import MenuWork from '../../components/MenuWork';
+import '../../components/MenuWork.css';
 
 const Zar: React.FC = () => (
   <div>

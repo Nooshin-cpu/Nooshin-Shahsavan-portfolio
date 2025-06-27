@@ -17,6 +17,8 @@ import Deli13 from '../../components/deli/Deli13';
 import Deli14 from '../../components/deli/Deli14';
 import Deli15 from '../../components/deli/Deli15';
 import MenuWork from '../../components/MenuWork';
+import '../../components/MenuWork.css';
+
 
 const Delicato: React.FC = () => {
   return (

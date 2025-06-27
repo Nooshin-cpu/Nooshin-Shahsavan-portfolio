@@ -46,6 +46,12 @@ const workItems: WorkItem[] = [
     description: 'Project 6: Description here.',
     alt: 'Project 6',
   },
+  {
+    image: '/src/assets/project6.png',
+    link: '/work/project6',
+    description: 'Project 6: Description here.',
+    alt: 'Project 6',
+  },
 ];
 
 const MenuWork: React.FC = () => {
