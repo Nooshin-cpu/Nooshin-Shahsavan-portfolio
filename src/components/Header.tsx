@@ -8,10 +8,10 @@ const HeaderContainer = styled.header`
   left: 0;
   right: 0;
   z-index: 1000;
-  background: ${({ theme }) => theme.headerBackground};
+  background: rgba(25, 28, 36, 0.9);
   backdrop-filter: blur(10px);
   padding: 1rem 0;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 `;
 
 const Nav = styled.nav`
@@ -26,7 +26,8 @@ const Nav = styled.nav`
 const Logo = styled(Link)`
   font-size: 1.5rem;
   font-weight: 700;
-  color: ${({ theme }) => theme.accent1};
+  color: #4CAF50;
+  text-decoration: none;
 `;
 
 const NavLinks = styled.div`
@@ -42,6 +43,8 @@ const NavLinks = styled.div`
 const NavLink = styled(Link)`
   position: relative;
   font-weight: 500;
+  color: #ffffff;
+  text-decoration: none;
   
   &::after {
     content: '';
@@ -50,7 +53,7 @@ const NavLink = styled(Link)`
     left: 0;
     width: 0;
     height: 2px;
-    background: ${({ theme }) => theme.accent1};
+    background: #4CAF50;
     transition: width 0.3s ease;
   }
 

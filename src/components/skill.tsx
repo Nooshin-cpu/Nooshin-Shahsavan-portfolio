@@ -119,23 +119,24 @@ const SkillBubbles: React.FC = () => {
   height: 120vh; /* Increased height for more vertical space */
   min-height: 1100px;
   overflow: hidden;
-  background: transparent;
+  background: #191c24;
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 1;
 }
 .skills-title {
   position: absolute;
   top: 3.5%;
   left: 50%;
   transform: translateX(-50%);
-  color: #fff;
+  color: #ffffff;
   font-size: 2.8rem;
   letter-spacing: 0.08em;
   z-index: 10;
   font-family: 'Montserrat', 'Arial', sans-serif;
   font-weight: 700;
-  text-shadow: 0 2px 12px #0004;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8);
   pointer-events: none;
 }
 .orbit {
@@ -146,7 +147,7 @@ const SkillBubbles: React.FC = () => {
   pointer-events: none;
   z-index: 1;
   border-style: solid;
-  border-color: #fff;
+  border-color: rgba(255, 255, 255, 0.3);
   opacity: 0.9;
   background: none;
   box-sizing: border-box;
@@ -173,6 +174,7 @@ const SkillBubbles: React.FC = () => {
   /* Animate: rotate around center */
   animation: orbit-rotate-parent var(--orbit-dur, 60s) linear infinite;
   transform-origin: center center;
+  z-index: 2;
 }
 .orbit-parent-outer { animation-direction: normal;}
 .orbit-parent-middle { animation-direction: reverse;}
@@ -188,22 +190,24 @@ const SkillBubbles: React.FC = () => {
   left: 0; top: 0;
   width: 112px; height: 112px;
   border-radius: 50%;
-  box-shadow: 0 10px 44px 0 rgba(24,24,24,0.28);
+  box-shadow: 0 10px 44px 0 rgba(0, 0, 0, 0.5);
   display: flex; align-items: center; justify-content: center;
-  background: rgba(28, 28, 32, 0.89);
+  background: rgba(40, 40, 40, 0.9);
   /* Move to orbit radius */
   transform: translateX(var(--orbit-radius, 0px));
   /* Bubble float effect */
   animation: bubble-float 3.8s ease-in-out infinite alternate;
-  transition: box-shadow 0.25s;
+  transition: box-shadow 0.25s, background 0.3s;
   cursor: pointer;
-  will-change: transform, box-shadow;
+  will-change: transform, box-shadow, background;
+  z-index: 3;
 }
 .bubble-img {
   width: 80px; height: 80px;
   object-fit: contain;
   user-select: none;
   pointer-events: none;
+  filter: brightness(1.1) contrast(1.1);
 }
 @keyframes bubble-float {
   0% { scale: 1; }
@@ -212,8 +216,8 @@ const SkillBubbles: React.FC = () => {
   100% { scale: 1;}
 }
 .bubble:hover {
-  box-shadow: 0 16px 48px 0 #fff9, 0 2px 16px 0 #fff7;
-  background: linear-gradient(135deg, #383838 0%, #222 100%);
+  box-shadow: 0 16px 48px 0 rgba(255, 255, 255, 0.2), 0 2px 16px 0 rgba(255, 255, 255, 0.1);
+  background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
   transition: background 0.6s, box-shadow 0.3s;
 }
       `}</style>

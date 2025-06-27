@@ -8,8 +8,10 @@ const WhyCactusContainer = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   padding: 4rem 2rem;
-
+  background: #191c24;
   color: #ffffff;
+  position: relative;
+  z-index: 1;
 `;
 
 const GridContainer = styled.div`
@@ -18,6 +20,8 @@ const GridContainer = styled.div`
   gap: 4rem;
   align-items: center;
   min-height: 500px;
+  position: relative;
+  z-index: 2;
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
@@ -35,6 +39,8 @@ const TextColumn = styled(motion.div)`
   border-radius: 20px;
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  z-index: 3;
 
   @media (max-width: 768px) {
     padding: 1.5rem;
@@ -48,6 +54,8 @@ const Title = styled.h2`
   margin: 0 0 1rem 0;
   line-height: 1.2;
   letter-spacing: -0.02em;
+  position: relative;
+  z-index: 4;
 
   @media (max-width: 768px) {
     font-size: 2rem;
@@ -60,6 +68,8 @@ const Text = styled.p`
   color: rgba(255, 255, 255, 0.9);
   margin: 0;
   font-weight: 400;
+  position: relative;
+  z-index: 4;
 
   @media (max-width: 768px) {
     font-size: 1rem;
@@ -72,6 +82,8 @@ const AnimationColumn = styled(motion.div)`
   align-items: center;
   min-height: 400px;
   padding: 2rem;
+  position: relative;
+  z-index: 3;
 
   @media (max-width: 768px) {
     min-height: 300px;
@@ -91,6 +103,7 @@ const Container = styled.div`
   margin: 0 auto;
   transform: scale(2.5);
   transform-origin: center center;
+  z-index: 4;
 `;
 
 const WhyCactus: React.FC = () => {

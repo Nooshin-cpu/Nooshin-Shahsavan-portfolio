@@ -9,14 +9,14 @@ import { IonIcon } from '@ionic/react';
 import { logoLinkedin, mail, document } from 'ionicons/icons';
 import man8 from '../assets/about/man-8.jpg';
 import CactusAnimation from '../components/CactusAnimation';
-import Skill from '../components/Skill';
+import Skill from '../components/skill';
 import WhyCactus from '../components/WhyCactus';
 
 // Import images for ImageTrail
 import man1 from '../assets/about/man-1.jpg';
 import man2 from '../assets/about/man-2.jpg';
 import man3 from '../assets/about/man-3.jpg';
-import man4 from '../assets/about/man-4.jpeg';
+// import man4 from '../assets/about/man-4.jpeg';
 import man5 from '../assets/about/man-5.jpg';
 import man6 from '../assets/about/man-6.jpg';
 import man7 from '../assets/about/man-7.jpg';
@@ -24,28 +24,24 @@ import man7 from '../assets/about/man-7.jpg';
 const AboutContainer = styled.div`
   width: 100%;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  overflow-x: hidden;
-  background: #000000 !important;
+  background: #191c24;
+  position: relative;
+  z-index: 0;
 `;
 
 const Section = styled.section`
   width: 100%;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
   position: relative;
+  background: #191c24;
   z-index: 1;
-  padding: 4rem 0;
-  background: #000000 !important;
 `;
- 
+
 const ImageTrailSection = styled.div`
   width: 100%;
   height: 100vh;
   position: relative;
-  background: #000000 !important;
+  background: #191c24;
   z-index: 0;
   display: flex;
   flex-direction: column;
@@ -56,7 +52,7 @@ const ImageTrailSection = styled.div`
 const ImageTrailTitle = styled.h2`
   font-size: 3rem;
   font-weight: bold;
-  color: ${({ theme }) => theme.text};
+  color: #ffffff;
   margin-bottom: 2rem;
   text-align: center;
   z-index: 2;
@@ -78,7 +74,7 @@ const CenteredOverlayText = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: ${({ theme }) => theme.text};
+  color: #ffffff;
   font-size: 1.5rem;
   opacity: 0.5;
   z-index: 1;
@@ -97,7 +93,7 @@ const TextSection = styled(motion.div)`
   padding: 2rem 0;
   align-items: start;
   position: relative;
-  z-index: 1;
+  z-index: 2;
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
@@ -110,13 +106,14 @@ const TextColumn = styled(motion.div)`
   flex-direction: column;
   gap: 2rem;
   max-width: 800px;
+  z-index: 3;
 `;
 
 const Title = styled.h2`
   font-size: 2.5rem;
   font-weight: bold;
   margin-bottom: 1rem;
-  color: ${({ theme }) => theme.text};
+  color: #ffffff;
 
   @media (max-width: 768px) {
     font-size: 2rem;
@@ -128,6 +125,7 @@ const ImageColumn = styled(motion.div)`
   justify-content: center;
   align-items: flex-start;
   position: relative;
+  z-index: 3;
 
   @media (max-width: 768px) {
     position: relative;
@@ -139,7 +137,7 @@ const ProfileImage = styled(motion.img)`
   max-width: 400px;
   height: auto;
   border-radius: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 `;
 
 const SkillsGrid = styled.div`
@@ -148,6 +146,7 @@ const SkillsGrid = styled.div`
   gap: 2rem;
   width: 80%;
   margin: 0 auto;
+  z-index: 3;
 
   @media (max-width: 1024px) {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -173,11 +172,11 @@ const AboutGrid = styled.div`
   align-items: start;
   padding: 32px 0;
   box-sizing: border-box;
-  color: rgb(0, 0, 0);
+  color: #ffffff;
   font-family: Montserrat, sans-serif;
   line-height: 25.6px;
   opacity: 1;
-  z-index: 1;
+  z-index: 2;
   -webkit-font-smoothing: antialiased;
 
   @media (max-width: 1200px) {
@@ -203,6 +202,7 @@ const AboutImageColumn = styled.div`
   visibility: visible;
   grid-column: 2;
   grid-row: 1;
+  z-index: 3;
 
   @media (max-width: 1200px) {
     width: 100%;
@@ -238,6 +238,7 @@ const StickyImageWrapper = styled.div`
   overflow: hidden;
   opacity: 1;
   visibility: visible;
+  z-index: 3;
 
   @media (max-width: 768px) {
     position: relative;
@@ -252,7 +253,8 @@ const AboutImage = styled(motion.div)`
   position: relative;
   overflow: hidden;
   border-radius: 24px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  z-index: 3;
 
   img {
     width: 100%;
@@ -269,74 +271,44 @@ const AboutImage = styled(motion.div)`
 `;
 
 const AboutTextColumn = styled.div`
+  grid-column: 1;
+  grid-row: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  width: 500px;
-  padding: 1rem;
-  gap: 2rem;
-  opacity: 1;
-  visibility: visible;
-  color: #ffffff;
-  grid-column: 1;
-  grid-row: 1;
-
-  @media (max-width: 1200px) {
-    width: 100%;
-    grid-column: 1;
-    grid-row: 1;
-    padding: 0.5rem;
-  }
+  align-items: flex-start;
+  padding: 2rem;
+  z-index: 3;
 
   @media (max-width: 768px) {
-    width: 100%;
     grid-column: 1;
     grid-row: 1;
-    padding: 0.5rem;
-    align-items: flex-start;
+    padding: 1rem;
   }
 `;
 
 const AboutTextContent = styled(motion.div)`
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  padding: 1rem 0;
-  background: rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(10px);
-  border-radius: 24px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  max-width: 550px;
+  max-width: 600px;
+  z-index: 4;
 
   h2 {
-    font-size: clamp(1.8rem, 3.5vw, 2.5rem);
-    font-weight: 600;
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
     color: #ffffff;
-    line-height: 1.2;
-    margin-bottom: 1.5rem;
-    text-align: center;
-  }
+    z-index: 5;
 
-  p {
-    font-size: clamp(1rem, 1.8vw, 1.2rem);
-    line-height: 1.6;
-    color: #ffffff;
-    opacity: 0.9;
-    margin-bottom: 1rem;
-    &:last-child {
-      margin-bottom: 0;
+    @media (max-width: 768px) {
+      font-size: 2.5rem;
     }
   }
 
-  @media (max-width: 800px) {
-    padding: 0.75rem 0;
-    max-width: 100%;
-  }
-
-  @media (max-width: 400px) {
-    padding: 0.5rem 0;
+  p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #ffffff;
+    opacity: 0.9;
+    z-index: 5;
   }
 `;
 
@@ -348,9 +320,10 @@ const ContactSection = styled.section`
   flex-direction: column;
   align-items: center;
   padding: 4rem 0;
-  background: ${({ theme }) => theme.background};
+  background: #191c24;
   position: relative;
   overflow: hidden;
+  z-index: 1;
 `;
 
 const ContactGrid = styled.div`
@@ -362,6 +335,7 @@ const ContactGrid = styled.div`
   margin: 0 auto;
   align-items: center;
   min-height: 600px;
+  z-index: 2;
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
@@ -376,7 +350,7 @@ const ContactInfoColumn = styled.div`
   flex-direction: column;
   gap: 2rem;
   padding: 2rem;
-  z-index: 1;
+  z-index: 3;
 
   @media (max-width: 768px) {
     align-items: center;
@@ -387,8 +361,9 @@ const ContactInfoColumn = styled.div`
 const ContactHeading = styled.h2`
   font-size: 3.5rem;
   margin: 0;
-  color: ${({ theme }) => theme.text};
+  color: #ffffff;
   font-weight: bold;
+  z-index: 4;
 
   @media (max-width: 768px) {
     font-size: 2.5rem;
@@ -398,18 +373,20 @@ const ContactHeading = styled.h2`
 const ContactText = styled.p`
   font-size: 1.2rem;
   line-height: 1.6;
-  color: ${({ theme }) => theme.text};
+  color: #ffffff;
   opacity: 0.9;
+  z-index: 4;
 `;
 
 const IconContainer = styled.div`
   display: flex;
   gap: 2rem;
   margin-top: 1rem;
+  z-index: 4;
 `;
 
 const IconLink = styled.a`
-  color: ${({ theme }) => theme.text};
+  color: #ffffff;
   font-size: 30px;
   transition: all 0.3s ease;
   display: flex;
@@ -417,12 +394,13 @@ const IconLink = styled.a`
   gap: 0.5rem;
   padding: 0.5rem;
   border-radius: 50%;
-  background: rgba(0, 0, 0, 0.05);
+  background: rgba(255, 255, 255, 0.1);
+  z-index: 4;
 
   &:hover {
     color: #007bff;
     transform: translateY(-3px);
-    background: rgba(0, 123, 255, 0.1);
+    background: rgba(0, 123, 255, 0.2);
   }
 `;
 
@@ -434,7 +412,7 @@ const AnimationColumn = styled.div`
   height: 100%;
   min-height: 500px;
   position: relative;
-  z-index: 1;
+  z-index: 3;
   overflow: visible;
   padding: 2rem;
   background: transparent;
@@ -451,6 +429,7 @@ const AnimationWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 4;
 `;
 
 const About: React.FC = () => {
@@ -465,7 +444,7 @@ const About: React.FC = () => {
 
   const aboutText = "Hi! my name is Nooshin. I'm originally from Iran and have been living in Vancouver for nearly two years. With a background in Graphic Design and over a decade of teaching Adobe software and design in high schools, I also worked with a small import/export firm to build their social media presence. After moving to Canada, I enrolled in BCIT's New Media Design and Web Development program to learn how design systems work here. Along the way, I gained skills in UX/UI, marketing, and web development, and began freelancing to help clients elevate their brands. I'm proficient in Adobe Creative Suite and Figma, and I enjoy creating design solutions that are both functional and visually engaging. Outside of work, I love spending time with my family and exploring the city for creative inspiration.";
 
-  const images = [man1, man2, man3, man4, man5, man6, man7];
+  const images = [man1, man2, man3, man5, man6, man7];
 
   // Define content for flip cards
   const visualLanguageSkills = (
@@ -499,7 +478,7 @@ const About: React.FC = () => {
 
   return (
     <AboutContainer>
-      <Section style={{ background: '#000000', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+      <Section style={{ background: '#0a0a0a', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
         <AboutGrid>
           <AboutImageColumn>
             <StickyImageWrapper>
@@ -538,6 +517,7 @@ const About: React.FC = () => {
       </Section>
       
       <Skill />
+      
       <WhyCactus />
       
       <Section>

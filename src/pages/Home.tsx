@@ -22,7 +22,7 @@ const PageWrapper = styled.main`
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
-  background: #000000 !important;
+  background: #191c24;
   position: relative;
 `;
 
@@ -47,7 +47,7 @@ const HeroSection = styled.section`
   align-items: center;
   text-align: center;
   padding: 2rem;
-  background-color: #000000 !important;
+  background-color: #191c24;
   position: relative;
   padding-top: 80px;
 `;
@@ -57,24 +57,23 @@ const HeroOverlay = styled.div<{ $isBlurred: boolean }>`
   top: 0; left: 0; right: 0; bottom: 0;
   background: linear-gradient(
     45deg,
-    rgba(var(--background-rgb,255,255,255), 0.3) 0%,
-    rgba(var(--background-rgb,255,255,255), 0.1) 100%
+    rgba(255, 255, 255, 0.05) 0%,
+    rgba(255, 255, 255, 0.02) 100%
   );
   z-index: 1;
   pointer-events: none;
-  backdrop-filter: ${({ $isBlurred, theme }) =>
-    $isBlurred && theme.background === '#FEF86A' ? 'blur(4px)' : 'none'};
+  backdrop-filter: ${({ $isBlurred }) => $isBlurred ? 'blur(4px)' : 'none'};
   transition: backdrop-filter 0.3s ease;
 `;
 
 const HeroContent = styled(motion.div)`
   position: relative;
-  z-index: 2;
+  z-index: 3;
   max-width: 1200px;
   width: 100%;
   padding: 2rem;
   text-align: center;
-  color: var(--text);
+  color: #ffffff;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -94,6 +93,7 @@ const LeftContent = styled.div`
   align-items: flex-start;
   gap: 1rem;
   cursor: pointer;
+  z-index: 3;
 `;
 
 const RightContent = styled.div`
@@ -102,6 +102,7 @@ const RightContent = styled.div`
   justify-content: flex-end;
   align-items: center;
   cursor: pointer;
+  z-index: 3;
 `;
 
 const NameAndRolesContainer = styled.div`
@@ -109,11 +110,13 @@ const NameAndRolesContainer = styled.div`
   flex-direction: column;
   align-items: flex-start;
   gap: 1rem;
+  z-index: 3;
 `;
 
 const NameContainer = styled.div`
   position: relative;
   display: inline-block;
+  z-index: 3;
 `;
 
 const NamePopup = styled(motion.div)<{ $x: number; $y: number }>`
@@ -125,7 +128,7 @@ const NamePopup = styled(motion.div)<{ $x: number; $y: number }>`
   height: 200px;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
   z-index: 9999;
   pointer-events: none;
   background: transparent;
@@ -134,10 +137,10 @@ const NamePopup = styled(motion.div)<{ $x: number; $y: number }>`
 const StyledNameText = styled(RotatingText)`
   font-weight: 900;
   font-size: clamp(2rem, 6vw, 4rem);
-  color: ${props => props.theme.text};
+  color: #ffffff;
   line-height: 1.2;
   position: relative;
-  z-index: 2;
+  z-index: 3;
   cursor: pointer;
 `;
 
@@ -146,17 +149,18 @@ const AnimatedRolesContainer = styled(motion.div)`
   display: inline-block;
   padding: 1rem 2rem;
   border-radius: 12px;
-  background: rgba(var(--background-rgb,255,255,255), 0.85);
+  background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(8px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   transition: all 0.3s ease;
   min-width: 200px;
   text-align: left;
+  z-index: 3;
 
   &:hover {
-    background: rgba(var(--background-rgb,255,255,255), 0.95);
+    background: rgba(255, 255, 255, 0.15);
     transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
   }
 `;
 
@@ -164,7 +168,7 @@ const ProjectsSection = styled.section`
   width: 100%;
   min-height: 100vh;
   padding: 6rem 0;
-  background: #ffffff;
+  background: #191c24;
   position: relative;
   z-index: 10;
   display: flex;
@@ -181,7 +185,7 @@ const FallingTextSection = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: #000000 !important;
+  background: #191c24;
   position: relative;
   z-index: 5;
   padding: 4rem 0;
@@ -193,6 +197,7 @@ const FallingTextContainer = styled.div`
   height: 400px;
   margin: 0 auto;
   position: relative;
+  z-index: 6;
 `;
 
 const SectionContainer = styled.div`
@@ -206,11 +211,11 @@ const SectionContainer = styled.div`
 
 const SectionTitle = styled.h2`
   font-size: 2.5rem;
-  color: ${({ theme }) => theme.accent1};
+  color: #4CAF50;
   margin-bottom: 3rem;
   text-align: center;
   position: relative;
-  z-index: 2;
+  z-index: 12;
 `;
 
 const CactusSection = styled.section`
@@ -219,7 +224,7 @@ const CactusSection = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #fff;
+  background: #191c24;
   position: relative;
   z-index: 5;
   padding: 4rem 0;

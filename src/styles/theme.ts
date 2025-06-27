@@ -35,17 +35,17 @@ declare module 'styled-components' {
 }
 
 export const normalTheme: DefaultTheme = {
-  background: '#FEF86A',
-  backgroundRgb: '254, 248, 106',
-  text: '#000000',
-  textRgb: '0, 0, 0',
+  background: '#191c24',
+  backgroundRgb: '25, 28, 36',
+  text: '#ffffff',
+  textRgb: '255, 255, 255',
   accent1: '#4CAF50',
   accent1Rgb: '76, 175, 80',
   accent2: '#2196F3',
   accent2Rgb: '33, 150, 243',
-  cardBackground: '#ffffff',
-  cardBackgroundRgb: '255, 255, 255',
-  headerBackground: 'rgba(254, 248, 106, 0.9)',
+  cardBackground: '#2a2f3a',
+  cardBackgroundRgb: '42, 47, 58',
+  headerBackground: 'rgba(25, 28, 36, 0.9)',
   transition: 'all 0.3s ease',
-  border: '#cccccc',
+  border: '#3a3f4a',
 }; 
