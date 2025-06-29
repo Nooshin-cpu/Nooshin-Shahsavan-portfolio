@@ -4,6 +4,7 @@ import strategyImg from "../../assets/zar/box-1.jpg";
 
 const Section = styled.section`
   width: 100vw;
+  height:100vh;
   background: #fff;
   display: flex;
   align-items: center;

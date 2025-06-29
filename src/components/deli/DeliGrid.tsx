@@ -5,7 +5,8 @@ import deli5 from '../../assets/deli/deli5.mp4';
 
 const Section = styled.section`
   width: 100vw;
-  background: transparent;
+  height:100vh;
+  background: #ffffff;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -15,12 +16,16 @@ const Section = styled.section`
 
 const GridContainer = styled.div`
   width: 100vw;
+  height: 100vh;
   max-width: 1400px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
   padding: 0 2rem;
   box-sizing: border-box;
+  place-items: center;
+  justify-items: center;
+  align-items: center;
   @media (max-width: 900px) {
     grid-template-columns: 1fr;
     gap: 1.5rem;
@@ -29,7 +34,7 @@ const GridContainer = styled.div`
 `;
 
 const VideoWrapper = styled.div`
-  width: 100%;
+  width: 80%;
   display: flex;
   justify-content: center;
   align-items: center;

@@ -18,7 +18,7 @@ const Section = styled.section`
 `;
 
 const VideoContainer = styled.div`
-  width: 100%;
+  width: 30%;
   height: 100vh;
   aspect-ratio: 16/9;
   display: flex;

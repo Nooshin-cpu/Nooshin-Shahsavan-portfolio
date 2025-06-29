@@ -4,6 +4,7 @@ import story from "../../assets/zar/zar-logoline.mp4";
 
 const FullWrapper = styled.div`
   width: 100vw;
+  height:100vh;
   background: rgb(255, 255, 255);
   display: flex;
   justify-content: center;
@@ -19,6 +20,10 @@ const Section = styled.section`
   font-family: 'Inter', Arial, Helvetica, sans-serif;
   box-sizing: border-box;
   padding: 2rem 0;
+  height: 100vh;
+  @media (max-width: 900px) {
+    height: auto;
+  }
 `;
 
 const ContentRow = styled.div`

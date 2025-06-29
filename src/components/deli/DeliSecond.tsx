@@ -87,6 +87,12 @@ const StyledVideo = styled.video`
   }
 `;
 
+const FullWrapper = styled.div`
+  width: 100%;
+  height: 100vh;
+  // ... existing styles ...
+`;
+
 const DeliSecond: React.FC = () => (
   <Section>
     <VideoContainer>

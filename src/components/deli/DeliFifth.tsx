@@ -2,14 +2,17 @@ import React from "react";
 import styled from "styled-components";
 import colorVideo from "../../assets/deli/deli5.mp4";
 
-const Section = styled.section`
+const FullWrapper = styled.div`
   width: 100vw;
+  height: 100vh;
   min-height: 100vh;
-  background: #fff;
+  background: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: 'Inter', Arial, Helvetica, sans-serif;
+  padding: 0;
+  margin: 0;
 `;
 
 const GridContainer = styled.div`
@@ -95,7 +98,7 @@ const BodyText = styled.p`
 `;
 
 const DeliFifth: React.FC = () => (
-  <Section>
+  <FullWrapper>
     <GridContainer>
       <TextContainer>
         <TopLabel>Color</TopLabel>
@@ -112,7 +115,7 @@ const DeliFifth: React.FC = () => (
         </VideoContainer>
       </VideoWrapper>
     </GridContainer>
-  </Section>
+  </FullWrapper>
 );
 
 export default DeliFifth; 

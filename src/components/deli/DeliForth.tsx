@@ -3,14 +3,17 @@ import styled from "styled-components";
 import logoImg from "../../assets/deli/deli8.jpg";
 
 const Section = styled.section`
-  width: 100vw;
+  width: 100%;
+  height: 100vh;
+  min-height: 100vh;
   background: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: 'Inter', Arial, Helvetica, sans-serif;
   box-sizing: border-box;
-  padding: 2rem 0;
+  padding: 0;
+  margin: 0;
 `;
 
 const ContentRow = styled.div`
@@ -139,7 +142,7 @@ const DeliForth: React.FC = () => (
           "Delicato" is an Italian word meaning "delicate" in English. This word conveys a sense of elegance and refinement. As I previously mentioned, I drew inspiration from classical Roman columns to reflect this delicacy. After designing the column shape, I simplified it as much as possible, transforming it into a balance of positive and negative space, ultimately integrating it with the letter "D."
 While the presence of the column evokes the architecture of the classical era, I introduced a subtle break in the lower curved line to symbolize a distinction between the classical and modern styles.
 This gap represents the inevitable separation created by time, even as the two periods remain interconnected. Through this logo, I aim to illustrate the fusion of these eras while acknowledging the distance between them.
-‍
+
           </Desc>
         </MainTextBlock>
       </TextBlock>

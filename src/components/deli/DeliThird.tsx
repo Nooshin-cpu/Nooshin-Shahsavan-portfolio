@@ -3,14 +3,17 @@ import styled from "styled-components";
 import strategyImg from "../../assets/deli/deli3.jpg";
 
 const Section = styled.section`
-  width: 100vw;
+  width: 100%;
+  height: 100vh;
+  min-height: 100vh;
   background: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: 'Inter', Arial, Helvetica, sans-serif;
   box-sizing: border-box;
-  padding: 2rem 0;
+  padding: 0;
+  margin: 0;
 `;
 
 const ContentRow = styled.div`

@@ -3,7 +3,8 @@ import styled from "styled-components";
 import story from "../../assets/deli/deli1.mp4";
 
 const FullWrapper = styled.div`
-  width: 100vw;
+  width: 100%;
+  height: 100vh;
   background: rgb(255, 255, 255);
   display: flex;
   justify-content: center;
@@ -12,6 +13,7 @@ const FullWrapper = styled.div`
 
 const Section = styled.section`
   width: 100vw;
+  height: 100vh;
   background: rgb(255, 255, 255);
   display: flex;
   align-items: center;
