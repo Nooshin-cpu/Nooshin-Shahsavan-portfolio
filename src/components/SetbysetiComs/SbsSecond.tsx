@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import logo1 from '../../assets/sbsimg/s-logo1.png';
 import logo2 from '../../assets/sbsimg/s-logo2.mp4';
 import logo3 from '../../assets/sbsimg/s-logo3.png';
+import { motion } from 'framer-motion';
 
 const Section = styled.section`
   width: 100vw;
@@ -183,17 +184,39 @@ const SbsSecond: React.FC = () => (
       {/* Left Text */}
       <LeftCol>
         <TopLabels>
-          <TopLabel>Logo</TopLabel>
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: 'easeOut' }}
+            viewport={{ once: true, amount: 0.7 }}
+            style={{ fontSize: '1.01rem', fontWeight: 600, color: '#888888', marginBottom: '0.35em', textTransform: 'uppercase', letterSpacing: '0.05em' }}
+          >
+            Logo
+          </motion.div>
         </TopLabels>
         <MainTextBlock>
-          <BigTitle>Design</BigTitle>
-          <OverviewText>
+          <motion.h1
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.1, ease: 'easeOut' }}
+            viewport={{ once: true, amount: 0.7 }}
+            style={{ fontSize: '2.7rem', fontWeight: 400, color: '#111', margin: '0 0 2rem 0', lineHeight: 1.07, letterSpacing: '-1px', textTransform: 'uppercase' }}
+          >
+            Design
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.2, ease: 'easeOut' }}
+            viewport={{ once: true, amount: 0.7 }}
+            style={{ fontSize: '1.06rem', color: '#504f51', fontWeight: 400, lineHeight: 1.54, margin: 0, maxWidth: 620, whiteSpace: 'pre-line' }}
+          >
             {"\n"}Primary Logo
             {"\n"}This is a typographic logo that directly uses the font "Gyst Variable" and represents the brand in written.
             {"\n"}Secondary Logo This is a graphic logo created using the brand's initials: S, B, S. It appears most frequently across various design elements such as clothing items, business cards, shopping bags, and clothing boxes. This logo forms a key part of the brand's identity. Its design incorporates curved shapes that symbolize dance, which reflects the brand's target audience: party-goers.
             {"\n"}Submark
             {"\n"}As shown in the image, this version is specifically designed for packaging purposes.
-          </OverviewText>
+          </motion.p>
         </MainTextBlock>
       </LeftCol>
 

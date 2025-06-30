@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import typeVideo from "../../assets/sbsimg/sbs-type.mp4";
+import { motion } from 'framer-motion';
 
 const Section = styled.section`
   width: 100vw;
@@ -119,11 +120,33 @@ const SbsType: React.FC = () => (
         />
       </VideoBlock>
       <RightTextBlock>
-        <TopLabel>TYPE</TopLabel>
-        <Title>FACE</Title>
-        <BodyText>
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: 'easeOut' }}
+          viewport={{ once: true, amount: 0.7 }}
+          style={{ fontSize: '1.01rem', fontWeight: 600, color: '#888', marginBottom: '0.25em' }}
+        >
+          TYPE
+        </motion.div>
+        <motion.h1
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.1, ease: 'easeOut' }}
+          viewport={{ once: true, amount: 0.7 }}
+          style={{ fontSize: '2.3rem', fontWeight: 400, color: '#fff', margin: '0 0 1.8rem 0', lineHeight: 1.07, letterSpacing: '-1px' }}
+        >
+          FACE
+        </motion.h1>
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.2, ease: 'easeOut' }}
+          viewport={{ once: true, amount: 0.7 }}
+          style={{ fontSize: '1rem', color: '#ccc', fontWeight: 400, lineHeight: 1.5, maxWidth: 370 }}
+        >
           The typography for SBS is bold and dynamic, reflecting the brand's energetic and modern personality. The primary typeface is strong and contemporary, creating an impactful presence that resonates with the target audience. The typography system includes a mix of bold headlines and clean body text, ensuring both readability and visual interest.
-        </BodyText>
+        </motion.div>
       </RightTextBlock>
     </ContentRow>
   </Section>

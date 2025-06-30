@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import pinkiVideo from "../../assets/sbsimg/pinki.mp4";
+import { motion } from 'framer-motion';
 
 const FullWrapper = styled.div`
   width: 100vw;
@@ -197,14 +198,44 @@ const SbsFirst: React.FC = () => (
         {/* Left Labels */}
         <LeftCol>
           <TopLabels>
-            <TopLabel>S.B.S</TopLabel>
-            <SubLabel>Brand identity / Printing</SubLabel>
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, ease: 'easeOut' }}
+              viewport={{ once: true, amount: 0.7 }}
+              style={{ fontSize: '1.01rem', fontWeight: 600, color: '#888888', marginBottom: '0.35em', textTransform: 'uppercase', letterSpacing: '0.05em' }}
+            >
+              S.B.S
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.1, ease: 'easeOut' }}
+              viewport={{ once: true, amount: 0.7 }}
+              style={{ fontSize: '1rem', color: '#504f51', fontWeight: 400, textTransform: 'uppercase', letterSpacing: '0.05em' }}
+            >
+              Brand identity
+            </motion.div>
           </TopLabels>
           <MainTextBlock>
-            <BigTitle>Project Overview</BigTitle>
-            <OverviewText>
+            <motion.h1
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.2, ease: 'easeOut' }}
+              viewport={{ once: true, amount: 0.7 }}
+              style={{ fontSize: '2.7rem', fontWeight: 400, color: '#111', margin: '0 0 2rem 0', lineHeight: 1.07, letterSpacing: '-1px', textTransform: 'uppercase' }}
+            >
+              Project Overview
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.3, ease: 'easeOut' }}
+              viewport={{ once: true, amount: 0.7 }}
+              style={{ fontSize: '1.06rem', color: '#504f51', fontWeight: 400, lineHeight: 1.54, margin: 0, maxWidth: 620 }}
+            >
               S.B.S Based in Vancouver, S.B.S is a fresh and fearless clothing brand made for the middle class partygoer. Designed for 20- to 30-year-olds who just want to have a good time, S.B.S stands for effortless style and carefree vibes. Life's too short to stress — and S.B.S is here to prove that fashion doesn't have to be fancy to be fun. Easy to wear, easy to enjoy, and always ready for a good time. For this collection, I created custom graphics for S.B.S, a casual streetwear brand based in Vancouver that celebrates freedom, fun, and not taking life too seriously. The designs were intended for partygoers—people who want to dress casually, feel expressive, and look effortlessly cool.
-            </OverviewText>
+            </motion.p>
           </MainTextBlock>
         </LeftCol>
 
@@ -221,12 +252,18 @@ const SbsFirst: React.FC = () => (
               aria-label="S.B.S project video"
             />
           </VideoFrame>
-          <InfoText>
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.4, ease: 'easeOut' }}
+            viewport={{ once: true, amount: 0.7 }}
+            style={{ color: '#717070', fontSize: '0.80rem', fontWeight: 400, marginTop: '1.6vw', marginRight: 0, textAlign: 'left', lineHeight: 1.28, alignSelf: 'flex-start' }}
+          >
             Role: Graphic Designer<br />
             Tools: (Adobe Illustrator, After Effects, Photoshop)<br />
             Timeline: 3 weeks<br />
             Year: 2023
-          </InfoText>
+          </motion.div>
         </VideoCol>
       </ContentRow>
     </Section>

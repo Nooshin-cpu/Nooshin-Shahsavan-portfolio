@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import story from "../../assets/veen/story.mp4";
+import { motion } from 'framer-motion';
 
 const FullWrapper = styled.div`
   width: 100vw;
@@ -197,15 +198,45 @@ const VeenFirst: React.FC = () => (
         {/* Left Labels */}
         <LeftCol>
           <TopLabels>
-            <TopLabel>Veen</TopLabel>
-            <SubLabel>Brand identity / Photography</SubLabel>
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, ease: 'easeOut' }}
+              viewport={{ once: true, amount: 0.7 }}
+              style={{ fontSize: '1.01rem', fontWeight: 600, color: '#888888', marginBottom: '0.35em', textTransform: 'uppercase', letterSpacing: '0.05em' }}
+            >
+              Veen
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.1, ease: 'easeOut' }}
+              viewport={{ once: true, amount: 0.7 }}
+              style={{ fontSize: '1rem', color: '#504f51', fontWeight: 400, textTransform: 'uppercase', letterSpacing: '0.05em' }}
+            >
+              Brand identity
+            </motion.div>
           </TopLabels>
           <MainTextBlock>
-            <BigTitle>Project Overview</BigTitle>
-            <OverviewText>
+            <motion.h1
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.2, ease: 'easeOut' }}
+              viewport={{ once: true, amount: 0.7 }}
+              style={{ fontSize: '2.7rem', fontWeight: 400, color: '#111', margin: '0 0 2rem 0', lineHeight: 1.07, letterSpacing: '-1px', textTransform: 'uppercase' }}
+            >
+              Project Overview
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.3, ease: 'easeOut' }}
+              viewport={{ once: true, amount: 0.7 }}
+              style={{ fontSize: '1.06rem', color: '#504f51', fontWeight: 400, lineHeight: 1.54, margin: 0, maxWidth: 620 }}
+            >
               VEEN Studio is a newly established photography brand based in Vancouver, specializing in family and child photography. The goal of this project was to create a professional, heartfelt brand identity that reflects warmth, trust, creativity, and joy.
               I was responsible for designing a logo system, selecting a color palette, choosing typography, and creating social media content to establish a strong and cohesive brand presence.
-            </OverviewText>
+            </motion.p>
           </MainTextBlock>
         </LeftCol>
 
@@ -222,12 +253,18 @@ const VeenFirst: React.FC = () => (
               aria-label="Veen project video"
             />
           </VideoFrame>
-          <InfoText>
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.4, ease: 'easeOut' }}
+            viewport={{ once: true, amount: 0.7 }}
+            style={{ color: '#717070', fontSize: '0.80rem', fontWeight: 400, marginTop: '1.6vw', marginRight: 0, textAlign: 'left', lineHeight: 1.28, alignSelf: 'flex-start' }}
+          >
             Role: Brand Designer<br />
             Tools: (Adobe Illustrator, After Effects, Photoshop)<br />
             Timeline: 2 weeks<br />
             Year: 2024
-          </InfoText>
+          </motion.div>
         </VideoCol>
       </ContentRow>
     </Section>

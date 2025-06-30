@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import story from "../../assets/zar/zar-logoline.mp4";
+import { motion } from 'framer-motion';
 
 const FullWrapper = styled.div`
   width: 100vw;
@@ -184,14 +185,44 @@ const ZarFirst: React.FC = () => (
         {/* Left Labels */}
         <LeftCol>
           <TopLabels>
-            <TopLabel>Zar</TopLabel>
-            <SubLabel>Brand identity / Packaging</SubLabel>
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, ease: 'easeOut' }}
+              viewport={{ once: true, amount: 0.7 }}
+              style={{ fontSize: '1.01rem', fontWeight: 600, color: '#888888', marginBottom: '0.35em', textTransform: 'uppercase', letterSpacing: '0.05em' }}
+            >
+              Zar
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.1, ease: 'easeOut' }}
+              viewport={{ once: true, amount: 0.7 }}
+              style={{ fontSize: '1rem', color: '#504f51', fontWeight: 400, textTransform: 'uppercase', letterSpacing: '0.05em' }}
+            >
+              Brand identity / Packaging
+            </motion.div>
           </TopLabels>
           <MainTextBlock>
-            <BigTitle>Project Overview</BigTitle>
-            <OverviewText>
-            ZAR is a premium saffron brand designed to celebrate the richness of Persian culture through a modern lens. The goal of this project was to create a brand identity and packaging design that not only highlights the luxurious and delicate nature of saffron but also communicates authenticity, heritage, and elegance.From logo development to color palette and typography choices, every element was carefully selected to reflect the timeless value of saffron while appealing to a contemporary audience. The result is a sophisticated, minimal yet culturally rooted brand that stands out in both local and global markets.
-            </OverviewText>
+            <motion.h1
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.2, ease: 'easeOut' }}
+              viewport={{ once: true, amount: 0.7 }}
+              style={{ fontSize: '2.7rem', fontWeight: 400, color: '#111', margin: '0 0 2rem 0', lineHeight: 1.07, letterSpacing: '-1px', textTransform: 'uppercase' }}
+            >
+              Project Overview
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.3, ease: 'easeOut' }}
+              viewport={{ once: true, amount: 0.7 }}
+              style={{ fontSize: '1.06rem', color: '#504f51', fontWeight: 400, lineHeight: 1.54, margin: 0, maxWidth: 620 }}
+            >
+              ZAR is a premium saffron brand designed to celebrate the richness of Persian culture through a modern lens. The goal of this project was to create a brand identity and packaging design that not only highlights the luxurious and delicate nature of saffron but also communicates authenticity, heritage, and elegance.From logo development to color palette and typography choices, every element was carefully selected to reflect the timeless value of saffron while appealing to a contemporary audience. The result is a sophisticated, minimal yet culturally rooted brand that stands out in both local and global markets.
+            </motion.p>
           </MainTextBlock>
         </LeftCol>
 

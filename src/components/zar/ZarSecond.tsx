@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import strategyImg from "../../assets/zar/moodboard-zar.png";
+import { motion } from 'framer-motion';
 
 const Section = styled.section`
   width: 100vw;
@@ -151,17 +152,34 @@ const ZarSecond: React.FC = () => (
   <Section>
     <ContentRow>
       <TextBlock>
-        
-          <TopLabel>Brand</TopLabel>
-          
-        
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: 'easeOut' }}
+          viewport={{ once: true, amount: 0.7 }}
+          style={{ fontSize: '1.01rem', fontWeight: 600, color: '#888888', marginBottom: '0.35em', textTransform: 'uppercase', letterSpacing: '0.05em' }}
+        >
+          Brand
+        </motion.div>
         <MainTextBlock>
-          <BigTitle>Strategy</BigTitle>
-          <Desc>
-          ZAR's brand strategy is built on the fusion of heritage and modernity. The core idea is to position saffron not just as a spice, but as a luxury cultural experience. By emphasizing authenticity, elegance, and Persian roots, the brand aims to connect emotionally with both traditional consumers and a new generation of global customers who value quality and story-driven products .The strategy focuses on three key pillars: Cultural Authenticity – Highlighting ZAR's Persian origin through storytelling, visuals, and design elements that reflect the history and beauty of saffron Premium Positioning  Using high-end packaging, refined typography, and a sophisticated color palette to communicate quality and exclusivity. Modern Appeal – Blending minimal design with rich cultural cues to attract modern consumers who appreciate aesthetics, transparency, and meaningful branding .ZAR aims to standout in the global spice market by being more than a product it's a symbol of tradition, beauty, and luxury.
-
-
-          </Desc>
+          <motion.h1
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.1, ease: 'easeOut' }}
+            viewport={{ once: true, amount: 0.7 }}
+            style={{ fontSize: '2.7rem', fontWeight: 400, color: '#111', margin: '0 0 2rem 0', lineHeight: 1.07, letterSpacing: '-1px', textTransform: 'uppercase' }}
+          >
+            Strategy
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.2, ease: 'easeOut' }}
+            viewport={{ once: true, amount: 0.7 }}
+            style={{ fontSize: '1.06rem', color: '#504f51', fontWeight: 400, lineHeight: 1.54, margin: 0, maxWidth: 620 }}
+          >
+            ZAR's brand strategy is built on the fusion of heritage and modernity. The core idea is to position saffron not just as a spice, but as a luxury cultural experience. By emphasizing authenticity, elegance, and Persian roots, the brand aims to connect emotionally with both traditional consumers and a new generation of global customers who value quality and story-driven products .The strategy focuses on three key pillars: Cultural Authenticity – Highlighting ZAR's Persian origin through storytelling, visuals, and design elements that reflect the history and beauty of saffron Premium Positioning  Using high-end packaging, refined typography, and a sophisticated color palette to communicate quality and exclusivity. Modern Appeal – Blending minimal design with rich cultural cues to attract modern consumers who appreciate aesthetics, transparency, and meaningful branding .ZAR aims to standout in the global spice market by being more than a product it's a symbol of tradition, beauty, and luxury.
+          </motion.p>
         </MainTextBlock>
       </TextBlock>
       <ImgBlock>

@@ -28,7 +28,7 @@ const Nav = styled.nav`
 const Logo = styled(Link)`
   font-size: 1.5rem;
   font-weight: 700;
-  color: #4CAF50;
+  color:rgb(157, 99, 239);
   text-decoration: none;
 `;
 
@@ -61,7 +61,7 @@ const NavLink = styled(Link)`
     left: 0;
     width: 0;
     height: 2px;
-    background: #4CAF50;
+    background:rgb(117, 81, 155);
     transition: width 0.3s ease;
   }
 
@@ -98,32 +98,84 @@ const Bar = styled.span`
 const MobileMenu = styled.div<{ open: boolean }>`
   position: fixed;
   top: 0;
-  right: 0;
+  left: 0;
   height: 100vh;
-  width: 220px;
-  background: rgba(25, 28, 36, 0.98);
-  box-shadow: -2px 0 16px rgba(0,0,0,0.2);
+  width: 100vw;
+  background: rgba(25, 28, 36, 0.85);
+  backdrop-filter: blur(18px) saturate(1.5);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  padding: 80px 24px 24px 24px;
-  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  gap: 2.5rem;
   z-index: 1200;
-  transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(100%)'};
-  transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
+  transform: ${({ open }) => open ? 'translateY(0)' : 'translateY(-100%)'};
+  opacity: ${({ open }) => open ? 1 : 0};
+  pointer-events: ${({ open }) => open ? 'auto' : 'none'};
+  transition: transform 0.5s cubic-bezier(0.4,0,0.2,1), opacity 0.4s cubic-bezier(0.4,0,0.2,1);
   @media (min-width: 769px) {
     display: none;
   }
 `;
 
 const MobileNavLink = styled(Link)`
-  font-size: 1.2rem;
+  font-size: 2rem;
   color: #fff;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 700;
   margin-bottom: 1.2rem;
+  letter-spacing: 0.04em;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeInUp 0.6s forwards;
+  animation-delay: var(--delay, 0s);
+  background: linear-gradient(90deg, #2ee0ff 0%, #4CAF50 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  transition: transform 0.2s, color 0.2s;
+  &:hover {
+    transform: scale(1.08) translateY(-2px);
+    filter: brightness(1.2) drop-shadow(0 2px 8px #2ee0ff80);
+  }
   &:last-child { margin-bottom: 0; }
-  &:hover { color: #4CAF50; }
+
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+`;
+
+const CloseButton = styled.button`
+  position: absolute;
+  top: 32px;
+  right: 32px;
+  background: rgba(46,224,255,0.15);
+  border: none;
+  color: #fff;
+  font-size: 3rem;
+  cursor: pointer;
+  z-index: 1300;
+  border-radius: 50%;
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 12px #2ee0ff40;
+  transition: background 0.2s, transform 0.2s;
+  &:hover {
+    background: rgba(46,224,255,0.35);
+    transform: scale(1.08) rotate(8deg);
+  }
+  @media (min-width: 769px) {
+    display: none;
+  }
 `;
 
 const Backdrop = styled.div<{ open: boolean }>`
@@ -135,21 +187,6 @@ const Backdrop = styled.div<{ open: boolean }>`
   height: 100vh;
   background: rgba(0,0,0,0.35);
   z-index: 1199;
-`;
-
-const CloseButton = styled.button`
-  position: absolute;
-  top: 18px;
-  right: 18px;
-  background: none;
-  border: none;
-  color: #fff;
-  font-size: 2rem;
-  cursor: pointer;
-  z-index: 1300;
-  @media (min-width: 769px) {
-    display: none;
-  }
 `;
 
 const Header: React.FC = () => {
@@ -177,10 +214,10 @@ const Header: React.FC = () => {
         <Backdrop open={menuOpen} onClick={handleClose} />
         <MobileMenu open={menuOpen}>
           <CloseButton aria-label="Close menu" onClick={handleClose}>&times;</CloseButton>
-          <MobileNavLink to="/" onClick={handleClose}>Home</MobileNavLink>
-          <MobileNavLink to="/about" onClick={handleClose}>About</MobileNavLink>
-          <MobileNavLink to="/work" onClick={handleClose}>Work</MobileNavLink>
-          <MobileNavLink to="/resume" onClick={handleClose}>Resume</MobileNavLink>
+          <MobileNavLink to="/" onClick={handleClose} style={{ '--delay': '0.1s' } as React.CSSProperties}>Home</MobileNavLink>
+          <MobileNavLink to="/about" onClick={handleClose} style={{ '--delay': '0.25s' } as React.CSSProperties}>About</MobileNavLink>
+          <MobileNavLink to="/work" onClick={handleClose} style={{ '--delay': '0.4s' } as React.CSSProperties}>Work</MobileNavLink>
+          <MobileNavLink to="/resume" onClick={handleClose} style={{ '--delay': '0.55s' } as React.CSSProperties}>Resume</MobileNavLink>
         </MobileMenu>
       </Nav>
     </HeaderContainer>

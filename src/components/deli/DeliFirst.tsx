@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import story from "../../assets/deli/deli1.mp4";
+import { motion } from 'framer-motion';
 
 const FullWrapper = styled.div`
   width: 100%;
@@ -174,14 +175,44 @@ const DeliFirst: React.FC = () => (
         {/* Left Labels */}
         <LeftCol>
           <TopLabels>
-            <TopLabel>Delicato</TopLabel>
-            <SubLabel>Brand identity </SubLabel>
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, ease: 'easeOut' }}
+              viewport={{ once: true, amount: 0.7 }}
+              style={{ fontSize: '1.01rem', fontWeight: 600, color: '#888888', marginBottom: '0.35em', textTransform: 'uppercase', letterSpacing: '0.05em' }}
+            >
+              Delicato
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.1, ease: 'easeOut' }}
+              viewport={{ once: true, amount: 0.7 }}
+              style={{ fontSize: '1rem', color: '#504f51', fontWeight: 400, textTransform: 'uppercase', letterSpacing: '0.05em' }}
+            >
+              Brand identity
+            </motion.div>
           </TopLabels>
           <MainTextBlock>
-            <BigTitle>Project Overview</BigTitle>
-            <OverviewText>
-            Delicato is a small interior design company from Italy that relies on classical architecture in its designs. The core value of this brand is to create spaces that blend the richness of historical elements with modern aesthetics.
-            </OverviewText>
+            <motion.h1
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.2, ease: 'easeOut' }}
+              viewport={{ once: true, amount: 0.7 }}
+              style={{ fontSize: '2.7rem', fontWeight: 400, color: '#111', margin: '0 0 2rem 0', lineHeight: 1.07, letterSpacing: '-1px', textTransform: 'uppercase' }}
+            >
+              Project Overview
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.3, ease: 'easeOut' }}
+              viewport={{ once: true, amount: 0.7 }}
+              style={{ fontSize: '1.06rem', color: '#504f51', fontWeight: 400, lineHeight: 1.54, margin: 0, maxWidth: 620 }}
+            >
+              Delicato is a small interior design company from Italy that relies on classical architecture in its designs. The core value of this brand is to create spaces that blend the richness of historical elements with modern aesthetics.
+            </motion.p>
           </MainTextBlock>
         </LeftCol>
 
@@ -198,12 +229,18 @@ const DeliFirst: React.FC = () => (
               aria-label="Veen project video"
             />
           </VideoFrame>
-          <InfoText>
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.4, ease: 'easeOut' }}
+            viewport={{ once: true, amount: 0.7 }}
+            style={{ color: '#717070', fontSize: '0.80rem', fontWeight: 400, marginTop: '1.6vw', marginRight: 0, textAlign: 'left', lineHeight: 1.28, alignSelf: 'flex-start' }}
+          >
             Role: Brand Designer<br />
             Tools: (Adobe Illustrator, After Effects, Photoshop)<br />
             Timeline: 2 weeks<br />
             Year: 2024
-          </InfoText>
+          </motion.div>
         </VideoCol>
       </ContentRow>
     </Section>
