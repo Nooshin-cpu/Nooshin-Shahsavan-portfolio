@@ -19,6 +19,7 @@ import StoryOne from '../../components/deli/StoryOne';
 import Deli14 from '../../components/deli/Deli14';
 import Deli15 from '../../components/deli/Deli15';
 
+
 import MenuWork from '../../components/MenuWork';
 import '../../components/MenuWork.css';
 
@@ -40,8 +41,10 @@ const Delicato: React.FC = () => {
       <Deli12 />
       <Deli13 />
       <StoryOne/>
+    
       <Deli14 />
       <Deli15 />
+      
       <MenuWork />
     </>
   );
