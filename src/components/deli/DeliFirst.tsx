@@ -211,7 +211,7 @@ const DeliFirst: React.FC = () => (
               viewport={{ once: true, amount: 0.7 }}
               style={{ fontSize: '1.06rem', color: '#504f51', fontWeight: 400, lineHeight: 1.54, margin: 0, maxWidth: 620 }}
             >
-              Delicato is a small interior design company from Italy that relies on classical architecture in its designs. The core value of this brand is to create spaces that blend the richness of historical elements with modern aesthetics.
+            Delicato is a small interior design company from Italy that relies on classical architecture in its designs. The core value of this brand is to create spaces that blend the richness of historical elements with modern aesthetics.
             </motion.p>
           </MainTextBlock>
         </LeftCol>

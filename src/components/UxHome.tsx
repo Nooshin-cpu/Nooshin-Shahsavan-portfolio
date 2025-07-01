@@ -14,7 +14,7 @@ const items = [
     type: "image",
     src: foodHomeImg,
     label: "UX-UI",
-    
+    link: "/work/savefood",
     details: [
       { label: "Project Title:", value: "SaveFood App" },
       { label: "Description:", value: "SaveFood App a mobile app that helps users track food expiration dates, find recipes for their ingredients... " },
@@ -26,7 +26,7 @@ const items = [
     type: "image",
     src: workdayPhoneImg,
     label: "UX-UI",
-    
+    link: "/work/workday",
     details: [
       { label: "Project Title:", value: "Workday App" },
       { label: "Description:", value: "Workday is a self - service portal , and Workday mobile app , designed to make it easy for employees to ac..." },
@@ -374,7 +374,7 @@ const UxHome: React.FC<{ setSelectedProject: (val: 'branding' | 'uxui' | 'funpro
             glarePosition="all"
             glareBorderRadius="8px"
           >
-              <Link to="/work/uxui" className="work-item" tabIndex={0}>
+              <Link to={item.link} className="work-item" tabIndex={0}>
                 <div className="work-label">{item.label}</div>
               <div className="work-media-container">
                   {item.type === "image" ? (
@@ -398,7 +398,7 @@ const UxHome: React.FC<{ setSelectedProject: (val: 'branding' | 'uxui' | 'funpro
                   initial="hidden"
                   whileHover="visible"
                 >
-                    {overlayToString(item.details, "/work/uxui")}
+                    {overlayToString(item.details, item.link)}
                 </motion.div>
               </div>
             </Link>

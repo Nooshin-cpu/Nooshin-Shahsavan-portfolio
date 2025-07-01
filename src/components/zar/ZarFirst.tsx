@@ -221,7 +221,7 @@ const ZarFirst: React.FC = () => (
               viewport={{ once: true, amount: 0.7 }}
               style={{ fontSize: '1.06rem', color: '#504f51', fontWeight: 400, lineHeight: 1.54, margin: 0, maxWidth: 620 }}
             >
-              ZAR is a premium saffron brand designed to celebrate the richness of Persian culture through a modern lens. The goal of this project was to create a brand identity and packaging design that not only highlights the luxurious and delicate nature of saffron but also communicates authenticity, heritage, and elegance.From logo development to color palette and typography choices, every element was carefully selected to reflect the timeless value of saffron while appealing to a contemporary audience. The result is a sophisticated, minimal yet culturally rooted brand that stands out in both local and global markets.
+            ZAR is a premium saffron brand designed to celebrate the richness of Persian culture through a modern lens. The goal of this project was to create a brand identity and packaging design that not only highlights the luxurious and delicate nature of saffron but also communicates authenticity, heritage, and elegance.From logo development to color palette and typography choices, every element was carefully selected to reflect the timeless value of saffron while appealing to a contemporary audience. The result is a sophisticated, minimal yet culturally rooted brand that stands out in both local and global markets.
             </motion.p>
           </MainTextBlock>
         </LeftCol>

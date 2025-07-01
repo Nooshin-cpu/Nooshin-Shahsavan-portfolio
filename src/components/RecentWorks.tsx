@@ -488,7 +488,7 @@ const RecentWorks: React.FC = () => {
             glarePosition="all"
             glareBorderRadius="8px"
           >
-            <Link to="/work/workday" className="work-item" tabIndex={0}>
+            <Link to="/work/zar" className="work-item" tabIndex={0}>
               <div className="work-label">{items[2].label}</div>
               <div className="work-media-container">
                 {items[2].type === "image" ? (
