@@ -14,6 +14,9 @@ import Deli10 from '../../components/deli/Deli10';
 import Deli11 from '../../components/deli/Deli11';
 import Deli12 from '../../components/deli/Deli12';
 import Deli13 from '../../components/deli/Deli13';
+
+import DeliLogoP from '../../components/deli/DeliLogoP';
+import ProblemDeli from '../../components/deli/ProblemDeli';
 import StoryOne from '../../components/deli/StoryOne';
 
 import Deli14 from '../../components/deli/Deli14';
@@ -30,7 +33,9 @@ const Delicato: React.FC = () => {
       <DeliFirst />
       <DeliSecond />
       <DeliThird />
+      <ProblemDeli/>
       <DeliForth />
+      <DeliLogoP/>
       <DeliGrid />
       <DeliColor />
       <DeliType />

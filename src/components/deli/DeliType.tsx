@@ -95,6 +95,16 @@ const Title = styled.h1`
   letter-spacing: -1px;
 `;
 
+const StyledLabel = styled.span`
+  display: block;
+  font-size: 1rem;
+  color: #504f51;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.35em;
+`;
+
 const BodyText = styled.div`
   font-size: 1rem;
   color: #504f51;
@@ -121,7 +131,12 @@ const DeliType: React.FC = () => (
         <TopLabel>TYPE</TopLabel>
         <Title>FACE</Title>
         <BodyText>
-          The typography for Delicato is modern and friendly, focusing on readability and warmth. The primary typeface is a clean sans-serif that ensures excellent legibility across all applications, while maintaining a contemporary and approachable feel. The secondary typeface adds a playful touch, perfect for headlines and special elements. Together, these typefaces create a harmonious system that reflects the brand's values of warmth, safety, and creativity.
+          <StyledLabel>Challenge</StyledLabel>
+          Find a balance between modern legibility and emotional warmth in typefaces that feel refined but friendly.Select fonts that reflect the luxurious elegance of classical architecture, while remaining clean and usable for modern websites and apps.<br/><br/>
+          <StyledLabel>Solution</StyledLabel>
+          For the primary typeface, I chose Gyst Variable  a refined, elegant serif that subtly echoes the curves and structure of classical architecture. Its luxurious aesthetic feels perfectly in tune with the brand’s roots in Roman-inspired design, while its modern features make it highly adaptable.
+
+As a secondary typeface, I used Roc Grotesk, a clean, highly legible sans-serif. It’s ideal for web and app interfaces, offering clear readability while still feeling modern and well-balanced next to the primary font. Together, this type pairing supports both emotional tone and practical function  just like the interiors Delicato designs.
         </BodyText>
       </RightTextBlock>
     </ContentRow>

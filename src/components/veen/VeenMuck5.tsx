@@ -96,6 +96,16 @@ const Title = styled.h1`
   letter-spacing: -1px;
 `;
 
+const StyledLabel = styled.span`
+  display: block;
+  font-size: 1rem;
+  color: #504f51;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.35em;
+`;
+
 const BodyText = styled.div`
   font-size: 1rem;
   color: #ccc;
@@ -122,7 +132,10 @@ const VeenMuck5: React.FC = () => (
         <TopLabel>COLOR</TopLabel>
         <Title>PALETTE</Title>
         <BodyText>
-          The color palette for SBS is carefully chosen to reflect energy, creativity, and youthfulness. The primary colors are vibrant and dynamic, creating an exciting atmosphere that resonates with party-goers. The palette includes bold colors and playful accents that work harmoniously together, ensuring the brand feels both modern and engaging.
+          <StyledLabel>Challenge</StyledLabel>
+          Develop a color system that feels soft, warm, and emotionally resonant, while staying modern and not overly pastel or washed out.<br/><br/>
+          <StyledLabel>Solution</StyledLabel>
+          The palette includes gentle tones that reflect trust, joy, and calmness — ideal for the emotional tone of family photography. Soft teals (representing calm and connection) are paired with complementary hues like peach, cream, and coral, adding a joyful, modern flair that stands out subtly and beautifully.
         </BodyText>
       </RightTextBlock>
     </ContentRow>

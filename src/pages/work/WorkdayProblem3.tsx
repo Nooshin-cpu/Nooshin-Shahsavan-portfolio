@@ -5,7 +5,7 @@ import errorImg from "../../assets/work/error.png";
 // Montserrat font global style
 const GlobalStyle = createGlobalStyle`
   body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 16px;
     font-weight: 400;
     background: #fafafa;
@@ -23,7 +23,7 @@ const SectionCard = styled.section`
   align-items: center;
   justify-content: center;
   padding: 0;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Inter', sans-serif;
   box-sizing: border-box;
   min-height: 400px;
   @media (max-width: 1200px) {
@@ -87,7 +87,7 @@ const ProblemIndex = styled.div`
   font-size: 1rem;
   font-weight: 700;
   margin-bottom: 0.8rem;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Inter', sans-serif;
   @media (max-width: 600px) {
     font-size: 0.9rem;
   }
@@ -98,7 +98,7 @@ const ProblemTitle = styled.h2`
   font-size: 22px;
   font-weight: 700;
   margin: 0 0 1.2rem 0;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Inter', sans-serif;
   text-align: left;
   @media (max-width: 900px) {
     text-align: center;
@@ -117,7 +117,7 @@ const ProblemText = styled.p`
   font-weight: 400;
   margin: 0;
   line-height: 1.6;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Inter', sans-serif;
   max-width: 420px;
   text-align: left;
   @media (max-width: 900px) {

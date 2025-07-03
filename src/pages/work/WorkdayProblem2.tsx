@@ -6,7 +6,7 @@ import pro2Video from "../../assets/work/pro-2.mp4";
 const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap');
   body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 20px;
     font-weight: 400;
     background: #fafafa;
@@ -24,7 +24,7 @@ const SectionCard = styled.section`
   align-items: center;
   justify-content: center;
   padding: 0;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Inter', sans-serif;
   box-sizing: border-box;
   min-height: 400px;
   @media (max-width: 1200px) {
@@ -88,7 +88,7 @@ const ProblemIndex = styled.div`
   font-size: 1rem;
   font-weight: 700;
   margin-bottom: 0.8rem;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Inter', sans-serif;
   @media (max-width: 600px) {
     font-size: 0.9rem;
   }
@@ -99,7 +99,7 @@ const ProblemTitle = styled.h2`
   font-size: 22px;
   font-weight: 700;
   margin: 0 0 1.2rem 0;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Inter', sans-serif;
   text-align: left;
   @media (max-width: 900px) {
     text-align: center;
@@ -118,7 +118,7 @@ const ProblemText = styled.p`
   font-weight: 400;
   margin: 0;
   line-height: 1.6;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Inter', sans-serif;
   max-width: 420px;
   text-align: left;
   @media (max-width: 900px) {
@@ -143,6 +143,7 @@ const VideoPlaceholder = styled.div`
   justify-content: center;
   overflow: hidden;
   border: 1.5px solid #eee;
+  margin: 16px 0;
   @media (max-width: 900px) {
     width: 200px;
     height: 420px;

@@ -12,6 +12,9 @@ import VeenMuck4 from '../../components/veen/VeenMuck4';
 import VeenMuck5 from '../../components/veen/VeenMuck5';
 import VeenMuck6 from '../../components/veen/VeenMuck6';
 import VeenMuck7 from '../../components/veen/VeenMuck7';
+import VeenLogoP from '../../components/veen/VeenLogoP';
+
+import ProblemVeen from '../../components/veen/ProblemVeen';
 import MenuWork from '../../components/MenuWork';
 import '../../components/MenuWork.css';
 
@@ -21,7 +24,9 @@ const Veen: React.FC = () => {
     <div>
       <VeenFirst />
       <VeenSecond />
+      <ProblemVeen/>
       <VeenThird />
+      <VeenLogoP />
       <VeenForth/>
       <VeenMuck5/>
       <VeenMuck6/>

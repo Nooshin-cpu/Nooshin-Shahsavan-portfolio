@@ -8,7 +8,7 @@ const SectionCard = styled.section`
   width: 60vw;
   max-width: 1100px;
   margin: 4vw auto 2vw auto;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Inter', sans-serif;
   padding: 3.5rem 3vw 2.5rem 3vw;
   box-sizing: border-box;
   @media (max-width: 1200px) {

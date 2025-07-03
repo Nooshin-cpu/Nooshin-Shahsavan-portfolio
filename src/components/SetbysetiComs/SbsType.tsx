@@ -145,7 +145,13 @@ const SbsType: React.FC = () => (
           viewport={{ once: true, amount: 0.7 }}
           style={{ fontSize: '1rem', color: '#ccc', fontWeight: 400, lineHeight: 1.5, maxWidth: 370 }}
         >
-          The typography for SBS is bold and dynamic, reflecting the brand's energetic and modern personality. The primary typeface is strong and contemporary, creating an impactful presence that resonates with the target audience. The typography system includes a mix of bold headlines and clean body text, ensuring both readability and visual interest.
+          <span style={{ display: 'block', fontSize: '1rem', color: '#504f51', fontWeight: 400, textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.35em' }}>Challenge</span>
+          Pick a typeface that visually connects to the logo's curves and works well across platforms — from digital to print.
+
+          <span style={{ display: 'block', fontSize: '1rem', color: '#504f51', fontWeight: 400, textTransform: 'uppercase', letterSpacing: '0.05em', margin: '1.2em 0 0.35em 0' }}>Solution</span>
+          I chose Gyst Variable as the primary typeface. It visually connects with the logo's form and shape, making it a strong choice for headers on social media and websites. It keeps the brand voice consistent and expressive.
+
+          As a secondary font, I selected Noto Sans, which is clean and highly legible — perfect for paragraph text on brochures, web pages, and other detailed brand communication.
         </motion.div>
       </RightTextBlock>
     </ContentRow>

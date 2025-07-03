@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import styled from "styled-components";
-import s2workday from "../../assets/work/s2workday.mp4";
+import s2workday from "../../assets/work/2sol.mp4";
 
 const Container = styled.section`
   background: #fff;
@@ -9,7 +9,7 @@ const Container = styled.section`
   width: 60vw;
   max-width: 1100px;
   margin: 4vw auto 2vw auto;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Inter', sans-serif;
   padding: 2.5rem 3vw 2.5rem 3vw;
   min-height: 700px;
   @media (max-width: 900px) {

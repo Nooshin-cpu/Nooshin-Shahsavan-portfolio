@@ -234,7 +234,9 @@ const SbsFirst: React.FC = () => (
               viewport={{ once: true, amount: 0.7 }}
               style={{ fontSize: '1.06rem', color: '#504f51', fontWeight: 400, lineHeight: 1.54, margin: 0, maxWidth: 620 }}
             >
-              S.B.S Based in Vancouver, S.B.S is a fresh and fearless clothing brand made for the middle class partygoer. Designed for 20- to 30-year-olds who just want to have a good time, S.B.S stands for effortless style and carefree vibes. Life's too short to stress — and S.B.S is here to prove that fashion doesn't have to be fancy to be fun. Easy to wear, easy to enjoy, and always ready for a good time. For this collection, I created custom graphics for S.B.S, a casual streetwear brand based in Vancouver that celebrates freedom, fun, and not taking life too seriously. The designs were intended for partygoers—people who want to dress casually, feel expressive, and look effortlessly cool.
+              S.B.S (Set by Sei) is a fresh and fearless clothing brand based in Vancouver, created for the middle-class partygoer aged 20 to 30. Designed for those who just want to have a good time, S.B.S celebrates freedom, fun, and not taking life too seriously. The brand stands for effortless style and carefree vibes, proving that fashion doesn't have to be fancy to be fun — it just needs to be easy to wear, easy to enjoy, and always ready for a good time.
+
+For this project, I developed a complete visual identity system and designed a collection of custom illustrations for their casual streetwear line. The goal was to create a brand image that resonates with the lifestyle and values of Gen Z — bold yet relaxed, expressive yet simple. My work included designing a logo and submark, crafting a color palette, choosing typefaces for both print and digital media, and creating print-ready illustrations for apparel.
             </motion.p>
           </MainTextBlock>
         </LeftCol>

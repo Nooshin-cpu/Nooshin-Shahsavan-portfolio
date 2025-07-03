@@ -9,7 +9,7 @@ const SectionCard = styled.section`
   width: 60vw;
   aspect-ratio: auto;
   margin: 4vw auto 2vw auto;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Inter', sans-serif;
   padding: 3.5rem 3vw;
   @media (max-width: 900px) {
     width: 95vw;
@@ -150,7 +150,7 @@ const UserInsight: React.FC = () => (
   <SectionCard>
     <Title>User Insight</Title>
     <Intro>
-      To gain a better understanding of real user frustrations, I started with an <a href="#">open-ended Google Form survey</a>. From the responses, I intentionally selected five <strong>part-time workers</strong>, as their lifestyle closely matched the app’s target audience. During the usability sessions, participants frequently expressed <span className="em">frustration</span> due to the long and <span className="em">confusing steps, lack of clear guidance, and unclear instructions</span>. These issues caused confusion and made the overall experience feel frustrating and mentally exhausting for them.
+      To gain a better understanding of real user frustrations, I started with an <a href="#">open-ended Google Form survey</a>. From the responses, I intentionally selected five <strong>part-time workers</strong>, as their lifestyle closely matched the app's target audience. During the usability sessions, participants frequently expressed <span className="em">frustration</span> due to the long and <span className="em">confusing steps, lack of clear guidance, and unclear instructions</span>. These issues caused confusion and made the overall experience feel frustrating and mentally exhausting for them.
     </Intro>
 
     <Divider />
@@ -172,8 +172,8 @@ const UserInsight: React.FC = () => (
       <ResearchItem>
         <ResearchLabel>TASKS</ResearchLabel>
         <ResearchList>
-          <li>Find the current week’s schedule</li>
-          <li>Locate the “Day Off” option</li>
+          <li>Find the current week's schedule</li>
+          <li>Locate the "Day Off" option</li>
           <li>Request and track a day off for two days in the upcoming week via mobile app</li>
         </ResearchList>
       </ResearchItem>
@@ -198,7 +198,7 @@ const UserInsight: React.FC = () => (
       <FindingCard bg="#ff9528">
         <Percent>80% <Count>4/5</Count></Percent>
         <FindingDesc>
-          Hard to find “Day Off” option<br />
+          Hard to find "Day Off" option<br />
           Most users struggled to locate it
         </FindingDesc>
       </FindingCard>
@@ -206,7 +206,7 @@ const UserInsight: React.FC = () => (
         <Percent>50% <Count>2.5/5</Count></Percent>
         <FindingDesc>
           Unclear how to track time-off request<br />
-          Users didn’t know what happens after submitting
+          Users didn't know what happens after submitting
         </FindingDesc>
       </FindingCard>
     </FindingsBar>

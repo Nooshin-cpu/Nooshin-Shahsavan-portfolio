@@ -96,6 +96,16 @@ const Title = styled.h1`
   letter-spacing: -1px;
 `;
 
+const StyledLabel = styled.span`
+  display: block;
+  font-size: 1rem;
+  color: #504f51;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.35em;
+`;
+
 const BodyText = styled.div`
   font-size: 1rem;
   color: #ccc;
@@ -122,13 +132,12 @@ const ZarType: React.FC = () => (
         <TopLabel>TYPE</TopLabel>
         <Title>FACE</Title>
         <BodyText>
-        🪷 Amandine – Our Luxury Touch
-Elegant, refined, and delicately curved — Amandine captures the essence of saffron’s richness and heritage. It brings a luxurious, graceful feel to headlines, product names, and Instagram highlights, adding a timeless charm to our brand presence.
-
-✍️ Housechks – Our Friendly Personality
-Handwritten and warm, Housechks gives our brand a personal, approachable tone. Used in storytelling and casual messages, it feels human and heartfelt — just like the tradition of passing saffron through generations.
-
-Together, Amandine and Housechks create a unique blend of luxury and authenticity, giving Zar Saffron a voice that’s both elegant and relatable.
+          <StyledLabel>Challenge</StyledLabel>
+          Find a type system that captures both elegance and relatability, expressing ZAR's luxury positioning while staying warm and personal.<br/><br/>
+          <StyledLabel>Solution</StyledLabel>
+          Primary Typeface: Amandine — Elegant and finely curved, Amandine gives the brand its luxurious tone, perfect for headlines, product names, and packaging. It echoes the visual softness of saffron threads and classical Persian detail.<br/><br/>
+          Secondary Typeface: Housechks — A handwritten script used in storytelling and informal messaging, this font brings a human, warm feeling to the brand — reminiscent of passing saffron through generations.<br/>
+          Together, these fonts balance refinement and approachability, giving ZAR a unique personality that is both timeless and emotional.
         </BodyText>
       </RightTextBlock>
     </ContentRow>

@@ -18,9 +18,9 @@ interface CircleSbsProps {
 const CircleContainer = styled(motion.div)`
   margin: 0 auto;
   border-radius: 50%;
-  width: 600px;
+  width: 800px;
   position: relative;
-  height: 600px;
+  height: 800px;
   font-family: 'Inter', Arial, Helvetica, sans-serif;
   font-weight: 600;
   color: #fff;
@@ -29,8 +29,8 @@ const CircleContainer = styled(motion.div)`
   transform-origin: 50% 50%;
   -webkit-transform-origin: 50% 50%;
   @media (max-width: 900px) {
-    width: 400px;
-    height: 400px;
+    width: 600px;
+    height: 600px;
   }
 `;
 

@@ -57,6 +57,16 @@ const Title = styled.h2`
   letter-spacing: -1.2px;
 `;
 
+const StyledLabel = styled.span`
+  display: block;
+  font-size: 1rem;
+  color: #504f51;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.35em;
+`;
+
 const Desc = styled.p`
   font-size: 1.06rem;
   color: #504f51;
@@ -155,10 +165,11 @@ const ZarPackaging: React.FC = () => (
         <MainTextBlock>
           <BigTitle>Packaging</BigTitle>
           <Desc>
-          For the saffron packaging design, I didn't just focus on creating a luxurious look — I also prioritized functionality and user experience. I chose a sliding drawer box for easy access, and added an inner wrapping paper to protect the saffron itself.
-          For the graphic elements, I created an abstract illustration of the saffron flower and used a combination of gold and purple on a black background to reflect the product's premium quality. Since saffron is an Eastern product, I incorporated motifs inspired by traditional Eastern art to highlight its cultural heritage.
-
-
+            <StyledLabel>Challenge</StyledLabel>
+            Design packaging that is luxurious, functional, and deeply rooted in Persian culture, while appealing to global consumers.<br/><br/>
+            <StyledLabel>Solution</StyledLabel>
+            I designed a sliding drawer box with an inner wrapping layer to both protect the saffron and enhance the unboxing experience. The graphics feature an abstract saffron flower illustration, blending organic lines with Eastern motifs to reflect ZAR's Persian origin.<br/><br/>
+            A combination of gold and purple on a matte black background reinforces the sense of exclusivity and richness. The design balances modern simplicity with traditional elegance, making ZAR saffron a true gift-worthy product.
           </Desc>
         </MainTextBlock>
       </TextBlock>

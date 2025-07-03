@@ -5,6 +5,9 @@ import scheduleIcon from "../../assets/work/schedule.png";
 import timeOutIcon from "../../assets/work/time-out.png";
 import notificationIcon from "../../assets/work/notification.png";
 import pro1Video from "../../assets/work/pro1.mp4";
+
+import WorkdayProblem1 from "./WorkdayProblem1";
+
 import WorkdayProblem2 from "./WorkdayProblem2";
 import WorkdayProblem3 from "./WorkdayProblem3";
 import WorkdayPersona from "./WorkdayPersona";
@@ -17,6 +20,7 @@ import FinalLookDayOff from "./FinalLookDayOff";
 import KeyTakeawaySection from "./KeyTakeawaySection";
 import MenuWork from '../../components/MenuWork';
 import '../../components/MenuWork.css';
+import WorkDayMenu from '../../components/WorkDayMenu';
 
 
 // Global style with dark mode support
@@ -49,7 +53,7 @@ const SectionCard = styled.section<{ $white?: boolean }>`
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3), 0 2px 3px rgba(0, 0, 0, 0.2);
   width: 60vw;
   margin: 4vw auto 2vw auto;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Inter', sans-serif;
   box-sizing: border-box;
   @media (max-width: 1200px) {
     width: 80vw;
@@ -418,7 +422,7 @@ const ProblemIndex = styled.div`
   font-size: 16px;
   font-weight: 700;
   margin-bottom: 0.8rem;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Inter', sans-serif;
   @media (max-width: 600px) {
     font-size: 14px;
   }
@@ -429,7 +433,7 @@ const ProblemDetailTitle = styled.h2`
   font-size: 22px;
   font-weight: 700;
   margin: 0 0 1.2rem 0;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Inter', sans-serif;
   text-align: left;
   @media (max-width: 900px) {
     text-align: center;
@@ -448,7 +452,7 @@ const ProblemText = styled.p`
   font-weight: 400;
   margin: 0;
   line-height: 1.6;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Inter', sans-serif;
   max-width: 420px;
   text-align: left;
   @media (max-width: 900px) {
@@ -497,45 +501,24 @@ const StyledVideo = styled.video`
 const PageContainer = styled.div`
   display: flex;
   width: 100%;
-  position: relative;
   min-height: 100vh;
-  overflow-x: hidden;
+  position: relative;
 `;
 
-const MenuWrapper = styled.div`
-  position: fixed;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 2rem;
-  z-index: 100;
-  padding: 1rem;
-  display: flex;
-  gap: 2rem;
+const StickyMenuWrapper = styled.div`
+  position: sticky;
+  top: 0;
+  align-self: flex-start;
+  z-index: 101;
   @media (max-width: 900px) {
     display: none;
   }
 `;
 
-const MenuItem = styled.a<{ isActive?: boolean }>`
-  color: ${props => props.isActive ? '#483efc' : '#666'};
-  text-decoration: none;
-  font-size: 1rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: color 0.2s ease;
-  white-space: nowrap;
-
-  &:hover {
-    color: #483efc;
-  }
-`;
-
 const ContentWrapper = styled.div`
   flex: 1;
-  margin-left: 250px;
   padding: 2rem;
   @media (max-width: 900px) {
-    margin-left: 0;
     padding: 1rem;
   }
   @media (max-width: 600px) {
@@ -556,7 +539,10 @@ const Workday: React.FC = () => (
   <PageBg>
     <GlobalStyle />
     <PageContainer>
-      <ContentWrapper>
+      <StickyMenuWrapper>
+        <WorkDayMenu />
+      </StickyMenuWrapper>
+      <ContentWrapper id="content-wrapper">
         <div id="overview">
           <Page1Card>
             <PhoneMockup src={workdayPhone} alt="Workday App Mockup" />
@@ -615,6 +601,7 @@ const Workday: React.FC = () => (
               </ProblemCard>
             </CardRow>
           </Page2Card>
+          <WorkdayProblem1 />
           <WorkdayProblem2 />
           <WorkdayProblem3 />
         </div>
@@ -638,7 +625,9 @@ const Workday: React.FC = () => (
           <FinalLookDayOff />
         </div>
 
-        <KeyTakeawaySection />
+        <div id="takeaway">
+          <KeyTakeawaySection />
+        </div>
       </ContentWrapper>
     </PageContainer>
     <div style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>

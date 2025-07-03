@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import './MenuWork.css';
 
@@ -57,6 +57,7 @@ const workItems: WorkItem[] = [
 const MenuWork: React.FC = () => {
   const location = useLocation();
   const navigate = useNavigate();
+  const [open, setOpen] = useState(false);
 
   // Find the index of the current page (if any)
   const currentIdx = workItems.findIndex(
@@ -71,14 +72,57 @@ const MenuWork: React.FC = () => {
 
   const handleCubeClick = (link: string) => {
     navigate(link);
-    // Scroll to top of the page
+    setOpen(false); // close menu on navigation
     window.scrollTo(0, 0);
   };
 
   return (
     <div className="menu-work-container">
       <h2 className="menu-work-title">Choose Next work to see</h2>
-      <div className="menu-work-grid">
+      {/* Hamburger button for mobile */}
+      <button
+        className={`menu-hamburger${open ? ' open' : ''}`}
+        aria-label={open ? 'Close menu' : 'Open menu'}
+        aria-expanded={open}
+        aria-controls="menu-work-overlay"
+        onClick={() => setOpen((v) => !v)}
+      >
+        <span className="hamburger-bar" />
+        <span className="hamburger-bar" />
+        <span className="hamburger-bar" />
+      </button>
+      {/* Overlay menu for mobile */}
+      <div
+        id="menu-work-overlay"
+        className={`menu-work-overlay${open ? ' show' : ''}`}
+        tabIndex={-1}
+        aria-hidden={!open}
+        onClick={() => setOpen(false)}
+      >
+        <div className="menu-work-overlay-content" onClick={e => e.stopPropagation()}>
+          <div className="menu-work-grid">
+            {orderedItems.map((item, idx) => (
+              <div
+                key={item.link}
+                className={`menu-work-cube${idx === 0 ? ' active' : ''}`}
+                onClick={() => handleCubeClick(item.link)}
+                tabIndex={0}
+                role="button"
+                aria-label={`Go to ${item.alt}`}
+              >
+                <div className="menu-work-img-wrapper">
+                  <img src={item.image} alt={item.alt} className="menu-work-img" />
+                  <div className="menu-work-desc">
+                    <span>{item.description}</span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+      {/* Desktop grid (always visible) */}
+      <div className="menu-work-grid desktop-only">
         {orderedItems.map((item, idx) => (
           <div
             key={item.link}

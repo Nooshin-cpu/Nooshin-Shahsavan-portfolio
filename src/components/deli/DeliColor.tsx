@@ -96,6 +96,16 @@ const Title = styled.h1`
   letter-spacing: -1px;
 `;
 
+const StyledLabel = styled.span`
+  display: block;
+  font-size: 1rem;
+  color: #504f51;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.35em;
+`;
+
 const BodyText = styled.div`
   font-size: 1rem;
   color: #ccc;
@@ -122,7 +132,10 @@ const DeliColor: React.FC = () => (
         <TopLabel>COLOR</TopLabel>
         <Title>PALETTE</Title>
         <BodyText>
-          The color palette for Delicato is warm and inviting, designed to evoke feelings of comfort, safety, and creativity. The primary colors are soft and gentle, creating a welcoming atmosphere that resonates with families. The palette includes warm neutrals and gentle pastels that work harmoniously together, ensuring the brand feels both professional and approachable. Secondary colors add a playful touch, perfect for highlighting important elements and creating visual interest.
+          <StyledLabel>Challenge</StyledLabel>
+          Design a palette that communicates both historical richness and modern warmth, appealing to clients who value tradition as well as comfort.<br/><br/>
+          <StyledLabel>Solution</StyledLabel>
+          I selected a range of warm neutrals and soft pastels, inspired by the tones of aged stone, terracotta, and sunlit interiors. These colors evoke feelings of comfort, trust, and creativity, while maintaining a sense of quiet luxury. Secondary tones provide playful accents for visual interest and to highlight key elements across branded materials.
         </BodyText>
       </RightTextBlock>
     </ContentRow>

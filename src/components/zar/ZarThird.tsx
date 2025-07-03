@@ -75,6 +75,16 @@ const BigTitle = styled.h1`
   text-transform: uppercase;
 `;
 
+const StyledLabel = styled.span`
+  display: block;
+  font-size: 1rem;
+  color: #504f51;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.35em;
+`;
+
 const OverviewText = styled.p`
   font-size: 1.06rem;
   color: #504f51;
@@ -199,19 +209,13 @@ const ZarThird: React.FC = () => (
           >
             Design
           </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.2, ease: 'easeOut' }}
-            viewport={{ once: true, amount: 0.7 }}
-            style={{ fontSize: '1.06rem', color: '#504f51', fontWeight: 400, lineHeight: 1.54, margin: 0, maxWidth: 620, whiteSpace: 'pre-line' }}
-          >
-            {"\n"}Primary Logo
-            {"\n"}The primary logo features a custom-designed wordmark "ZAR" with elegant, elongated letterforms that blend modern minimalism with a subtle nod to classical calligraphy. The sharp angles and fluid curves symbolize both precision and beauty—reflecting the premium nature of the saffron brand.
-           
-            {"\n"}Submark
-            {"\n"}The submark introduces a stylized saffron flower illustration entwinedwith organic lines, surrounded by the words "ZAR," "SAFFRON," "PREMIUM," andthe year "1988." This mark emphasizes authenticity and heritage, adding anartisanal touch that celebrates tradition and craftsmanship.
-          </motion.p>
+          <OverviewText>
+            <StyledLabel>Challenge</StyledLabel>
+            Create a logo that represents luxury, culture, and authenticity while balancing modern minimalism and Persian elegance.<br/><br/>
+            <StyledLabel>Solution</StyledLabel>
+            The primary logo is a custom wordmark of “ZAR” using elongated, elegant letterforms inspired by Persian calligraphy. It combines sharp angles and soft curves, symbolizing the brand’s dual values of precision and beauty.<br/><br/>
+            The submark includes a stylized saffron flower illustration with organic lines, framed by the words “ZAR,” “SAFFRON,” “PREMIUM,” and “1988.” This version emphasizes heritage and craftsmanship, adding an artisanal, authentic character to the brand for use in packaging, stamps, and seals.
+          </OverviewText>
         </MainTextBlock>
       </LeftCol>
 

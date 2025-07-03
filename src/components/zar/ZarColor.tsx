@@ -96,6 +96,16 @@ const Title = styled.h1`
   letter-spacing: -1px;
 `;
 
+const StyledLabel = styled.span`
+  display: block;
+  font-size: 1rem;
+  color: #504f51;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.35em;
+`;
+
 const BodyText = styled.div`
   font-size: 1rem;
   color: #ccc;
@@ -122,7 +132,10 @@ const ZarColor: React.FC = () => (
         <TopLabel>COLOR</TopLabel>
         <Title>PALETTE</Title>
         <BodyText>
-          The color palette for SBS is carefully chosen to reflect energy, creativity, and youthfulness. The primary colors are vibrant and dynamic, creating an exciting atmosphere that resonates with party-goers. The palette includes bold colors and playful accents that work harmoniously together, ensuring the brand feels both modern and engaging.
+          <StyledLabel>Challenge</StyledLabel>
+          Select a palette that conveys premium quality and cultural depth, while remaining modern and luxurious.<br/><br/>
+          <StyledLabel>Solution</StyledLabel>
+          I chose a rich, sophisticated combination of deep black, royal purple, and metallic gold. These colors reflect the exotic luxury of saffron and evoke feelings of elegance, rarity, and heritage. The contrast between dark and vibrant tones helps the product stand out on shelves, especially in global markets where Eastern luxury is highly valued.
         </BodyText>
       </RightTextBlock>
     </ContentRow>

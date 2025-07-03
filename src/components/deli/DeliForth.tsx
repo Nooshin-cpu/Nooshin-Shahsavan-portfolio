@@ -80,6 +80,16 @@ const BigTitle = styled.h1`
   text-transform: uppercase;
 `;
 
+const StyledLabel = styled.span`
+  display: block;
+  font-size: 1rem;
+  color: #504f51;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.35em;
+`;
+
 const Desc = styled.p`
   font-size: 1.06rem;
   color: #504f51;
@@ -139,10 +149,10 @@ const DeliForth: React.FC = () => (
         <MainTextBlock>
           <BigTitle>Design</BigTitle>
           <Desc>
-          "Delicato" is an Italian word meaning "delicate" in English. This word conveys a sense of elegance and refinement. As I previously mentioned, I drew inspiration from classical Roman columns to reflect this delicacy. After designing the column shape, I simplified it as much as possible, transforming it into a balance of positive and negative space, ultimately integrating it with the letter "D."
-While the presence of the column evokes the architecture of the classical era, I introduced a subtle break in the lower curved line to symbolize a distinction between the classical and modern styles.
-This gap represents the inevitable separation created by time, even as the two periods remain interconnected. Through this logo, I aim to illustrate the fusion of these eras while acknowledging the distance between them.
-
+            <StyledLabel>Challenge</StyledLabel>
+            Create a logo that visually bridges classical Roman architecture with a modern minimalist approach, representing both the brand's heritage and its contemporary audience.<br/><br/>
+            <StyledLabel>Solution</StyledLabel>
+            Inspired by classical columns, I developed a minimal, elegant symbol that merges with the letter "D" in "Delicato". The column is abstracted into a balance of positive and negative space, evoking both strength and delicacy. A subtle break in the lower curved line represents the passage of time — the separation and connection between classical and modern eras. The overall form is clean and memorable, encapsulating the brand's concept of timeless elegance.
           </Desc>
         </MainTextBlock>
       </TextBlock>

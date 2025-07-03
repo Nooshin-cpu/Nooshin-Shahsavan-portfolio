@@ -96,6 +96,16 @@ const Title = styled.h1`
   letter-spacing: -1px;
 `;
 
+const StyledLabel = styled.span`
+  display: block;
+  font-size: 1rem;
+  color: #504f51;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.35em;
+`;
+
 const BodyText = styled.div`
   font-size: 1rem;
   color: #ccc;
@@ -122,7 +132,12 @@ const VeenMuck6: React.FC = () => (
         <TopLabel>Type</TopLabel>
         <Title>Typography</Title>
         <BodyText>
-          The typography for SBS is bold and dynamic, reflecting the brand's energetic and modern personality. The primary typeface is strong and contemporary, creating an impactful presence that resonates with the target audience. The typography system includes a mix of bold headlines and clean body text, ensuring both readability and visual interest.
+          <StyledLabel>Challenge</StyledLabel>
+          Select typography that supports the brand's friendly and trustworthy personality — while being clean and functional across digital and print platforms.<br/><br/>
+          <StyledLabel>Solution</StyledLabel>
+          I chose two main fonts:<br/><br/>
+          Primary Typeface: A modern, slightly rounded font that echoes the curves found in the logo — making the identity feel cohesive and soft.<br/><br/>
+          Secondary Typeface: A clean, readable sans-serif ideal for body text in brochures, website copy, and captions. Together, they ensure both emotional warmth and clarity.
         </BodyText>
       </RightTextBlock>
     </ContentRow>

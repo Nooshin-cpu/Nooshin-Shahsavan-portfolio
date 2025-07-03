@@ -8,7 +8,7 @@ const SectionCard = styled.section`
   box-shadow: 0 8px 32px #0002, 0 2px 10px #0001;
   width: 60vw;
   margin: 4vw auto 2vw auto;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Inter', sans-serif;
   padding: 3.5rem 3vw;
   @media (max-width: 900px) {
     width: 95vw;
@@ -77,7 +77,7 @@ const ChallengeGoals: React.FC = () => (
     <Title>Challenge</Title>
     <ChallengeText>
       <b>How might I</b> make it easier for users to access their full weekly schedule at a glance, all on one screen?<br/>
-      And how can I simplify the time-off request process so it’s clear, fast, and takes only a few clicks?
+      And how can I simplify the time-off request process so it's clear, fast, and takes only a few clicks?
     </ChallengeText>
     <Divider />
     <GoalsTitle>UX Goals</GoalsTitle>

@@ -1,4 +1,3 @@
-
 import React from "react";
 import styled from "styled-components";
 
@@ -9,7 +8,7 @@ const SectionCard = styled.section`
   width: 60vw;
   max-width: 1100px;
   margin: 4vw auto 2vw auto;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Inter', sans-serif;
   padding: 3.5rem 3vw 2.5rem 3vw;
   @media (max-width: 900px) {
     width: 95vw;
@@ -79,7 +78,7 @@ const SolutionDayOffNotification: React.FC = () => (
     <SubtleLabel>Solution 2</SubtleLabel>
     <Title>Taking a Day Off & Getting Notified</Title>
     <Description>
-      Since taking time off and receiving updates are closely connected, they're combined into one simple flow. Users just tap the “Time Off” button on the home page, select their start and end dates, and quickly double-check everything on the calendar. After hitting submit, they'll instantly get a confirmation message. Once the manager reviews the request, users receive a notification with the result—either approved or declined—so they're always kept in the loop.
+      Since taking time off and receiving updates are closely connected, they're combined into one simple flow. Users just tap the "Time Off" button on the home page, select their start and end dates, and quickly double-check everything on the calendar. After hitting submit, they'll instantly get a confirmation message. Once the manager reviews the request, users receive a notification with the result—either approved or declined—so they're always kept in the loop.
     </Description>
     <FlowLabel>Flow 2</FlowLabel>
     <FlowEmbedWrapper>

@@ -21,7 +21,7 @@ const FullWrapper = styled.div`
 const Section = styled.section`
   width: 100vw;
   min-height: 100vh;
-  background: #9ed4d1;
+  background: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -114,6 +114,16 @@ const Title = styled.h2`
   letter-spacing: -1.2px;
 `;
 
+const StyledLabel = styled.span`
+  display: block;
+  font-size: 1rem;
+  color: #504f51;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.35em;
+`;
+
 const Desc = styled.p`
   font-size: 1.06rem;
   color: #504f51;
@@ -176,11 +186,12 @@ const VeenThird: React.FC = () => (
           <MainTextBlock>
             <BigTitle>DESIGN</BigTitle>
             <Desc>
-              The logo needed to feel personal and memorable, while also being versatile and professional. I began by researching competitors in the photography space, especially those focused on families and children. Most successful logos used rounded, friendly shapes, often incorporating a camera motif. From there, I explored several sketches and landed on two versions:
-✨  Primary Logo
-A full logo featuring the word "VEEN" with a hidden camera graphic inside the letters , a little visual surprise that makes people say, "Oh, I see it!" The center circle symbolizes both a camera lens and the unbreakable bond of family.
-✨  Secondary Logo
-A compact monogram featuring the letters V + N, perfect for stickers, watermarks, and social media. Simple, clean, and easily recognizable.
+              <StyledLabel>Challenge</StyledLabel>
+              Create a logo that feels personal, warm, and creative, while being versatile for different uses (web, watermark, print). It needed to stand out in the family photography space and subtly hint at the photography theme.<br/><br/>
+              <StyledLabel>Solution</StyledLabel>
+              I designed two logo versions:<br/><br/>
+              Primary Logo: A clean wordmark with a hidden camera shape integrated into the word "VEEN." The center circle serves as both a camera lens and a symbol of the family bond, offering a moment of discovery to the viewer.<br/><br/>
+              Secondary Logo: A minimal V + N monogram ideal for stickers, watermarks, and small-scale use. It's simple and professional, maintaining brand recognition even in compact spaces.
             </Desc>
           </MainTextBlock>
         </TextBlock>

@@ -7,7 +7,7 @@ import empathyMap from "../../assets/work/empathy-map.png";
 
 const GlobalStyle = createGlobalStyle`
   body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Inter', sans-serif;
     background: #fafafa;
     font-size: 20px;
     font-weight: 400;
@@ -25,7 +25,7 @@ const SectionCard = styled.section`
   align-items: center;
   justify-content: center;
   padding: 0;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Inter', sans-serif;
   box-sizing: border-box;
   min-height: 400px;
   @media (max-width: 1200px) {
@@ -193,7 +193,7 @@ const ButtonRow = styled.div`
 `;
 
 const PersonaButton = styled.button<{ active?: boolean }>`
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 700;
   font-size: 1rem;
   padding: 1.2rem 2.7rem;

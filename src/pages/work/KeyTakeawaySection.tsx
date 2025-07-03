@@ -10,7 +10,7 @@ const Card = styled.section`
   width: 60vw;
   max-width: 1100px;
   margin: 4vw auto 2vw auto;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Inter', sans-serif;
   padding: 4vw 5vw 4vw 5vw;
   min-height: 420px;
   display: flex;
@@ -62,7 +62,7 @@ const KeyTakeawaySection: React.FC = () => (
     <Finally>Finally</Finally>
     <KeyTitle>Key Takeaway</KeyTitle>
     <Paragraph>
-      Redesigning this app taught me that today’s users — especially busy people like part-time workers — value speed and simplicity above all. As a designer, it’s easy to get caught up in visuals and aesthetics (which do matter!), but what matters more is how easily someone can use the product.
+      Redesigning this app taught me that today's users — especially busy people like part-time workers — value speed and simplicity above all. As a designer, it's easy to get caught up in visuals and aesthetics (which do matter!), but what matters more is how easily someone can use the product.
     </Paragraph>
     <Paragraph>
       I learned the importance of using clear structure, proper button placement, readable fonts, and intuitive color choices to guide users quickly and confidently through their tasks. A well-designed app should not only look good, but feel effortless to use — and that balance is what I aim for in every project.

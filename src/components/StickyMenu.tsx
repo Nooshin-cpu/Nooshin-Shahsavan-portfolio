@@ -62,8 +62,8 @@ const IconContainer = styled.a<{ $hovered: boolean }>`
   }
 `;
 
-const Tooltip = styled.div<{ visible: boolean }>`
-  display: ${({ visible }) => (visible ? "block" : "none")};
+const Tooltip = styled.div<{ $visible: boolean }>`
+  display: ${({ $visible }) => ($visible ? "block" : "none")};
   position: absolute;
   left: 55px;
   top: 50%;
@@ -122,7 +122,7 @@ const StickyMenu: React.FC = () => {
             onMouseLeave={() => setHovered(null)}
           >
             {item.icon}
-            <Tooltip visible={hovered === i}>{item.label}</Tooltip>
+            <Tooltip $visible={hovered === i}>{item.label}</Tooltip>
           </IconContainer>
         ))}
       </MenuBox>

@@ -211,11 +211,13 @@ const SbsSecond: React.FC = () => (
             viewport={{ once: true, amount: 0.7 }}
             style={{ fontSize: '1.06rem', color: '#504f51', fontWeight: 400, lineHeight: 1.54, margin: 0, maxWidth: 620, whiteSpace: 'pre-line' }}
           >
-            {"\n"}Primary Logo
-            {"\n"}This is a typographic logo that directly uses the font "Gyst Variable" and represents the brand in written.
-            {"\n"}Secondary Logo This is a graphic logo created using the brand's initials: S, B, S. It appears most frequently across various design elements such as clothing items, business cards, shopping bags, and clothing boxes. This logo forms a key part of the brand's identity. Its design incorporates curved shapes that symbolize dance, which reflects the brand's target audience: party-goers.
-            {"\n"}Submark
-            {"\n"}As shown in the image, this version is specifically designed for packaging purposes.
+            <span style={{ display: 'block', fontSize: '1rem', color: '#504f51', fontWeight: 400, textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.35em' }}>Challenge</span>
+            Design a logo that reflects the values of freedom, movement, and carefreeness and also functions as part of every clothing graphic.
+
+            <span style={{ display: 'block', fontSize: '1rem', color: '#504f51', fontWeight: 400, textTransform: 'uppercase', letterSpacing: '0.05em', margin: '1.2em 0 0.35em 0' }}>Solution</span>
+            For the logo, I designed a graphic mark using the three initials of the brand name: Set by Sei (S.B.S). My goal was for this logo not only to represent the brand but to exist as part of every clothing design, acting as both a symbol and a visual element. If you look at the clothing graphics, you'll notice the logo appears in almost every design — placed in different spots, blending into the artwork.
+
+            To reflect the brand's spirit, I used curved lines that represent movement, emotional freedom, and carefreeness. These curves bring softness and rhythm to the logo, allowing it to feel alive and in motion, just like the brand's audience.
           </motion.p>
         </MainTextBlock>
       </LeftCol>

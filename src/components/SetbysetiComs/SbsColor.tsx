@@ -145,7 +145,13 @@ const SbsColor: React.FC = () => (
           viewport={{ once: true, amount: 0.7 }}
           style={{ fontSize: '1rem', color: '#ccc', fontWeight: 400, lineHeight: 1.5, maxWidth: 370 }}
         >
-          The color palette for SBS is carefully chosen to reflect energy, creativity, and youthfulness. The primary colors are vibrant and dynamic, creating an exciting atmosphere that resonates with party-goers. The palette includes bold colors and playful accents that work harmoniously together, ensuring the brand feels both modern and engaging.
+          <span style={{ display: 'block', fontSize: '1rem', color: '#504f51', fontWeight: 400, textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.35em' }}>Challenge</span>
+          Choose colors that don't compete with the linework but instead enhance it — and that also match the feeling of lightness and freedom.
+
+          <span style={{ display: 'block', fontSize: '1rem', color: '#504f51', fontWeight: 400, textTransform: 'uppercase', letterSpacing: '0.05em', margin: '1.2em 0 0.35em 0' }}>Solution</span>
+          Since my graphics are based on lines (to show movement and flow), I selected nude and soft colors that are not too bold. This choice allows the lines to stay visually dominant and makes them more visible in key areas.
+
+          The color palette also includes transparent tones, which symbolize party lights and add a sense of ambiance. These colors support the illustrations without distracting from them — helping the lines stay expressive while keeping the overall look light and modern.
         </motion.div>
       </RightTextBlock>
     </ContentRow>

@@ -15,33 +15,35 @@ const Section = styled.section`
   justify-content: center;
 `;
 
-const MediaBox = styled.div<{ $size: string }>`
-  position: absolute;
-  width: ${({ $size }) => $size};
-  height: ${({ $size }) => $size};
-  background: transparent;
+const MediaBox = styled.div`
+  position: relative;
+  width: 800px;
+  height: 800px;
   display: flex;
   align-items: center;
   justify-content: center;
   @media (max-width: 900px) {
-    position: relative;
-    width: 100vw;
-    height: 70vw;
-    min-width: 320px;
-    min-height: 400px;
+    width: 600px;
+    height: 600px;
   }
 `;
 
 const StyledVideo = styled.video`
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 70%;
+  height: 70%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
   background: transparent;
   z-index: 1;
 `;
 
 const CircleWrapper = styled.div`
   position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   display: flex;
@@ -50,42 +52,26 @@ const CircleWrapper = styled.div`
   z-index: 2;
 `;
 
-const AbsoluteWrapper = styled.div`
-  position: relative;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  @media (max-width: 900px) {
-    flex-direction: column;
-    height: auto;
-    padding: 20px 0;
-  }
-`;
-
 const SbsIllustration: React.FC = () => (
   <Section>
-    <AbsoluteWrapper>
-      <MediaBox $size="45vw">
-        <StyledVideo
-          src={capIntroVideo}
-          autoPlay
-          loop
-          muted
-          playsInline
-          controls={false}
-          aria-label="Cap intro video"
+    <MediaBox>
+      <StyledVideo
+        src={capIntroVideo}
+        autoPlay
+        loop
+        muted
+        playsInline
+        controls={false}
+        aria-label="Cap intro video"
+      />
+      <CircleWrapper>
+        <CircleSbs 
+          text="S.B.S*BRAND*IDENTITY*DESIGN*"
+          onHover="speedUp"
+          spinDuration={20}
         />
-        <CircleWrapper>
-          <CircleSbs 
-            text="S.B.S*BRAND*IDENTITY*DESIGN*"
-            onHover="speedUp"
-            spinDuration={20}
-          />
-        </CircleWrapper>
-      </MediaBox>
-    </AbsoluteWrapper>
+      </CircleWrapper>
+    </MediaBox>
   </Section>
 );
 
