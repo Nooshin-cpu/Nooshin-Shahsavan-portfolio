@@ -6,7 +6,7 @@ import ProblemSbs from '../../components/SetbysetiComs/ProblemSbs';
 import SbsSecond from '../../components/SetbysetiComs/SbsSecond';
 import SbsType from '../../components/SetbysetiComs/SbsType';
 import SbsColor from '../../components/SetbysetiComs/SbsColor';
-import SbsIllustration from '../../components/Setbyseticoms/SbsIllustration';
+import SbsIllustration from '../../components/SetbysetiComs/SbsIllustration';
 import SbsMock1 from '../../components/SetbysetiComs/SbsMock1';
 import SbsMock2 from '../../components/SetbysetiComs/SbsMock2';
 import SbsMock3 from '../../components/SetbysetiComs/SbsMock3';
