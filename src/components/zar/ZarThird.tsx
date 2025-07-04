@@ -16,7 +16,10 @@ const Section = styled.section`
   padding: 2rem 0;
   height: 100vh;
   @media (max-width: 900px) {
+    width: 100%;
     height: auto;
+    box-sizing: border-box;
+    overflow-x: hidden;
   }
 `;
 
@@ -31,8 +34,11 @@ const ContentRow = styled.div`
   @media (max-width: 900px) {
     flex-direction: column;
     align-items: stretch;
-    width: 98vw;
+    width: 100vw;
+    max-width: 100vw;
     padding: 0 0.5rem;
+    box-sizing: border-box;
+    overflow-x: hidden;
   }
 `;
 
@@ -51,6 +57,8 @@ const LeftCol = styled.div`
     margin-right: 0;
     margin-bottom: 2vw;
     padding: 0 0.5rem;
+    box-sizing: border-box;
+    overflow-x: hidden;
   }
 `;
 
@@ -110,6 +118,8 @@ const RightCol = styled.div`
     min-width: 0;
     align-items: center;
     padding: 0 0.5rem;
+    box-sizing: border-box;
+    overflow-x: hidden;
   }
 `;
 
@@ -126,6 +136,8 @@ const MediaLayout = styled.div`
     flex-direction: column;
     align-items: center;
     gap: 1rem;
+    box-sizing: border-box;
+    overflow-x: hidden;
   }
 `;
 
@@ -144,6 +156,8 @@ const Img1 = styled.img`
     max-width: 300px;
     display: block;
     margin: 0 auto;
+    box-sizing: border-box;
+    overflow-x: hidden;
   }
 `;
 
@@ -162,6 +176,8 @@ const StyledVideo = styled.video`
     max-width: 400px;
     display: block;
     margin: 0 auto;
+    box-sizing: border-box;
+    overflow-x: hidden;
   }
 `;
 
@@ -180,6 +196,8 @@ const Img2 = styled.img`
     max-width: 300px;
     display: block;
     margin: 0 auto;
+    box-sizing: border-box;
+    overflow-x: hidden;
   }
 `;
 
@@ -213,8 +231,8 @@ const ZarThird: React.FC = () => (
             <StyledLabel>Challenge</StyledLabel>
             Create a logo that represents luxury, culture, and authenticity while balancing modern minimalism and Persian elegance.<br/><br/>
             <StyledLabel>Solution</StyledLabel>
-            The primary logo is a custom wordmark of “ZAR” using elongated, elegant letterforms inspired by Persian calligraphy. It combines sharp angles and soft curves, symbolizing the brand’s dual values of precision and beauty.<br/><br/>
-            The submark includes a stylized saffron flower illustration with organic lines, framed by the words “ZAR,” “SAFFRON,” “PREMIUM,” and “1988.” This version emphasizes heritage and craftsmanship, adding an artisanal, authentic character to the brand for use in packaging, stamps, and seals.
+            The primary logo is a custom wordmark of "ZAR" using elongated, elegant letterforms inspired by Persian calligraphy. It combines sharp angles and soft curves, symbolizing the brand's dual values of precision and beauty.<br/><br/>
+            The submark includes a stylized saffron flower illustration with organic lines, framed by the words "ZAR," "SAFFRON," "PREMIUM," and "1988." This version emphasizes heritage and craftsmanship, adding an artisanal, authentic character to the brand for use in packaging, stamps, and seals.
           </OverviewText>
         </MainTextBlock>
       </LeftCol>
