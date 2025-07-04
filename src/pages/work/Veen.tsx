@@ -29,14 +29,16 @@ const Veen: React.FC = () => {
       <VeenThird />
       <VeenLogoP />
       <VeenForth/>
+    
       <VeenMuck5/>
       <VeenMuck6/>
+      <FlipBook />
+      
       <VeenMuck1/>
       <VeenMuck2/>
       <VeenMuck3/>
       <VeenMuck4/>
       <VeenMuck7/>
-      <FlipBook />
 
       <MenuWork />
     </div>
