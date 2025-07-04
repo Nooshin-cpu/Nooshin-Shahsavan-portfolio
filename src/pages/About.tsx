@@ -1,9 +1,8 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import ScrambledText from '../components/ScrambledText';
 import ImageTrail from '../components/ImageTrail';
-
 import DecryptedText from '../components/DecryptedText';
 import { IonIcon } from '@ionic/react';
 import { logoLinkedin, mail, document } from 'ionicons/icons';
@@ -19,10 +18,19 @@ import man1 from '../assets/about/man-1.jpg';
 import man2 from '../assets/about/man-2.jpg';
 import man3 from '../assets/about/man-3.jpg';
 import man4 from '../assets/about/man-4.jpeg';
-
 import man5 from '../assets/about/man-5.jpg';
 import man6 from '../assets/about/man-6.jpg';
 import man7 from '../assets/about/man-7.jpg';
+
+// Responsive global style to prevent scroll
+const GlobalStyle = createGlobalStyle`
+  html, body {
+    overflow-x: hidden !important;
+    margin: 0;
+    padding: 0;
+    background: #191c24;
+  }
+`;
 
 const AboutContainer = styled.div`
   width: 100%;
@@ -30,6 +38,8 @@ const AboutContainer = styled.div`
   background: #191c24;
   position: relative;
   z-index: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
 `;
 
 const Section = styled.section`
@@ -50,6 +60,12 @@ const ImageTrailSection = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: 600px) {
+    height: 70vh;
+    min-height: 400px;
+    padding: 0 8px;
+  }
 `;
 
 const ImageTrailTitle = styled.h2`
@@ -62,13 +78,12 @@ const ImageTrailTitle = styled.h2`
   position: relative;
 
   @media (max-width: 768px) {
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
+    font-size: 2.2rem;
+    margin-bottom: 1.2rem;
   }
-
   @media (max-width: 480px) {
-    font-size: 2rem;
-    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
   }
 `;
 
@@ -85,82 +100,7 @@ const CenteredOverlayText = styled.div`
   text-align: center;
 
   @media (max-width: 768px) {
-    font-size: 1.2rem;
-  }
-`;
-
-const TextSection = styled(motion.div)`
-  display: grid;
-  grid-template-columns: 1.5fr 1fr;
-  gap: 4rem;
-  padding: 2rem 0;
-  align-items: start;
-  position: relative;
-  z-index: 2;
-
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-`;
-
-const TextColumn = styled(motion.div)`
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  max-width: 800px;
-  z-index: 3;
-`;
-
-const Title = styled.h2`
-  font-size: 2.5rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
-  color: #ffffff;
-
-  @media (max-width: 768px) {
-    font-size: 2rem;
-  }
-`;
-
-const ImageColumn = styled(motion.div)`
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  position: relative;
-  z-index: 3;
-
-  @media (max-width: 768px) {
-    position: relative;
-  }
-`;
-
-const ProfileImage = styled(motion.img)`
-  width: 100%;
-  max-width: 400px;
-  height: auto;
-  border-radius: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-`;
-
-const SkillsGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  width: 80%;
-  margin: 0 auto;
-  z-index: 3;
-
-  @media (max-width: 1024px) {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem;
-    width: 90%;
-  }
-
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-    width: 95%;
+    font-size: 1rem;
   }
 `;
 
@@ -169,7 +109,7 @@ const AboutGrid = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 550px 500px;
+  grid-template-columns: 550px 1fr;
   gap: 64px;
   position: relative;
   align-items: start;
@@ -180,25 +120,24 @@ const AboutGrid = styled.div`
   line-height: 25.6px;
   opacity: 1;
   z-index: 2;
-  -webkit-font-smoothing: antialiased;
 
   @media (max-width: 1200px) {
-    width: 90%;
+    width: 95%;
     grid-template-columns: 1fr 1fr;
-    gap: 48px;
-  }
-
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr;
     gap: 32px;
-    padding: 24px 0;
+  }
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 16px 0;
   }
 `;
 
 const AboutImageColumn = styled.div`
   position: sticky;
   top: 80px;
-  width: 500px;
+  width: 100%;
+  max-width: 500px;
   height: 700px;
   overflow: hidden;
   opacity: 1;
@@ -208,15 +147,14 @@ const AboutImageColumn = styled.div`
   z-index: 3;
 
   @media (max-width: 1200px) {
-    width: 100%;
+    max-width: 100%;
     height: 600px;
     grid-column: 2;
     grid-row: 1;
     position: relative;
     top: 0;
   }
-
-  @media (max-width: 768px) {
+  @media (max-width: 900px) {
     width: 100%;
     height: 400px;
     grid-column: 1;
@@ -224,9 +162,8 @@ const AboutImageColumn = styled.div`
     position: relative;
     top: 0;
   }
-
   @media (max-width: 480px) {
-    height: 300px;
+    height: 220px;
   }
 `;
 
@@ -242,12 +179,6 @@ const StickyImageWrapper = styled.div`
   opacity: 1;
   visibility: visible;
   z-index: 3;
-
-  @media (max-width: 768px) {
-    position: relative;
-    top: 0;
-    height: 100%;
-  }
 `;
 
 const AboutImage = styled(motion.div)`
@@ -256,7 +187,7 @@ const AboutImage = styled(motion.div)`
   position: relative;
   overflow: hidden;
   border-radius: 24px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
   z-index: 3;
 
   img {
@@ -266,7 +197,6 @@ const AboutImage = styled(motion.div)`
     object-position: center;
     transition: transform 0.6s ease, filter 0.6s ease;
   }
-
   &:hover img {
     transform: scale(1.05);
     filter: brightness(1.1);
@@ -283,10 +213,13 @@ const AboutTextColumn = styled.div`
   padding: 2rem;
   z-index: 3;
 
-  @media (max-width: 768px) {
+  @media (max-width: 900px) {
     grid-column: 1;
     grid-row: 1;
-    padding: 1rem;
+    padding: 1rem 0;
+  }
+  @media (max-width: 480px) {
+    padding: 0.5rem 0;
   }
 `;
 
@@ -302,10 +235,10 @@ const AboutTextContent = styled(motion.div)`
     z-index: 5;
 
     @media (max-width: 768px) {
-      font-size: 2.5rem;
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
     }
   }
-
   p {
     font-size: 1.1rem;
     line-height: 1.8;
@@ -315,129 +248,9 @@ const AboutTextContent = styled(motion.div)`
   }
 `;
 
-// Add new styled components for the contact section
-const ContactSection = styled.section`
-  width: 100%;
-  min-height: 80vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 4rem 0;
-  background: #191c24;
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-`;
-
-const ContactGrid = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  width: 80%;
-  max-width: 1200px;
-  margin: 0 auto;
-  align-items: center;
-  min-height: 600px;
-  z-index: 2;
-
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    width: 90%;
-    min-height: auto;
-  }
-`;
-
-const ContactInfoColumn = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  padding: 2rem;
-  z-index: 3;
-
-  @media (max-width: 768px) {
-    align-items: center;
-    text-align: center;
-  }
-`;
-
-const ContactHeading = styled.h2`
-  font-size: 3.5rem;
-  margin: 0;
-  color: #ffffff;
-  font-weight: bold;
-  z-index: 4;
-
-  @media (max-width: 768px) {
-    font-size: 2.5rem;
-  }
-`;
-
-const ContactText = styled.p`
-  font-size: 1.2rem;
-  line-height: 1.6;
-  color: #ffffff;
-  opacity: 0.9;
-  z-index: 4;
-`;
-
-const IconContainer = styled.div`
-  display: flex;
-  gap: 2rem;
-  margin-top: 1rem;
-  z-index: 4;
-`;
-
-const IconLink = styled.a`
-  color: #ffffff;
-  font-size: 30px;
-  transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.1);
-  z-index: 4;
-
-  &:hover {
-    color: #007bff;
-    transform: translateY(-3px);
-    background: rgba(0, 123, 255, 0.2);
-  }
-`;
-
-const AnimationColumn = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  min-height: 500px;
-  position: relative;
-  z-index: 3;
-  overflow: visible;
-  padding: 2rem;
-  background: transparent;
-
-  @media (max-width: 768px) {
-    min-height: 400px;
-    padding: 1rem;
-  }
-`;
-
-const AnimationWrapper = styled.div`
-  width: 70%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 4;
-`;
-
 const About: React.FC = () => {
   const { scrollYProgress } = useScroll();
-  
+
   // Create scroll-based animations
   const textOpacity = useTransform(scrollYProgress, [0.1, 0.2], [0, 1]);
   const textY = useTransform(scrollYProgress, [0.1, 0.2], [50, 0]);
@@ -456,10 +269,9 @@ In my free time, I enjoy caring for my plants, spending quality time with my fam
 
   const images = [man1, man2, man3, man5, man6, man7];
 
-  // Define content for flip cards
-  
   return (
     <AboutContainer>
+      <GlobalStyle />
       <StickyMenu />
       <Section style={{ background: '#191c24', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
         <AboutGrid>
@@ -515,4 +327,4 @@ In my free time, I enjoy caring for my plants, spending quality time with my fam
   );
 };
 
-export default About; 
+export default About;
