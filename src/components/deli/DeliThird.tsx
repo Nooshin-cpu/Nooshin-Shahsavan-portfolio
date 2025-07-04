@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import strategyImg from "../../assets/deli/deli3.jpg";
+import deli3Img from "../../assets/deli/deli3.jpg";
 
 const Section = styled.section`
   width: 100%;
@@ -127,6 +127,11 @@ const Img = styled.img`
     height: auto;
     min-height: 180px;
   }
+`;
+
+const Dot = styled.button<{ $active: boolean }>`
+  background: ${({ $active }) => $active ? '#6c3483' : 'rgba(0,0,0,0.13)'};
+  // ...
 `;
 
 const DeliThird: React.FC = () => (

@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import deliImage1 from "../../assets/deli/deli10.jpg";
+import deliImage1 from "../../assets/deli/deli11.jpg";
 import deliImage2 from "../../assets/deli/deli11.jpg";
 
 const Section = styled.section`

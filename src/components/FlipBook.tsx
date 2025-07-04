@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import styled from 'styled-components';
-// import HTMLFlipBook from 'react-pageflip';
+import HTMLFlipBook from 'react-pageflip';
 
 // Import all brand book images
 import page1 from '../assets/book/Brand-Book-1.png';
@@ -170,8 +170,7 @@ const FlipBook: React.FC = () => {
         <TestText>FlipBook Component is Working!</TestText>
         <p>Total pages: {pages.length}</p>
         <p>Current page: {currentPage}</p>
-        {/* Temporarily comment out the flipbook to test basic rendering */}
-        {/* <HTMLFlipBook
+        <HTMLFlipBook
           ref={bookRef}
           width={400}
           height={600}
@@ -199,7 +198,7 @@ const FlipBook: React.FC = () => {
               <img src={page} alt={`Page ${index + 1}`} />
             </Page>
           ))}
-        </HTMLFlipBook> */}
+        </HTMLFlipBook>
       </BookContainer>
       
       <NavigationContainer>

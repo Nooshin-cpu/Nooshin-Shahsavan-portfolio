@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import logoImg from "../../assets/deli/deli8.jpg";
+import logoImg from "../../assets/deli/deli11.jpg";
 
 const Section = styled.section`
   width: 100%;
