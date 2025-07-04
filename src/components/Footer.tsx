@@ -26,7 +26,7 @@ const Footer: React.FC = () => {
   return (
     <FooterContainer>
       <FooterText>
-        © 2025 NOOSHIN SHAHSAVN | Designed & developed by me using React 🩵
+        © 2025 NOOSHIN SHAHSAVN | Designed & developed by me using React 🤍
       </FooterText>
     </FooterContainer>
   );
