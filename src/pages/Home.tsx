@@ -250,7 +250,7 @@ const Home: React.FC = () => {
   const hoverTimeout = useRef<number | null>(null);
 
   const roles = ['Graphic designer', 'Brand designer', 'UX/UI designer'];
-  const name = ['NOOSHIN SHAHSAVAN'];
+  const name = ['NOOSHIN SHAHSAVAN!'];
 
   // Define menu items for StickyMenu
   const menuItems = [
