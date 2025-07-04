@@ -5,10 +5,20 @@ import logo2 from '../../assets/sbsimg/s-logo2.mp4';
 import logo3 from '../../assets/sbsimg/s-logo3.png';
 import { motion } from 'framer-motion';
 
-const Section = styled.section`
-  width: 100vw;
+const Wrapper = styled.div`
+  width: 100%;
   min-height: 100vh;
-  background: #fdd7bb;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
+
+const Section = styled.section`
+  width: 100%;
+  min-height: 100vh;
+  background: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -30,7 +40,7 @@ const ContentRow = styled.div`
   @media (max-width: 900px) {
     flex-direction: column;
     align-items: stretch;
-    width: 98vw;
+    width: 100%;
     min-height: 40vw;
     padding: 0 2vw;
   }
@@ -46,7 +56,7 @@ const LeftCol = styled.div`
   align-items: flex-start;
   margin-right: 4vw;
   @media (max-width: 900px) {
-    max-width: 100vw;
+    max-width: 100%;
     margin-right: 0;
     margin-bottom: 4vw;
     min-width: 0;

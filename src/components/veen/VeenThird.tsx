@@ -7,7 +7,7 @@ import logo3 from "../../assets/veen/veenlogo-3.jpg";
 import strategyImg from "../../assets/veen/scatch.jpg";
 
 const FullWrapper = styled.div`
-  width: 100vw;
+  width: 100%;
   min-height: 100vh;
   background: #9ed4d1;
   display: flex;
@@ -19,7 +19,7 @@ const FullWrapper = styled.div`
 `;
 
 const Section = styled.section`
-  width: 100vw;
+  width: 100%;
   min-height: 100vh;
   background: #ffffff;
   display: flex;
@@ -43,7 +43,7 @@ const ContentRow = styled.div`
   @media (max-width: 900px) {
     flex-direction: column;
     align-items: stretch;
-    width: 98vw;
+    width: 100%;
     min-height: 40vw;
     padding: 0 2vw;
   }
@@ -59,7 +59,7 @@ const TextBlock = styled.div`
   align-items: flex-start;
   margin-right: 4vw;
   @media (max-width: 900px) {
-    max-width: 100vw;
+    max-width: 100%;
     margin-right: 0;
     margin-bottom: 4vw;
     min-width: 0;
@@ -132,7 +132,7 @@ const Desc = styled.p`
   margin: 0;
   max-width: 620px;
   @media (max-width: 900px) {
-    max-width: 100vw;
+    max-width: 100%;
   }
 `;
 
@@ -146,8 +146,8 @@ const ImgBlock = styled.div`
   max-width: 480px;
   height: 100%;
   @media (max-width: 900px) {
-    width: 100vw;
-    max-width: 100vw;
+    width: 100%;
+    max-width: 100%;
     height: auto;
     margin-bottom: 3vw;
     min-width: 0;
@@ -163,9 +163,9 @@ const Img = styled.img`
   background: #dddddd;
   display: block;
   @media (max-width: 900px) {
-    width: 100vw;
+    width: 100%;
     height: auto;
-    max-width: 97vw;
+    max-width: 100%;
     max-height: 60vw;
     object-fit: contain;
     background: transparent;

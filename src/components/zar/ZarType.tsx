@@ -2,67 +2,98 @@ import React from "react";
 import styled from "styled-components";
 import typeVideo from "../../assets/zar/zar-type.mp4";
 
-const Section = styled.section`
-  width: 100vw;
+const Wrapper = styled.div`
+  width: 100%;
   min-height: 100vh;
-  background: #000;
+  background: #fff;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  @media (max-width: 900px) {
-    width: 100%;
-    min-height: 60vw;
-    box-sizing: border-box;
-    overflow-x: hidden;
-  }
+  justify-content: center;
+`;
+
+const Section = styled.section`
+  width: 100%;
+  min-height: 100vh;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
 `;
 
 const ContentRow = styled.div`
-  width: 100vw;
-  max-width: 100vw;
+  width: 70vw;
+  max-width: 1200px;
+  min-height: 60vh;
   display: flex;
   flex-direction: row;
-  align-items: flex-end;
-  justify-content: center;
-  margin-top: 6vw;
+  align-items: flex-start;
+  justify-content: space-between;
   @media (max-width: 900px) {
     flex-direction: column;
-    align-items: center;
-    margin-top: 2vw;
+    align-items: stretch;
     width: 100%;
-    max-width: 100vw;
+    min-height: 40vw;
+    padding: 0 2vw;
+  }
+`;
+
+const LeftCol = styled.div`
+  min-width: 320px;
+  max-width: 460px;
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-right: 4vw;
+  @media (max-width: 900px) {
+    max-width: 100%;
+    margin-right: 0;
+    margin-bottom: 4vw;
+    min-width: 0;
+    padding: 0 2vw;
+  }
+`;
+
+const VideoCol = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 320px;
+  flex: 1 1 0;
+  max-width: 480px;
+  height: 100%;
+  justify-content: flex-start;
+  @media (max-width: 900px) {
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 3vw;
+    min-width: 0;
+    padding: 0 2vw;
     box-sizing: border-box;
     overflow-x: hidden;
   }
 `;
 
-const VideoBlock = styled.div`
-  flex: none;
-  width: 66vw;
-  height: 50vw;
-  max-width: 1080px;
-  max-height: 720px;
+const VideoFrame = styled.div`
+  width: 32vw;
+  height: 100%;
+  max-width: 420px;
+  max-height: none;
+  background: #dddddd;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
-  font-size: 4rem;
-  font-weight: bold;
-  margin-right: 1vw;
-  @media (max-width: 1100px) {
-    width: 96vw;
-    height: 60vw;
-    margin-right: 0;
-    max-width: 96vw;
-    max-height: 60vw;
-    align-items: center;
-  }
   @media (max-width: 900px) {
-    width: 100vw;
+    width: 100%;
     height: auto;
-    max-width: 100vw;
-    max-height: 60vw;
-    margin-right: 0;
-    align-items: center;
+    max-width: 100%;
+    max-height: none;
+    background: transparent;
     box-sizing: border-box;
     overflow-x: hidden;
   }
@@ -71,15 +102,14 @@ const VideoBlock = styled.div`
 const StyledVideo = styled.video`
   width: 100%;
   height: 100%;
-  object-fit: fill;
   background: transparent;
   border: none;
   box-shadow: none;
+  object-fit: cover;
   display: block;
-  margin-bottom: 0;
   @media (max-width: 900px) {
-    width: 100vw;
-    max-width: 100vw;
+    width: 100%;
+    max-width: 100%;
     height: auto;
     max-height: 60vw;
     object-fit: contain;
@@ -148,17 +178,19 @@ const BodyText = styled.div`
 const ZarType: React.FC = () => (
   <Section>
     <ContentRow>
-      <VideoBlock>
-        <StyledVideo
-          src={typeVideo}
-          autoPlay
-          loop
-          muted
-          playsInline
-          controls={false}
-          aria-label="Typography video"
-        />
-      </VideoBlock>
+      <VideoCol>
+        <VideoFrame>
+          <StyledVideo
+            src={typeVideo}
+            autoPlay
+            loop
+            muted
+            playsInline
+            controls={false}
+            aria-label="Typography video"
+          />
+        </VideoFrame>
+      </VideoCol>
       <RightTextBlock>
         <TopLabel>TYPE</TopLabel>
         <Title>FACE</Title>

@@ -4,7 +4,7 @@ import strategyImg from "../../assets/zar/moodboard-zar.png";
 import { motion } from 'framer-motion';
 
 const Section = styled.section`
-  width: 100vw;
+  width: 100%;
   background: #fff;
   display: flex;
   align-items: center;
@@ -29,7 +29,7 @@ const ContentRow = styled.div`
   @media (max-width: 900px) {
     flex-direction: column;
     align-items: center;
-    width: 98vw;
+    width: 100%;
     padding: 0 0.5rem;
   }
 `;
@@ -45,7 +45,7 @@ const TextBlock = styled.div`
   margin-right: 4vw;
   box-sizing: border-box;
   @media (max-width: 900px) {
-    max-width: 100vw;
+    max-width: 100%;
     margin-right: 0;
     margin-bottom: 2vw;
     padding: 0 0.5rem;
@@ -69,7 +69,7 @@ const Desc = styled.p`
   margin: 0;
   max-width: 620px;
   @media (max-width: 900px) {
-    max-width: 100vw;
+    max-width: 100%;
   }
 `;
 
@@ -85,8 +85,8 @@ const ImgBlock = styled.div`
   box-sizing: border-box;
   @media (max-width: 900px) {
     align-items: center;
-    width: 100vw;
-    max-width: 100vw;
+    width: 100%;
+    max-width: 100%;
     height: auto;
     margin-bottom: 2vw;
     padding: 0 0.5rem;
@@ -103,8 +103,8 @@ const Img = styled.img`
   border-radius: 12px;
   box-sizing: border-box;
   @media (max-width: 900px) {
-    width: 97vw;
-    max-width: 97vw;
+    width: 100%;
+    max-width: 100%;
     height: auto;
     min-height: 180px;
   }
