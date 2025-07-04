@@ -1,19 +1,31 @@
 import React from "react";
+import afterPng from '../assets/about/after.png';
+import indesignPng from '../assets/about/indesign.png';
+import illustratorPng from '../assets/about/illustrator.png';
+import photoshopPng from '../assets/about/photoshop.png';
+import prePng from '../assets/about/pre.png';
+import figmaPng from '../assets/about/figma.png';
+import reactPng from '../assets/about/react.png';
+import htmlPng from '../assets/about/html.png';
+import cssPng from '../assets/about/css.png';
+import excelPng from '../assets/about/excel.png';
+import wordPng from '../assets/about/word.png';
+import powerPng from '../assets/about/power.png';
 
 // All icon paths relative to /src/assets/about/
 const skillIcons = [
-  { src: "after.png", alt: "After Effects" },      // 1 (adobe)
-  { src: "indesign.png", alt: "InDesign" },        // 2 (adobe)
-  { src: "illustrator.png", alt: "Illustrator" },  // 3 (adobe)
-  { src: "photoshop.png", alt: "Photoshop" },      // 4 (adobe)
-  { src: "pre.png", alt: "Premiere" },             // 5 (adobe)
-  { src: "figma.png", alt: "Figma" },              // 6 (not used in this layout)
-  { src: "react.png", alt: "React" },              // 7 (smallest)
-  { src: "html.png", alt: "HTML" },                // 8 (smallest)
-  { src: "css.png", alt: "CSS" },                  // 9 (smallest)
-  { src: "excel.png", alt: "Excel" },              // 10 (second)
-  { src: "word.png", alt: "Word" },                // 11 (second)
-  { src: "power.png", alt: "PowerPoint" },         // 12 (second)
+  { src: afterPng, alt: "After Effects" },      // 1 (adobe)
+  { src: indesignPng, alt: "InDesign" },        // 2 (adobe)
+  { src: illustratorPng, alt: "Illustrator" },  // 3 (adobe)
+  { src: photoshopPng, alt: "Photoshop" },      // 4 (adobe)
+  { src: prePng, alt: "Premiere" },             // 5 (adobe)
+  { src: figmaPng, alt: "Figma" },              // 6 (not used in this layout)
+  { src: reactPng, alt: "React" },              // 7 (smallest)
+  { src: htmlPng, alt: "HTML" },                // 8 (smallest)
+  { src: cssPng, alt: "CSS" },                  // 9 (smallest)
+  { src: excelPng, alt: "Excel" },              // 10 (second)
+  { src: wordPng, alt: "Word" },                // 11 (second)
+  { src: powerPng, alt: "PowerPoint" },         // 12 (second)
 ];
 
 // Circle groupings
@@ -60,7 +72,7 @@ const SkillBubbles: React.FC = () => {
         >
           <div className="bubble">
             <img
-              src={`/src/assets/about/${skillIcons[idx].src}`}
+              src={skillIcons[idx].src}
               alt={skillIcons[idx].alt}
               className="bubble-img"
               draggable={false}
@@ -82,7 +94,7 @@ const SkillBubbles: React.FC = () => {
         >
           <div className="bubble">
             <img
-              src={`/src/assets/about/${skillIcons[idx].src}`}
+              src={skillIcons[idx].src}
               alt={skillIcons[idx].alt}
               className="bubble-img"
               draggable={false}
@@ -104,7 +116,7 @@ const SkillBubbles: React.FC = () => {
         >
           <div className="bubble">
             <img
-              src={`/src/assets/about/${skillIcons[idx].src}`}
+              src={skillIcons[idx].src}
               alt={skillIcons[idx].alt}
               className="bubble-img"
               draggable={false}
