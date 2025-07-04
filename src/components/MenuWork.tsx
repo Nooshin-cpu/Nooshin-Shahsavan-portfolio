@@ -86,52 +86,7 @@ const MenuWork: React.FC = () => {
   return (
     <div className="menu-work-container">
       <h2 className="menu-work-title">Choose Next work to see</h2>
-      {/* Hamburger button for mobile */}
-      <button
-        className={`menu-hamburger${open ? ' open' : ''}`}
-        aria-label={open ? 'Close menu' : 'Open menu'}
-        aria-expanded={open}
-        aria-controls="menu-work-overlay"
-        onClick={() => setOpen((v) => !v)}
-      >
-        <span className="hamburger-bar" />
-        <span className="hamburger-bar" />
-        <span className="hamburger-bar" />
-      </button>
-      {/* Overlay menu for mobile */}
-      <div
-        id="menu-work-overlay"
-        className={`menu-work-overlay${open ? ' show' : ''}`}
-        tabIndex={-1}
-        aria-hidden={!open}
-        onClick={() => setOpen(false)}
-      >
-        <div className="menu-work-overlay-content" onClick={e => e.stopPropagation()}>
-          <div className="menu-work-overlay-scroll-fade">
-            <div className="menu-work-grid">
-              {orderedItems.map((item, idx) => (
-                <div
-                  key={item.link}
-                  className={`menu-work-cube${idx === 0 ? ' active' : ''}`}
-                  onClick={() => handleCubeClick(item.link)}
-                  tabIndex={0}
-                  role="button"
-                  aria-label={`Go to ${item.alt}`}
-                >
-                  <div className="menu-work-img-wrapper">
-                    <img src={item.image} alt={item.alt} className="menu-work-img" />
-                    <div className="menu-work-desc">
-                      <span>{item.description}</span>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-      {/* Desktop grid (always visible) */}
-      <div className="menu-work-grid desktop-only">
+      <div className="menu-work-grid">
         {orderedItems.map((item, idx) => (
           <div
             key={item.link}
