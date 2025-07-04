@@ -170,8 +170,9 @@ const DotGrid = forwardRef<{ triggerShockwave: (pageX: number, pageY: number) =>
     let lastTime = 0;
     let lastX = 0;
     let lastY = 0;
+    let throttleTimeout: ReturnType<typeof setTimeout> | null = null;
 
-    const onMove = (e: MouseEvent) => {
+    const handleMove = (e: MouseEvent) => {
       const now = performance.now();
       const dt = now - (lastTime || now);
       const dx = e.pageX - lastX;
@@ -228,6 +229,15 @@ const DotGrid = forwardRef<{ triggerShockwave: (pageX: number, pageY: number) =>
       });
     };
 
+    // Throttle mousemove handler
+    const onMove = (e: MouseEvent) => {
+      if (throttleTimeout) return;
+      throttleTimeout = setTimeout(() => {
+        handleMove(e);
+        throttleTimeout = null;
+      }, 40); // 40ms throttle
+    };
+
     const onClick = (e: MouseEvent) => {
       handleShockwave(e.pageX, e.pageY);
     };
@@ -237,6 +247,7 @@ const DotGrid = forwardRef<{ triggerShockwave: (pageX: number, pageY: number) =>
     return () => {
       window.removeEventListener("mousemove", onMove);
       window.removeEventListener("click", onClick);
+      if (throttleTimeout) clearTimeout(throttleTimeout);
     };
   }, [
     baseColor,
