@@ -270,6 +270,49 @@
   .menu-work-title {
     margin-top: 60px;
   }
+  .menu-work-overlay .menu-work-grid {
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    gap: 20px;
+    justify-content: flex-start;
+    padding: 0 12px 12px 12px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .menu-work-overlay .menu-work-grid::-webkit-scrollbar {
+    display: none;
+  }
+  .menu-work-overlay .menu-work-cube {
+    min-width: 96px;
+    width: 96px;
+    height: 96px;
+    flex: 0 0 auto;
+  }
+  .menu-work-overlay-scroll-fade {
+    position: relative;
+  }
+  .menu-work-overlay-scroll-fade::before,
+  .menu-work-overlay-scroll-fade::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 32px;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+    transition: opacity 0.2s;
+  }
+  .menu-work-overlay-scroll-fade::before {
+    left: 0;
+    background: linear-gradient(to right, #000 80%, transparent 100%);
+  }
+  .menu-work-overlay-scroll-fade::after {
+    right: 0;
+    background: linear-gradient(to left, #000 80%, transparent 100%);
+  }
 }
 
 /* Hide overlay and hamburger on desktop */

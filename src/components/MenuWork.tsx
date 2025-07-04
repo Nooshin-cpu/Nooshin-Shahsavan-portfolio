@@ -107,24 +107,26 @@ const MenuWork: React.FC = () => {
         onClick={() => setOpen(false)}
       >
         <div className="menu-work-overlay-content" onClick={e => e.stopPropagation()}>
-          <div className="menu-work-grid">
-            {orderedItems.map((item, idx) => (
-              <div
-                key={item.link}
-                className={`menu-work-cube${idx === 0 ? ' active' : ''}`}
-                onClick={() => handleCubeClick(item.link)}
-                tabIndex={0}
-                role="button"
-                aria-label={`Go to ${item.alt}`}
-              >
-                <div className="menu-work-img-wrapper">
-                  <img src={item.image} alt={item.alt} className="menu-work-img" />
-                  <div className="menu-work-desc">
-                    <span>{item.description}</span>
+          <div className="menu-work-overlay-scroll-fade">
+            <div className="menu-work-grid">
+              {orderedItems.map((item, idx) => (
+                <div
+                  key={item.link}
+                  className={`menu-work-cube${idx === 0 ? ' active' : ''}`}
+                  onClick={() => handleCubeClick(item.link)}
+                  tabIndex={0}
+                  role="button"
+                  aria-label={`Go to ${item.alt}`}
+                >
+                  <div className="menu-work-img-wrapper">
+                    <img src={item.image} alt={item.alt} className="menu-work-img" />
+                    <div className="menu-work-desc">
+                      <span>{item.description}</span>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </div>
