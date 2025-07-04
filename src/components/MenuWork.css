@@ -25,6 +25,38 @@
   }
   
   @media (max-width: 900px) {
+    .menuwork-horizontal-scroll {
+      width: 100%;
+      overflow-x: auto;
+      overflow-y: hidden;
+      -webkit-overflow-scrolling: touch;
+    }
+    .menuwork-horizontal-scroll .menu-work-grid {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      overflow-y: hidden;
+      white-space: nowrap;
+      gap: 20px;
+      justify-content: flex-start;
+      align-items: stretch;
+      width: auto;
+      min-width: 100%;
+      max-width: none;
+      padding: 0 12px 12px 12px;
+      box-sizing: border-box;
+      scrollbar-width: none;
+    }
+    .menuwork-horizontal-scroll .menu-work-grid::-webkit-scrollbar {
+      display: none;
+    }
+    .menuwork-horizontal-scroll .menu-work-cube {
+      min-width: 96px;
+      width: 96px;
+      height: 96px;
+      flex: 0 0 auto;
+    }
     .menu-work-overlay-content,
     .menu-work-overlay-scroll-fade {
       width: 100vw;

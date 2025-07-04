@@ -61,7 +61,9 @@ const Sbs: React.FC = () => (
     <SbsMock10/>
     <SbsMock12/>
     {/* You can add more S.B.S. sections/components below */}
-    <MenuWork />
+    <div className="menuwork-horizontal-scroll">
+      <MenuWork />
+    </div>
   </MainContainer>
 );
 
