@@ -12,9 +12,9 @@ import Zarmock3 from "../../components/zar/Zarmock3";
 import Zarmock4 from "../../components/zar/Zarmock4";
 import ZarMock5 from "../../components/zar/ZarMock5";
 import ZarStory from "../../components/zar/ZarStory";
-import ZarMock6 from "../../components/zar/ZarMock6";
-import ZarMock7 from "../../components/zar/ZarMock7";
-import ZarMock8 from "../../components/zar/ZarMock8";
+import ZarMock6 from "../../components/zar/Zarmock6";
+import ZarMock7 from "../../components/zar/Zarmock7";
+import ZarMock8 from "../../components/zar/Zarmock8";
 import ZarLogoP from "../../components/zar/ZarLogoP";
 import ProblemZar from "../../components/zar/ProblemZar";
 
