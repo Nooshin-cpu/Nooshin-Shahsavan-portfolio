@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import deli3Img from "../../assets/deli/deli3.jpg";
+import deli13Img from "../../assets/deli/deli13.jpg";
+
 
 const Section = styled.section`
   width: 100%;
@@ -149,7 +150,7 @@ const DeliThird: React.FC = () => (
         </MainTextBlock>
       </TextBlock>
       <ImgBlock>
-        <Img src={strategyImg} alt="Brand Strategy Visual" />
+        <Img src={deli13Img} alt="Brand Strategy Visual" />
       </ImgBlock>
     </ContentRow>
   </Section>

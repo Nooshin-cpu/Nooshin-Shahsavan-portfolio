@@ -36,6 +36,7 @@
       justify-content: unset;
       position: relative;
       padding: 0;
+      margin-bottom: 32px;
     }
     .menuwork-horizontal-scroll {
       width: 100%;
