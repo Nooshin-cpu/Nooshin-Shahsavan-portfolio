@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import video from "../../assets/deli/Story-1-deli.mp4";
+import video from "../../assets/deli/story-1-deli.mp4";
 
 const Section = styled.section`
   width: 100vw;
