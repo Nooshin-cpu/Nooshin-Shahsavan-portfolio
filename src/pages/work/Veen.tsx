@@ -13,6 +13,7 @@ import VeenMuck5 from '../../components/veen/VeenMuck5';
 import VeenMuck6 from '../../components/veen/VeenMuck6';
 import VeenMuck7 from '../../components/veen/VeenMuck7';
 import VeenLogoP from '../../components/veen/VeenLogoP';
+import TestFlipBook from '../../components/TestFlipBook';
 
 import ProblemVeen from '../../components/veen/ProblemVeen';
 import MenuWork from '../../components/MenuWork';
@@ -35,6 +36,7 @@ const Veen: React.FC = () => {
       <VeenMuck3/>
       <VeenMuck4/>
       <VeenMuck7/>
+      <TestFlipBook />
 
       <MenuWork />
     </div>
