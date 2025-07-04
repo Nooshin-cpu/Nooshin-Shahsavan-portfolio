@@ -131,6 +131,7 @@ const SkillBubbles: React.FC = () => {
   height: 120vh;
   min-height: 1100px;
   overflow: hidden;
+  overflow-x: hidden;
   background: #191c24;
   display: flex;
   justify-content: center;
@@ -189,14 +190,20 @@ const SkillBubbles: React.FC = () => {
 .orbit-outer {
   width: 680px; height: 680px;
   border-width: 3.2px;
+  max-width: 90vw;
+  max-height: 90vw;
 }
 .orbit-middle {
   width: 440px; height: 440px;
   border-width: 2.2px;
+  max-width: 70vw;
+  max-height: 70vw;
 }
 .orbit-inner {
   width: 220px; height: 220px;
   border-width: 1.6px;
+  max-width: 50vw;
+  max-height: 50vw;
 }
 @media (max-width: 900px) {
   .orbit-outer { width: 420px; height: 420px; }
