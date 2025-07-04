@@ -1,6 +1,13 @@
 import React, { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import './MenuWork.css';
+import sbsImg from '../assets/sbsimg/s-88.png';
+import deliImg from '../assets/deli/deli9.jpg';
+import veenImg from '../assets/veen/mveen5.png';
+import zarImg from '../assets/zar/box-2.jpg';
+import workdayImg from '../assets/work/workday-phone.png';
+import foodImg from '../assets/food/foodhome.png';
+import funImg from '../assets/fun/funhome.jpg';
 
 interface WorkItem {
   image: string;
@@ -11,43 +18,43 @@ interface WorkItem {
 
 const workItems: WorkItem[] = [
   {
-    image: '/src/assets/sbsimg/s-88.png',
+    image: sbsImg,
     link: '/work/sbs',
     description: 'SBS',
     alt: 'SBS Work',
   },
   {
-    image: '/src/assets/deli/deli9.jpg',
+    image: deliImg,
     link: '/work/delicato',
     description: 'Delicato',
     alt: 'Deli Project',
   },
   {
-    image: '/src/assets/veen/mveen5.png',
+    image: veenImg,
     link: '/work/veen',
     description: 'Veen',
     alt: 'Veen Shop',
   },
   {
-    image: '/src/assets/zar/box-2.jpg',
+    image: zarImg,
     link: '/work/zar',
     description: 'Zar',
     alt: 'Zar Gallery',
   },
   {
-    image: '/src/assets/work/workday-phone.png',
+    image: workdayImg,
     link: '/work/workday',
     description: 'Workday App',
     alt: 'Workday App',
   },
   {
-    image: '/src/assets/food/foodhome.png',
+    image: foodImg,
     link: '/work/UX-UI-2',
     description: 'SaveFood App',
     alt: 'saveFood App',
   },
   {
-    image: '/src/assets/fun/funhome.jpg',
+    image: funImg,
     link: '/work/FUN PROJECT',
     description: 'FUN PROJ',
     alt: 'FUN PROJECTS',

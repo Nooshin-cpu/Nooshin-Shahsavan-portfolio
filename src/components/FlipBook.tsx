@@ -49,23 +49,26 @@ const Container = styled.div`
   min-height: 100vh;
   padding: 2rem;
   background: #f5f5f5;
-  border: 2px solid red; /* Debug border */
+  /* border: 2px solid red; */
 `;
 
 const BookContainer = styled.div`
   margin-bottom: 2rem;
-  border: 2px solid blue; /* Debug border */
-  padding: 2rem;
-  background: white;
-  
-  @media (max-width: 768px) {
-    transform: scale(0.8);
-    margin-bottom: 1rem;
+  /* border: 2px solid blue; */
+  padding: 2rem 0;
+  /* background: white; */
+  width: 600px;
+  max-width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media (max-width: 900px) {
+    width: 98vw;
+    padding: 0.5rem 0;
   }
-  
-  @media (max-width: 480px) {
-    transform: scale(0.6);
-    margin-bottom: 0.5rem;
+  @media (max-width: 600px) {
+    width: 99vw;
+    padding: 0.25rem 0;
   }
 `;
 
@@ -113,17 +116,18 @@ const PageNumber = styled.span`
 
 const Page = styled.div`
   width: 100%;
-  height: 100%;
+  aspect-ratio: 1 / 1;
   display: flex;
   align-items: center;
   justify-content: center;
   background: white;
   border: 1px solid #ddd;
-  
+
   img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
+    display: block;
   }
 `;
 
@@ -166,18 +170,19 @@ const FlipBook: React.FC = () => {
 
   return (
     <Container>
+      <h2 style={{marginBottom: '1rem', fontWeight: 700, fontSize: '2.2rem', color: '#222', letterSpacing: '-1px'}}>Brand Book</h2>
       <BookContainer>
-        <TestText>FlipBook Component is Working!</TestText>
-        <p>Total pages: {pages.length}</p>
-        <p>Current page: {currentPage}</p>
+        {/* <TestText>FlipBook Component is Working!</TestText> */}
+        <p style={{display: 'none'}}>Total pages: {pages.length}</p>
+        <p style={{display: 'none'}}>Current page: {currentPage}</p>
         <HTMLFlipBook
           ref={bookRef}
-          width={400}
-          height={600}
+          width={580}
+          height={580}
           size="stretch"
-          minWidth={300}
-          maxWidth={500}
-          minHeight={400}
+          minWidth={320}
+          maxWidth={700}
+          minHeight={320}
           maxHeight={700}
           showCover={true}
           flippingTime={1000}
@@ -186,7 +191,8 @@ const FlipBook: React.FC = () => {
           drawShadow={true}
           className="demo-book"
           style={{
-            margin: '0 auto'
+            margin: '0 auto',
+            display: 'block',
           }}
           onFlip={handlePageChange}
           onInit={() => {
