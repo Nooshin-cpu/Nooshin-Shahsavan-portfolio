@@ -20,36 +20,23 @@ import SbsLogoP from '../../components/SetbysetiComs/SbsLogoP';
 import MenuWork from '../../components/MenuWork';
 import '../../components/MenuWork.css';
 
-
-
 import SbsMock8 from '../../components/SetbysetiComs/SbsMock8';
 import SbsMock9 from '../../components/SetbysetiComs/SbsMock9';
 import SbsMock10 from '../../components/SetbysetiComs/SbsMock10';
 import SbsMock12 from '../../components/SetbysetiComs/SbsMock12';
 
-
-const MainContainer = styled.div`
-  width: 100%;
-  min-height: 100vh;
-  background: #fff;
-`;
-
-const Sbs: React.FC = () => (
-  <>
-    <MainContainer>
+const Sbs: React.FC = () => {
+  return (
+    <div>
       <SbsFirst />
       <ProblemSbs />
       <SbsSecond /> 
       <SbsLogoP /> 
-
       <SbsColor /> 
       <SbsType /> 
       <SbsIll/>
       <SbsIllustration />   
-      
       <SbsMock1/> 
-      
-      
       <SbsMock2/>
       <SbsMock3/>
       <SbsMock4/>
@@ -61,12 +48,9 @@ const Sbs: React.FC = () => (
       <SbsMock9/>
       <SbsMock10/>
       <SbsMock12/>
-      {/* You can add more S.B.S. sections/components below */}
-    </MainContainer>
-    <div className="menuwork-horizontal-scroll">
       <MenuWork />
     </div>
-  </>
-);
+  );
+};
 
 export default Sbs;

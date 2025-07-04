@@ -69,20 +69,12 @@
       height: 96px;
       flex: 0 0 auto;
     }
-    .menu-work-overlay-content,
-    .menu-work-overlay-scroll-fade {
-      width: 100vw;
-      max-width: 100vw;
-      overflow: hidden;
-      box-sizing: border-box;
-    }
-    .menu-work-overlay .menu-work-grid,
     .menu-work-grid {
-      width: 100%;
-      max-width: 100%;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
       overflow-x: auto;
       overflow-y: hidden;
-      flex-wrap: nowrap;
       white-space: nowrap;
       gap: 20px;
       justify-content: flex-start;
@@ -92,11 +84,9 @@
       scrollbar-width: none;
       box-sizing: border-box;
     }
-    .menu-work-overlay .menu-work-grid::-webkit-scrollbar,
     .menu-work-grid::-webkit-scrollbar {
       display: none;
     }
-    .menu-work-overlay .menu-work-cube,
     .menu-work-cube {
       min-width: 96px;
       width: 96px;
