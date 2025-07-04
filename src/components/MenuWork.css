@@ -25,6 +25,18 @@
   }
   
   @media (max-width: 900px) {
+    .menu-work-container {
+      width: 100%;
+      max-width: 100%;
+      min-height: unset;
+      background: #000;
+      display: block;
+      flex-direction: unset;
+      align-items: unset;
+      justify-content: unset;
+      position: relative;
+      padding: 0;
+    }
     .menuwork-horizontal-scroll {
       width: 100%;
       overflow-x: auto;

@@ -35,36 +35,38 @@ const MainContainer = styled.div`
 `;
 
 const Sbs: React.FC = () => (
-  <MainContainer>
-    <SbsFirst />
-    <ProblemSbs />
-    <SbsSecond /> 
-    <SbsLogoP /> 
+  <>
+    <MainContainer>
+      <SbsFirst />
+      <ProblemSbs />
+      <SbsSecond /> 
+      <SbsLogoP /> 
 
-    <SbsColor /> 
-    <SbsType /> 
-    <SbsIll/>
-    <SbsIllustration />   
-    
-    <SbsMock1/> 
-    
-    
-    <SbsMock2/>
-    <SbsMock3/>
-    <SbsMock4/>
-    <SbsMock5/>
-    <SbsMock6/>
-    <SbsMock7/>
-    <SbsMock71/>
-    <SbsMock8/>
-    <SbsMock9/>
-    <SbsMock10/>
-    <SbsMock12/>
-    {/* You can add more S.B.S. sections/components below */}
+      <SbsColor /> 
+      <SbsType /> 
+      <SbsIll/>
+      <SbsIllustration />   
+      
+      <SbsMock1/> 
+      
+      
+      <SbsMock2/>
+      <SbsMock3/>
+      <SbsMock4/>
+      <SbsMock5/>
+      <SbsMock6/>
+      <SbsMock7/>
+      <SbsMock71/>
+      <SbsMock8/>
+      <SbsMock9/>
+      <SbsMock10/>
+      <SbsMock12/>
+      {/* You can add more S.B.S. sections/components below */}
+    </MainContainer>
     <div className="menuwork-horizontal-scroll">
       <MenuWork />
     </div>
-  </MainContainer>
+  </>
 );
 
 export default Sbs;
