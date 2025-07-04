@@ -3,16 +3,14 @@ import styled from "styled-components";
 import pinkiVideo from "../../assets/sbsimg/pinki.mp4";
 import { motion } from 'framer-motion';
 
-const FullWrapper = styled.div`
-  width: 100vw;
+const Wrapper = styled.div`
+  width: 100%;
   min-height: 100vh;
-  background: #ffffff;
+  background: #fff;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  @media (max-width: 900px) {
-    min-height: 60vw;
-    padding: 0;
-  }
 `;
 
 const Section = styled.section`
@@ -192,7 +190,7 @@ const InfoText = styled.div`
 `;
 
 const SbsFirst: React.FC = () => (
-  <FullWrapper>
+  <Wrapper>
     <Section>
       <ContentRow>
         {/* Left Labels */}
@@ -269,7 +267,7 @@ For this project, I developed a complete visual identity system and designed a c
         </VideoCol>
       </ContentRow>
     </Section>
-  </FullWrapper>
+  </Wrapper>
 );
 
 export default SbsFirst;

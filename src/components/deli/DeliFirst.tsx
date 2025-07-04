@@ -3,13 +3,14 @@ import styled from "styled-components";
 import story from "../../assets/deli/deli1.mp4";
 import { motion } from 'framer-motion';
 
-const FullWrapper = styled.div`
+const Wrapper = styled.div`
   width: 100%;
-  height: 100vh;
-  background: rgb(255, 255, 255);
+  min-height: 100vh;
+  background: #fff;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  box-sizing: border-box;
 `;
 
 const Section = styled.section`
@@ -169,7 +170,7 @@ const InfoText = styled.div`
 `;
 
 const DeliFirst: React.FC = () => (
-  <FullWrapper>
+  <Wrapper>
     <Section>
       <ContentRow>
         {/* Left Labels */}
@@ -244,7 +245,7 @@ const DeliFirst: React.FC = () => (
         </VideoCol>
       </ContentRow>
     </Section>
-  </FullWrapper>
+  </Wrapper>
 );
 
 export default DeliFirst; 

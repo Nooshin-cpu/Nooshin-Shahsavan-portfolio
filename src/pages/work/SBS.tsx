@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 import { motion } from 'framer-motion';
 import SbsFirst from '../../components/SetbysetiComs/SbsFirst';
 import ProblemSbs from '../../components/SetbysetiComs/ProblemSbs';
@@ -25,9 +25,25 @@ import SbsMock9 from '../../components/SetbysetiComs/SbsMock9';
 import SbsMock10 from '../../components/SetbysetiComs/SbsMock10';
 import SbsMock12 from '../../components/SetbysetiComs/SbsMock12';
 
+const PageBg = styled.div`
+  min-height: 100vh;
+  width: 100vw;
+  background: #fff;
+  transition: background 0.2s;
+  overflow-x: hidden;
+`;
+
+const GlobalStyle = createGlobalStyle`
+  body {
+    background: #fff;
+    overflow-x: hidden;
+  }
+`;
+
 const Sbs: React.FC = () => {
   return (
-    <div>
+    <PageBg>
+      <GlobalStyle />
       <SbsFirst />
       <ProblemSbs />
       <SbsSecond /> 
@@ -49,7 +65,7 @@ const Sbs: React.FC = () => {
       <SbsMock10/>
       <SbsMock12/>
       <MenuWork />
-    </div>
+    </PageBg>
   );
 };
 

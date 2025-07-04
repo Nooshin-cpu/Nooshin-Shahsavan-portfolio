@@ -3,13 +3,14 @@ import styled from "styled-components";
 import story from "../../assets/zar/zar-logoline.mp4";
 import { motion } from 'framer-motion';
 
-const FullWrapper = styled.div`
-  width: 100vw;
-  height:100vh;
-  background: rgb(255, 255, 255);
+const Wrapper = styled.div`
+  width: 100%;
+  min-height: 100vh;
+  background: #fff;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  box-sizing: border-box;
 `;
 
 const Section = styled.section`
@@ -179,7 +180,7 @@ const InfoText = styled.div`
 `;
 
 const ZarFirst: React.FC = () => (
-  <FullWrapper>
+  <Wrapper>
     <Section>
       <ContentRow>
         {/* Left Labels */}
@@ -252,7 +253,7 @@ From logo and typography to packaging and illustration, every design decision wa
         </VideoCol>
       </ContentRow>
     </Section>
-  </FullWrapper>
+  </Wrapper>
 );
 
 export default ZarFirst;

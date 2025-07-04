@@ -20,9 +20,26 @@ import ProblemZar from "../../components/zar/ProblemZar";
 
 import MenuWork from '../../components/MenuWork';
 import '../../components/MenuWork.css';
+import styled, { createGlobalStyle } from 'styled-components';
+
+const PageBg = styled.div`
+  min-height: 100vh;
+  width: 100vw;
+  background: #fff;
+  transition: background 0.2s;
+  overflow-x: hidden;
+`;
+
+const GlobalStyle = createGlobalStyle`
+  body {
+    background: #fff;
+    overflow-x: hidden;
+  }
+`;
 
 const Zar: React.FC = () => (
-  <div>
+  <PageBg>
+    <GlobalStyle />
     <ZarFirst />
     <ZarSecond/>
     <ProblemZar />
@@ -43,7 +60,7 @@ const Zar: React.FC = () => (
     <ZarMock8/>
     
     <MenuWork />
-  </div>
+  </PageBg>
 );
 
 export default Zar;

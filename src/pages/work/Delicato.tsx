@@ -1,5 +1,5 @@
 import React from "react";
-import styled from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 import { motion } from 'framer-motion';
 import DeliFirst from "../../components/deli/DeliFirst";
 import DeliSecond from "../../components/deli/DeliSecond";
@@ -26,10 +26,25 @@ import Deli15 from '../../components/deli/Deli15';
 import MenuWork from '../../components/MenuWork';
 import '../../components/MenuWork.css';
 
+const PageBg = styled.div`
+  min-height: 100vh;
+  width: 100vw;
+  background: #fff;
+  transition: background 0.2s;
+  overflow-x: hidden;
+`;
+
+const GlobalStyle = createGlobalStyle`
+  body {
+    background: #fff;
+    overflow-x: hidden;
+  }
+`;
 
 const Delicato: React.FC = () => {
   return (
-    <>
+    <PageBg>
+      <GlobalStyle />
       <DeliFirst />
       <DeliSecond />
       <DeliThird />
@@ -51,7 +66,7 @@ const Delicato: React.FC = () => {
       <Deli15 />
       
       <MenuWork />
-    </>
+    </PageBg>
   );
 };
 

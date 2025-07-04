@@ -4,7 +4,7 @@ import story from "../../assets/veen/story.mp4";
 import { motion } from 'framer-motion';
 
 const FullWrapper = styled.div`
-  width: 100vw;
+  width: 100%;
   min-height: 100vh;
   background: #9ed4d1;
   display: flex;
@@ -16,7 +16,7 @@ const FullWrapper = styled.div`
 `;
 
 const Section = styled.section`
-  width: 100vw;
+  width: 100%;
   min-height: 100vh;
   background: #9ed4d1;
   display: flex;
@@ -40,7 +40,7 @@ const ContentRow = styled.div`
   @media (max-width: 900px) {
     flex-direction: column;
     align-items: stretch;
-    width: 98vw;
+    width: 100%;
     min-height: 40vw;
     padding: 0 2vw;
   }
