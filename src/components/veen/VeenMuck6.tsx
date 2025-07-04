@@ -46,17 +46,38 @@ const VideoBlock = styled.div`
     max-height: 60vw;
     align-items: center;
   }
+  @media (max-width: 900px) {
+    width: 100vw;
+    height: auto;
+    max-width: 100vw;
+    max-height: 60vw;
+    margin-right: 0;
+    align-items: center;
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
 `;
 
 const StyledVideo = styled.video`
-  width: 70%;
-  height: 70%;
+  width: 100%;
+  height: 100%;
   object-fit: fill;
   background: transparent;
   border: none;
   box-shadow: none;
   display: block;
   margin-bottom: 0;
+  @media (max-width: 900px) {
+    width: 100vw;
+    max-width: 100vw;
+    height: auto;
+    max-height: 60vw;
+    object-fit: contain;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
 `;
 
 const RightTextBlock = styled.div`

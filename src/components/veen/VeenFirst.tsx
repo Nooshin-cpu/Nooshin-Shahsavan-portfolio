@@ -130,12 +130,14 @@ const VideoCol = styled.div`
   justify-content: flex-start;
   @media (max-width: 900px) {
     align-items: center;
-    width: 100vw;
+    width: 100%;
     max-width: 100vw;
     height: auto;
     margin-bottom: 3vw;
     min-width: 0;
     padding: 0 2vw;
+    box-sizing: border-box;
+    overflow-x: hidden;
   }
 `;
 
@@ -149,11 +151,13 @@ const VideoFrame = styled.div`
   align-items: center;
   justify-content: center;
   @media (max-width: 900px) {
-    width: 87vw;
-    height: 70vw;
-    max-width: 97vw;
+    width: 100vw;
+    height: auto;
+    max-width: 100vw;
     max-height: none;
     background: transparent;
+    box-sizing: border-box;
+    overflow-x: hidden;
   }
 `;
 
@@ -167,9 +171,14 @@ const StyledVideo = styled.video`
   display: block;
   @media (max-width: 900px) {
     width: 100vw;
+    max-width: 100vw;
     height: auto;
     max-height: 60vw;
     object-fit: contain;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
   }
 `;
 

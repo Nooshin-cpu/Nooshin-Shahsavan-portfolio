@@ -10,10 +10,13 @@ const Section = styled.section`
   justify-content: center;
   align-items: center;
   @media (max-width: 900px) {
+    width: 100%;
     height: auto;
     min-height: 60vw;
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
   }
 `;
 
@@ -22,11 +25,13 @@ const VideoContainer = styled.div`
   height: 100vh;
   overflow: hidden;
   @media (max-width: 900px) {
-    width: 100vw;
+    width: 100%;
     height: auto;
     min-height: 40vw;
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
   }
 `;
 
@@ -37,12 +42,14 @@ const StyledVideo = styled.video`
   display: block;
   @media (max-width: 900px) {
     width: 100vw;
-    height: auto;
     max-width: 100vw;
+    height: auto;
     max-height: 70vh;
     object-fit: contain;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
   }
 `;
 

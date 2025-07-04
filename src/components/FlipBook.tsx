@@ -54,9 +54,7 @@ const Container = styled.div`
 
 const BookContainer = styled.div`
   margin-bottom: 2rem;
-  /* border: 2px solid blue; */
   padding: 2rem 0;
-  /* background: white; */
   width: 600px;
   max-width: 100vw;
   display: flex;
@@ -64,11 +62,17 @@ const BookContainer = styled.div`
   align-items: center;
   @media (max-width: 900px) {
     width: 98vw;
+    max-width: 98vw;
     padding: 0.5rem 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
   }
   @media (max-width: 600px) {
     width: 99vw;
+    max-width: 99vw;
     padding: 0.25rem 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
   }
 `;
 
@@ -177,12 +181,12 @@ const FlipBook: React.FC = () => {
         <p style={{display: 'none'}}>Current page: {currentPage}</p>
         <HTMLFlipBook
           ref={bookRef}
-          width={580}
-          height={580}
+          width={window.innerWidth < 600 ? 320 : window.innerWidth < 900 ? 400 : 580}
+          height={window.innerWidth < 600 ? 320 : window.innerWidth < 900 ? 400 : 580}
           size="stretch"
-          minWidth={320}
+          minWidth={200}
           maxWidth={700}
-          minHeight={320}
+          minHeight={200}
           maxHeight={700}
           showCover={true}
           flippingTime={1000}
@@ -193,6 +197,10 @@ const FlipBook: React.FC = () => {
           style={{
             margin: '0 auto',
             display: 'block',
+            width: '100%',
+            maxWidth: '100vw',
+            boxSizing: 'border-box',
+            overflowX: 'hidden',
           }}
           onFlip={handlePageChange}
           onInit={() => {
