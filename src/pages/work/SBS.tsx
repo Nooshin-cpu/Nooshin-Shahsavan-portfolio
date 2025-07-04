@@ -29,7 +29,7 @@ import SbsMock12 from '../../components/SetbysetiComs/SbsMock12';
 
 
 const MainContainer = styled.div`
-  width: 100vw;
+  width: 100%;
   min-height: 100vh;
   background: #fff;
 `;
