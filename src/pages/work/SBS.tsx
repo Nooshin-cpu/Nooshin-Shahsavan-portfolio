@@ -19,23 +19,37 @@ import SbsIll from '../../components/SetbysetiComs/SbsIll';
 import SbsLogoP from '../../components/SetbysetiComs/SbsLogoP';
 import MenuWork from '../../components/MenuWork';
 import '../../components/MenuWork.css';
-
 import SbsMock8 from '../../components/SetbysetiComs/SbsMock8';
 import SbsMock9 from '../../components/SetbysetiComs/SbsMock9';
 import SbsMock10 from '../../components/SetbysetiComs/SbsMock10';
 import SbsMock12 from '../../components/SetbysetiComs/SbsMock12';
 
+// Responsive PageBg
 const PageBg = styled.div`
   min-height: 100vh;
   width: 100vw;
   background: #fff;
   transition: background 0.2s;
   overflow-x: hidden;
+  box-sizing: border-box;
+  /* Optional: Add some horizontal padding on mobile */
+  @media (max-width: 600px) {
+    padding-left: 8px;
+    padding-right: 8px;
+    width: 100%;
+  }
 `;
 
 const GlobalStyle = createGlobalStyle`
   body {
     background: #fff;
+    overflow-x: hidden !important; /* Stronger override */
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Optional: Prevent horizontal scroll on html element */
+  html {
     overflow-x: hidden;
   }
 `;
