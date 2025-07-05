@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
-// Import only the specific images for the carousel
-import img1 from '../../assets/deli/d1.png';
-import img2 from '../../assets/deli/d2.png';
-import img3 from '../../assets/deli/d3.png';
-import img4 from '../../assets/deli/d4.png';
-
-const images = [img1, img2, img3, img4];
+// Use public folder path for better production compatibility
+const images: string[] = [
+  '/assets/deli/d1.png',
+  '/assets/deli/d2.png', 
+  '/assets/deli/d3.png',
+  '/assets/deli/d4.png'
+];
 
 const BG = styled.div`
   width: 100vw;
@@ -155,8 +155,8 @@ function DeliLogoP() {
   };
 
   // Get visible images in a circular way
-  const getVisibleImages = () => {
-    let arr = [];
+  const getVisibleImages = (): string[] => {
+    let arr: string[] = [];
     for (let i = 0; i < visibleCount; i++) {
       arr.push(images[(startIdx + i) % images.length]);
     }
