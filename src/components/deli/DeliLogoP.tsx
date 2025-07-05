@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
-// Use public folder path for better production compatibility
+// Use dynamic imports for better production compatibility
 const images: string[] = [
-  '/assets/deli/d1.png',
-  '/assets/deli/d2.png', 
-  '/assets/deli/d3.png',
-  '/assets/deli/d4.png'
+  new URL('../../assets/deli/d1.png', import.meta.url).href,
+  new URL('../../assets/deli/d2.png', import.meta.url).href,
+  new URL('../../assets/deli/d3.png', import.meta.url).href,
+  new URL('../../assets/deli/d4.png', import.meta.url).href,
 ];
 
 const BG = styled.div`
