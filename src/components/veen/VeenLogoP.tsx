@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import styled from "styled-components";
 
 // Import placeholder images for Veen carousel (replace with actual Veen images as needed)
-import img1 from '../../assets/veen/veenlogo1.jpg';
-import img2 from '../../assets/veen/veenlogo-2.jpg';
-import img3 from '../../assets/veen/veenlogo-3.jpg';
-import img4 from '../../assets/veen/scatch.jpg';
+import img1 from '../../assets/veen/v1.png';
+import img2 from '../../assets/veen/v2.jpeg';
+import img3 from '../../assets/veen/v3.png';
+import img4 from '../../assets/veen/v4.png';
 
 const images = [img1, img2, img3, img4];
 

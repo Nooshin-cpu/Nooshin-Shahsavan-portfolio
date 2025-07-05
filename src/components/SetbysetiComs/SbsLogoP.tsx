@@ -2,16 +2,14 @@ import React, { useState } from "react";
 import styled from "styled-components";
 
 // Import only the specific images for the carousel
-import img1 from '../../assets/sbsimg/1s.jpg';
-import img2 from '../../assets/sbsimg/2s.jpg';
-import img3 from '../../assets/sbsimg/3s.jpg';
-import img4 from '../../assets/sbsimg/4s.jpg';
-import img5 from '../../assets/sbsimg/5s.jpg';
-import img6 from '../../assets/sbsimg/6s.jpg';
-import img7 from '../../assets/sbsimg/7s.jpg';
-import img8 from '../../assets/sbsimg/8s.jpg';
+import img1 from '../../assets/sbsimg/s1.jpeg';
+import img2 from '../../assets/sbsimg/s2.png';
+import img3 from '../../assets/sbsimg/s3.png';
+import img4 from '../../assets/sbsimg/s4.png';
+import img5 from '../../assets/sbsimg/8s.png';
 
-const images = [img1, img2, img3, img4, img5, img6, img7, img8];
+
+const images = [img1, img2, img3, img4, img5, ];
 
 const BG = styled.div`
   width: 100vw;
