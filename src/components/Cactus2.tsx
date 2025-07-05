@@ -114,6 +114,7 @@ const Cactus2: React.FC = () => {
   return (
     <div className="cactus2-container">
       <h2 className="cactus2-title">Say Hi!</h2>
+      <p className="cactus2-email">nooshin-shahsavan.ca@gmail.com</p>
       <svg 
         ref={svgRef}
         width="833px" 

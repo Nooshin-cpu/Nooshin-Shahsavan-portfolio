@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
-import img1 from '../../assets/zar/logo-zar-1.png';
-import img2 from '../../assets/zar/logo-zar-2.png';
-import img3 from '../../assets/zar/banner-zar.png';
-import img4 from '../../assets/zar/box-zar.png';
+import img1 from '../../assets/zar/logo1.jpeg';
+import img2 from '../../assets/zar/logo2.jpg';
+import img3 from '../../assets/zar/logo3.jpg';
+import img4 from '../../assets/zar/logo4.png';
+import img5 from '../../assets/zar/logo5.png';
+import img6 from '../../assets/zar/logo6.png';
 
 const images = [img1, img2, img3, img4];
 

@@ -15,7 +15,7 @@ const Wrapper = styled.div`
 const Section = styled.section`
   width: 100%;
   min-height: 100vh;
-  background: #fff;
+  background: #000;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -28,14 +28,16 @@ const ContentRow = styled.div`
   min-height: 60vh;
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
+  gap: 4vw;
   @media (max-width: 900px) {
     flex-direction: column;
-    align-items: stretch;
+    align-items: center;
     width: 100%;
     min-height: 40vw;
     padding: 0 2vw;
+    gap: 2vw;
   }
 `;
 
@@ -57,67 +59,35 @@ const LeftCol = styled.div`
   }
 `;
 
-const VideoCol = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  min-width: 320px;
-  flex: 1 1 0;
-  max-width: 480px;
-  height: 100%;
-  justify-content: flex-start;
-  @media (max-width: 900px) {
-    align-items: center;
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 3vw;
-    min-width: 0;
-    padding: 0 2vw;
-    box-sizing: border-box;
-    overflow-x: hidden;
-  }
-`;
-
-const VideoFrame = styled.div`
-  width: 32vw;
-  height: 100%;
-  max-width: 420px;
-  max-height: none;
-  background: #dddddd;
+const VideoBlock = styled.div`
+  flex: none;
+  width: 66vw;
+  height: 50vw;
+  max-width: 1080px;
+  max-height: 720px;
   display: flex;
   align-items: center;
   justify-content: center;
-  @media (max-width: 900px) {
-    width: 100%;
-    height: auto;
-    max-width: 100%;
-    max-height: none;
-    background: transparent;
-    box-sizing: border-box;
-    overflow-x: hidden;
+  font-size: 4rem;
+  font-weight: bold;
+  @media (max-width: 1100px) {
+    width: 96vw;
+    height: 60vw;
+    max-width: 96vw;
+    max-height: 60vw;
+    align-items: center;
   }
 `;
 
 const StyledVideo = styled.video`
-  width: 100%;
-  height: 100%;
+  width: 70%;
+  height: 70%;
+  object-fit: fill;
   background: transparent;
   border: none;
   box-shadow: none;
-  object-fit: cover;
   display: block;
-  @media (max-width: 900px) {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    max-height: 60vw;
-    object-fit: contain;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    overflow-x: hidden;
-  }
+  margin-bottom: 0;
 `;
 
 const RightTextBlock = styled.div`
@@ -129,7 +99,7 @@ const RightTextBlock = styled.div`
   max-height: 720px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: flex-start;
   color: #fff;
   @media (max-width: 1100px) {
@@ -137,7 +107,7 @@ const RightTextBlock = styled.div`
     max-width: 96vw;
     height: auto;
     margin-top: 2vw;
-    justify-content: flex-start;
+    justify-content: center;
   }
 `;
 
@@ -178,19 +148,17 @@ const BodyText = styled.div`
 const ZarType: React.FC = () => (
   <Section>
     <ContentRow>
-      <VideoCol>
-        <VideoFrame>
-          <StyledVideo
-            src={typeVideo}
-            autoPlay
-            loop
-            muted
-            playsInline
-            controls={false}
-            aria-label="Typography video"
-          />
-        </VideoFrame>
-      </VideoCol>
+      <VideoBlock>
+        <StyledVideo
+          src={typeVideo}
+          autoPlay
+          loop
+          muted
+          playsInline
+          controls={false}
+          aria-label="Typography video"
+        />
+      </VideoBlock>
       <RightTextBlock>
         <TopLabel>TYPE</TopLabel>
         <Title>FACE</Title>

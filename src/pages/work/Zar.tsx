@@ -16,6 +16,7 @@ import ZarMock7 from "../../components/zar/Zarmock7";
 import ZarMock8 from "../../components/zar/Zarmock8";
 import ZarLogoP from "../../components/zar/ZarLogoP";
 import ProblemZar from "../../components/zar/ProblemZar";
+import PackZarImage from "../../components/zar/PackZarImage";
 import MenuWork from '../../components/MenuWork';
 import '../../components/MenuWork.css';
 import styled, { createGlobalStyle } from 'styled-components';
@@ -58,6 +59,7 @@ const Zar: React.FC = () => (
     <ZarColor/>
     <ZarType/>
     <ZarPackaging/>
+    <PackZarImage/>
     <Zarmock1/>
     <Zarmock2/>
     <Zarmock3/>
