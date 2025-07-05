@@ -44,7 +44,7 @@ const GlobalStyle = createGlobalStyle`
 const Delicato: React.FC = () => {
   return (
     <PageBg>
-      <GlobalStyle />
+     
       <DeliFirst />
       <DeliSecond />
       <DeliThird />
@@ -55,6 +55,7 @@ const Delicato: React.FC = () => {
       <DeliColor />
       <DeliType />
       <Deli8 />
+      <Deli15 />
       <Deli9 />
       <Deli10 />
       <Deli11 />
@@ -63,7 +64,7 @@ const Delicato: React.FC = () => {
       <StoryOne/>
     
       <Deli14 />
-      <Deli15 />
+      
       
       <MenuWork />
     </PageBg>

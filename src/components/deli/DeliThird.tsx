@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import deli13Img from "../../assets/deli/deli13.jpg";
+import brandImg from "../../assets/deli/brand.jpg";
 
 
 const Section = styled.section`
@@ -150,7 +150,7 @@ const DeliThird: React.FC = () => (
         </MainTextBlock>
       </TextBlock>
       <ImgBlock>
-        <Img src={deli13Img} alt="Brand Strategy Visual" />
+        <Img src={brandImg} alt="Brand Strategy Visual" />
       </ImgBlock>
     </ContentRow>
   </Section>

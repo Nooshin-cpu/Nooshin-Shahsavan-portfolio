@@ -1,6 +1,6 @@
 import React from "react";
 import styled from 'styled-components';
-import deliImage from "../../assets/deli/deli11.jpg";
+import deliImage from "../../assets/deli/delin.jpg";
 
 const Section = styled.section`
   width: 100vw;
