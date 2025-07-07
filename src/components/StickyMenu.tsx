@@ -43,18 +43,18 @@ const IconContainer = styled.a<{ $hovered: boolean }>`
     $hovered &&
     `
       background: #222222;
-      border-color: #2ee0ff;
+      border-color: rgb(171, 71, 248);
       transform: scale(1.08);
-      box-shadow: 0 0 16px rgba(46, 224, 255, 0.5);
+      box-shadow: 0 0 16px rgba(131, 7, 207, 0.5);
       z-index: 1;
     `
   }
 
   &:hover {
     background: #222222;
-    border-color: #2ee0ff;
+    border-color:rgb(171, 71, 248);
     transform: scale(1.08);
-    box-shadow: 0 0 16px rgba(46, 224, 255, 0.5);
+    box-shadow: 0 0 16px rgba(131, 7, 207, 0.5);
   }
 
   &:active {

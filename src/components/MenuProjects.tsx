@@ -13,7 +13,7 @@ const ProjectButton = styled.button<{ $selected: boolean }>`
   background: #000000;
   color: #fff;
   border: 2px solid #fff;
-  border-color: ${({ $selected }) => ($selected ? '#2ee0ff' : '#fff')};
+  border-color: ${({ $selected }) => ($selected ? 'rgb(171, 71, 248)' : '#fff')};
   border-radius: 12px;
   min-width: 120px;
   padding: 18px 32px;
@@ -27,9 +27,9 @@ const ProjectButton = styled.button<{ $selected: boolean }>`
   z-index: 1;
   &:hover, &:focus {
     background: #222222;
-    border-color: #2ee0ff;
+    border-color: rgb(171, 71, 248);
     transform: scale(1.08);
-    box-shadow: 0 0 16px rgba(46, 224, 255, 0.5);
+    box-shadow: 0 0 16px rgba(131, 7, 207, 0.5);
   }
   &:active {
     transform: scale(0.98);
