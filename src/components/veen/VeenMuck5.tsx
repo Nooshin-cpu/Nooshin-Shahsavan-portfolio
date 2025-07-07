@@ -69,8 +69,8 @@ const VideoBlock = styled.div`
 `;
 
 const StyledVideo = styled.video`
-  width: 100%;
-  height: 100%;
+  width: 70%;
+  height: 70%;
   object-fit: fill;
   background: transparent;
   border: none;
