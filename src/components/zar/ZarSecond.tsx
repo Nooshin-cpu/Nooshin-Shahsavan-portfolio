@@ -3,190 +3,81 @@ import styled from "styled-components";
 import strategyImg from "../../assets/zar/moodboard-zar.png";
 import { motion } from 'framer-motion';
 
-const Section = styled.section`
-  width: 100%;
+const MinimalSection = styled.section`
+  width: 100vw;
+  min-height: 100vh;
   background: #fff;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-family: 'Inter', Arial, Helvetica, sans-serif;
-  box-sizing: border-box;
-  padding: 2rem 0;
-  height: 100vh;
-  @media (max-width: 900px) {
-    height: auto;
-  }
+  padding: 48px 0 32px 0;
 `;
 
-const ContentRow = styled.div`
-  width: 70vw;
-  max-width: 1200px;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-end;
-  justify-content: space-between;
-  box-sizing: border-box;
-  @media (max-width: 900px) {
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    padding: 0 0.5rem;
-  }
-`;
-
-const TextBlock = styled.div`
-  min-width: 220px;
-  max-width: 460px;
-  flex: 1 1 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-start;
-  margin-right: 4vw;
-  box-sizing: border-box;
-  @media (max-width: 900px) {
-    max-width: 100%;
-    margin-right: 0;
-    margin-bottom: 2vw;
-    padding: 0 0.5rem;
-  }
-`;
-
-const Title = styled.h2`
-  font-size: 2.3rem;
-  font-weight: 400;
-  color: #504f51;
-  margin: 0 0 1rem 0;
-  line-height: 1.07;
-  letter-spacing: -1.2px;
-`;
-
-const Desc = styled.p`
-  font-size: 1.06rem;
-  color: #504f51;
-  font-weight: 400;
-  line-height: 1.54;
-  margin: 0;
-  max-width: 620px;
-  @media (max-width: 900px) {
-    max-width: 100%;
-  }
-`;
-
-const ImgBlock = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: flex-end;
-  min-width: 220px;
-  flex: 1 1 0;
-  max-width: 480px;
-  height: 100%;
-  box-sizing: border-box;
-  @media (max-width: 900px) {
-    align-items: center;
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 2vw;
-    padding: 0 0.5rem;
-  }
-`;
-
-const Img = styled.img`
-  width: 100%;
-  max-width: 420px;
-  height: auto;
-  object-fit: cover;
-  background: #dddddd;
-  display: block;
-  border-radius: 12px;
-  box-sizing: border-box;
-  @media (max-width: 900px) {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    min-height: 180px;
-  }
-`;
-
-const TopLabels = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  margin-bottom: 0.35em;
-`;
-
-const TopLabel = styled.div`
-  font-size: 1.01rem;
+const Title = styled.h1`
+  font-size: 2.4rem;
   font-weight: 600;
-  color: #888888;
-  margin-bottom: 0.35em;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-`;
-
-const SubLabel = styled.div`
-  font-size: 1rem;
-  color: #504f51;
-  font-weight: 400;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-`;
-
-const MainTextBlock = styled.div`
-  margin-top: 0;
-`;
-
-const BigTitle = styled.h1`
-  font-size: 2.7rem;
-  font-weight: 400;
-  color: #111;
-  margin: 0 0 2rem 0;
-  line-height: 1.07;
+  color: #181818;
+  margin-bottom: 1.2rem;
   letter-spacing: -1px;
-  text-transform: uppercase;
+  text-align: center;
+`;
+
+const Description = styled.p`
+  font-size: 1.08rem;
+  color: #444;
+  font-weight: 400;
+  line-height: 1.5;
+  max-width: 480px;
+  margin: 0 auto 2.2rem auto;
+  text-align: center;
+`;
+
+const ImageWrapper = styled.div`
+  width: 340px;
+  max-width: 90vw;
+  margin: 0 auto 2.2rem auto;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #f3f3f3;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+`;
+
+const StyledImage = styled.img`
+  width: 100%;
+  height: auto;
+  display: block;
+  background: transparent;
+`;
+
+const AccentLine = styled.div`
+  color:rgb(177, 67, 220);
+  font-size: 1.02rem;
+  margin: 2.2rem auto 0 auto;
+  text-align: center;
+  letter-spacing: 0.01em;
+  width: auto;
+  white-space: nowrap;
+  overflow-x: auto;
 `;
 
 const ZarSecond: React.FC = () => (
-  <Section>
-    <ContentRow>
-      <TextBlock>
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: 'easeOut' }}
-          viewport={{ once: true, amount: 0.7 }}
-          style={{ fontSize: '1.01rem', fontWeight: 600, color: '#888888', marginBottom: '0.35em', textTransform: 'uppercase', letterSpacing: '0.05em' }}
-        >
-          Brand
-        </motion.div>
-        <MainTextBlock>
-          <motion.h1
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.1, ease: 'easeOut' }}
-            viewport={{ once: true, amount: 0.7 }}
-            style={{ fontSize: '2.7rem', fontWeight: 400, color: '#111', margin: '0 0 2rem 0', lineHeight: 1.07, letterSpacing: '-1px', textTransform: 'uppercase' }}
-          >
-            Strategy
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.2, ease: 'easeOut' }}
-            viewport={{ once: true, amount: 0.7 }}
-            style={{ fontSize: '1.06rem', color: '#504f51', fontWeight: 400, lineHeight: 1.54, margin: 0, maxWidth: 620 }}
-          >
-          ZAR's brand strategy is built on the fusion of heritage and modernity. The core idea is to position saffron not just as a spice, but as a luxury cultural experience. By emphasizing authenticity, elegance, and Persian roots, the brand aims to connect emotionally with both traditional consumers and a new generation of global customers who value quality and story-driven products .The strategy focuses on three key pillars: Cultural Authenticity – Highlighting ZAR's Persian origin through storytelling, visuals, and design elements that reflect the history and beauty of saffron Premium Positioning  Using high-end packaging, refined typography, and a sophisticated color palette to communicate quality and exclusivity. Modern Appeal – Blending minimal design with rich cultural cues to attract modern consumers who appreciate aesthetics, transparency, and meaningful branding .ZAR aims to standout in the global spice market by being more than a product it's a symbol of tradition, beauty, and luxury.
-          </motion.p>
-        </MainTextBlock>
-      </TextBlock>
-      <ImgBlock>
-        <Img src={strategyImg} alt="Brand Strategy Visual" />
-      </ImgBlock>
-    </ContentRow>
-  </Section>
+  <MinimalSection>
+    <Title>About Zar</Title>
+    <Description>
+    ZAR is a premium saffron brand rooted in Persian culture. The name means “gold” in Persian, reflecting the value and heritage of saffron. The brand combines traditional elements with modern design to present saffron as a high-end, culturally rich product for a global audience.
+    </Description>
+    
+    <ImageWrapper>
+      <StyledImage 
+        src={strategyImg} 
+        alt="Brand Strategy Visual" 
+      />
+    </ImageWrapper>
+    <AccentLine>
+      Aim → Persian Heritage → Cultural Authenticity → Modern Design → Unforgettable Experience
+    </AccentLine>
+  </MinimalSection>
 );
 
 export default ZarSecond;

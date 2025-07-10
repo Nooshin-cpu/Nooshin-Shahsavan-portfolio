@@ -2,6 +2,7 @@ import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
 import { motion } from 'framer-motion';
 import SbsFirst from '../../components/SetbysetiComs/SbsFirst';
+import SbsOverviewDetails from '../../components/SetbysetiComs/SbsOverviewDetails';
 import ProblemSbs from '../../components/SetbysetiComs/ProblemSbs';
 import SbsSecond from '../../components/SetbysetiComs/SbsSecond';
 import SbsType from '../../components/SetbysetiComs/SbsType';
@@ -9,9 +10,9 @@ import SbsColor from '../../components/SetbysetiComs/SbsColor';
 import SbsIllustration from '../../components/SetbysetiComs/SbsIllustration';
 import SbsMock1 from '../../components/SetbysetiComs/SbsMock1';
 import SbsMock2 from '../../components/SetbysetiComs/SbsMock2';
-import SbsMock3 from '../../components/SetbysetiComs/SbsMock3';
-import SbsMock4 from '../../components/SetbysetiComs/SbsMock4';
-import SbsMock5 from '../../components/SetbysetiComs/SbsMock5';
+import SbsVideo from '../../components/SetbysetiComs/SbsVideo';
+
+
 import SbsMock6 from '../../components/SetbysetiComs/SbsMock6';
 import SbsMock7 from '../../components/SetbysetiComs/SbsMock7';
 import SbsMock71 from '../../components/SetbysetiComs/SbsMock71';
@@ -23,6 +24,11 @@ import SbsMock8 from '../../components/SetbysetiComs/SbsMock8';
 import SbsMock9 from '../../components/SetbysetiComs/SbsMock9';
 import SbsMock10 from '../../components/SetbysetiComs/SbsMock10';
 import SbsMock12 from '../../components/SetbysetiComs/SbsMock12';
+import SbsSocialMedia1 from '../../components/SetbysetiComs/SbsSocialMedia1';
+import SbsSocialMedia2 from '../../components/SetbysetiComs/SbsSocialMedia2';
+import CircleSbs from '../../components/SetbysetiComs/CircleSbs';
+import { EmailFooter } from '../../components/Footer';
+import SbsStickyMenu from '../../components/SbsStickyMenu';
 
 // Responsive PageBg
 const PageBg = styled.div`
@@ -32,12 +38,9 @@ const PageBg = styled.div`
   transition: background 0.2s;
   overflow-x: hidden;
   box-sizing: border-box;
-  /* Optional: Add some horizontal padding on mobile */
-  @media (max-width: 600px) {
-    padding-left: 8px;
-    padding-right: 8px;
-    width: 100%;
-  }
+  position: fixed;
+  inset: 0;
+  z-index: 0;
 `;
 
 const GlobalStyle = createGlobalStyle`
@@ -54,31 +57,78 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
+const SectionTitle = styled.h2`
+  width: 100vw;
+  text-align: center;
+  font-size: 2.1rem;
+  font-weight: 700;
+  color: #181818;
+  margin: 2.5rem 0 1.5rem 0;
+  letter-spacing: -1px;
+`;
+
 const Sbs: React.FC = () => {
   return (
     <PageBg>
-      <GlobalStyle />
-      <SbsFirst />
-      <ProblemSbs />
-      <SbsSecond /> 
-      <SbsLogoP /> 
-      <SbsColor /> 
-      <SbsType /> 
-      <SbsIll/>
-      <SbsIllustration />   
-      <SbsMock1/> 
-      <SbsMock2/>
-      <SbsMock3/>
-      <SbsMock4/>
-      <SbsMock5/>
-      <SbsMock6/>
-      <SbsMock7/>
-      <SbsMock71/>
-      <SbsMock8/>
-      <SbsMock9/>
-      <SbsMock10/>
-      <SbsMock12/>
+      <SbsStickyMenu />
+      
+      <div id="sbs-overview">
+        <SbsFirst />
+        <SbsMock12/>
+        <SbsOverviewDetails />
+      </div>
+      
+      <div id="sbs-challenges">
+        <ProblemSbs />
+      </div>
+      
+      <div id="sbs-logo">
+        <SbsSecond /> 
+      </div>
+      
+      <div id="sbs-logo-process">
+        <SbsLogoP /> 
+      </div>
+      
+      <div id="sbs-color">
+        <SbsColor /> 
+      </div>
+      
+      <div id="sbs-typography">
+        <SbsType /> 
+      </div>
+      
+      <div id="sbs-illustration">
+        <SbsIll/>
+        <SbsIllustration />   
+      </div>
+      
+      <div id="sbs-brand-identity">
+        <CircleSbs text="Set by Setti Brand Identity" spinDuration={18} />
+      </div>
+      
+      <div id="sbs-video">
+        <SbsVideo/>
+      </div>
+      
+      <div id="sbs-mockups">
+        <SbsMock1/> 
+        <SbsMock2/>
+      </div>
+      
+      <div id="sbs-social-media">
+        <SectionTitle>Social Media/Black Friday</SectionTitle>
+        <SbsSocialMedia1 />
+        <SbsSocialMedia2 />
+      </div>
+    
+      <div id="sbs-additional-mockups">
+        <SbsMock6/>
+        <SbsMock71/>
+      </div>
+      
       <MenuWork />
+      <EmailFooter />
     </PageBg>
   );
 };

@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 
-// Import placeholder images for Veen carousel (replace with actual Veen images as needed)
 import img1 from '../../assets/veen/v1.png';
 import img2 from '../../assets/veen/v2.jpeg';
 import img3 from '../../assets/veen/v3.png';
-import img4 from '../../assets/veen/v4.png';
+import img4 from '../../assets/veen/v4.jpg';
 
 const images = [img1, img2, img3, img4];
 
@@ -13,22 +12,31 @@ const BG = styled.div`
   width: 100vw;
   min-height: 60vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: #9ed4d1;
+  background: #fff;
   box-sizing: border-box;
+`;
+
+const Title = styled.h2`
+  width: 100vw;
+  text-align: center;
+  color: #181818;
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin: 2.5rem 0 2rem 0;
+  letter-spacing: 0.04em;
 `;
 
 const CarouselGlass = styled.div`
   width: 70vw;
   max-width: 1200px;
   min-height: 320px;
-  background: rgba(255,255,255,0.85);
-  border-radius: 2rem;
-  box-shadow: 0 8px 32px 0 rgba(80, 79, 81, 0.13);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1.5px solid #9ed4d1;
+  background: #fff;
+  border-radius: 0;
+  box-shadow: none;
+  border: none;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -38,31 +46,6 @@ const CarouselGlass = styled.div`
   @media (max-width: 700px) {
     min-height: 180px;
     padding: 1.2rem 0.5rem;
-  }
-`;
-
-const ArrowButton = styled.button`
-  background: #fff;
-  border: none;
-  border-radius: 50%;
-  width: 48px;
-  height: 48px;
-  margin: 0 1.2rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  font-size: 2rem;
-  color: #504f51;
-  box-shadow: 0 2px 8px rgba(80,79,81,0.08);
-  transition: background 0.18s, box-shadow 0.18s, color 0.18s;
-  outline: none;
-  border: 2px solid transparent;
-  &:hover, &:focus {
-    background: #504f51;
-    color: #fff;
-    border: 2px solid #fff;
-    box-shadow: 0 4px 16px rgba(80,79,81,0.12);
   }
 `;
 
@@ -109,87 +92,32 @@ const Img = styled.img`
   display: block;
 `;
 
-const Dots = styled.div`
-  position: absolute;
-  bottom: 1.2rem;
-  left: 0;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  gap: 0.7rem;
-`;
-
-const Dot = styled.button<{active: boolean}>`
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  border: none;
-  background: ${({active}) => active ? '#504f51' : 'rgba(0,0,0,0.13)'};
-  transition: background 0.18s;
-  cursor: pointer;
-  outline: none;
-  &:hover, &:focus {
-    background: #504f51;
-  }
+const Explanation = styled.p`
+  font-size: 1rem;
+  color: #444;
+  font-weight: 400;
+  line-height: 1.5;
+  max-width: 480px;
+  margin: 2.2rem auto 0 auto;
+  text-align: center;
 `;
 
 function VeenLogoP() {
-  const [startIdx, setStartIdx] = useState(0);
-  const numVisible = 3;
-  const isMobile = typeof window !== "undefined" && window.innerWidth < 700;
-  const visibleCount = isMobile ? 2 : numVisible;
-
-  const totalGroups = Math.ceil(images.length / visibleCount);
-  const currentGroup = Math.floor(startIdx / visibleCount);
-
-  const handlePrev = () => {
-    setStartIdx((prev) => (prev - visibleCount + images.length) % images.length);
-  };
-
-  const handleNext = () => {
-    setStartIdx((prev) => (prev + visibleCount) % images.length);
-  };
-
-  const goToGroup = (groupIdx: number) => {
-    setStartIdx((groupIdx * visibleCount) % images.length);
-  };
-
-  // Get visible images in a circular way
-  const getVisibleImages = () => {
-    let arr = [];
-    for (let i = 0; i < visibleCount; i++) {
-      arr.push(images[(startIdx + i) % images.length]);
-    }
-    return arr;
-  };
-
   return (
     <BG>
-      <ArrowButton aria-label="Previous" onClick={handlePrev}>
-        <span aria-hidden="true">&#8592;</span>
-      </ArrowButton>
+      <Title>Logo Explorations</Title>
       <CarouselGlass>
         <ImagesRow>
-          {getVisibleImages().map((img, idx) => (
+          {images.map((img, idx) => (
             <ImgCard key={img + idx}>
-              <Img src={img} alt={`carousel-${idx}`} loading="lazy" />
+              <Img src={img} alt={`logo-${idx + 1}`} loading="lazy" />
             </ImgCard>
           ))}
         </ImagesRow>
-        <Dots>
-          {Array.from({ length: totalGroups }).map((_, i) => (
-            <Dot
-              key={i}
-              active={i === currentGroup}
-              onClick={() => goToGroup(i)}
-              aria-label={`Go to slide group ${i + 1}`}
-            />
-          ))}
-        </Dots>
       </CarouselGlass>
-      <ArrowButton aria-label="Next" onClick={handleNext}>
-        <span aria-hidden="true">&#8594;</span>
-      </ArrowButton>
+      <Explanation>
+        Through this approach, I successfully addressed both sides of the design: incorporating a recognizable camera shape and embedding symbolic elements that reflect the concept of family. None of these choices were accidental; they are all grounded in semiotics.
+      </Explanation>
     </BG>
   );
 }

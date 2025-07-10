@@ -10,10 +10,9 @@ const HeaderContainer = styled.header`
   left: 0;
   right: 0;
   z-index: 1000;
-  background: rgba(25, 28, 36, 0.9);
-  backdrop-filter: blur(10px);
+  background: #fff;
   padding: 1rem 0;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: none;
 `;
 
 const Nav = styled.nav`
@@ -26,9 +25,9 @@ const Nav = styled.nav`
 `;
 
 const Logo = styled(Link)`
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   font-weight: 700;
-  color:rgb(157, 99, 239);
+  color: #181818;
   text-decoration: none;
 `;
 
@@ -51,9 +50,11 @@ const NavLinks = styled.div`
 const NavLink = styled(Link)`
   position: relative;
   font-weight: 500;
-  color: #ffffff;
+  color: #181818;
   text-decoration: none;
-  
+  font-size: 1.18rem;
+  letter-spacing: 0.01em;
+  transition: color 0.2s;
   &::after {
     content: '';
     position: absolute;
@@ -61,10 +62,12 @@ const NavLink = styled(Link)`
     left: 0;
     width: 0;
     height: 2px;
-    background:rgb(117, 81, 155);
+    background: #e4572e;
     transition: width 0.3s ease;
   }
-
+  &:hover {
+    color: #e4572e;
+  }
   &:hover::after {
     width: 100%;
   }
@@ -121,8 +124,8 @@ const MobileMenu = styled.div<{ open: boolean }>`
 `;
 
 const MobileNavLink = styled(Link)`
-  font-size: 2rem;
-  color: #fff;
+  font-size: 2.1rem;
+  color: #181818;
   text-decoration: none;
   font-weight: 700;
   margin-bottom: 1.2rem;
@@ -131,15 +134,10 @@ const MobileNavLink = styled(Link)`
   transform: translateY(40px);
   animation: fadeInUp 0.6s forwards;
   animation-delay: var(--delay, 0s);
-  background: linear-gradient(90deg, #2ee0ff 0%, #4CAF50 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-fill-color: transparent;
   transition: transform 0.2s, color 0.2s;
   &:hover {
+    color:rgb(8, 164, 102);
     transform: scale(1.08) translateY(-2px);
-    filter: brightness(1.2) drop-shadow(0 2px 8px #2ee0ff80);
   }
   &:last-child { margin-bottom: 0; }
 

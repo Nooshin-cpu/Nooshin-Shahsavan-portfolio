@@ -2,66 +2,38 @@ import React from "react";
 import styled from "styled-components";
 import mockVideo from "../../assets/sbsimg/print2.mp4";
 
-const Section = styled.section`
+const MockupSection = styled.section`
   width: 100vw;
-  height: 100vh;
-  background: #000;
+  background: #fff;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  overflow: hidden;
-  @media (max-width: 900px) {
-    height: auto;
-    min-height: 60vw;
-    padding: 0;
-  }
+  padding: 24px 0 16px 0;
 `;
 
-const VideoContainer = styled.div`
-  width: 31vw;
-  height: 100vh;
-  background: #dadada;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  @media (max-width: 900px) {
-    width: 90vw;
-    height: 60vw;
-    min-height: 200px;
-  }
-`;
-
-const StyledVideo = styled.video`
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+const IndividualMockup = styled.video`
+  width: 40vw;
+  max-width: 40vw;
+  max-height: 50vh;
+  border-radius: 1.5rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  object-fit: contain;
   background: transparent;
+  border: none;
   display: block;
-  @media (max-width: 900px) {
-    width: 100vw;
-    max-width: 100vw;
-    height: auto;
-    max-height: 70vh;
-    object-fit: contain;
-    margin: 0 auto;
-    padding: 0;
-  }
 `;
 
 const SbsMock7: React.FC = () => (
-  <Section>
-    <VideoContainer>
-      <StyledVideo
+  <MockupSection>
+    <IndividualMockup
         src={mockVideo}
-        autoPlay
         loop
         muted
         playsInline
-        controls={false}
+      controls
         aria-label="SBS Print Video"
       />
-    </VideoContainer>
-  </Section>
+  </MockupSection>
 );
 
 export default SbsMock7;

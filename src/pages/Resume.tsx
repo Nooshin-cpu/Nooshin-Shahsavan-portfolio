@@ -57,9 +57,9 @@ const Resume: React.FC = () => {
         
         <ResumeText>
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
           >
             <h3 style={{ color: 'var(--accent1)', marginBottom: '0.5rem', fontSize: '2rem' }}>Nooshin Shahsavan</h3>
             <p style={{ marginBottom: '1rem', color: 'var(--text)', fontSize: '1rem' }}>

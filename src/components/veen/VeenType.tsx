@@ -141,7 +141,7 @@ const VeenType: React.FC = () => (
         <TopLabel>Type</TopLabel>
         <Title>Typography</Title>
         <BodyText>
-          The typography for Veen is elegant and sophisticated, reflecting the brand's premium and timeless character. The primary typeface is refined and modern, creating a luxurious presence that resonates with discerning consumers. The typography system combines classic serif fonts with contemporary sans-serif elements, ensuring both readability and visual distinction.
+        Typography was chosen to reflect the brand’s friendly, trustworthy personality—combining a modern, rounded font echoing the logo’s curves with a clean sans-serif for clear, readable text across website, social media, and print.
         </BodyText>
       </RightTextBlock>
     </ContentRow>

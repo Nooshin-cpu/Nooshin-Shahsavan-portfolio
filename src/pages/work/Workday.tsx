@@ -21,6 +21,7 @@ import KeyTakeawaySection from "./KeyTakeawaySection";
 import MenuWork from '../../components/MenuWork';
 import '../../components/MenuWork.css';
 import WorkDayMenu from '../../components/WorkDayMenu';
+import { EmailFooter } from '../../components/Footer';
 
 
 // Global style with dark mode support
@@ -630,6 +631,7 @@ const Workday: React.FC = () => (
         </div>
       </ContentWrapper>
     </PageContainer>
+    <EmailFooter />
     <div style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
       <MenuWork />
     </div>

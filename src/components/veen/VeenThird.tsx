@@ -1,203 +1,99 @@
 import React from "react";
 import styled from "styled-components";
-import logo1 from "../../assets/veen/veenlogo1.jpg";
-import logo2 from "../../assets/veen/veenlogo-2.jpg";
-import logo3 from "../../assets/veen/veenlogo-3.jpg";
+import logoSketch from "../../assets/veen/scatch.jpg";
 
-import strategyImg from "../../assets/veen/scatch.jpg";
-
-const FullWrapper = styled.div`
-  width: 100%;
+const MinimalSection = styled.section`
+  width: 100vw;
   min-height: 100vh;
-  background: #9ed4d1;
+  background: #fff;
   display: flex;
-  justify-content: center;
-  @media (max-width: 900px) {
-    min-height: 60vw;
-    padding: 0;
-  }
-`;
-
-const Section = styled.section`
-  width: 100%;
-  min-height: 100vh;
-  background: #ffffff;
-  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-family: 'Inter', Arial, Helvetica, sans-serif;
-  @media (max-width: 900px) {
-    min-height: 60vw;
-    padding: 0;
-  }
+  padding: 48px 0 32px 0;
 `;
 
-const ContentRow = styled.div`
-  width: 70vw;
-  max-width: 1200px;
-  min-height: 60vh;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-end;
-  justify-content: space-between;
-  @media (max-width: 900px) {
-    flex-direction: column;
-    align-items: stretch;
-    width: 100%;
-    min-height: 40vw;
-    padding: 0 2vw;
-  }
-`;
-
-const TextBlock = styled.div`
-  min-width: 320px;
-  max-width: 460px;
-  flex: 1 1 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-start;
-  margin-right: 4vw;
-  @media (max-width: 900px) {
-    max-width: 100%;
-    margin-right: 0;
-    margin-bottom: 4vw;
-    min-width: 0;
-    padding: 0 2vw;
-  }
-`;
-
-const TopLabels = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  margin-bottom: 0.35em;
-`;
-
-const TopLabel = styled.div`
-  font-size: 1.01rem;
+const Title = styled.h1`
+  font-size: 2.4rem;
   font-weight: 600;
-  color: #888888;
-  margin-bottom: 0.35em;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-`;
-
-const SubLabel = styled.div`
-  font-size: 1rem;
-  color: #504f51;
-  font-weight: 400;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-`;
-
-const MainTextBlock = styled.div`
-  margin-top: 0;
-`;
-
-const BigTitle = styled.h1`
-  font-size: 2.7rem;
-  font-weight: 400;
-  color: #111;
-  margin: 0 0 2rem 0;
-  line-height: 1.07;
+  color: #181818;
+  margin-bottom: 1.2rem;
   letter-spacing: -1px;
-  text-transform: uppercase;
+  text-align: center;
 `;
 
-const Title = styled.h2`
-  font-size: 2.3rem;
+const Description = styled.p`
+  font-size: 1.08rem;
+  color: #444;
   font-weight: 400;
-  color: #504f51;
-  margin: 0 0 1rem 0;
-  line-height: 1.07;
-  letter-spacing: -1.2px;
+  line-height: 1.5;
+  max-width: 480px;
+  margin: 0 auto 2.2rem auto;
+  text-align: center;
 `;
 
-const StyledLabel = styled.span`
+const ImageWrapper = styled.div`
+  width: 340px;
+  max-width: 90vw;
+  margin: 0 auto 2.2rem auto;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #f3f3f3;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+`;
+
+const StyledImg = styled.img`
+  width: 100%;
+  height: auto;
+  display: block;
+  background: transparent;
+`;
+
+const SectionLabel = styled.span`
   display: block;
   font-size: 1rem;
-  color: #504f51;
-  font-weight: 400;
+  color:rgb(160, 160, 160);
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   margin-bottom: 0.35em;
+  text-align: center;
 `;
 
-const Desc = styled.p`
-  font-size: 1.06rem;
-  color: #504f51;
+const BodyText = styled.p`
+  font-size: 1.08rem;
+  color: #222;
   font-weight: 400;
-  line-height: 1.54;
-  margin: 0;
-  max-width: 620px;
-  @media (max-width: 900px) {
-    max-width: 100%;
-  }
-`;
-
-const ImgBlock = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
-  min-width: 320px;
-  flex: 1 1 0;
+  line-height: 1.5;
   max-width: 480px;
-  height: 100%;
-  @media (max-width: 900px) {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 3vw;
-    min-width: 0;
-    padding: 0 2vw;
-  }
+  margin: 0 auto 2.2rem auto;
+  text-align: center;
 `;
 
-const Img = styled.img`
-  width: 32vw;
-  height: auto;
-  max-width: 420px;
-  object-fit: contain;
-  background: #dddddd;
-  display: block;
-  @media (max-width: 900px) {
-    width: 100%;
-    height: auto;
-    max-width: 100%;
-    max-height: 60vw;
-    object-fit: contain;
-    background: transparent;
-  }
+const Highlight = styled.span`
+  color: #9ed4d1;
+  font-weight: 600;
 `;
 
 const VeenThird: React.FC = () => (
-  <FullWrapper>
-    <Section>
-      <ContentRow>
-        <ImgBlock>
-          <Img src={strategyImg} alt="scetck" />
-        </ImgBlock>
-        <TextBlock>
-          <TopLabels>
-            <TopLabel>LOGO</TopLabel>
-          </TopLabels>
-          <MainTextBlock>
-            <BigTitle>DESIGN</BigTitle>
-            <Desc>
-              <StyledLabel>Challenge</StyledLabel>
-              Create a logo that feels personal, warm, and creative, while being versatile for different uses (web, watermark, print). It needed to stand out in the family photography space and subtly hint at the photography theme.<br/><br/>
-              <StyledLabel>Solution</StyledLabel>
-              I designed two logo versions:<br/><br/>
-              Primary Logo: A clean wordmark with a hidden camera shape integrated into the word "VEEN." The center circle serves as both a camera lens and a symbol of the family bond, offering a moment of discovery to the viewer.<br/><br/>
-              Secondary Logo: A minimal V + N monogram ideal for stickers, watermarks, and small-scale use. It's simple and professional, maintaining brand recognition even in compact spaces.
-            </Desc>
-          </MainTextBlock>
-        </TextBlock>
-      </ContentRow>
-    </Section>
-  </FullWrapper>
+  <MinimalSection>
+    <Title>Logo Design</Title>
+    <Description>
+    Based on the brand’s values and target audience families and children, with an emphasis on conveying warm and comforting vibes I considered several key points. The client preferred a <Highlight>wordmark</Highlight> combined with a <Highlight>photography-related symbol</Highlight>. On the other hand, I also needed to visually reflect the brand’s core values: <Highlight>family</Highlight> and <Highlight>warmth</Highlight>. 
+    </Description>
+    <ImageWrapper>
+      <StyledImg src={logoSketch} alt="Logo Sketch" />
+    </ImageWrapper>
+    <SectionLabel>To achieve this...</SectionLabel>
+    <BodyText>
+    I simplified the shape of a camera into a clean, graphic form and placed it at the center of the word “VEEN,” replacing the two <Highlight>“E”</Highlight>s with the camera shape. This created a strong visual connection between the brand name and photography.
+    </BodyText>
+    <SectionLabel>To reinforce the concept of family,</SectionLabel>
+    <BodyText>
+        I used a <Highlight>square</Highlight> shape(<Highlight>camera body</Highlight>) to represent <Highlight>home</Highlight> and security , and added a <Highlight>circle</Highlight> inside the square, symbolizing <Highlight>family</Highlight>, <Highlight>love</Highlight> , and <Highlight>the flow of life</Highlight> also resembling the camera <Highlight>lens</Highlight> .<br/><br/>
+      Secondary Logo: A minimal <Highlight>V+N</Highlight> monogram, derived from the main logo, designed for versatile use in stickers, watermarks, and small-scale branding.
+    </BodyText>
+  </MinimalSection>
 );
 
 export default VeenThird;

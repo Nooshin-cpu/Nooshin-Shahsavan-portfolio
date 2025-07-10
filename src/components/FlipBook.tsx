@@ -48,7 +48,7 @@ const Container = styled.div`
   justify-content: center;
   min-height: 100vh;
   padding: 2rem;
-  background: #f5f5f5;
+  background: #fff;
   /* border: 2px solid red; */
 `;
 

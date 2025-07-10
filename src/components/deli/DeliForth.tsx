@@ -1,166 +1,61 @@
 import React from "react";
 import styled from "styled-components";
-import logoImg from "../../assets/deli/delim.jpg";
 
-const Section = styled.section`
-  width: 100%;
-  height: 100vh;
-  min-height: 100vh;
+const MinimalSection = styled.section`
+  width: 100vw;
+  min-height: 60vh;
   background: #fff;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-family: 'Inter', Arial, Helvetica, sans-serif;
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+  padding: 48px 0 32px 0;
 `;
 
-const ContentRow = styled.div`
-  width: 70vw;
-  max-width: 1200px;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-end;
-  justify-content: space-between;
-  box-sizing: border-box;
-  @media (max-width: 900px) {
-    flex-direction: column;
-    align-items: center;
-    width: 98vw;
-    padding: 0 0.5rem;
-  }
-`;
-
-const TextBlock = styled.div`
-  min-width: 220px;
-  max-width: 460px;
-  flex: 1 1 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-start;
-  margin-right: 4vw;
-  box-sizing: border-box;
-  @media (max-width: 900px) {
-    max-width: 100vw;
-    margin-right: 0;
-    margin-bottom: 2vw;
-    padding: 0 0.5rem;
-  }
-`;
-
-const TopLabels = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  margin-bottom: 0.35em;
-`;
-
-const TopLabel = styled.div`
-  font-size: 1.01rem;
+const Title = styled.h2`
+  font-size: 2.1rem;
   font-weight: 600;
-  color: #888888;
-  margin-bottom: 0.35em;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-`;
-
-const MainTextBlock = styled.div`
-  margin-top: 0;
-`;
-
-const BigTitle = styled.h1`
-  font-size: 2.7rem;
-  font-weight: 400;
-  color: #111;
-  margin: 0 0 2rem 0;
-  line-height: 1.07;
+  color: #181818;
+  margin-bottom: 1.2rem;
   letter-spacing: -1px;
-  text-transform: uppercase;
+  text-align: center;
 `;
 
-const StyledLabel = styled.span`
-  display: block;
-  font-size: 1rem;
-  color: #504f51;
+const Description = styled.div`
+  font-size: 1.08rem;
+  color: #444;
   font-weight: 400;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-bottom: 0.35em;
-`;
-
-const Desc = styled.p`
-  font-size: 1.06rem;
-  color: #504f51;
-  font-weight: 400;
-  line-height: 1.54;
-  margin: 0;
-  max-width: 620px;
-  @media (max-width: 900px) {
-    max-width: 100vw;
-  }
-`;
-
-const ImgBlock = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: flex-end;
-  min-width: 220px;
-  flex: 1 1 0;
+  line-height: 1.5;
   max-width: 480px;
-  height: 100%;
-  box-sizing: border-box;
-  @media (max-width: 900px) {
-    align-items: center;
-    width: 100vw;
-    max-width: 100vw;
-    height: auto;
-    margin-bottom: 2vw;
-    padding: 0 0.5rem;
-  }
+  margin: 0 auto 2.2rem auto;
+  text-align: center;
 `;
 
-const Img = styled.img`
-  width: 100%;
-  max-width: 450px;
-  height: auto;
-  object-fit: cover;
-  background: #dddddd;
-  display: block;
-  border-radius: 12px;
-  box-sizing: border-box;
-  @media (max-width: 900px) {
-    width: 97vw;
-    max-width: 97vw;
-    height: auto;
-    min-height: 180px;
-  }
+const Category = styled.div`
+  font-size: 0.98rem;
+  color: #888;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-top: 1.2em;
+  margin-bottom: 0.3em;
+`;
+
+const Highlight = styled.span`
+  color: #b48a3b;
+  font-weight: 400;
 `;
 
 const DeliForth: React.FC = () => (
-  <Section>
-    <ContentRow>
-      <TextBlock>
-        <TopLabels>
-          <TopLabel>Logo</TopLabel>
-        </TopLabels>
-        <MainTextBlock>
-          <BigTitle>Design</BigTitle>
-          <Desc>
-            <StyledLabel>Challenge</StyledLabel>
-            Create a logo that visually bridges classical Roman architecture with a modern minimalist approach, representing both the brand's heritage and its contemporary audience.<br/><br/>
-            <StyledLabel>Solution</StyledLabel>
-            Inspired by classical columns, I developed a minimal, elegant symbol that merges with the letter "D" in "Delicato". The column is abstracted into a balance of positive and negative space, evoking both strength and delicacy. A subtle break in the lower curved line represents the passage of time — the separation and connection between classical and modern eras. The overall form is clean and memorable, encapsulating the brand's concept of timeless elegance.
-          </Desc>
-        </MainTextBlock>
-      </TextBlock>
-      <ImgBlock>
-        <Img src={logoImg} alt="Logo Design" />
-      </ImgBlock>
-    </ContentRow>
-  </Section>
+  <MinimalSection>
+    <Title>Logo Design</Title>
+    <Description>
+      <Category>I drew inspiration</Category>
+      From the <Highlight>iconic classical columns</Highlight>, which are widely recognized <Highlight>symbols</Highlight> of that era. I developed a <Highlight>minimal</Highlight>, <Highlight>elegant</Highlight> symbol that merges with the letter "D" in "Delicato".
+      <Category>The column is</Category>
+      Abstracted into a balance of <Highlight>positive and negative</Highlight> space, evoking both strength and delicacy. A subtle <Highlight>break</Highlight> in the lower curved line represents the passage of time, the <Highlight>separation and connection</Highlight> between classical and modern eras. The overall form is clean and memorable, encapsulating the brand's concept of timeless elegance.      
+    </Description>
+  </MinimalSection>
 );
 
 export default DeliForth; 

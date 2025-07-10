@@ -1,43 +1,27 @@
 import React from "react";
 import styled from "styled-components";
-import mockImg from "../../assets/sbsimg/banner.png";
+import mockupImg from "../../assets/sbsimg/sbs-tag.jpg";
 
-const MockSection5 = styled.section`
+const MockupSection = styled.section`
   width: 100vw;
-  height: 100vh;
-  min-height: 100vh;
-  background: #000;
+  background: #fff;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  overflow: hidden;
-  @media (max-width: 900px) {
-    height: auto;
-    min-height: 60vw;
-    padding: 0;
-  }
+  padding: 48px 0 32px 0;
 `;
 
-const FullImg = styled.img`
-  width: 70%;
-  height: 70%;
-  object-fit: cover;
-  display: block;
-  @media (max-width: 900px) {
-    width: 100vw;
-    max-width: 100vw;
-    height: auto;
-    max-height: 70vh;
-    object-fit: contain;
-    margin: 0 auto;
-    padding: 0;
-  }
+const IndividualMockup = styled.img`
+  width: 70vw;
+  max-width: 70vw;
+  border-radius: 1.5rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
 `;
 
 const SbsMock5: React.FC = () => (
-  <MockSection5>
-    <FullImg src={mockImg} alt="SBS Bag Mockup 2" />
-  </MockSection5>
+  <MockupSection>
+    <IndividualMockup src={mockupImg} alt="SBS Tag Mockup 2" />
+  </MockupSection>
 );
 
-export  default SbsMock5;
+export default SbsMock5;

@@ -2,142 +2,77 @@ import React from "react";
 import styled from "styled-components";
 import capIntroVideo from "../../assets/sbsimg/cap-intro2.mp4";
 
-
-const Section = styled.section`
+const MinimalSection = styled.section`
   width: 100vw;
-  height: 100vh;
   min-height: 100vh;
-  background: #000;
-  position: relative;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 0 32px 0;
+`;
+
+const Title = styled.h2`
+  font-size: 2.1rem;
+  font-weight: 600;
+  color: #181818;
+  margin-bottom: 1.2rem;
+  letter-spacing: -1px;
+  text-align: center;
+`;
+
+const Description = styled.p`
+  font-size: 1.08rem;
+  color: #444;
+  font-weight: 400;
+  line-height: 1.5;
+  max-width: 480px;
+  margin: 0 auto 2.2rem auto;
+  text-align: center;
+`;
+
+const VideoWrapper = styled.div`
+  width: 420px;
+  height: 420px;
+  max-width: 90vw;
+  max-height: 60vw;
+  margin: 2.2rem 0 1.2rem 0;
+  border-radius: 1.5rem;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
 `;
 
-const ContentRow = styled.div`
-  width: 70vw;
-  max-width: 1200px;
-  min-height: 60vh;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: space-between;
-  @media (max-width: 900px) {
-    flex-direction: column;
-    align-items: stretch;
-    width: 98vw;
-    min-height: 40vw;
-    padding: 0 2vw;
-  }
-`;
-
-const LeftCol = styled.div`
-  min-width: 320px;
-  max-width: 460px;
-  flex: 1 1 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  margin-right: 4vw;
-  @media (max-width: 900px) {
-    max-width: 100vw;
-    margin-right: 0;
-    margin-bottom: 4vw;
-    min-width: 0;
-    padding: 0 2vw;
-  }
-`;
-
-const RightCol = styled.div`
-  flex: 1 1 0;
-  min-width: 420px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-  @media (max-width: 900px) {
-    min-width: 0;
-    align-items: center;
-    width: 100vw;
-    padding: 0 2vw;
-    margin-bottom: 2vw;
-  }
-`;
-
-const MediaBox = styled.div`
-  position: relative;
-  width: 600px;
-  height: 600px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  @media (max-width: 900px) {
-    width: 400px;
-    height: 400px;
-  }
-`;
-
 const StyledVideo = styled.video`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 70%;
-  height: 70%;
-  transform: translate(-50%, -50%);
-  object-fit: cover;
-  background: transparent;
-  z-index: 1;
-`;
-
-const CircleWrapper = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 2;
-`;
-
-const MainTextBlock = styled.div`
-  margin-top: 0;
+  object-fit: contain;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  display: block;
+  border-radius: 1.5rem;
 `;
 
 const SbsIll: React.FC = () => (
-  <Section>
-    <ContentRow>
-      <LeftCol>
-        <MainTextBlock>
-          <span style={{ display: 'block', fontSize: '1.01rem', fontWeight: 600, color: '#888', marginBottom: '0.25em', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Illustration</span>
-          <span style={{ display: 'block', fontSize: '2.3rem', fontWeight: 400, color: '#fff', margin: '0 0 1.8rem 0', lineHeight: 1.07, letterSpacing: '-1px' }}>Style</span>
-          <span style={{ display: 'block', fontSize: '1rem', color: '#504f51', fontWeight: 400, textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.35em' }}>Challenge</span>
-          Create graphics that reflect (freedom, movement, and dance), while matching the logo's shape and Gen Z's emotional vibe.
-          <span style={{ display: 'block', fontSize: '1rem', color: '#504f51', fontWeight: 400, textTransform: 'uppercase', letterSpacing: '0.05em', margin: '1.2em 0 0.35em 0' }}>Solution</span>
-          For the clothing graphics, I used curved lines to represent freedom, movement, and rhythm. These curves also visually connect with the form of the logo, which appears in every design — maintaining strong harmony between the brand mark and the graphics.
-          <br />
-          The illustrated characters have neutral, almost emotionless faces, inspired by Gen Z. This generation often appears tired, withdrawn, or avoiding emotional expression, and I reflected that by designing characters who visually embody this detached energy — staying true to the brand's cultural relevance.
-        </MainTextBlock>
-      </LeftCol>
-      <RightCol>
-        <MediaBox>
+  <MinimalSection>
+    <Title>Illustration</Title>
+    <Description>
+      The illustration style uses curved lines and neutral, emotionless characters to reflect Gen Z’s mood and the brand’s sense of movement and freedom. The logo’s form is echoed in every graphic, creating a cohesive and culturally relevant visual identity.
+    </Description>
+    <VideoWrapper>
           <StyledVideo
             src={capIntroVideo}
-            autoPlay
             loop
             muted
             playsInline
-            controls={false}
+        controls
             aria-label="Cap intro video"
           />
-        
-        </MediaBox>
-      </RightCol>
-    </ContentRow>
-  </Section>
+    </VideoWrapper>
+  </MinimalSection>
 );
 
 export default SbsIll;

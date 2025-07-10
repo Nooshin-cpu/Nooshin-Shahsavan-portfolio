@@ -4,50 +4,37 @@ import deliVideo from "../../assets/deli/delistory.mp4";
 
 const Section = styled.section`
   width: 100vw;
-  height: 100vh;
-  background: #000;
+  background: #fff;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  margin: 2.5rem 0;
+  
   @media (max-width: 900px) {
-    height: auto;
-    min-height: 60vw;
-    padding: 0;
-    margin: 0;
+    margin: 1.5rem 0;
   }
 `;
 
 const VideoContainer = styled.div`
-  width: 30%;
-  height: 100vh;
+  width: 70vw;
+  max-width: 1100px;
   aspect-ratio: 16/9;
   display: flex;
   justify-content: center;
   align-items: center;
-  @media (max-width: 900px) {
-    width: 100vw;
-    height: auto;
-    min-height: 40vw;
-    aspect-ratio: auto;
-    padding: 0;
-    margin: 0;
-  }
+  margin: 0 auto;
+  background: #000;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.06);
 `;
 
 const Video = styled.video`
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  @media (max-width: 900px) {
-    width: 100vw;
-    height: auto;
-    max-width: 100vw;
-    max-height: 40vh;
-    object-fit: cover;
-    margin: 0 auto;
-    padding: 0;
-    display: block;
-  }
+  width: 40%;
+  height: auto;
+  display: block;
+  background: transparent;
 `;
 
 const Deli11: React.FC = () => {
@@ -60,7 +47,7 @@ const Deli11: React.FC = () => {
           loop
           muted
           playsInline
-          controls={false}
+          controls={true}
         />
       </VideoContainer>
     </Section>

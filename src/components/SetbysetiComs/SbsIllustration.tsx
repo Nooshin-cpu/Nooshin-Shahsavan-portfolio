@@ -1,77 +1,88 @@
 import React from "react";
 import styled from "styled-components";
-import capIntroVideo from "../../assets/sbsimg/allin1.mp4";
-import CircleSbs from "./CircleSbs";
+import sbsillustration from "../../assets/sbsimg/sbsillustration.mp4";
+import capIntro2 from "../../assets/sbsimg/cap-intro2.mp4";
+import print2 from "../../assets/sbsimg/print2.mp4";
 
 const Section = styled.section`
   width: 100vw;
-  height: 100vh;
-  min-height: 100vh;
-  background: #000;
-  position: relative;
-  overflow: hidden;
+  background: #fff;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  padding: 48px 0 32px 0;
 `;
 
-const MediaBox = styled.div`
-  position: relative;
-  width: 800px;
-  height: 800px;
+const VideoRow = styled.div`
   display: flex;
-  align-items: center;
+  gap: 2.5rem;
   justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 1400px;
+  margin-bottom: 2.5rem;
   @media (max-width: 900px) {
-    width: 600px;
-    height: 600px;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+    margin-bottom: 1.5rem;
   }
 `;
 
-const StyledVideo = styled.video`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 70%;
-  height: 70%;
-  transform: translate(-50%, -50%);
-  object-fit: cover;
-  background: transparent;
-  z-index: 1;
+const VideoCol = styled.div`
+  flex: 1 1 0;
+  display: flex;
+  justify-content: center;
 `;
 
-const CircleWrapper = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+const StyledVideo = styled.video`
+  width: 35vw;
+  max-width: 500px;
+  height: 400px;
+  border-radius: 1.5rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  object-fit: contain;
+  background: transparent;
+  border: none;
+  display: block;
+  @media (max-width: 900px) {
+    width: 70vw;
+    max-width: 90vw;
+    height: 300px;
+  }
+`;
+
+const SingleVideoRow = styled.div`
   display: flex;
-  align-items: center;
   justify-content: center;
-  z-index: 2;
+  width: 100%;
+  max-width: 1400px;
 `;
 
 const SbsIllustration: React.FC = () => (
   <Section>
-    <MediaBox>
+    <VideoRow>
+      <VideoCol>
       <StyledVideo
-        src={capIntroVideo}
-        autoPlay
+          src={print2}
         loop
         muted
         playsInline
-        controls={false}
-        aria-label="Cap intro video"
+          controls
+          aria-label="SBS Print2 Video"
       />
-      <CircleWrapper>
-        <CircleSbs 
-          text="S.B.S*BRAND*IDENTITY*DESIGN*"
-          onHover="speedUp"
-          spinDuration={20}
+      </VideoCol>
+      <VideoCol>
+        <StyledVideo
+          src={sbsillustration}
+          loop
+          muted
+          playsInline
+          controls
+          aria-label="SBS Illustration Video"
         />
-      </CircleWrapper>
-    </MediaBox>
+      </VideoCol>
+    </VideoRow>
   </Section>
 );
 

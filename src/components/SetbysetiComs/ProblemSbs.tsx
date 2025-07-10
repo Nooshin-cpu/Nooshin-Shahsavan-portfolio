@@ -1,15 +1,17 @@
 import React from "react";
 import styled from "styled-components";
 
+const Highlight = styled.span`
+  color: #e4572e;
+  font-weight: 400;
+`;
+
 const challenges = [
   {
     title: "Logo",
     description: (
       <>
-        Design a flexible logo<br />
-        that reflects <b>freedom, dance, and carefreeness</b>, and
-        can be used inside<br />
-        every graphic.
+        Design a flexible logo that reflects <Highlight>freedom</Highlight>, <Highlight>dance</Highlight>, and <Highlight>carefreeness</Highlight>, and can be used in every graphic.
       </>
     ),
   },
@@ -17,144 +19,115 @@ const challenges = [
     title: "Color Palette",
     description: (
       <>
-        Choose soft,<br />
-        transparent colors to<br />
-        <b>support line-based graphics</b> and <b>reflect party lights</b>.
+        Choose <Highlight>soft</Highlight>, <Highlight>transparent</Highlight> colors to support line-based graphics and reflect party lights.
       </>
     ),
   },
   {
     title: "Typography",
-    description: (
-      <>
-        Find a typeface that<br />
-        matches the logo's <b>form</b> and works well<br />
-        on <b>digital and print</b>.
-      </>
-    ),
+    description: "Find a typeface that matches the logo's form and works well on digital and print.",
   },
   {
     title: "Illustration",
     description: (
       <>
-        Create graphics that<br />
-        show <b>movement and Gen Z mood</b>, while<br />
-        blending with the<br />
-        <b>logo's curves</b>.
+        Create graphics that show <Highlight>movement</Highlight> and <Highlight>Gen Z mood</Highlight>, blending with the logo's curves.
       </>
     ),
   },
 ];
 
-const BG = styled.div`
-  min-height: 100vh;
+const MinimalSection = styled.section`
   width: 100vw;
-  background: linear-gradient(135deg, #fdd7bb 0%, #fff6ee 100%);
+  min-height: 100vh;
+  background: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-`;
-
-const Glass = styled.div`
-  width: 72vw;
-  max-width: 1200px;
-  background: rgba(255,255,255,0.45);
-  border-radius: 2rem;
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.13);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1.5px solid rgba(255,255,255,0.22);
-  padding: 3.5rem 2.5rem 2.5rem 2.5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  @media (max-width: 700px) {
-    padding: 1.2rem 0.5rem 1.5rem 0.5rem;
-    width: 98vw;
-  }
-`;
-
-const SbsLabel = styled.div`
-  font-size: 1.01rem;
-  font-weight: 600;
-  color: #888888;
-  margin-bottom: 0.35em;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  padding: 48px 0 32px 0;
 `;
 
 const Title = styled.h2`
-  font-weight: 400;
-  font-size: 2.7rem;
-  color: #111;
-  margin: 0 0 2rem 0;
-  line-height: 1.07;
+  font-size: 2.1rem;
+  font-weight: 600;
+  color: #181818;
+  margin-bottom: 1.2rem;
   letter-spacing: -1px;
-  text-transform: uppercase;
-  width: 100%;
-  text-align: left;
-  @media (max-width: 700px) {
-    font-size: 2rem;
-    margin-bottom: 1.2rem;
-  }
+  text-align: center;
+`;
+
+const Description = styled.p`
+  font-size: 1.08rem;
+  color: #444;
+  font-weight: 400;
+  line-height: 1.5;
+  max-width: 480px;
+  margin: 0 auto 2.2rem auto;
+  text-align: center;
 `;
 
 const ChallengesGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 2.2rem;
-  width: 100%;
-  @media (max-width: 700px) {
-    gap: 1rem;
-    grid-template-columns: 1fr;
-  }
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2.5rem;
+  margin-top: 1.2rem;
 `;
 
 const ChallengeCard = styled.div`
-  background: rgba(255,255,255,0.85);
+  min-width: 180px;
+  max-width: 240px;
+  background: #fff;
   border-radius: 1.2rem;
-  box-shadow: 0 2px 16px rgba(255, 140, 66, 0.08);
-  border: 1.5px solid #ffe2c7;
-  padding: 2.2rem 1.5rem 1.5rem 1.5rem;
+  border: 2px solid #e4572e;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  padding: 1.5rem 1.2rem;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   transition: transform 0.18s, box-shadow 0.18s;
   &:hover {
     transform: scale(1.04) rotate(-1deg);
-    box-shadow: 0 8px 32px rgba(255, 140, 66, 0.13);
+    box-shadow: 0 8px 32px rgba(80, 79, 81, 0.13);
   }
-  @media (max-width: 700px) {
-    padding: 1.1rem 0.7rem 1rem 0.7rem;
-  }
+`;
+
+const ChallengeTitle = styled.div`
+  font-size: 1.01rem;
+  font-weight: 600;
+  color: #888;
+  margin-bottom: 0.5em;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  text-align: center;
 `;
 
 const ChallengeDesc = styled.div`
   font-weight: 400;
   font-size: 1.08rem;
-  color: #444;
-  line-height: 1.6;
+  color: #222;
+  line-height: 1.5;
   letter-spacing: -0.1px;
-  text-align: left;
+  text-align: center;
 `;
 
 function ProblemSbs() {
   return (
-    <BG>
-      <Glass>
-        <SbsLabel>Key</SbsLabel>
-        <Title>Challenges</Title>
+    <MinimalSection>
+      <Title>Key Challenges</Title>
+      <Description>
+        The project required solving four main creative challenges to build a cohesive, expressive brand identity.
+      </Description>
         <ChallengesGrid>
-          {challenges.map((challenge, i) => (
+        {challenges.map((challenge) => (
             <ChallengeCard key={challenge.title}>
-              <SbsLabel>{challenge.title}</SbsLabel>
+            <ChallengeTitle>{challenge.title}</ChallengeTitle>
               <ChallengeDesc>{challenge.description}</ChallengeDesc>
             </ChallengeCard>
           ))}
         </ChallengesGrid>
-      </Glass>
-    </BG>
+    </MinimalSection>
   );
 }
 

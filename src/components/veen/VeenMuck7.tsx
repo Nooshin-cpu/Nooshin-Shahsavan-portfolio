@@ -3,18 +3,20 @@ import styled from "styled-components";
 import veen3Img from "../../assets/veen/veen3.jpg";
 
 const Section = styled.section`
-  width: 100vw;
-  height: 100vh;
-  background: #fffdd0;
+  width: 70vw;
+  height: auto;
+  background: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2rem;
+  padding: 2rem 0;
+  margin: 2.5rem auto;
   @media (max-width: 900px) {
+    width: 98vw;
     height: auto;
     min-height: 60vw;
     padding: 0;
-    margin: 0;
+    margin: 1.5rem auto;
   }
 `;
 

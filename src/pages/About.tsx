@@ -11,7 +11,7 @@ import CactusAnimation from '../components/CactusAnimation';
 import Skill from '../components/skill';
 import WhyCactus from '../components/WhyCactus';
 import StickyMenu from '../components/StickyMenu';
-import Footer from '../components/Footer';
+import { ClassicFooter } from '../components/Footer';
 
 // Import images for ImageTrail
 import man1 from '../assets/about/man-1.jpg';
@@ -322,7 +322,7 @@ In my free time, I enjoy caring for my plants, spending quality time with my fam
           <ImageTrail items={images} variant={1} />
         </ImageTrailSection>
       </Section>
-      <Footer />
+      <ClassicFooter />
     </AboutContainer>
   );
 };

@@ -1,87 +1,40 @@
 import React from "react";
 import styled from "styled-components";
-import mockImg from "../../assets/sbsimg/sbs-box.jpg";
-import bagImg from "../../assets/sbsimg/sbs-bag1.jpg";
+import mockupImg1 from "../../assets/sbsimg/Sbs-tag.jpg";
+import mockupImg2 from "../../assets/sbsimg/sbs-box.jpg";
 
-const MockSection2 = styled.section`
+const MockupSection = styled.section`
   width: 100vw;
-  height: 100vh;
-  background: #000;
+  background: #fff;
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  overflow: hidden;
-  flex-direction: row;
-  @media (max-width: 900px) {
     flex-direction: column;
-    height: auto;
-    min-height: 60vw;
-    padding: 0;
-    margin: 0;
-  }
-`;
-
-const LeftImgContainer = styled.div`
-  margin-left: 200px;
-  width: 60vw;
-  height: 50vh;
-  display: flex;
-  justify-content: flex-start;
   align-items: center;
-  @media (max-width: 900px) {
-    margin-left: 0;
-    width: 100vw;
-    height: auto;
-    justify-content: center;
-    margin-bottom: 0;
-    margin-top: 0;
-    padding: 0;
-  }
+  padding: 48px 0 32px 0;
 `;
 
-const RightImgContainer = styled.div`
-  width: 30vw;
-  height: 50vh;
+const TwoColumnGrid = styled.div`
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  margin-left: 10px;
-  @media (max-width: 900px) {
-    width: 100vw;
-    height: auto;
-    margin-left: 0;
+  gap: 2rem;
     justify-content: center;
-    margin-bottom: 0;
-    margin-top: 0;
-    padding: 0;
-  }
+  flex-wrap: wrap;
+  width: 70vw;
+  max-width: 70vw;
 `;
 
-const FullImg = styled.img`
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  @media (max-width: 900px) {
-    width: 100vw;
-    max-width: 100vw;
-    height: auto;
-    max-height: 70vh;
-    object-fit: contain;
-    margin: 0 auto;
-    padding: 0;
-  }
+const PairedMockup = styled.img`
+  width: calc(35vw - 1rem);
+  max-width: calc(35vw - 1rem);
+  border-radius: 1.5rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
 `;
 
 const SbsMock2: React.FC = () => (
-  <MockSection2>
-    <LeftImgContainer>
-      <FullImg src={mockImg} alt="SBS Box Mockup" />
-    </LeftImgContainer>
-    <RightImgContainer>
-      <FullImg src={bagImg} alt="SBS Bag Mockup" />
-    </RightImgContainer>
-  </MockSection2>
+  <MockupSection>
+    <TwoColumnGrid>
+      <PairedMockup src={mockupImg1} alt="SBS Tote Bag Mockup 2" />
+      <PairedMockup src={mockupImg2} alt="SBS Box Mockup" />
+    </TwoColumnGrid>
+  </MockupSection>
 );
 
 export default SbsMock2;

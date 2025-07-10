@@ -2,158 +2,68 @@ import React from "react";
 import styled from "styled-components";
 import brandImg from "../../assets/deli/brand.jpg";
 
-
-const Section = styled.section`
-  width: 100%;
-  height: 100vh;
-  min-height: 100vh;
+const MinimalSection = styled.section`
+  width: 100vw;
+  min-height: 80vh;
   background: #fff;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-family: 'Inter', Arial, Helvetica, sans-serif;
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+  padding: 48px 0 32px 0;
 `;
 
-const ContentRow = styled.div`
-  width: 70vw;
-  max-width: 1200px;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-end;
-  justify-content: space-between;
-  box-sizing: border-box;
-  @media (max-width: 900px) {
-    flex-direction: column;
-    align-items: center;
-    width: 98vw;
-    padding: 0 0.5rem;
-  }
-`;
-
-const TextBlock = styled.div`
-  min-width: 220px;
-  max-width: 460px;
-  flex: 1 1 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-start;
-  margin-right: 4vw;
-  box-sizing: border-box;
-  @media (max-width: 900px) {
-    max-width: 100vw;
-    margin-right: 0;
-    margin-bottom: 2vw;
-    padding: 0 0.5rem;
-  }
-`;
-
-const TopLabels = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  margin-bottom: 0.35em;
-`;
-
-const TopLabel = styled.div`
-  font-size: 1.01rem;
+const Title = styled.h2`
+  font-size: 2.1rem;
   font-weight: 600;
-  color: #888888;
-  margin-bottom: 0.35em;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-`;
-
-const MainTextBlock = styled.div`
-  margin-top: 0;
-`;
-
-const BigTitle = styled.h1`
-  font-size: 2.7rem;
-  font-weight: 400;
-  color: #111;
-  margin: 0 0 2rem 0;
-  line-height: 1.07;
+  color: #181818;
+  margin-bottom: 1.2rem;
   letter-spacing: -1px;
-  text-transform: uppercase;
+  text-align: center;
 `;
 
-const Desc = styled.p`
-  font-size: 1.06rem;
-  color: #504f51;
+const Description = styled.p`
+  font-size: 1.08rem;
+  color: #444;
   font-weight: 400;
-  line-height: 1.54;
-  margin: 0;
-  max-width: 620px;
-  @media (max-width: 900px) {
-    max-width: 100vw;
-  }
+  line-height: 1.5;
+  max-width: 520px;
+  margin: 0 auto 2.2rem auto;
+  text-align: center;
 `;
 
-const ImgBlock = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: flex-end;
-  min-width: 220px;
-  flex: 1 1 0;
-  max-width: 480px;
-  height: 60vh;
-  box-sizing: border-box;
-  @media (max-width: 900px) {
-    align-items: center;
-    width: 100vw;
-    max-width: 100vw;
-    height: auto;
-    margin-bottom: 2vw;
-    padding: 0 0.5rem;
-  }
+const Highlight = styled.span`
+  color: #b48a3b;
+  font-weight: 400;
+`;
+
+const ImageWrapper = styled.div`
+  width: 420px;
+  max-width: 90vw;
+  margin: 0 auto 2.2rem auto;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #f3f3f3;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.06);
 `;
 
 const Img = styled.img`
   width: 100%;
-  max-width: 450px;
   height: auto;
-  object-fit: cover;
-  background: #dddddd;
   display: block;
-  border-radius: 12px;
-  box-sizing: border-box;
-  @media (max-width: 900px) {
-    width: 97vw;
-    max-width: 97vw;
-    height: auto;
-    min-height: 180px;
-  }
-`;
-
-const Dot = styled.button<{ $active: boolean }>`
-  background: ${({ $active }) => $active ? '#6c3483' : 'rgba(0,0,0,0.13)'};
-  // ...
+  background: transparent;
 `;
 
 const DeliThird: React.FC = () => (
-  <Section>
-    <ContentRow>
-      <TextBlock>
-        <TopLabels>
-          <TopLabel>Brand</TopLabel>
-        </TopLabels>
-        <MainTextBlock>
-          <BigTitle>Strategy</BigTitle>
-          <Desc>
-          Since the core values of this company were based on embracing the grandeur of classical Roman art while maintaining a modern identity, I needed to design a logo that would serve as a bridge between the classical and contemporary eras. This project was an exciting opportunity for me to explore my passion for art history, allowing me to revisit some of my favorite books, including *Art Through the Ages* by Helen Gardner and *The Story of Art* by Ernst Gombrich. After extensive research and study, I decided to draw inspiration from the iconic classical columns, which are widely recognized symbols of that era. At the same time, I carefully selected colors that reflected the essence and spirit of that period, ensuring that the design stayed true to both historical and modern sensibilities.
-          </Desc>
-        </MainTextBlock>
-      </TextBlock>
-      <ImgBlock>
-        <Img src={brandImg} alt="Brand Strategy Visual" />
-      </ImgBlock>
-    </ContentRow>
-  </Section>
+  <MinimalSection>
+    <Title>Brand Strategy</Title>
+    <Description>
+      Since the core values of this company were based on embracing the grandeur of <Highlight>classical columns</Highlight>, which are widely recognized <Highlight>symbols</Highlight> of that era, I needed to design a logo that would serve as a bridge between the <Highlight>classical</Highlight> and contemporary eras. This project was an exciting opportunity for me to explore my passion for art history, allowing me to revisit some of my favorite books, including <i>Art Through the Ages</i> by Helen Gardner and <i>The Story of Art</i> by Ernst Gombrich. After extensive research and study, I decided to draw inspiration from the <Highlight>iconic classical columns</Highlight>. At the same time, I carefully selected colors that reflected the essence and spirit of that period, ensuring that the design stayed true to both historical and modern sensibilities. The final logo is <Highlight>minimal</Highlight>, <Highlight>elegant</Highlight>, and makes use of <Highlight>positive and negative</Highlight> space. A subtle <Highlight>break</Highlight> in the lower curved line represents the <Highlight>separation and connection</Highlight> between classical and modern eras.
+    </Description>
+    <ImageWrapper>
+      <Img src={brandImg} alt="Brand Strategy Visual" />
+    </ImageWrapper>
+  </MinimalSection>
 );
 
 export default DeliThird; 

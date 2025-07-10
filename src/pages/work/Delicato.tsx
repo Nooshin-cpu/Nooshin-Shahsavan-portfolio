@@ -14,6 +14,9 @@ import Deli10 from '../../components/deli/Deli10';
 import Deli11 from '../../components/deli/Deli11';
 import Deli12 from '../../components/deli/Deli12';
 import Deli13 from '../../components/deli/Deli13';
+import Deli11Image from '../../components/deli/Deli11Image';
+import Deli13Image from '../../components/deli/Deli13Image';
+import DeliCardImage from '../../components/deli/DeliCardImage';
 
 import DeliLogoP from '../../components/deli/DeliLogoP';
 import ProblemDeli from '../../components/deli/ProblemDeli';
@@ -25,6 +28,7 @@ import Deli15 from '../../components/deli/Deli15';
 
 import MenuWork from '../../components/MenuWork';
 import '../../components/MenuWork.css';
+import { EmailFooter } from '../../components/Footer';
 
 const PageBg = styled.div`
   min-height: 100vh;
@@ -32,6 +36,10 @@ const PageBg = styled.div`
   background: #fff;
   transition: background 0.2s;
   overflow-x: hidden;
+  box-sizing: border-box;
+  position: fixed;
+  inset: 0;
+  z-index: 0;
 `;
 
 const GlobalStyle = createGlobalStyle`
@@ -41,32 +49,48 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
+const SectionTitle = styled.h2`
+  width: 100vw;
+  text-align: center;
+  color: #111;
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin: 4rem 0 2rem 0;
+  letter-spacing: 0.04em;
+`;
+
 const Delicato: React.FC = () => {
   return (
     <PageBg>
      
       <DeliFirst />
       <DeliSecond />
-      <DeliThird />
+      
       <ProblemDeli/>
       <DeliForth />
       <DeliLogoP/>
+      
       <DeliGrid />
       <DeliColor />
       <DeliType />
+      <SectionTitle>Mockups</SectionTitle>
       <Deli8 />
       <Deli15 />
-      <Deli9 />
+      <DeliCardImage />
       <Deli10 />
+      <Deli11Image />
+      <Deli13Image />
+      <StoryOne/>
       <Deli11 />
       <Deli12 />
       <Deli13 />
-      <StoryOne/>
+      
     
-      <Deli14 />
+      
       
       
       <MenuWork />
+      <EmailFooter />
     </PageBg>
   );
 };

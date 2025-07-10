@@ -62,6 +62,7 @@ const CardMedia = styled.div`
   height: 100%;
   overflow: hidden;
   border-radius: 20px;
+  z-index: 1;
 
   img, video {
     width: 100%;
@@ -84,28 +85,31 @@ const CardContent = styled.div`
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 2rem;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  padding: 0.6rem 1rem 0.5rem 1rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.82), transparent 90%);
   color: #ffffff;
-  transform: translateY(0);
-  transition: transform 0.4s ease;
-
-  ${ProjectCard}:hover & {
-    transform: translateY(-10px);
-  }
+  transform: none;
+  transition: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  z-index: 2;
+  backdrop-filter: blur(4px);
 
   h3 {
-    font-size: 2.2rem;
+    font-size: 0.98rem;
     font-weight: 600;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.12rem;
     color: #ffffff;
   }
 
   p {
-    font-size: 1rem;
-    opacity: 0.9;
+    font-size: 0.72rem;
+    opacity: 0.92;
     margin: 0;
-    color: rgba(255, 255, 255, 0.9);
+    color: rgba(255, 255, 255, 0.92);
+    font-weight: 400;
   }
 `;
 

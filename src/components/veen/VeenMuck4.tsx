@@ -4,19 +4,21 @@ import mveen2 from '../../assets/veen/mveen2.jpg';
 import mveen5 from '../../assets/veen/mveen5.png';
 
 const Container = styled.div`
-  width: 100vw;
-  height: 100vh;
+  width: 70vw;
+  height: auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
   overflow: hidden;
-  background: #fffdd0;
+  background: #fff;
+  margin: 2.5rem auto;
   @media (max-width: 900px) {
+    width: 98vw;
     height: auto;
     min-height: 60vw;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
-    margin: 0;
+    margin: 1.5rem auto;
     padding: 0;
   }
 `;

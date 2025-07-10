@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 
 // Import only the specific images for the carousel
@@ -11,95 +11,61 @@ import img5 from '../../assets/sbsimg/8s.png';
 
 const images = [img1, img2, img3, img4, img5, ];
 
-const BG = styled.div`
+const MinimalSection = styled.section`
   width: 100vw;
   min-height: 60vh;
+  background: #fff;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  background: #fdd7bb;
-  box-sizing: border-box;
+  justify-content: center;
+  padding: 48px 0 32px 0;
 `;
 
-const CarouselGlass = styled.div`
-  width: 70vw;
-  max-width: 1200px;
-  min-height: 320px;
-  background: rgba(255,255,255,0.35);
-  border-radius: 2rem;
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1.5px solid rgba(255,255,255,0.25);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2.5rem 2rem;
-  position: relative;
-  transition: min-height .2s;
-  @media (max-width: 700px) {
-    min-height: 180px;
-    padding: 1.2rem 0.5rem;
-  }
+const Title = styled.h2`
+  font-size: 2.1rem;
+  font-weight: 600;
+  color: #181818;
+  margin-bottom: 1.2rem;
+  letter-spacing: -1px;
+  text-align: center;
 `;
 
-const ArrowButton = styled.button`
-  background: rgba(255,255,255,0.7);
-  border: none;
-  border-radius: 50%;
-  width: 48px;
-  height: 48px;
-  margin: 0 1.2rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  font-size: 2rem;
-  color: #222;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  transition: background 0.18s, box-shadow 0.18s, color 0.18s;
-  outline: none;
-  border: 2px solid transparent;
-  &:hover, &:focus {
-    background: #fff;
-    color: #ff8c42;
-    border: 2px solid #ff8c42;
-    box-shadow: 0 4px 16px rgba(255,140,66,0.12);
-  }
+const Description = styled.p`
+  font-size: 1.08rem;
+  color: #444;
+  font-weight: 400;
+  line-height: 1.5;
+  max-width: 480px;
+  margin: 0 auto 2.2rem auto;
+  text-align: center;
 `;
 
 const ImagesRow = styled.div`
   display: flex;
-  gap: 2.2vw;
-  width: 100%;
+  gap: 1.5rem;
   justify-content: center;
   align-items: center;
-  @media (max-width: 700px) {
-    gap: 10px;
-  }
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
 `;
 
 const ImgCard = styled.div`
-  width: 260px;
-  height: 260px;
-  background: #fff6ee;
+  width: 280px;
+  height: 280px;
+  background: #fff;
   border-radius: 1.2rem;
+  border: 2px solid #e4572e;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 2px 16px rgba(255, 140, 66, 0.08);
-  border: 1.5px solid #ffe2c7;
-  transition: transform 0.18s, box-shadow 0.18s;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
   flex: 0 0 auto;
+  transition: transform 0.18s, box-shadow 0.18s;
   &:hover {
     transform: scale(1.04) rotate(-1deg);
-    box-shadow: 0 8px 32px rgba(255, 140, 66, 0.13);
-  }
-  @media (max-width: 700px) {
-    width: 100px;
-    height: 100px;
-    border-radius: 0.7rem;
+    box-shadow: 0 8px 32px rgba(80, 79, 81, 0.13);
   }
 `;
 
@@ -111,88 +77,30 @@ const Img = styled.img`
   display: block;
 `;
 
-const Dots = styled.div`
-  position: absolute;
-  bottom: 1.2rem;
-  left: 0;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  gap: 0.7rem;
-`;
-
-const Dot = styled.button<{active: boolean}>`
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  border: none;
-  background: ${({active}) => active ? '#ff8c42' : 'rgba(0,0,0,0.13)'};
-  transition: background 0.18s;
-  cursor: pointer;
-  outline: none;
-  &:hover, &:focus {
-    background: #ff8c42;
-  }
+const Highlight = styled.span`
+  color: #e4572e;
+  font-weight: 400;
 `;
 
 function SbsLogoP() {
-  const [startIdx, setStartIdx] = useState(0);
-  const numVisible = 3;
-  const isMobile = typeof window !== "undefined" && window.innerWidth < 700;
-  const visibleCount = isMobile ? 2 : numVisible;
-
-  const totalGroups = Math.ceil(images.length / visibleCount);
-  const currentGroup = Math.floor(startIdx / visibleCount);
-
-  const handlePrev = () => {
-    setStartIdx((prev) => (prev - visibleCount + images.length) % images.length);
-  };
-
-  const handleNext = () => {
-    setStartIdx((prev) => (prev + visibleCount) % images.length);
-  };
-
-  const goToGroup = (groupIdx: number) => {
-    setStartIdx((groupIdx * visibleCount) % images.length);
-  };
-
-  // Get visible images in a circular way
-  const getVisibleImages = () => {
-    let arr = [];
-    for (let i = 0; i < visibleCount; i++) {
-      arr.push(images[(startIdx + i) % images.length]);
-    }
-    return arr;
-  };
-
   return (
-    <BG>
-      <ArrowButton aria-label="Previous" onClick={handlePrev}>
-        <span aria-hidden="true">&#8592;</span>
-      </ArrowButton>
-      <CarouselGlass>
+    <MinimalSection>
+      <Title>Logo Design Process</Title>
+      <Description>Exploring logo concepts and refinements.</Description>
+      <Description>
+        I noticed a natural <Highlight>connection</Highlight> between the shape of the body and the <Highlight>curves</Highlight> of the letter <Highlight>"S"</Highlight>, which led me to explore how movement could be integrated into the typography. Using the motion and energy from the image, I stylized the letters <Highlight>S.B.S</Highlight> into a unified, dynamic form. The final logo features curved lines that suggest motion and emotional freedom, making the mark feel alive and expressive.
+      </Description>
+      <Description>
+        The result is a logo that combines all three <Highlight>brand initials</Highlight> (<Highlight>S.B.S</Highlight>) into a single, fluid design that works seamlessly across clothing graphics and brand applications.
+      </Description>
         <ImagesRow>
-          {getVisibleImages().map((img, idx) => (
+        {images.map((img, idx) => (
             <ImgCard key={img + idx}>
-              <Img src={img} alt={`carousel-${idx}`} loading="lazy" />
+            <Img src={img} alt={`logo-process-${idx}`} loading="lazy" />
             </ImgCard>
           ))}
         </ImagesRow>
-        <Dots>
-          {Array.from({ length: totalGroups }).map((_, i) => (
-            <Dot
-              key={i}
-              active={i === currentGroup}
-              onClick={() => goToGroup(i)}
-              aria-label={`Go to slide group ${i + 1}`}
-            />
-          ))}
-        </Dots>
-      </CarouselGlass>
-      <ArrowButton aria-label="Next" onClick={handleNext}>
-        <span aria-hidden="true">&#8594;</span>
-      </ArrowButton>
-    </BG>
+    </MinimalSection>
   );
 }
 

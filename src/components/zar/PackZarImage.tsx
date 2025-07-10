@@ -1,88 +1,71 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import pzar1 from "../../assets/zar/pzar1.jpeg";
 import pzar2 from "../../assets/zar/pzar2.png";
 import pzar3 from "../../assets/zar/pzar3.png";
 import pzar4 from "../../assets/zar/pzar4.jpg";
 
-const Container = styled.div`
-  width: 100%;
+const MinimalSection = styled.section`
+  width: 100vw;
   min-height: 100vh;
-  background: linear-gradient(135deg, #2d1b69 0%, #4c1081 50%, #6a0dad 100%);
+  background: #fff;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 4rem 2rem;
+  padding: 48px 0 32px 0;
 `;
 
-const ContentWrapper = styled.div`
-  max-width: 1400px;
-  width: 100%;
-`;
-
-const Title = styled.h2`
-  font-size: 3rem;
-  font-weight: 300;
-  color: #fff;
+const Title = styled.h1`
+  font-size: 2.4rem;
+  font-weight: 600;
+  color: #181818;
+  margin-bottom: 1.2rem;
+  letter-spacing: -1px;
   text-align: center;
-  margin-bottom: 1rem;
-  letter-spacing: -0.02em;
-  
-  @media (max-width: 768px) {
-    font-size: 2rem;
-  }
 `;
 
-const Subtitle = styled.p`
-  font-size: 1.1rem;
-  color: #ccc;
+const Description = styled.p`
+  font-size: 1.08rem;
+  color: #444;
+  font-weight: 400;
+  line-height: 1.5;
+  max-width: 480px;
+  margin: 0 auto 2.2rem auto;
   text-align: center;
-  margin-bottom: 4rem;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 1.6;
 `;
 
 const GridContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
   width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  
+  @media (max-width: 1200px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
   
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
     gap: 1.5rem;
+    padding: 0 1rem;
   }
 `;
 
-const ImageCard = styled.div<{ isHovered: boolean }>`
-  position: relative;
-  background: rgba(255, 255, 255, 0.05);
+const ImageCard = styled.div`
+  background: none;
   border-radius: 16px;
-  padding: 1.5rem;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: all 0.3s ease;
-  cursor: pointer;
   overflow: hidden;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   
   &:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-    border-color: rgba(255, 255, 255, 0.2);
-  }
-  
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.05));
-    opacity: ${props => props.isHovered ? 1 : 0};
-    transition: opacity 0.3s ease;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
   }
 `;
 
@@ -90,10 +73,8 @@ const ImageWrapper = styled.div`
   position: relative;
   width: 100%;
   aspect-ratio: 1;
-  border-radius: 12px;
   overflow: hidden;
-  margin-bottom: 1rem;
-  background: #000;
+  background: #f3f3f3;
 `;
 
 const StyledImage = styled.img`
@@ -103,91 +84,80 @@ const StyledImage = styled.img`
   transition: transform 0.3s ease;
   
   ${ImageCard}:hover & {
-    transform: scale(1.05);
+    transform: scale(1.02);
   }
 `;
 
-const ImageTitle = styled.h3`
-  font-size: 1.2rem;
-  font-weight: 500;
-  color: #fff;
-  margin-bottom: 0.5rem;
+const ImageContent = styled.div`
+  padding: 1.5rem;
+  background: none;
 `;
 
-const ImageDescription = styled.p`
-  font-size: 0.9rem;
-  color: #aaa;
-  line-height: 1.5;
-  display: none;
+const ImageTitle = styled.h3`
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #181818;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
 `;
 
 const Badge = styled.span`
   position: absolute;
   top: 1rem;
   right: 1rem;
-  background: rgba(76, 16, 129, 0.1);
+  background: rgba(76, 16, 129, 0.9);
   color: #fff;
   padding: 0.25rem 0.75rem;
   border-radius: 20px;
   font-size: 0.8rem;
   font-weight: 500;
-  backdrop-filter: blur(10px);
 `;
 
 const PackZarImage: React.FC = () => {
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-
   const images = [
     { 
       src: pzar1, 
       alt: "Pack Zar 1", 
       title: "Selecting a traditional Iranian motif",
-      
     },
     { 
       src: pzar2, 
       alt: "Pack Zar 2", 
       title: "Getting inspiration from a detail of it",
-     
     },
     { 
       src: pzar3, 
       alt: "Pack Zar 3", 
-      title: "Designing a saffron flower based on the flower inspired by the motif",
-      
+      title: "Designed a saffron flower inspired by traditional motifs, using purple and gold to reflect its value and cultural roots.",
     },
     { 
       src: pzar4, 
       alt: "Pack Zar 4", 
       title: "Applying the design to the package",
-      
     },
   ];
 
   return (
-    <Container>
-      <ContentWrapper>
-        <Title>Packaging Design</Title>
+    <MinimalSection>
+      <Title>Packaging Design Process</Title>
+      <Description>
+        The packaging design process involved researching traditional Iranian motifs, extracting key elements, and creating a modern saffron flower illustration that reflects ZAR's Persian heritage while appealing to contemporary consumers.
+      </Description>
       
-        
-        <GridContainer>
-          {images.map((img, idx) => (
-            <ImageCard
-              key={img.alt}
-              isHovered={hoveredIndex === idx}
-              onMouseEnter={() => setHoveredIndex(idx)}
-              onMouseLeave={() => setHoveredIndex(null)}
-            >
-                             <ImageWrapper>
-                 <StyledImage src={img.src} alt={img.alt} />
-                 <Badge>ZAR</Badge>
-               </ImageWrapper>
-               <ImageTitle>{img.title}</ImageTitle>
-            </ImageCard>
-          ))}
-        </GridContainer>
-      </ContentWrapper>
-    </Container>
+      <GridContainer>
+        {images.map((img, idx) => (
+          <ImageCard key={img.alt}>
+            <ImageWrapper>
+              <StyledImage src={img.src} alt={img.alt} />
+              <Badge>ZAR</Badge>
+            </ImageWrapper>
+            <ImageContent>
+              <ImageTitle>{img.title}</ImageTitle>
+            </ImageContent>
+          </ImageCard>
+        ))}
+      </GridContainer>
+    </MinimalSection>
   );
 };
 

@@ -4,23 +4,25 @@ import mveen1 from "../../assets/veen/mveen1.png";
 import card from "../../assets/veen/card.png";
 
 const Section = styled.section`
-  width: 100vw;
-  height: 100vh;
+  width: 70vw;
+  height: auto;
   background: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 2.5rem auto;
   @media (max-width: 900px) {
+    width: 98vw;
     height: auto;
     min-height: 60vw;
     padding: 0;
-    margin: 0;
+    margin: 1.5rem auto;
   }
 `;
 
 const GridContainer = styled.div`
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
@@ -52,6 +54,7 @@ const StyledImage = styled.img`
   height: 100%;
   object-fit: cover;
   display: block;
+  border-radius: 1.2rem;
   @media (max-width: 900px) {
     width: 100vw;
     height: auto;

@@ -2,67 +2,37 @@ import React from "react";
 import styled from "styled-components";
 import webVideo from "../../assets/sbsimg/sbsintro.mp4";
 
-const Section = styled.section`
+const MockupSection = styled.section`
   width: 100vw;
-  height: 100vh;
-  background: #000;
+  background: #fff;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  overflow: hidden;
-  @media (max-width: 900px) {
-    height: auto;
-    min-height: 60vw;
-    padding: 0;
-    margin: 0;
-  }
+  padding: 48px 0 32px 0;
 `;
 
-const VideoContainer = styled.div`
-  width: 100vw;
-  height: 100vh;
+const IndividualMockup = styled.video`
+  width: 70vw;
+  max-width: 70vw;
+  border-radius: 1.5rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  object-fit: contain;
   background: transparent;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  @media (max-width: 900px) {
-    width: 100vw;
-    height: auto;
-    min-height: 0;
-  }
-`;
-
-const StyledVideo = styled.video`
-  width: 70%;
-  height: 70%;
-  object-fit: cover;
-  background: transparent;
+  border: none;
   display: block;
-  @media (max-width: 900px) {
-    width: 100vw;
-    max-width: 100vw;
-    height: auto;
-    max-height: 70vh;
-    object-fit: contain;
-    margin: 0 auto;
-    padding: 0;
-  }
 `;
 
-const SbsMock8: React.FC = () => (
-  <Section>
-    <VideoContainer>
-      <StyledVideo
+const SbsMock12: React.FC = () => (
+  <MockupSection>
+    <IndividualMockup
         src={webVideo}
-        autoPlay
         loop
         muted
         playsInline
-        controls={false}
-        aria-label="SBS Web Video"
+      controls
+      aria-label="SBS Intro Video"
       />
-    </VideoContainer>
-  </Section>
+  </MockupSection>
 );
 
-export default SbsMock8;
+export default SbsMock12;

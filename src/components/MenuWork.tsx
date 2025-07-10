@@ -85,7 +85,7 @@ const MenuWork: React.FC = () => {
 
   return (
     <div className="menu-work-container">
-      <h2 className="menu-work-title">Choose Next work to see</h2>
+      <h2 className="menu-work-title">Next Project</h2>
       <div className="menu-work-grid">
         {orderedItems.map((item, idx) => (
           <div

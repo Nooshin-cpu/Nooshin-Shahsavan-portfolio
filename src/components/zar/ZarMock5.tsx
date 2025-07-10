@@ -2,44 +2,47 @@ import React from "react";
 import styled from "styled-components";
 import mockImg from "../../assets/zar/webzar.png";
 
-const MockSection = styled.section`
+const MinimalSection = styled.section`
   width: 100vw;
-  height: auto;
-  min-height: 100vh;
-  background: #000;
+  background: #fff;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  overflow: hidden;
-  box-sizing: border-box;
+  justify-content: center;
+  margin: 2.5rem 0;
+  
   @media (max-width: 900px) {
-    min-height: unset;
-    padding: 0;
+    margin: 1.5rem 0;
   }
 `;
 
-const FullImg = styled.img`
-  width: 100vw;
-  height: auto;
-  object-fit: cover;
-  display: block;
-  box-sizing: border-box;
-  @media (max-width: 900px) {
-    width: 100vw;
-    max-width: 100vw;
-    max-height: 90vh;
-    height: auto;
-    object-fit: cover;
-    margin: 0;
-    padding: 0;
-    display: block;
+const ImageWrapper = styled.div`
+  width: 70%;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #f3f3f3;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+  
+  @media (max-width: 768px) {
+    width: 90%;
   }
+`;
+
+const StyledImage = styled.img`
+  width: 100%;
+  height: auto;
+  display: block;
+  background: transparent;
 `;
 
 const ZarMock5: React.FC = () => (
-  <MockSection>
-    <FullImg src={mockImg} alt="ZAR Mockup 4" />
-  </MockSection>
+  <MinimalSection>
+    <ImageWrapper>
+      <StyledImage src={mockImg} alt="Zar Mockup 5" />
+    </ImageWrapper>
+  </MinimalSection>
 );
 
 export default ZarMock5;

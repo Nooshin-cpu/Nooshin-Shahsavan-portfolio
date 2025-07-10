@@ -1,97 +1,40 @@
 import React from "react";
 import styled from "styled-components";
-import mockVideo from "../../assets/sbsimg/story-1.mp4";
-import bagImg from "../../assets/sbsimg/Sbs-bag2.jpg";
+import mockupImg1 from "../../assets/sbsimg/sbs-box.jpg";
+import mockupImg2 from "../../assets/sbsimg/sbs-tag.jpg";
 
-const Section = styled.section`
+const MockupSection = styled.section`
   width: 100vw;
-  height: 100vh;
-  min-height: 100vh;
-  background: #000;
+  background: #fff;
   display: flex;
-  flex-direction: row;
-  justify-content: stretch;
-  align-items: stretch;
-  overflow: hidden;
-  @media (max-width: 900px) {
     flex-direction: column;
-    height: auto;
-    min-height: 60vw;
-    padding: 0;
-    margin: 0;
-  }
-`;
-
-const Col = styled.div`
-  flex: 1;
-  height: 100vh;
-  display: flex;
   align-items: center;
+  padding: 48px 0 32px 0;
+`;
+
+const TwoColumnGrid = styled.div`
+  display: flex;
+  gap: 2rem;
   justify-content: center;
-  background: #000;
-  overflow: hidden;
-  @media (max-width: 900px) {
-    height: auto;
-    min-height: 30vw;
-    width: 100vw;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-    padding: 0;
-  }
+  flex-wrap: wrap;
+  width: 70vw;
+  max-width: 70vw;
 `;
 
-const FullImg = styled.img`
-  width: 50%;
-  height: 50%;
-  object-fit: cover;
-  display: block;
-  background: #000;
-  @media (max-width: 900px) {
-    width: 100vw;
-    max-width: 100vw;
-    height: auto;
-    max-height: 70vh;
-    object-fit: contain;
-    margin: 0;
-    padding: 0;
-  }
-`;
-
-const FullVideo = styled.video`
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  background: #000;
-  @media (max-width: 900px) {
-    width: 100vw;
-    max-width: 100vw;
-    height: auto;
-    max-height: 70vh;
-    object-fit: contain;
-    margin: 0;
-    padding: 0;
-  }
+const PairedMockup = styled.img`
+  width: calc(35vw - 1rem);
+  max-width: calc(35vw - 1rem);
+  border-radius: 1.5rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
 `;
 
 const SbsMock4: React.FC = () => (
-  <Section>
-    <Col>
-      <FullImg src={bagImg} alt="SBS Bag Mockup" />
-    </Col>
-    <Col>
-      <FullVideo
-        src={mockVideo}
-        autoPlay
-        loop
-        muted
-        playsInline
-        controls={false}
-        aria-label="SBS Story Video"
-      />
-    </Col>
-  </Section>
+  <MockupSection>
+    <TwoColumnGrid>
+      <PairedMockup src={mockupImg1} alt="SBS Box Mockup" />
+      <PairedMockup src={mockupImg2} alt="SBS Tag Mockup" />
+    </TwoColumnGrid>
+  </MockupSection>
 );
 
-export { SbsMock4 as default };
+export default SbsMock4;

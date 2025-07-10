@@ -20,6 +20,7 @@ import PackZarImage from "../../components/zar/PackZarImage";
 import MenuWork from '../../components/MenuWork';
 import '../../components/MenuWork.css';
 import styled, { createGlobalStyle } from 'styled-components';
+import { EmailFooter } from '../../components/Footer';
 
 const PageBg = styled.div`
   min-height: 100vh;
@@ -48,6 +49,39 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
+const MockupsTitle = styled.section`
+  width: 100vw;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 2.5rem 0;
+  
+  @media (max-width: 900px) {
+    margin: 1.5rem 0;
+  }
+`;
+
+const Title = styled.h1`
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #181818;
+  margin-bottom: 2rem;
+  letter-spacing: 0.04em;
+  text-align: center;
+`;
+
+const Description = styled.p`
+  font-size: 1.08rem;
+  color: #444;
+  font-weight: 400;
+  line-height: 1.5;
+  max-width: 480px;
+  margin: 0 auto;
+  text-align: center;
+`;
+
 const Zar: React.FC = () => (
   <PageBg>
     <GlobalStyle />
@@ -60,16 +94,26 @@ const Zar: React.FC = () => (
     <ZarType/>
     <ZarPackaging/>
     <PackZarImage/>
-    <Zarmock1/>
+    <MockupsTitle>
+      <Title>Mockups</Title>
+      
+    </MockupsTitle>
+    <ZarStory/>
+    <ZarMock8/>
     <Zarmock2/>
     <Zarmock3/>
-    <Zarmock4/>
-    <ZarMock5/>
-    <ZarStory/>
+    <Zarmock1/>
     <ZarMock6/>
-    <ZarMock7/>
-    <ZarMock8/>
+    
+  
+   
+    <ZarMock5/>
+   
+    
+    
+   
     <MenuWork />
+    <EmailFooter />
   </PageBg>
 );
 

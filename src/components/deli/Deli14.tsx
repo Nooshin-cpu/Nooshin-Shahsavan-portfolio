@@ -12,17 +12,21 @@ const Section = styled.section`
 `;
 
 const ImageContainer = styled.div`
-  width: 100%;
-  height: 100%;
+  width: 70vw;
+  max-width: 1100px;
+  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0 auto;
 `;
 
 const Image = styled.img`
   width: 100%;
-  height: 100%;
+  height: auto;
   object-fit: cover;
+  border-radius: 1.2rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
 `;
 
 const Deli14: React.FC = () => {

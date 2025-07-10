@@ -2,7 +2,7 @@ import React, { useRef, useState, useContext, useCallback } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 import { motion, AnimatePresence } from 'framer-motion';
 import DotGrid from '../components/DotGrid.tsx';
-import RotatingText from '../components/RotatingText';
+
 import HoverImage from '../components/HoverImage';
 import man1Image from '../assets/home/icons/man1.png';
 
@@ -16,6 +16,8 @@ import HeaderRecentWork from '../components/HeaderRecentWork';
 import MenuProjects from '../components/MenuProjects';
 import UxHome from '../components/UxHome';
 import FunHome from '../components/FunHome';
+import { ClassicFooter } from '../components/Footer';
+import RotatingText from '../components/RotatingText';
 
 
 // Styled-components
@@ -326,20 +328,7 @@ const Home: React.FC = () => {
                   texts={name}
                   onTextChange={handleRolesTextChange}
                 />
-                <AnimatePresence>
-                  {isHoveringName && (
-                    <NamePopup
-                      $x={popupPosition.x}
-                      $y={popupPosition.y}
-                      initial={{ opacity: 0, scale: 0.95 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      exit={{ opacity: 0, scale: 0.95 }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      {/* You could put an image or content here if desired */}
-                    </NamePopup>
-                  )}
-                </AnimatePresence>
+                {/* Removed NamePopup to eliminate transparent square on hover */}
               </NameContainer>
               <AnimatedRolesContainer
                 ref={rolesTextRef}
@@ -358,12 +347,7 @@ const Home: React.FC = () => {
             </NameAndRolesContainer>
           </LeftContent>
           <RightContent>
-            <HoverImage
-              imageUrl={man1Image}
-              mousePosition={mousePosition}
-              isVisible={isHoveringName}
-              // Best: Ensure HoverImage implements image preloading/loading fallback
-            />
+            {/* Removed HoverImage on name hover as requested */}
           </RightContent>
         </HeroContent>
       </HeroSection>
@@ -378,7 +362,7 @@ const Home: React.FC = () => {
       <CactusSection>
         <Cactus2 />
       </CactusSection>
-      <Footer />
+      <ClassicFooter />
     </PageWrapper>
   );
 };

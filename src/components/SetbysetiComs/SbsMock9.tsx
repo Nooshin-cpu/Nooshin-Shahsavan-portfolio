@@ -3,95 +3,57 @@ import styled from "styled-components";
 import mockVideo from "../../assets/sbsimg/sbsillustration.mp4";
 import bagImg from "../../assets/sbsimg/tag-2.png";
 
-const Section = styled.section`
+const MockupSection = styled.section`
   width: 100vw;
-  height: 100vh;
-  min-height: 100vh;
-  background: #000;
+  background: #fff;
   display: flex;
-  flex-direction: row;
-  justify-content: stretch;
-  align-items: stretch;
-  overflow: hidden;
-  @media (max-width: 900px) {
     flex-direction: column;
-    height: auto;
-    min-height: 60vw;
-    padding: 0;
-    margin: 0;
-  }
-`;
-
-const Col = styled.div`
-  flex: 1;
-  height: 100vh;
-  display: flex;
   align-items: center;
+  padding: 48px 0 32px 0;
+`;
+
+const TwoColumnGrid = styled.div`
+  display: flex;
+  gap: 2rem;
   justify-content: center;
-  background: transparent;
-  overflow: hidden;
-  @media (max-width: 900px) {
-    height: auto;
-    min-height: 30vw;
-    width: 100vw;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-    padding: 0;
-  }
+  flex-wrap: wrap;
+  width: 70vw;
+  max-width: 70vw;
 `;
 
-const FullImg = styled.img`
-  width: 50%;
-  height: 50%;
-  object-fit: cover;
-  display: block;
-  background: transparent;
-  @media (max-width: 900px) {
-    width: 100vw;
-    max-width: 100vw;
-    height: auto;
-    max-height: 70vh;
+const PairedMockup = styled.img`
+  width: calc(35vw - 1rem);
+  max-width: calc(35vw - 1rem);
+  border-radius: 1.5rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
     object-fit: contain;
-    margin: 0;
-    padding: 0;
-  }
 `;
 
-const FullVideo = styled.video`
-  width: 50%;
-  height: 50%;
-  object-fit: cover;
-  display: block;
+const PairedVideo = styled.video`
+  width: calc(35vw - 1rem);
+  max-width: calc(35vw - 1rem);
+  border-radius: 1.5rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  object-fit: contain;
   background: transparent;
-  @media (max-width: 900px) {
-    width: 100vw;
-    max-width: 100vw;
-    height: auto;
-    max-height: 70vh;
-    object-fit: contain;
-    margin: 0;
-    padding: 0;
-  }
+  border: none;
+  display: block;
 `;
 
 const SbsMock9: React.FC = () => (
-  <Section>
-    <Col>
-      <FullImg src={bagImg} alt="SBS Bag Mockup" />
-    </Col>
-    <Col>
-      <FullVideo
+  <MockupSection>
+    <TwoColumnGrid>
+      <PairedMockup src={bagImg} alt="SBS Bag Mockup" />
+      <PairedVideo
         src={mockVideo}
-        autoPlay
         loop
         muted
         playsInline
-        controls={false}
+        controls
         aria-label="SBS Story Video"
       />
-    </Col>
-  </Section>
+    </TwoColumnGrid>
+  </MockupSection>
 );
 
 export default SbsMock9;

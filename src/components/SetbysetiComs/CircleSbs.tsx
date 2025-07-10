@@ -15,24 +15,42 @@ interface CircleSbsProps {
   className?: string;
 }
 
-const CircleContainer = styled(motion.div)`
+const Container = styled.div`
+  width: 100%;
   margin: 0 auto;
-  border-radius: 50%;
-  width: 800px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
-  height: 800px;
+  
+  @media (max-width: 900px) {
+    padding: 1.5rem;
+  }
+`;
+
+const CircleContainer = styled(motion.div)`
+  border-radius: 50%;
+  width: 400px;
+  height: 400px;
   font-family: 'Inter', Arial, Helvetica, sans-serif;
-  font-weight: 600;
-  color: #fff;
+  font-weight: 800;
+  color: #000;
   text-align: center;
   cursor: pointer;
   transform-origin: 50% 50%;
   -webkit-transform-origin: 50% 50%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
   @media (max-width: 900px) {
-    width: 600px;
-    height: 600px;
+    width: 300px;
+    height: 300px;
   }
 `;
+
+
 
 const LetterSpan = styled.span`
   position: absolute;
@@ -41,10 +59,13 @@ const LetterSpan = styled.span`
   right: 0;
   top: 0;
   bottom: 0;
-  font-size: 2rem;
+  font-size: 1.5rem;
   transition: all 0.5s cubic-bezier(0, 0, 0, 1);
-  color: #fff;
-  text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  color: #000;
+  
+  @media (max-width: 900px) {
+    font-size: 1.2rem;
+  }
 `;
 
 const getRotationTransition = (
@@ -134,28 +155,30 @@ const CircleSbs: React.FC<CircleSbsProps> = ({
   };
 
   return (
-    <CircleContainer
-      className={className}
-      style={{ rotate: rotation }}
-      initial={{ rotate: 0 }}
-      animate={controls}
-      onMouseEnter={handleHoverStart}
-      onMouseLeave={handleHoverEnd}
-    >
-      {letters.map((letter, i) => {
-        const rotationDeg = (360 / letters.length) * i;
-        const factor = Math.PI / letters.length;
-        const x = factor * i;
-        const y = factor * i;
-        const transform = `rotateZ(${rotationDeg}deg) translate3d(${x}px, ${y}px, 0)`;
+    <Container>
+      <CircleContainer
+        className={className}
+        style={{ rotate: rotation }}
+        initial={{ rotate: 0 }}
+        animate={controls}
+        onMouseEnter={handleHoverStart}
+        onMouseLeave={handleHoverEnd}
+      >
+        {letters.map((letter, i) => {
+          const rotationDeg = (360 / letters.length) * i;
+          const factor = Math.PI / letters.length;
+          const x = factor * i;
+          const y = factor * i;
+          const transform = `rotateZ(${rotationDeg}deg) translate3d(${x}px, ${y}px, 0)`;
 
-        return (
-          <LetterSpan key={i} style={{ transform, WebkitTransform: transform }}>
-            {letter}
-          </LetterSpan>
-        );
-      })}
-    </CircleContainer>
+          return (
+            <LetterSpan key={i} style={{ transform, WebkitTransform: transform }}>
+              {letter}
+            </LetterSpan>
+          );
+        })}
+      </CircleContainer>
+    </Container>
   );
 };
 

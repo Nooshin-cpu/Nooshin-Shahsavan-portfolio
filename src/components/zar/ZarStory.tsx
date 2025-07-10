@@ -2,70 +2,59 @@ import React from "react";
 import styled from "styled-components";
 import storyVideo from "../../assets/zar/story-zar-1.mp4";
 
-const MockSection = styled.section`
+const MinimalSection = styled.section`
   width: 100vw;
-  height: 100vh;
-  min-height: 100vh;
-  background: #460863;
+  background: #fff;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  margin: 2.5rem 0;
+  
+  @media (max-width: 900px) {
+    margin: 1.5rem 0;
+  }
+`;
+
+const VideoWrapper = styled.div`
+  width: 70%;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-radius: 16px;
   overflow: hidden;
-  box-sizing: border-box;
-  @media (max-width: 900px) {
-    height: auto;
-    min-height: unset;
-    padding: 0;
-  }
-`;
-
-const CenteredVideoWrapper = styled.div`
-  width: 80vw;
-  height: 80vh;
+  background: #460863;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+  aspect-ratio: 16/9;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-sizing: border-box;
-  @media (max-width: 900px) {
-    width: 100vw;
-    height: auto;
-    max-width: 100vw;
-    max-height: 70vh;
-    padding: 0;
+  
+  @media (max-width: 768px) {
+    width: 90%;
   }
 `;
 
-const FullVideo = styled.video`
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+const StyledVideo = styled.video`
+  width: 30%;
+  height: auto;
   display: block;
-  background: #460863;
-  box-sizing: border-box;
-  @media (max-width: 900px) {
-    width: 100vw;
-    height: auto;
-    max-width: 100vw;
-    max-height: 70vh;
-    object-fit: contain;
-    margin: 0;
-    padding: 0;
-    display: block;
-  }
+  background: transparent;
 `;
 
 const ZarStory: React.FC = () => (
-  <MockSection>
-    <CenteredVideoWrapper>
-      <FullVideo
+  <MinimalSection>
+    <VideoWrapper>
+      <StyledVideo
         src={storyVideo}
         autoPlay
         loop
-        
+        muted
+        playsInline
+        controls={true}
         aria-label="Zar Story Video"
       />
-    </CenteredVideoWrapper>
-  </MockSection>
+    </VideoWrapper>
+  </MinimalSection>
 );
 
 export default ZarStory;

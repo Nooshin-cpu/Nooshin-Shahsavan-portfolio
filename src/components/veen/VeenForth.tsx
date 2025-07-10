@@ -30,8 +30,14 @@ const ImgBox = styled.img`
   height: 260px;
   object-fit: cover;
   background: #dadada;
-  border-radius: 0;
+  border-radius: 1.2rem;
   display: block;
+  transition: transform 0.18s, box-shadow 0.18s;
+  box-shadow: 0 2px 16px rgba(80, 79, 81, 0.08);
+  &:hover {
+    transform: scale(1.04) rotate(-1deg);
+    box-shadow: 0 8px 32px rgba(80, 79, 81, 0.13);
+  }
   @media (max-width: 900px) {
     width: 70vw;
     height: 70vw;
@@ -39,6 +45,7 @@ const ImgBox = styled.img`
     max-height: 320px;
     min-width: 120px;
     min-height: 120px;
+    border-radius: 0.7rem;
   }
 `;
 
