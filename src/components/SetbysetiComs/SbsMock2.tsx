@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import mockupImg1 from "../../assets/sbsimg/Sbs-tag.jpg";
+import mockupImg1 from "../../assets/sbsimg/sbs-tag.jpg";
 import mockupImg2 from "../../assets/sbsimg/sbs-box.jpg";
 
 const MockupSection = styled.section`
