@@ -173,7 +173,7 @@ const FlipBook: React.FC = () => {
   };
 
   return (
-    <Container>
+    <Container id="veen-brand-book">
       <h2 style={{marginBottom: '1rem', fontWeight: 700, fontSize: '2.2rem', color: '#222', letterSpacing: '-1px'}}>Brand Book</h2>
       <BookContainer>
         {/* <TestText>FlipBook Component is Working!</TestText> */}

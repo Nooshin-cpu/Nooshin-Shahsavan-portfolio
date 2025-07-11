@@ -79,7 +79,7 @@ const InfoValue = styled.div`
 `;
 
 const ZarColor: React.FC = () => (
-  <MinimalSection>
+  <MinimalSection id="zar-color">
     <Title>Color Palette</Title>
     <Description>
     I chose these colors based on several goals:

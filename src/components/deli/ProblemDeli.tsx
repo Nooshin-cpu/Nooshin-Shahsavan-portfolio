@@ -119,7 +119,7 @@ const ChallengeDesc = styled.div`
 
 function ProblemDeli() {
   return (
-    <MinimalSection>
+    <MinimalSection id="deli-challenges">
       <Title>Key Challenges</Title>
       <Description>
         The project required solving four main creative challenges to build a cohesive, expressive brand identity for Delicato.

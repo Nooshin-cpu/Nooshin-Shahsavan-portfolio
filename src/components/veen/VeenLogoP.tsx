@@ -104,7 +104,7 @@ const Explanation = styled.p`
 
 function VeenLogoP() {
   return (
-    <BG>
+    <BG id="veen-logo-explorations">
       <Title>Logo Explorations</Title>
       <CarouselGlass>
         <ImagesRow>

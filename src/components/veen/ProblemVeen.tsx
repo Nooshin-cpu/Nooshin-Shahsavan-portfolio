@@ -118,7 +118,7 @@ const ChallengeDesc = styled.div`
 
 function ProblemVeen() {
   return (
-    <MinimalSection>
+    <MinimalSection id="veen-challenges">
       <Title>Key Challenges</Title>
       <Description>
         The project required solving four main creative challenges to build a cohesive, expressive brand identity for Veen.

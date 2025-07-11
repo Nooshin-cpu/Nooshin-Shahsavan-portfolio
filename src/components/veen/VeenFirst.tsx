@@ -79,7 +79,7 @@ const InfoValue = styled.div`
 `;
 
 const VeenFirst: React.FC = () => (
-  <MinimalSection>
+  <MinimalSection id="veen-overview">
     <Title>VEEN — Overview</Title>
     <Description>
     VEEN Studio is a newly established photography brand based in Vancouver, specializing in family and child photography. The goal of this project was to create a professional, heartfelt brand identity that reflects warmth, trust, creativity, and joy. 

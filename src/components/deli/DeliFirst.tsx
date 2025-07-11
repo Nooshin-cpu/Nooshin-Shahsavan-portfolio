@@ -78,7 +78,7 @@ const InfoValue = styled.div`
 `;
 
 const DeliFirst: React.FC = () => (
-  <MinimalSection>
+  <MinimalSection id="deli-overview">
     <Title>Delicato — Overview</Title>
     <Description>
     Delicato is a small interior design company from Italy, inspired by the classical architecture of ancient Rome. The brand’s core value is to create spaces that blend the richness of historical elements with modern aesthetics, bringing timeless elegance into contemporary living.

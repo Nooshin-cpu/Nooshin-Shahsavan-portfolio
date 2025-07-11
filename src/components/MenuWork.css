@@ -171,23 +171,23 @@
   }
   
   .menu-work-top-btn {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 32px;
-    width: 56px;
-    height: 56px;
-    background: #000;
-    border: 2.5px solid #fff;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.18);
-    transition: background 0.18s, border-color 0.18s, transform 0.18s;
-    z-index: 10;
-  }
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 32px;
+  width: 56px;
+  height: 56px;
+  background: #000;
+  border: 2.5px solid #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+  transition: background 0.18s, border-color 0.18s, transform 0.18s;
+  z-index: 1000;
+}
   
   .menu-work-top-btn:hover {
     background: #222;
@@ -297,12 +297,8 @@
 }
 
 .menu-work-top-btn {
-  /* Hide scroll-to-top button when overlay is open */
+  /* Ensure scroll-to-top button is always visible */
   transition: opacity 0.2s;
-}
-.menu-work-overlay.show ~ .menu-work-top-btn {
-  opacity: 0;
-  pointer-events: none;
 }
 
 /* Hide desktop grid on mobile, show overlay and hamburger */

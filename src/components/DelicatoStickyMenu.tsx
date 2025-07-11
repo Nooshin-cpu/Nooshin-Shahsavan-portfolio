@@ -48,16 +48,14 @@ const MenuItem = styled.button<{ isActive: boolean; isClicked: boolean }>`
 `;
 
 const menuItems = [
-  { id: 'overview', label: 'Overview', targetId: 'sbs-overview' },
-  { id: 'challenges', label: 'Key Challenges', targetId: 'sbs-challenges' },
-  { id: 'logo', label: 'Logo Design', targetId: 'sbs-logo' },
-  { id: 'color', label: 'Color Palette', targetId: 'sbs-color' },
-  { id: 'typography', label: 'Typography', targetId: 'sbs-typography' },
-  { id: 'illustration', label: 'Illustration', targetId: 'sbs-illustration' },
-  { id: 'mockups', label: 'Mockups', targetId: 'sbs-mockups' },
+  { id: 'overview', label: 'Overview', targetId: 'deli-overview' },
+  { id: 'challenges', label: 'Key Challenges', targetId: 'deli-challenges' },
+  { id: 'logo', label: 'Logo Design', targetId: 'deli-logo' },
+  { id: 'typography', label: 'Typography', targetId: 'deli-typography' },
+  { id: 'mockups', label: 'Mockups', targetId: 'deli-mockups' },
 ];
 
-const SbsStickyMenu: React.FC = () => {
+const DelicatoStickyMenu: React.FC = () => {
   const [clickedItem, setClickedItem] = useState<string | null>(null);
 
   const scrollToSection = (targetId: string, itemId: string) => {
@@ -90,4 +88,4 @@ const SbsStickyMenu: React.FC = () => {
   );
 };
 
-export default SbsStickyMenu; 
+export default DelicatoStickyMenu; 

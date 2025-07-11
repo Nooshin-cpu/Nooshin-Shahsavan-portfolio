@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import FlowingMenu from '../components/FlowingMenu';
+import TopScrollButton from '../components/TopScrollButton';
 
 
 // Import work images
@@ -210,6 +211,7 @@ const Work: React.FC = () => {
       <HeroSection>
         <MenuContainer>
           <FlowingMenu items={menuItems} />
+          <TopScrollButton />
         </MenuContainer>
       </HeroSection>
     </>

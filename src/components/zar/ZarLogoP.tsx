@@ -69,7 +69,7 @@ const Img = styled.img`
 
 function ZarLogoP() {
   return (
-    <MinimalSection>
+    <MinimalSection id="zar-logo">
       <Title>Logo Explorations</Title>
       <ImagesRow>
         {images.map((img, idx) => (

@@ -78,7 +78,7 @@ const InfoValue = styled.div`
 `;
 
 const ZarType: React.FC = () => (
-  <MinimalSection>
+  <MinimalSection id="zar-typography">
     <Title>Typography</Title>
     <Description>
       Primary Typeface: Amandine Elegant and finely curved, perfect for headlines and packaging. Secondary Typeface: Housechks A handwritten script that brings warmth and human feeling to the brand.

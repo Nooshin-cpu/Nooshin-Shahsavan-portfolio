@@ -50,7 +50,7 @@ const StyledVideo = styled.video`
 `;
 
 const DeliType: React.FC = () => (
-  <MinimalSection>
+  <MinimalSection id="deli-typography">
     <Title>Typography</Title>
     <Description>
     I chose Gyst Variable for its contemporary yet classic feel, and paired it with Roc Grotesk a clean, highly legible sans-serif ideal for web use.

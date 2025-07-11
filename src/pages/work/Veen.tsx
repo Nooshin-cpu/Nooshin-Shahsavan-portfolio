@@ -18,8 +18,11 @@ import FlipBook from '../../components/FlipBook';
 
 import ProblemVeen from '../../components/veen/ProblemVeen';
 import MenuWork from '../../components/MenuWork';
+import VeenStickyMenu from '../../components/VeenStickyMenu';
 import '../../components/MenuWork.css';
 import { EmailFooter } from '../../components/Footer';
+import TopScrollButton from '../../components/TopScrollButton';
+import BottomScrollButton from '../../components/BottomScrollButton';
 
 const PageBg = styled.div`
   min-height: 100vh;
@@ -54,34 +57,71 @@ const GlobalStyle = createGlobalStyle`
 const Veen: React.FC = () => {
   return (
     <PageBg>
-     
+      <VeenStickyMenu />
       <VeenFirst />
       <VeenSecond />
       <ProblemVeen />
       <VeenThird />
       <VeenLogoP />
       <VeenForth />
+      <div id="veen-typography" style={{
+        width: '100vw',
+        minHeight: '100vh',
+        background: '#fff',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: '48px 0 32px 0'
+      }}>
+        <h2 style={{
+          fontSize: '2.1rem',
+          fontWeight: 600,
+          color: '#181818',
+          marginBottom: '1.2rem',
+          letterSpacing: '-1px',
+          textAlign: 'center'
+        }}>Typography</h2>
+        <p style={{
+          fontSize: '1.08rem',
+          color: '#444',
+          fontWeight: 400,
+          lineHeight: 1.5,
+          maxWidth: '480px',
+          margin: '0 auto 2.2rem auto',
+          textAlign: 'center'
+        }}>
+          The typography system was carefully chosen to reflect warmth and professionalism, 
+          ensuring excellent readability across all applications.
+        </p>
+      </div>
       <VeenMuck5 />
       <VeenMuck6 />
       <FlipBook />
-      <h2 style={{
-        width: '70vw',
-        margin: '2.5rem auto 1.5rem auto',
-        textAlign: 'center',
-        fontSize: '2.5rem',
-        fontWeight: 700,
-        letterSpacing: '0.04em',
-        color: '#222',
-        background: 'transparent',
-        border: 'none',
-      }}>Mockups</h2>
-      
-      <VeenMuck2 />
-      <VeenMuck3 />
-      <VeenMuck8 />
+      <div id="veen-mockups">
+        <h2 style={{
+          width: '70vw',
+          margin: '2.5rem auto 1.5rem auto',
+          textAlign: 'center',
+          fontSize: '2.5rem',
+          fontWeight: 700,
+          letterSpacing: '0.04em',
+          color: '#222',
+          background: 'transparent',
+          border: 'none',
+        }}>Mockups</h2>
+        
+        <VeenMuck2 />
+        <VeenMuck3 />
+        <VeenMuck8 />
+      </div>
       
   
       <MenuWork />
+      <div style={{ display: 'flex', justifyContent: 'center', margin: '32px 0' }}>
+        <TopScrollButton />
+        <BottomScrollButton />
+      </div>
       <EmailFooter />
     </PageBg>
   );

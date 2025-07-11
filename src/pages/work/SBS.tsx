@@ -29,6 +29,8 @@ import SbsSocialMedia2 from '../../components/SetbysetiComs/SbsSocialMedia2';
 import CircleSbs from '../../components/SetbysetiComs/CircleSbs';
 import { EmailFooter } from '../../components/Footer';
 import SbsStickyMenu from '../../components/SbsStickyMenu';
+import TopScrollButton from '../../components/TopScrollButton';
+import BottomScrollButton from '../../components/BottomScrollButton';
 
 // Responsive PageBg
 const PageBg = styled.div`
@@ -128,6 +130,10 @@ const Sbs: React.FC = () => {
       </div>
       
       <MenuWork />
+      <div style={{ display: 'flex', justifyContent: 'center', margin: '32px 0' }}>
+        <TopScrollButton />
+        <BottomScrollButton />
+      </div>
       <EmailFooter />
     </PageBg>
   );

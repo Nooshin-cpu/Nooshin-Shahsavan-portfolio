@@ -79,7 +79,7 @@ const InfoValue = styled.div`
 `;
 
 const ZarFirst: React.FC = () => (
-  <MinimalSection>
+  <MinimalSection id="zar-overview">
     <Title>Zar — Overview</Title>
     <Description>
     I was responsible for designing the brand identity and packaging system for ZAR, a premium saffron brand. The project focused on merging Persian cultural elements with a modern, minimalist aesthetic. My work included developing the logo, typography, color palette, and packaging design to reflect the brand’s aim of positioning saffron as a luxury product rooted in heritage.

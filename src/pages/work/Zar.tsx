@@ -18,6 +18,9 @@ import ZarLogoP from "../../components/zar/ZarLogoP";
 import ProblemZar from "../../components/zar/ProblemZar";
 import PackZarImage from "../../components/zar/PackZarImage";
 import MenuWork from '../../components/MenuWork';
+import ZarStickyMenu from '../../components/ZarStickyMenu';
+import TopScrollButton from '../../components/TopScrollButton';
+import BottomScrollButton from '../../components/BottomScrollButton';
 import '../../components/MenuWork.css';
 import styled, { createGlobalStyle } from 'styled-components';
 import { EmailFooter } from '../../components/Footer';
@@ -85,6 +88,7 @@ const Description = styled.p`
 const Zar: React.FC = () => (
   <PageBg>
     <GlobalStyle />
+    <ZarStickyMenu />
     <ZarFirst />
     <ZarSecond/>
     <ProblemZar />
@@ -94,16 +98,18 @@ const Zar: React.FC = () => (
     <ZarType/>
     <ZarPackaging/>
     <PackZarImage/>
-    <MockupsTitle>
-      <Title>Mockups</Title>
-      
-    </MockupsTitle>
-    <ZarStory/>
+    <div id="zar-mockups">
+      <MockupsTitle>
+        <Title>Mockups</Title>
+        
+      </MockupsTitle>
+      <ZarStory/>
     <ZarMock8/>
     <Zarmock2/>
     <Zarmock3/>
     <Zarmock1/>
     <ZarMock6/>
+    </div>
     
   
    
@@ -113,6 +119,10 @@ const Zar: React.FC = () => (
     
    
     <MenuWork />
+    <div style={{ display: 'flex', justifyContent: 'center', margin: '32px 0' }}>
+      <TopScrollButton />
+      <BottomScrollButton />
+    </div>
     <EmailFooter />
   </PageBg>
 );

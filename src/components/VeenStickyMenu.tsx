@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
 const MenuContainer = styled.div`
@@ -48,17 +48,19 @@ const MenuItem = styled.button<{ isActive: boolean; isClicked: boolean }>`
 `;
 
 const menuItems = [
-  { id: 'overview', label: 'Overview', targetId: 'sbs-overview' },
-  { id: 'challenges', label: 'Key Challenges', targetId: 'sbs-challenges' },
-  { id: 'logo', label: 'Logo Design', targetId: 'sbs-logo' },
-  { id: 'color', label: 'Color Palette', targetId: 'sbs-color' },
-  { id: 'typography', label: 'Typography', targetId: 'sbs-typography' },
-  { id: 'illustration', label: 'Illustration', targetId: 'sbs-illustration' },
-  { id: 'mockups', label: 'Mockups', targetId: 'sbs-mockups' },
+  { id: 'overview', label: 'Overview', targetId: 'veen-overview' },
+  { id: 'challenges', label: 'Key Challenges', targetId: 'veen-challenges' },
+  { id: 'logo', label: 'Logo Design', targetId: 'veen-logo' },
+  { id: 'color', label: 'Color Palette', targetId: 'veen-color' },
+  { id: 'typography', label: 'Typography', targetId: 'veen-typography' },
+  { id: 'brand-book', label: 'Brand Book', targetId: 'veen-brand-book' },
+  { id: 'mockups', label: 'Mockups', targetId: 'veen-mockups' },
 ];
 
-const SbsStickyMenu: React.FC = () => {
+const VeenStickyMenu: React.FC = () => {
   const [clickedItem, setClickedItem] = useState<string | null>(null);
+
+
 
   const scrollToSection = (targetId: string, itemId: string) => {
     const element = document.getElementById(targetId);
@@ -90,4 +92,4 @@ const SbsStickyMenu: React.FC = () => {
   );
 };
 
-export default SbsStickyMenu; 
+export default VeenStickyMenu; 

@@ -50,7 +50,7 @@ const ImgBox = styled.img`
 `;
 
 const VeenForth: React.FC = () => (
-  <Section>
+  <Section id="veen-color">
     <Row>
       <ImgBox src={logo1} alt="Veen Logo 1" />
       <ImgBox src={logo2} alt="Veen Logo 2" />

@@ -27,8 +27,11 @@ import Deli15 from '../../components/deli/Deli15';
 
 
 import MenuWork from '../../components/MenuWork';
+import DelicatoStickyMenu from '../../components/DelicatoStickyMenu';
 import '../../components/MenuWork.css';
 import { EmailFooter } from '../../components/Footer';
+import TopScrollButton from '../../components/TopScrollButton';
+import BottomScrollButton from '../../components/BottomScrollButton';
 
 const PageBg = styled.div`
   min-height: 100vh;
@@ -62,7 +65,7 @@ const SectionTitle = styled.h2`
 const Delicato: React.FC = () => {
   return (
     <PageBg>
-     
+      <DelicatoStickyMenu />
       <DeliFirst />
       <DeliSecond />
       
@@ -73,8 +76,9 @@ const Delicato: React.FC = () => {
       <DeliGrid />
       <DeliColor />
       <DeliType />
-      <SectionTitle>Mockups</SectionTitle>
-      <Deli8 />
+      <div id="deli-mockups">
+        <SectionTitle>Mockups</SectionTitle>
+        <Deli8 />
       <Deli15 />
       <DeliCardImage />
       <Deli10 />
@@ -84,12 +88,17 @@ const Delicato: React.FC = () => {
       <Deli11 />
       <Deli12 />
       <Deli13 />
+      </div>
       
     
       
       
       
       <MenuWork />
+      <div style={{ display: 'flex', justifyContent: 'center', margin: '32px 0' }}>
+        <TopScrollButton />
+        <BottomScrollButton />
+      </div>
       <EmailFooter />
     </PageBg>
   );

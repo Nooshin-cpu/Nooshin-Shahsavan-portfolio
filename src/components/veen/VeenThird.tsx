@@ -76,7 +76,7 @@ const Highlight = styled.span`
 `;
 
 const VeenThird: React.FC = () => (
-  <MinimalSection>
+  <MinimalSection id="veen-logo">
     <Title>Logo Design</Title>
     <Description>
     Based on the brand’s values and target audience families and children, with an emphasis on conveying warm and comforting vibes I considered several key points. The client preferred a <Highlight>wordmark</Highlight> combined with a <Highlight>photography-related symbol</Highlight>. On the other hand, I also needed to visually reflect the brand’s core values: <Highlight>family</Highlight> and <Highlight>warmth</Highlight>. 

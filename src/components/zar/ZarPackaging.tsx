@@ -78,7 +78,7 @@ const InfoValue = styled.div`
 `;
 
 const ZarPackaging: React.FC = () => (
-  <MinimalSection>
+  <MinimalSection id="zar-packaging">
     <Title>Packaging</Title>
     <Description>
       Design packaging that is luxurious, functional, and deeply rooted in Persian culture, while appealing to global consumers. I designed a sliding drawer box with an inner wrapping layer to both protect the saffron and enhance the unboxing experience. The graphics feature an abstract saffron flower illustration, blending organic lines with Eastern motifs to reflect ZAR's Persian origin.

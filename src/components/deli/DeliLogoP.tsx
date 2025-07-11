@@ -67,7 +67,7 @@ const Img = styled.img`
 
 function DeliLogoP() {
   return (
-    <MinimalSection>
+    <MinimalSection id="deli-logo">
       <Title>Logo Explorations</Title>
       <ImagesRow>
         {images.map((img, idx) => (

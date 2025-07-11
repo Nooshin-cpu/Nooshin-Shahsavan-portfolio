@@ -119,7 +119,7 @@ const ChallengeDesc = styled.div`
 
 function ProblemZar() {
   return (
-    <MinimalSection>
+    <MinimalSection id="zar-challenges">
       <Title>Key Challenges</Title>
       <Description>
         The project required solving four main creative challenges to build a cohesive, luxurious brand identity for ZAR that honors Persian heritage.
