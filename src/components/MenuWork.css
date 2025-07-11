@@ -97,7 +97,7 @@
   }
   
   .menu-work-cube {
-    background: #111;
+    background: #fff;
     border-radius: 18px;
     border: 2px solid #fff;
     width: 96px;
@@ -133,7 +133,7 @@
   
   .menu-work-cube:hover,
   .menu-work-cube:focus {
-    background: #222;
+    background: #f5f5f5;
     border-color: #2ee0ff;
     transform: scale(1.08);
     box-shadow: 0 0 16px #2ee0ff80;
