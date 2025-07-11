@@ -62,22 +62,16 @@ const MenuItem = styled.button<{ isActive: boolean }>`
 `;
 
 const menuItems = [
-  { id: 'overview', label: 'Overview', targetId: 'sbs-overview' },
   { id: 'challenges', label: 'Key Challenges', targetId: 'sbs-challenges' },
   { id: 'logo', label: 'Logo Design', targetId: 'sbs-logo' },
-  { id: 'logo-process', label: 'Logo Process', targetId: 'sbs-logo-process' },
   { id: 'color', label: 'Color Palette', targetId: 'sbs-color' },
   { id: 'typography', label: 'Typography', targetId: 'sbs-typography' },
   { id: 'illustration', label: 'Illustration', targetId: 'sbs-illustration' },
-  { id: 'brand-identity', label: 'Brand Identity', targetId: 'sbs-brand-identity' },
-  { id: 'video', label: 'Video', targetId: 'sbs-video' },
   { id: 'mockups', label: 'Mockups', targetId: 'sbs-mockups' },
-  { id: 'social-media', label: 'Social Media', targetId: 'sbs-social-media' },
-  { id: 'additional-mockups', label: 'Additional Mockups', targetId: 'sbs-additional-mockups' },
 ];
 
 const SbsStickyMenu: React.FC = () => {
-  const [activeSection, setActiveSection] = useState('overview');
+  const [activeSection, setActiveSection] = useState('challenges');
 
   useEffect(() => {
     const handleScroll = () => {
