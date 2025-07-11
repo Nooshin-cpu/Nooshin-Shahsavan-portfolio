@@ -119,10 +119,6 @@ const Zar: React.FC = () => (
     
    
     <MenuWork />
-    <div style={{ display: 'flex', justifyContent: 'center', margin: '32px 0' }}>
-      <TopScrollButton />
-      <BottomScrollButton />
-    </div>
     <EmailFooter />
   </PageBg>
 );
