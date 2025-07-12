@@ -91,6 +91,12 @@ const HeroContent = styled(motion.div)`
   @media (max-width: 768px) {
     flex-direction: column;
     gap: 1rem;
+    padding: 1rem;
+  }
+
+  @media (max-width: 480px) {
+    padding: 0.5rem;
+    gap: 0.5rem;
   }
 `;
 
@@ -102,6 +108,11 @@ const LeftContent = styled.div`
   gap: 1rem;
   cursor: pointer;
   z-index: 3;
+
+  @media (max-width: 768px) {
+    align-items: center;
+    text-align: center;
+  }
 `;
 
 const RightContent = styled.div`
@@ -119,6 +130,11 @@ const NameAndRolesContainer = styled.div`
   align-items: flex-start;
   gap: 1rem;
   z-index: 3;
+
+  @media (max-width: 768px) {
+    align-items: center;
+    width: 100%;
+  }
 `;
 
 const NameContainer = styled.div`
@@ -151,6 +167,15 @@ const StyledNameText = styled(RotatingText)`
   z-index: 3;
   cursor: pointer;
   margin-bottom: 0.5em;
+
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    font-size: clamp(2rem, 6vw, 3.5rem);
+  }
+
+  @media (max-width: 480px) {
+    font-size: clamp(1.8rem, 5vw, 3rem);
+  }
 `;
 
 const AnimatedRolesContainer = styled(motion.div)`
@@ -179,6 +204,26 @@ const AnimatedRolesContainer = styled(motion.div)`
     background: rgba(255, 255, 255, 0.15);
     transform: translateY(-2px);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.38);
+  }
+
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    padding: 1rem 1.5rem;
+    min-width: 180px;
+    margin-top: 1rem;
+
+    & > * {
+      font-size: 1.5rem !important;
+    }
+  }
+
+  @media (max-width: 480px) {
+    padding: 0.8rem 1.2rem;
+    min-width: 160px;
+
+    & > * {
+      font-size: 1.3rem !important;
+    }
   }
 `;
 
@@ -342,8 +387,6 @@ const Home: React.FC = () => {
               </NameContainer>
               <AnimatedRolesContainer
                 ref={rolesTextRef}
-                onMouseEnter={() => setIsHoveringText(true)}
-                onMouseLeave={() => setIsHoveringText(false)}
               >
                 <RotatingText
                   texts={roles}
