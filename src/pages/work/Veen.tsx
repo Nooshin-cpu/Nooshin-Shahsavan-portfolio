@@ -64,37 +64,7 @@ const Veen: React.FC = () => {
       <VeenThird />
       <VeenLogoP />
       <VeenForth />
-      <div id="veen-typography" style={{
-        width: '100vw',
-        minHeight: '100vh',
-        background: '#fff',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        padding: '48px 0 32px 0'
-      }}>
-        <h2 style={{
-          fontSize: '2.1rem',
-          fontWeight: 600,
-          color: '#181818',
-          marginBottom: '1.2rem',
-          letterSpacing: '-1px',
-          textAlign: 'center'
-        }}>Typography</h2>
-        <p style={{
-          fontSize: '1.08rem',
-          color: '#444',
-          fontWeight: 400,
-          lineHeight: 1.5,
-          maxWidth: '480px',
-          margin: '0 auto 2.2rem auto',
-          textAlign: 'center'
-        }}>
-          The typography system was carefully chosen to reflect warmth and professionalism, 
-          ensuring excellent readability across all applications.
-        </p>
-      </div>
+    
       <VeenMuck5 />
       <VeenMuck6 />
       <FlipBook />

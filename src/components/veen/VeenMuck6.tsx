@@ -72,7 +72,7 @@ const VeenMuck6: React.FC = () => {
     <MinimalSection>
       <Title>Typography</Title>
       <Description>
-        Select typography that supports the brand's friendly and trustworthy personality — while being clean and functional across digital and print platforms. I chose two main fonts: a modern, slightly rounded font that echoes the curves found in the logo, and a clean, readable sans-serif ideal for body text. Together, they ensure both emotional warmth and clarity.
+      The typography system was carefully chosen to reflect warmth and professionalism, ensuring excellent readability across all applications.
       </Description>
       <VideoWrapper>
         <StyledVideo
