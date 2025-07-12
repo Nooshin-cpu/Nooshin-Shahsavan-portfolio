@@ -92,7 +92,7 @@ const Hamburger = styled.button`
 const Bar = styled.span`
   width: 28px;
   height: 3px;
-  background: #fff;
+  background: #000;
   margin: 3px 0;
   border-radius: 2px;
   transition: 0.4s;
@@ -125,7 +125,7 @@ const MobileMenu = styled.div<{ open: boolean }>`
 
 const MobileNavLink = styled(Link)`
   font-size: 2.1rem;
-  color: #181818;
+  color: #fff;
   text-decoration: none;
   font-weight: 700;
   margin-bottom: 1.2rem;
@@ -136,7 +136,7 @@ const MobileNavLink = styled(Link)`
   animation-delay: var(--delay, 0s);
   transition: transform 0.2s, color 0.2s;
   &:hover {
-    color:rgb(8, 164, 102);
+    color: #2ee0ff;
     transform: scale(1.08) translateY(-2px);
   }
   &:last-child { margin-bottom: 0; }
