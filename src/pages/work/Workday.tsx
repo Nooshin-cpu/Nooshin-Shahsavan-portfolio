@@ -20,7 +20,7 @@ import FinalLookDayOff from "./FinalLookDayOff";
 import KeyTakeawaySection from "./KeyTakeawaySection";
 import MenuWork from '../../components/MenuWork';
 import '../../components/MenuWork.css';
-import WorkDayMenu from '../../components/WorkDayMenu';
+import WorkdayStickyMenu from '../../components/WorkdayStickyMenu';
 import { EmailFooter } from '../../components/Footer';
 
 
@@ -541,7 +541,7 @@ const Workday: React.FC = () => (
     <GlobalStyle />
     <PageContainer>
       <StickyMenuWrapper>
-        <WorkDayMenu />
+        <WorkdayStickyMenu />
       </StickyMenuWrapper>
       <ContentWrapper id="content-wrapper">
         <div id="overview">

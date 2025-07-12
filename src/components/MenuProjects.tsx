@@ -68,21 +68,21 @@ const MenuProjects: React.FC<MenuProjectsProps> = ({ onSelect, selected }) => {
     main.scrollTo({ top: 0, behavior: 'smooth' });
   }
   return (
-    <div>
-      <MenuProjectsTitle>Recent Works</MenuProjectsTitle>
-      <MenuProjectsWrapper>
-        <ProjectButton $selected={selected === 'branding'} onClick={() => onSelect('branding')}>
-          Branding
-        </ProjectButton>
-        <ProjectButton $selected={selected === 'uxui'} onClick={() => onSelect('uxui')}>
-          UX-UI
-        </ProjectButton>
-        <ProjectButton $selected={selected === 'funproj'} onClick={() => onSelect('funproj')}>
-          Fun proj
-        </ProjectButton>
-      </MenuProjectsWrapper>
-    </div>
-  );
+  <div>
+    <MenuProjectsTitle>Recent Works</MenuProjectsTitle>
+    <MenuProjectsWrapper>
+      <ProjectButton $selected={selected === 'branding'} onClick={() => onSelect('branding')}>
+        Branding
+      </ProjectButton>
+      <ProjectButton $selected={selected === 'uxui'} onClick={() => onSelect('uxui')}>
+        UX-UI
+      </ProjectButton>
+      <ProjectButton $selected={selected === 'funproj'} onClick={() => onSelect('funproj')}>
+        Fun proj
+      </ProjectButton>
+    </MenuProjectsWrapper>
+  </div>
+);
 };
 
 export default MenuProjects;

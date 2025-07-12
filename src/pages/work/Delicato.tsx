@@ -77,8 +77,8 @@ const Delicato: React.FC = () => {
       <DeliColor />
       <DeliType />
       <div id="deli-mockups">
-        <SectionTitle>Mockups</SectionTitle>
-        <Deli8 />
+      <SectionTitle>Mockups</SectionTitle>
+      <Deli8 />
       <Deli15 />
       <DeliCardImage />
       <Deli10 />

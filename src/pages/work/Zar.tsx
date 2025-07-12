@@ -99,11 +99,11 @@ const Zar: React.FC = () => (
     <ZarPackaging/>
     <PackZarImage/>
     <div id="zar-mockups">
-      <MockupsTitle>
-        <Title>Mockups</Title>
-        
-      </MockupsTitle>
-      <ZarStory/>
+    <MockupsTitle>
+      <Title>Mockups</Title>
+      
+    </MockupsTitle>
+    <ZarStory/>
     <ZarMock8/>
     <Zarmock2/>
     <Zarmock3/>
