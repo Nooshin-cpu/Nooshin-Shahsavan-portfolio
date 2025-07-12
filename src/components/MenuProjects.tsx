@@ -7,6 +7,18 @@ const MenuProjectsWrapper = styled.div`
   align-items: center;
   margin: 40px 0 32px 0;
   gap: 18px;
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 12px;
+    margin: 30px 0 24px 0;
+  }
+  
+  @media (max-width: 480px) {
+    gap: 10px;
+    margin: 20px 0 16px 0;
+  }
 `;
 
 const ProjectButton = styled.button<{ $selected: boolean }>`
@@ -25,14 +37,32 @@ const ProjectButton = styled.button<{ $selected: boolean }>`
   outline: none;
   position: relative;
   z-index: 1;
+  
   &:hover, &:focus {
     background: #222222;
     border-color: rgb(204, 204, 205);
     transform: scale(1.08);
     box-shadow: 0 0 16px rgba(255, 255, 255, 0.5);
   }
+  
   &:active {
     transform: scale(0.98);
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    min-width: 200px;
+    padding: 16px 24px;
+    font-size: 1rem;
+    width: 100%;
+    max-width: 280px;
+  }
+  
+  @media (max-width: 480px) {
+    min-width: 180px;
+    padding: 14px 20px;
+    font-size: 0.95rem;
+    max-width: 240px;
   }
 `;
 
@@ -45,15 +75,23 @@ const MenuProjectsTitle = styled.h2`
   font-weight: 700;
   letter-spacing: 0.04em;
   font-family: 'Montserrat', 'Arial', sans-serif;
+  
   @media (max-width: 900px) {
     font-size: 2rem;
     margin-top: 2.5rem;
     margin-bottom: 2rem;
   }
+  
   @media (max-width: 600px) {
     font-size: 1.3rem;
     margin-top: 1.5rem;
     margin-bottom: 1.2rem;
+  }
+  
+  @media (max-width: 480px) {
+    font-size: 1.1rem;
+    margin-top: 1.2rem;
+    margin-bottom: 1rem;
   }
 `;
 
