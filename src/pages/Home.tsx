@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import DotGrid from '../components/DotGrid.tsx';
 
 import HoverImage from '../components/HoverImage';
-import man1Image from '../assets/home/icons/man1.png';
+
 
 import ProjectGrid from '../components/ProjectGrid';
 import { DefaultTheme } from '../styles/theme';

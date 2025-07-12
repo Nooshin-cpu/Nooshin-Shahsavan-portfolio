@@ -71,54 +71,70 @@ const DotGrid = forwardRef<{ triggerShockwave: (pageX: number, pageY: number) =>
     centresRef.current = [];
 
     const { clientWidth: w, clientHeight: h } = container;
-    const cols = Math.floor((w + gap) / (dotSize + gap));
-    const rows = Math.floor((h + gap) / (dotSize + gap));
-    const total = cols * rows;
+    const centerX = w / 2;
+    const centerY = h / 2;
+    const maxRadius = Math.min(w, h) * 0.5 * 0.95;
+    const baseGap = gap;
+    const baseDotSize = dotSize;
+    const rings = Math.floor(maxRadius / baseGap);
 
-    for (let i = 0; i < total; i++) {
-      const dot = document.createElement("div");
-      dot.classList.add("dot-grid__dot");
-      (dot as any)._inertiaApplied = false; // Add property for inertia tracking
-
-      gsap.set(dot, { x: 0, y: 0, backgroundColor: baseColor });
-      container.appendChild(dot);
-      dotsRef.current.push({
-        x: 0,
-        y: 0,
-        element: dot,
-        originalX: 0,
-        originalY: 0,
-        currentX: 0,
-        currentY: 0,
-        velocityX: 0,
-        velocityY: 0,
-      }); // Initialize with dummy values
+    // Precompute all dot positions
+    const dotPositions: Array<{x: number, y: number}> = [];
+    for (let ring = 0; ring < rings; ring++) {
+      const radius = (ring / rings) * maxRadius;
+      const ringGap = baseGap + (radius / maxRadius) * baseGap * 1.5;
+      const circumference = 2 * Math.PI * (radius || 1);
+      const dotsInRing = Math.max(6, Math.floor(circumference / ringGap));
+      for (let i = 0; i < dotsInRing; i++) {
+        const angle = (i / dotsInRing) * 2 * Math.PI;
+        const x = centerX + radius * Math.cos(angle);
+        const y = centerY + radius * Math.sin(angle);
+        if (x < 0 || x > w || y < 0 || y > h) continue;
+        dotPositions.push({ x, y });
+      }
     }
 
-    requestAnimationFrame(() => {
-      centresRef.current = dotsRef.current.map(({ element: el }) => {
-        const r = el.getBoundingClientRect();
-        const x = r.left + window.scrollX + r.width / 2;
-        const y = r.top + window.scrollY + r.height / 2;
-
-        // Update the dot's position data after layout is complete
-        const dot = dotsRef.current.find(d => d.element === el);
-        if (dot) {
-          dot.x = x;
-          dot.y = y;
-          dot.originalX = x;
-          dot.originalY = y;
-          dot.currentX = x;
-          dot.currentY = y;
-        }
-
-        return { el, x, y };
-      });
-    });
+    // Progressive rendering in batches
+    const batchSize = 40;
+    let index = 0;
+    function renderBatch() {
+      if (!container) return;
+      const end = Math.min(index + batchSize, dotPositions.length);
+      for (; index < end; index++) {
+        const { x, y } = dotPositions[index];
+        const dot = document.createElement("div");
+        dot.classList.add("dot-grid__dot");
+        (dot as any)._inertiaApplied = false;
+        gsap.set(dot, { x: 0, y: 0, backgroundColor: baseColor, width: baseDotSize, height: baseDotSize, left: x - baseDotSize / 2, top: y - baseDotSize / 2, position: 'absolute' });
+        container.appendChild(dot);
+        dotsRef.current.push({
+          x,
+          y,
+          element: dot,
+          originalX: x,
+          originalY: y,
+          currentX: x,
+          currentY: y,
+          velocityX: 0,
+          velocityY: 0,
+        });
+      }
+      if (index < dotPositions.length) {
+        requestAnimationFrame(renderBatch);
+      } else {
+        // Update centresRef after all dots are rendered
+        requestAnimationFrame(() => {
+          centresRef.current = dotsRef.current.map(({ element: el, x, y }) => {
+            return { el, x, y };
+          });
+        });
+      }
+    }
+    renderBatch();
   }, [dotSize, gap, baseColor]);
 
   useEffect(() => {
-    const debouncedBuildGrid = debounce(buildGrid, 150);
+    const debouncedBuildGrid = debounce(buildGrid, 250); // was 150
     buildGrid();
     const ro = new ResizeObserver(debouncedBuildGrid);
     if (containerRef.current) ro.observe(containerRef.current);
@@ -235,7 +251,7 @@ const DotGrid = forwardRef<{ triggerShockwave: (pageX: number, pageY: number) =>
       throttleTimeout = setTimeout(() => {
         handleMove(e);
         throttleTimeout = null;
-      }, 40); // 40ms throttle
+      }, 60); // was 40ms throttle
     };
 
     const onClick = (e: MouseEvent) => {
