@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 // Import only the specific images for the carousel
-import img1 from '../../assets/sbsimg/s1.jpeg';
+import img1 from '../../assets/sbsimg/s1.png';
 import img2 from '../../assets/sbsimg/s2.png';
 import img3 from '../../assets/sbsimg/s3.png';
 import img4 from '../../assets/sbsimg/s4.png';

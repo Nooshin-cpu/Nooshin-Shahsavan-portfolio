@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const images: string[] = [
   new URL('../../assets/deli/d1.png', import.meta.url).href,
-  new URL('../../assets/deli/d2.png', import.meta.url).href,
+  new URL('../../assets/deli/d2.jpg', import.meta.url).href,
   new URL('../../assets/deli/d3.png', import.meta.url).href,
   new URL('../../assets/deli/d4.png', import.meta.url).href,
 ];
