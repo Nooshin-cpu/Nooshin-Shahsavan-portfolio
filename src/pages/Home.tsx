@@ -11,7 +11,7 @@ import { DefaultTheme } from '../styles/theme';
 import RecentWorks from '../components/RecentWorks';
 import StickyMenu from '../components/StickyMenu';
 import Cactus2 from '../components/Cactus2';
-import Footer from '../components/Footer';
+// import Footer from '../components/Footer'; // Not used, ClassicFooter is used below
 import HeaderRecentWork from '../components/HeaderRecentWork';
 import MenuProjects from '../components/MenuProjects';
 import UxHome from '../components/UxHome';
@@ -144,31 +144,41 @@ const NamePopup = styled(motion.div)<{ $x: number; $y: number }>`
 
 const StyledNameText = styled(RotatingText)`
   font-weight: 900;
-  font-size: clamp(2rem, 6vw, 4rem);
+  font-size: clamp(2.5rem, 7vw, 4.5rem);
   color: #ffffff;
-  line-height: 1.2;
+  line-height: 1.1;
   position: relative;
   z-index: 3;
   cursor: pointer;
+  margin-bottom: 0.5em;
 `;
 
 const AnimatedRolesContainer = styled(motion.div)`
   position: relative;
   display: inline-block;
-  padding: 1rem 2rem;
-  border-radius: 12px;
+  padding: 1.2rem 2.2rem;
+  border-radius: 1rem;
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(8px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.32);
   transition: all 0.3s ease;
-  min-width: 200px;
+  min-width: 220px;
   text-align: left;
   z-index: 3;
+  margin-top: 1.2rem;
+
+  & > * {
+    font-size: 2rem !important;
+    line-height: 1.2;
+    font-weight: 600;
+    text-align: center;
+    color: #e0e0e0;
+  }
 
   &:hover {
     background: rgba(255, 255, 255, 0.15);
     transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.38);
   }
 `;
 
@@ -293,7 +303,7 @@ const Home: React.FC = () => {
   return (
     <PageWrapper>
       <StickyMenuContainer>
-        <StickyMenu items={menuItems} />
+        <StickyMenu />
       </StickyMenuContainer>
       
       <HeroSection onMouseMove={handleMouseMove}>
