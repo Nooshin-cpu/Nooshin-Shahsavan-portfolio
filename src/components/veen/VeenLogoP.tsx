@@ -9,7 +9,7 @@ import img4 from '../../assets/veen/v4.jpg';
 const images = [img1, img2, img3, img4];
 
 const BG = styled.div`
-  width: 100vw;
+  width: 100%;
   min-height: 60vh;
   display: flex;
   flex-direction: column;
@@ -20,7 +20,7 @@ const BG = styled.div`
 `;
 
 const Title = styled.h2`
-  width: 100vw;
+  width: 100%;
   text-align: center;
   color: #181818;
   font-size: 2.2rem;

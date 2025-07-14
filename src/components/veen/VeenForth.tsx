@@ -5,7 +5,7 @@ import logo2 from "../../assets/veen/veenlogo-2.jpg";
 import logo3 from "../../assets/veen/veenlogo-3.jpg";
 
 const Section = styled.section`
-  width: 100vw;
+  width: 100%;
   min-height: 100vh;
   background: #fff;
   display: flex;

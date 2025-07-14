@@ -3,7 +3,7 @@ import styled from "styled-components";
 import logoSketch from "../../assets/veen/scatch.jpg";
 
 const MinimalSection = styled.section`
-  width: 100vw;
+  width: 100%;
   min-height: 100vh;
   background: #fff;
   display: flex;

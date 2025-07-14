@@ -3,7 +3,7 @@ import styled from "styled-components";
 import mveen1Img from "../../assets/veen/mveen1.jpg";
 
 const Section = styled.section`
-  width: 70vw;
+  width: 100%;
   height: auto;
   background: #fff;
   display: flex;
@@ -12,7 +12,7 @@ const Section = styled.section`
   margin: 2.5rem auto;
   padding: 2rem 0;
   @media (max-width: 900px) {
-    width: 98vw;
+    width: 100%;
     height: auto;
     min-height: 60vw;
     padding: 0;
@@ -30,7 +30,7 @@ const ImageContainer = styled.div`
   overflow: hidden;
   border-radius: 12px;
   @media (max-width: 900px) {
-    width: 100vw;
+    width: 100%;
     height: auto;
     max-width: 100vw;
     min-height: 40vw;
