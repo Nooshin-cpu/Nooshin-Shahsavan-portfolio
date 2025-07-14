@@ -107,10 +107,6 @@ const styles = `
     margin-top: 1.5rem;
     margin-bottom: 1.2rem;
   }
-  .overlay-content {
-    font-size: 0.72rem;
-    padding: 12px 8px;
-  }
   .work-label {
     font-size: 0.85rem;
     top: 10px;
@@ -187,15 +183,26 @@ const styles = `
   left: 16px;
   right: 16px;
   bottom: 16px;
-  background: #fff;
+  background: linear-gradient(135deg, rgba(255,255,255,0.62) 60%, rgba(230,245,255,0.32) 100%);
+  backdrop-filter: blur(32px) saturate(240%);
+  -webkit-backdrop-filter: blur(32px) saturate(240%);
   border-radius: 8px;
-  padding: 16px 18px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  border: 1.5px solid rgba(200,200,220,0.13);
+  box-shadow: 0 8px 32px rgba(60, 60, 90, 0.13);
+  padding: 18px 22px;
   font-size: 1rem;
   z-index: 2;
-  pointer-events: none;
+  pointer-events: auto;
   opacity: 1;
-  transition: opacity 0.2s;
+  transition: none;
+  display: block;
+  color: #23243a;
+  text-align: left;
+  align-items: flex-end;
+  justify-content: flex-end;
+  letter-spacing: 0.01em;
+  /* Subtle inner border for glass effect */
+  box-shadow: 0 8px 32px rgba(60, 60, 90, 0.13), 0 0 0 1.5px rgba(255,255,255,0.18) inset;
 }
 .work-info-box span {
   display: block;
@@ -204,70 +211,6 @@ const styles = `
 }
 .work-info-box span b {
   font-weight: 700;
-}
-.overlay {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.4s;
-  background: rgba(255, 255, 255, 0.18);
-  backdrop-filter: blur(10px) saturate(180%);
-  -webkit-backdrop-filter: blur(10px) saturate(180%);
-  z-index: 10;
-}
-.overlay-content {
-  opacity: 0;
-  transition: opacity 0.5s 0.25s;
-  color: #222;
-  font-size: 0.80rem;
-  font-weight: 500;
-  text-align: left;
-  padding: 22px 22px;
-  border-radius: 12px;
-  background: rgba(255,255,255,0.08);
-}
-.cta-button {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4em;
-  margin-top: 1.1em;
-  padding: 0.45em 1.1em;
-  background: #222;
-  color: #fff;
-  border: none;
-  border-radius: 6px;
-  font-size: 1em;
-  font-weight: 600;
-  cursor: pointer;
-  text-decoration: none;
-  transition: background 0.2s;
-}
-.cta-button:hover, .cta-button:focus {
-  background: #444;
-  color: #fff;
-}
-.cta-arrow {
-  display: inline-block;
-  width: 1.1em;
-  height: 1.1em;
-  vertical-align: middle;
-}
-.work-item:hover .overlay,
-.work-item:focus-within .overlay {
-  opacity: 1;
-  pointer-events: auto;
-}
-.work-item:hover .overlay-content,
-.work-item:focus-within .overlay-content {
-  opacity: 1;
-}
-.work-item:hover .work-info-box,
-.work-item:focus-within .work-info-box {
-  display: none;
 }
 .work-media.workday-fit {
   width: 100%;
@@ -290,15 +233,6 @@ const styles = `
   background: #fff;
 }
 `;
-
-const detailsToString = (details: { label: string, value: string }[]) => (
-  <>
-    <span><b>Project Title:</b> {details[0].value}</span>
-    <span><b>Description:</b> {details[1].value}</span>
-    <span><b>Timeline:</b> {details[2].value}</span>
-    <span><b>Year:</b> {details[3].value}</span>
-  </>
-);
 
 const overlayToString = (details: { label: string, value: string }[], link: string) => (
   <div style={{ textAlign: 'left', fontSize: '0.95rem', lineHeight: '1.5' }}>
@@ -419,15 +353,10 @@ const RecentWorks: React.FC = () => {
                   />
                 )}
               </div>
-              <div className="overlay">
-                <motion.div 
-                  className="overlay-content"
-                  variants={overlayVariants}
-                  initial="hidden"
-                  whileHover="visible"
-                >
-                  {overlayToString(items[0].details, "/work/sbs")}
-                </motion.div>
+              <div className="work-info-box">
+                <span><b>Project Title:</b> {items[0].details[0].value}</span>
+                <span><b>Timeline:</b> {items[0].details[2].value}</span>
+                <span><b>Year:</b> {items[0].details[3].value}</span>
               </div>
             </Link>
           </Tilt>
@@ -462,15 +391,10 @@ const RecentWorks: React.FC = () => {
                   />
                 )}
               </div>
-              <div className="overlay">
-                <motion.div 
-                  className="overlay-content"
-                  variants={overlayVariants}
-                  initial="hidden"
-                  whileHover="visible"
-                >
-                  {overlayToString(items[1].details, "/work/delicato")}
-                </motion.div>
+              <div className="work-info-box">
+                <span><b>Project Title:</b> {items[1].details[0].value}</span>
+                <span><b>Timeline:</b> {items[1].details[2].value}</span>
+                <span><b>Year:</b> {items[1].details[3].value}</span>
               </div>
             </Link>
           </Tilt>
@@ -509,15 +433,10 @@ const RecentWorks: React.FC = () => {
                   />
                 )}
               </div>
-              <div className="overlay">
-                <motion.div 
-                  className="overlay-content"
-                  variants={overlayVariants}
-                  initial="hidden"
-                  whileHover="visible"
-                >
-                  {overlayToString(items[2].details, "/work/workday")}
-                </motion.div>
+              <div className="work-info-box">
+                <span><b>Project Title:</b> {items[2].details[0].value}</span>
+                <span><b>Timeline:</b> {items[2].details[2].value}</span>
+                <span><b>Year:</b> {items[2].details[3].value}</span>
               </div>
             </Link>
           </Tilt>
@@ -552,15 +471,10 @@ const RecentWorks: React.FC = () => {
                   />
                 )}
               </div>
-              <div className="overlay">
-                <motion.div 
-                  className="overlay-content"
-                  variants={overlayVariants}
-                  initial="hidden"
-                  whileHover="visible"
-                >
-                  {overlayToString(items[3].details, "/work/veen")}
-                </motion.div>
+              <div className="work-info-box">
+                <span><b>Project Title:</b> {items[3].details[0].value}</span>
+                <span><b>Timeline:</b> {items[3].details[2].value}</span>
+                <span><b>Year:</b> {items[3].details[3].value}</span>
               </div>
             </Link>
           </Tilt>

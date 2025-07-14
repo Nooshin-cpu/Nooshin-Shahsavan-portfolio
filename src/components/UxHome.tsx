@@ -165,15 +165,24 @@ const styles = `
   left: 16px;
   right: 16px;
   bottom: 16px;
-  background: #fff;
+  background: linear-gradient(135deg, rgba(255,255,255,0.62) 60%, rgba(230,245,255,0.32) 100%);
+  backdrop-filter: blur(32px) saturate(240%);
+  -webkit-backdrop-filter: blur(32px) saturate(240%);
   border-radius: 8px;
-  padding: 16px 18px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  border: 1.5px solid rgba(200,200,220,0.13);
+  box-shadow: 0 8px 32px rgba(60, 60, 90, 0.13), 0 0 0 1.5px rgba(255,255,255,0.18) inset;
+  padding: 18px 22px;
   font-size: 1rem;
   z-index: 2;
-  pointer-events: none;
+  pointer-events: auto;
   opacity: 1;
-  transition: opacity 0.2s;
+  transition: none;
+  display: block;
+  color: #23243a;
+  text-align: left;
+  align-items: flex-end;
+  justify-content: flex-end;
+  letter-spacing: 0.01em;
 }
 .work-info-box span {
   display: block;
@@ -391,15 +400,10 @@ const UxHome: React.FC<{ setSelectedProject: (val: 'branding' | 'uxui' | 'funpro
                   />
                 )}
               </div>
-              <div className="overlay">
-                <motion.div 
-                  className="overlay-content"
-                  variants={overlayVariants}
-                  initial="hidden"
-                  whileHover="visible"
-                >
-                    {overlayToString(item.details, item.link)}
-                </motion.div>
+              <div className="work-info-box">
+                <span><b>Project Title:</b> {item.details[0].value}</span>
+                <span><b>Timeline:</b> {item.details[2].value}</span>
+                <span><b>Year:</b> {item.details[3].value}</span>
               </div>
             </Link>
           </Tilt>
