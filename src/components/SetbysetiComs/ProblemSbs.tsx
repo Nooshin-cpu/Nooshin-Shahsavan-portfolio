@@ -46,6 +46,12 @@ const MinimalSection = styled.section`
   align-items: center;
   justify-content: center;
   padding: 48px 0 32px 0;
+  @media (max-width: 900px) {
+    padding: 32px 0 24px 0;
+  }
+  @media (max-width: 600px) {
+    padding: 18px 0 12px 0;
+  }
 `;
 
 const Title = styled.h2`
@@ -55,6 +61,12 @@ const Title = styled.h2`
   margin-bottom: 1.2rem;
   letter-spacing: -1px;
   text-align: center;
+  @media (max-width: 900px) {
+    font-size: 1.6rem;
+  }
+  @media (max-width: 600px) {
+    font-size: 1.2rem;
+  }
 `;
 
 const Description = styled.p`
@@ -65,6 +77,14 @@ const Description = styled.p`
   max-width: 480px;
   margin: 0 auto 2.2rem auto;
   text-align: center;
+  @media (max-width: 900px) {
+    font-size: 1rem;
+    max-width: 90vw;
+  }
+  @media (max-width: 600px) {
+    font-size: 0.98rem;
+    margin-bottom: 1.2rem;
+  }
 `;
 
 const ChallengesGrid = styled.div`
@@ -73,6 +93,14 @@ const ChallengesGrid = styled.div`
   justify-content: center;
   gap: 2.5rem;
   margin-top: 1.2rem;
+  @media (max-width: 900px) {
+    gap: 1.2rem;
+  }
+  @media (max-width: 600px) {
+    flex-direction: column;
+    gap: 0.8rem;
+    align-items: center;
+  }
 `;
 
 const ChallengeCard = styled.div`
@@ -91,10 +119,19 @@ const ChallengeCard = styled.div`
     transform: scale(1.04) rotate(-1deg);
     box-shadow: 0 8px 32px rgba(80, 79, 81, 0.13);
   }
+  @media (max-width: 900px) {
+    min-width: 140px;
+    max-width: 180px;
+    padding: 1rem 0.8rem;
+  }
+  @media (max-width: 600px) {
+    min-width: 90vw;
+    max-width: 98vw;
+    padding: 0.8rem 0.4rem;
+  }
 `;
 
-const ChallengeTitle = styled.div`
-  font-size: 1.01rem;
+const ChallengeTitle = styled.div`  font-size: 1.01rem;
   font-weight: 600;
   color: #888;
   margin-bottom: 0.5em;

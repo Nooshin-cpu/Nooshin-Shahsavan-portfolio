@@ -14,6 +14,12 @@ const MinimalSection = styled.section`
   align-items: center;
   justify-content: center;
   padding: 48px 0 32px 0;
+  @media (max-width: 900px) {
+    padding: 32px 0 24px 0;
+  }
+  @media (max-width: 600px) {
+    padding: 18px 0 12px 0;
+  }
 `;
 
 const Title = styled.h2`
@@ -23,6 +29,12 @@ const Title = styled.h2`
   margin-bottom: 1.2rem;
   letter-spacing: -1px;
   text-align: center;
+  @media (max-width: 900px) {
+    font-size: 1.6rem;
+  }
+  @media (max-width: 600px) {
+    font-size: 1.2rem;
+  }
 `;
 
 const Description = styled.div`
@@ -33,6 +45,14 @@ const Description = styled.div`
   max-width: 480px;
   margin: 0 auto 2.2rem auto;
   text-align: center;
+  @media (max-width: 900px) {
+    font-size: 1rem;
+    max-width: 90vw;
+  }
+  @media (max-width: 600px) {
+    font-size: 0.98rem;
+    margin-bottom: 1.2rem;
+  }
 `;
 
 const Category = styled.div`
@@ -51,6 +71,14 @@ const LogoMedia = styled.div`
     align-items: center;
   gap: 2.5rem;
   margin: 2.2rem 0 1.2rem 0;
+  @media (max-width: 900px) {
+    gap: 1.2rem;
+    margin: 1.2rem 0 0.8rem 0;
+  }
+  @media (max-width: 600px) {
+    gap: 0.8rem;
+    margin: 0.8rem 0 0.4rem 0;
+  }
 `;
 
 const MainLogoVideo = styled.video`
@@ -63,12 +91,30 @@ const MainLogoVideo = styled.video`
   background: #f7f7f7;
   box-shadow: 0 2px 16px rgba(0,0,0,0.06);
     display: block;
+  @media (max-width: 900px) {
+    width: 220px;
+    height: 220px;
+  }
+  @media (max-width: 600px) {
+    width: 98vw;
+    height: 180px;
+    max-width: 98vw;
+    max-height: 40vw;
+  }
 `;
 
 const LogoRow = styled.div`
   display: flex;
   gap: 2.5rem;
   justify-content: center;
+  @media (max-width: 900px) {
+    gap: 1.2rem;
+  }
+  @media (max-width: 600px) {
+    flex-direction: column;
+    gap: 0.8rem;
+    align-items: center;
+  }
 `;
 
 const LogoImg = styled.img`
@@ -78,6 +124,16 @@ const LogoImg = styled.img`
   border-radius: 1rem;
   background: #f7f7f7;
   box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  @media (max-width: 900px) {
+    width: 120px;
+    height: 120px;
+  }
+  @media (max-width: 600px) {
+    width: 90vw;
+    height: 90vw;
+    max-width: 98vw;
+    max-height: 98vw;
+  }
 `;
 
 const LogoCaption = styled.div`

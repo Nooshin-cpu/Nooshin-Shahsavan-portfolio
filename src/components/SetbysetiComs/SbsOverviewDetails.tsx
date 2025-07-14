@@ -8,6 +8,12 @@ const DetailsSection = styled.section`
   flex-direction: column;
   align-items: center;
   padding: 24px 0 16px 0;
+  @media (max-width: 900px) {
+    padding: 16px 0 8px 0;
+  }
+  @media (max-width: 600px) {
+    padding: 8px 0 4px 0;
+  }
 `;
 
 const DetailsText = styled.p`
@@ -18,6 +24,14 @@ const DetailsText = styled.p`
   max-width: 480px;
   margin: 0 auto;
   text-align: center;
+  @media (max-width: 900px) {
+    font-size: 1rem;
+    max-width: 90vw;
+  }
+  @media (max-width: 600px) {
+    font-size: 0.98rem;
+    margin-bottom: 1.2rem;
+  }
 `;
 
 const AimLine = styled.div`
@@ -27,6 +41,12 @@ const AimLine = styled.div`
   margin-top: 1.2rem;
   text-align: center;
   letter-spacing: 0.01em;
+  @media (max-width: 900px) {
+    font-size: 1rem;
+  }
+  @media (max-width: 600px) {
+    font-size: 0.98rem;
+  }
 `;
 
 const SbsOverviewDetails: React.FC = () => (
