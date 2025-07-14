@@ -9,6 +9,12 @@ const MockupSection = styled.section`
   flex-direction: column;
   align-items: center;
   padding: 48px 0 32px 0;
+  @media (max-width: 900px) {
+    padding: 32px 0 24px 0;
+  }
+  @media (max-width: 600px) {
+    padding: 18px 0 12px 0;
+  }
 `;
 
 const IndividualMockup = styled.video`
@@ -20,6 +26,14 @@ const IndividualMockup = styled.video`
   background: transparent;
   border: none;
   display: block;
+  @media (max-width: 900px) {
+    width: 90vw;
+    max-width: 90vw;
+  }
+  @media (max-width: 600px) {
+    width: 98vw;
+    max-width: 98vw;
+  }
 `;
 
 const SbsSocialMedia2: React.FC = () => (
