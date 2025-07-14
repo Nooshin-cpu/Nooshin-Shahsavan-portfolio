@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const Highlight = styled.span`
-  color: #e4572e;
+  color: #fabfb7;
   font-weight: 400;
 `;
 
@@ -108,7 +108,7 @@ const ChallengeCard = styled.div`
   max-width: 240px;
   background: #fff;
   border-radius: 1.2rem;
-  border: 2px solid #e4572e;
+  border: 2px solid #fabfb7;
   box-shadow: 0 2px 12px rgba(0,0,0,0.04);
   padding: 1.5rem 1.2rem;
   display: flex;

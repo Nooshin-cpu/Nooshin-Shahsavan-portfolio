@@ -36,7 +36,7 @@ const DetailsText = styled.p`
 
 const AimLine = styled.div`
   font-size: 1.08rem;
-  color: #e4572e;
+  color: #fabfb7;
   font-weight: 400;
   margin-top: 1.2rem;
   text-align: center;
