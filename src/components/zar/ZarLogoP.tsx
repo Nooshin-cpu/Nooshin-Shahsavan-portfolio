@@ -90,3 +90,24 @@ const ImgCard = styled.div`
 `;
 
 const Img = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  background: transparent;
+`;
+
+const ZarLogoP: React.FC = () => (
+  <MinimalSection>
+    <Title>Logo Process</Title>
+    <ImagesRow>
+      {images.map((src, idx) => (
+        <ImgCard key={idx}>
+          <Img src={src} alt={`Zar logo process ${idx + 1}`} />
+        </ImgCard>
+      ))}
+    </ImagesRow>
+  </MinimalSection>
+);
+
+export default ZarLogoP;
