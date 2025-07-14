@@ -137,3 +137,28 @@ const ChallengeCard = styled.div`
 `;
 
 const ChallengeTitle = styled.div`
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #a349c6;
+  margin-bottom: 0.7rem;
+  text-align: center;
+`;
+
+const ProblemZar: React.FC = () => (
+  <MinimalSection>
+    <Title>Branding Challenges</Title>
+    <Description>
+      The main design challenges for the ZAR brand were:
+    </Description>
+    <ChallengesGrid>
+      {challenges.map((challenge, idx) => (
+        <ChallengeCard key={challenge.title}>
+          <ChallengeTitle>{challenge.title}</ChallengeTitle>
+          <div>{challenge.description}</div>
+        </ChallengeCard>
+      ))}
+    </ChallengesGrid>
+  </MinimalSection>
+);
+
+export default ProblemZar;
