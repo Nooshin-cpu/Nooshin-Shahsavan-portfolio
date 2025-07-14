@@ -11,6 +11,12 @@ const Section = styled.section`
   flex-direction: column;
   align-items: center;
   padding: 48px 0 32px 0;
+  @media (max-width: 900px) {
+    padding: 32px 0 24px 0;
+  }
+  @media (max-width: 600px) {
+    padding: 18px 0 12px 0;
+  }
 `;
 
 const VideoRow = styled.div`
@@ -26,6 +32,10 @@ const VideoRow = styled.div`
     gap: 1.5rem;
     align-items: center;
     margin-bottom: 1.5rem;
+  }
+  @media (max-width: 600px) {
+    gap: 0.8rem;
+    margin-bottom: 1rem;
   }
 `;
 
@@ -49,6 +59,11 @@ const StyledVideo = styled.video`
     width: 70vw;
     max-width: 90vw;
     height: 300px;
+  }
+  @media (max-width: 600px) {
+    width: 98vw;
+    max-width: 98vw;
+    height: 180px;
   }
 `;
 

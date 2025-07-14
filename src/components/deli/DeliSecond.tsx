@@ -31,8 +31,8 @@ const VideoContainer = styled.div`
   align-items: center;
   margin: 0 auto;
   @media (max-width: 900px) {
-    width: 100vw;
-    max-width: 100vw;
+    width: 95vw;
+    max-width: 95vw;
     aspect-ratio: 16/9;
     padding: 0;
     margin: 0;
@@ -53,12 +53,29 @@ const StyledVideo = styled.video`
   box-shadow: 0 2px 12px rgba(0,0,0,0.04);
   display: block;
   box-sizing: border-box;
+  @media (max-width: 900px) {
+    border-radius: 1rem;
+  }
+  @media (max-width: 600px) {
+    border-radius: 0.7rem;
+  }
 `;
 
 const FullWrapper = styled.div`
   width: 100%;
   height: 100vh;
-  // ... existing styles ...
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  @media (max-width: 900px) {
+    height: auto;
+    padding: 0;
+  }
+  @media (max-width: 600px) {
+    height: auto;
+    padding: 0;
+  }
 `;
 
 const Description = styled.p`
@@ -69,6 +86,15 @@ const Description = styled.p`
   max-width: 480px;
   margin: 2.2rem auto 2.2rem auto;
   text-align: center;
+  @media (max-width: 900px) {
+    font-size: 1rem;
+    max-width: 90vw;
+    margin: 1.2rem auto 1.2rem auto;
+  }
+  @media (max-width: 600px) {
+    font-size: 0.98rem;
+    margin: 0.8rem auto 1rem auto;
+  }
 `;
 
 const AccentLine = styled.div`
@@ -80,6 +106,14 @@ const AccentLine = styled.div`
   width: auto;
   white-space: nowrap;
   overflow-x: auto;
+  @media (max-width: 900px) {
+    font-size: 0.98rem;
+    margin-top: 1rem;
+  }
+  @media (max-width: 600px) {
+    font-size: 0.92rem;
+    margin-top: 0.7rem;
+  }
 `;
 
 const DeliSecond: React.FC = () => (
