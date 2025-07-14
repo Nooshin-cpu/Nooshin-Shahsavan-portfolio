@@ -16,6 +16,9 @@ const Section = styled.section`
     padding: 0;
     margin: 1.5rem 0;
   }
+  @media (max-width: 600px) {
+    margin: 1rem 0;
+  }
 `;
 
 const VideoContainer = styled.div`
@@ -26,6 +29,14 @@ const VideoContainer = styled.div`
   justify-content: center;
   align-items: center;
   margin: 0 auto;
+  @media (max-width: 900px) {
+    width: 90vw;
+    max-width: 90vw;
+  }
+  @media (max-width: 600px) {
+    width: 98vw;
+    max-width: 98vw;
+  }
 `;
 
 const Video = styled.video`

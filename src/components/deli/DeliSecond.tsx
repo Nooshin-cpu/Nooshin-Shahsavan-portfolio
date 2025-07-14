@@ -12,17 +12,12 @@ const Section = styled.section`
   box-sizing: border-box;
   @media (max-width: 900px) {
     height: auto;
-    padding: 0;
+    padding: 18px 0 12px 0;
     margin: 0;
   }
-  @media (max-width: 768px) {
+  @media (max-width: 600px) {
     height: auto;
-    padding: 0;
-    margin: 0;
-  }
-  @media (max-width: 480px) {
-    height: auto;
-    padding: 0;
+    padding: 8px 0 4px 0;
     margin: 0;
   }
 `;
@@ -41,6 +36,12 @@ const VideoContainer = styled.div`
     aspect-ratio: 16/9;
     padding: 0;
     margin: 0;
+  }
+  @media (max-width: 600px) {
+    width: 98vw;
+    max-width: 98vw;
+    aspect-ratio: 16/9;
+    margin-bottom: 1.2rem;
   }
 `;
 

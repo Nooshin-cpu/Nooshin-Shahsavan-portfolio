@@ -12,6 +12,14 @@ const Section = styled.section`
   align-items: center;
   padding: 2rem 0;
   box-sizing: border-box;
+  @media (max-width: 900px) {
+    height: auto;
+    padding: 1rem 0;
+  }
+  @media (max-width: 600px) {
+    height: auto;
+    padding: 0.5rem 0;
+  }
 `;
 
 const GridContainer = styled.div`
@@ -30,6 +38,12 @@ const GridContainer = styled.div`
     grid-template-columns: 1fr;
     gap: 1.5rem;
     padding: 0 0.5rem;
+    height: auto;
+  }
+  @media (max-width: 600px) {
+    gap: 1rem;
+    padding: 0 0.2rem;
+    height: auto;
   }
 `;
 

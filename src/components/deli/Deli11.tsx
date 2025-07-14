@@ -14,6 +14,9 @@ const Section = styled.section`
   @media (max-width: 900px) {
     margin: 1.5rem 0;
   }
+  @media (max-width: 600px) {
+    margin: 1rem 0;
+  }
 `;
 
 const VideoContainer = styled.div`
@@ -28,6 +31,14 @@ const VideoContainer = styled.div`
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+  @media (max-width: 900px) {
+    width: 90vw;
+    max-width: 90vw;
+  }
+  @media (max-width: 600px) {
+    width: 98vw;
+    max-width: 98vw;
+  }
 `;
 
 const Video = styled.video`

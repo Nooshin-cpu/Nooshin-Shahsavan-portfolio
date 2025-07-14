@@ -16,6 +16,9 @@ const Section = styled.section`
     padding: 0;
     margin: 1.5rem 0;
   }
+  @media (max-width: 600px) {
+    margin: 1rem 0;
+  }
 `;
 
 const Title = styled.h2`
@@ -24,6 +27,13 @@ const Title = styled.h2`
   font-weight: 600;
   margin-bottom: 2rem;
   letter-spacing: 0.04em;
+  @media (max-width: 900px) {
+    font-size: 1.6rem;
+  }
+  @media (max-width: 600px) {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
 `;
 
 const Image = styled.img`
@@ -35,6 +45,14 @@ const Image = styled.img`
   margin: 0 auto;
   border-radius: 1.2rem;
   box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  @media (max-width: 900px) {
+    width: 90vw;
+    max-width: 90vw;
+  }
+  @media (max-width: 600px) {
+    width: 98vw;
+    max-width: 98vw;
+  }
 `;
 
 const Deli8: React.FC = () => {

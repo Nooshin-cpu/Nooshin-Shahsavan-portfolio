@@ -11,6 +11,12 @@ const MinimalSection = styled.section`
   align-items: center;
   justify-content: center;
   padding: 48px 0 32px 0;
+  @media (max-width: 900px) {
+    padding: 32px 0 24px 0;
+  }
+  @media (max-width: 600px) {
+    padding: 18px 0 12px 0;
+  }
 `;
 
 const Title = styled.h2`
@@ -20,6 +26,12 @@ const Title = styled.h2`
   margin-bottom: 1.2rem;
   letter-spacing: -1px;
   text-align: center;
+  @media (max-width: 900px) {
+    font-size: 1.6rem;
+  }
+  @media (max-width: 600px) {
+    font-size: 1.2rem;
+  }
 `;
 
 const Description = styled.p`
@@ -30,6 +42,14 @@ const Description = styled.p`
   max-width: 480px;
   margin: 0 auto 2.2rem auto;
   text-align: center;
+  @media (max-width: 900px) {
+    font-size: 1rem;
+    max-width: 90vw;
+  }
+  @media (max-width: 600px) {
+    font-size: 0.98rem;
+    margin-bottom: 1.2rem;
+  }
 `;
 
 const VideoWrapper = styled.div`
@@ -40,6 +60,15 @@ const VideoWrapper = styled.div`
   overflow: hidden;
   background: #f3f3f3;
   box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+  @media (max-width: 900px) {
+    width: 350px;
+    max-width: 95vw;
+  }
+  @media (max-width: 600px) {
+    width: 98vw;
+    max-width: 98vw;
+    margin-bottom: 1.2rem;
+  }
 `;
 
 const StyledVideo = styled.video`
