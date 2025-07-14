@@ -14,6 +14,12 @@ const MinimalSection = styled.section`
   align-items: center;
   justify-content: center;
   padding: 48px 0 32px 0;
+  @media (max-width: 900px) {
+    padding: 32px 0 24px 0;
+  }
+  @media (max-width: 600px) {
+    padding: 24px 0 16px 0;
+  }
 `;
 
 const Title = styled.h1`
@@ -23,6 +29,12 @@ const Title = styled.h1`
   margin-bottom: 1.2rem;
   letter-spacing: -1px;
   text-align: center;
+  @media (max-width: 900px) {
+    font-size: 2rem;
+  }
+  @media (max-width: 600px) {
+    font-size: 1.5rem;
+  }
 `;
 
 const Description = styled.p`
@@ -33,6 +45,14 @@ const Description = styled.p`
   max-width: 480px;
   margin: 0 auto 2.2rem auto;
   text-align: center;
+  @media (max-width: 900px) {
+    font-size: 1rem;
+    margin-bottom: 1.2rem;
+  }
+  @media (max-width: 600px) {
+    font-size: 0.98rem;
+    margin-bottom: 1rem;
+  }
 `;
 
 const GridContainer = styled.div`
@@ -43,16 +63,19 @@ const GridContainer = styled.div`
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 2rem;
-  
   @media (max-width: 1200px) {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
   }
-  
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
     padding: 0 1rem;
+  }
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 0 0.5rem;
   }
 `;
 
@@ -62,10 +85,15 @@ const ImageCard = styled.div`
   overflow: hidden;
   box-shadow: 0 2px 16px rgba(0,0,0,0.06);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  
   &:hover {
     transform: translateY(-4px);
     box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  }
+  @media (max-width: 900px) {
+    border-radius: 12px;
+  }
+  @media (max-width: 600px) {
+    border-radius: 10px;
   }
 `;
 

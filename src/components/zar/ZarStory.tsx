@@ -14,6 +14,9 @@ const MinimalSection = styled.section`
   @media (max-width: 900px) {
     margin: 1.5rem 0;
   }
+  @media (max-width: 600px) {
+    margin: 1rem 0;
+  }
 `;
 
 const VideoWrapper = styled.div`
@@ -29,13 +32,19 @@ const VideoWrapper = styled.div`
   align-items: center;
   justify-content: center;
   
-  @media (max-width: 768px) {
+  @media (max-width: 900px) {
     width: 90%;
+    border-radius: 12px;
+  }
+  @media (max-width: 600px) {
+    width: 98vw;
+    border-radius: 10px;
+    aspect-ratio: 1/1;
   }
 `;
 
 const StyledVideo = styled.video`
-  width: 30%;
+  width: 100%;
   height: auto;
   display: block;
   background: transparent;

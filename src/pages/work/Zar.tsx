@@ -60,9 +60,13 @@ const MockupsTitle = styled.section`
   justify-content: center;
   align-items: center;
   margin: 2.5rem 0;
-  
   @media (max-width: 900px) {
     margin: 1.5rem 0;
+  }
+  @media (max-width: 600px) {
+    margin: 1rem 0;
+    padding: 0 0.5rem;
+    width: 100%;
   }
 `;
 
@@ -73,6 +77,14 @@ const Title = styled.h1`
   margin-bottom: 2rem;
   letter-spacing: 0.04em;
   text-align: center;
+  @media (max-width: 900px) {
+    font-size: 1.6rem;
+    margin-bottom: 1.2rem;
+  }
+  @media (max-width: 600px) {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
 `;
 
 const Description = styled.p`

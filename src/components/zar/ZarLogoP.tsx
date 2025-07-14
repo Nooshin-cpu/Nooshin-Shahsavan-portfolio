@@ -19,6 +19,12 @@ const MinimalSection = styled.section`
   align-items: center;
   justify-content: center;
   padding: 48px 0 32px 0;
+  @media (max-width: 900px) {
+    padding: 32px 0 24px 0;
+  }
+  @media (max-width: 600px) {
+    padding: 24px 0 16px 0;
+  }
 `;
 
 const Title = styled.h2`
@@ -28,6 +34,12 @@ const Title = styled.h2`
   margin-bottom: 1.2rem;
   letter-spacing: -1px;
   text-align: center;
+  @media (max-width: 900px) {
+    font-size: 1.6rem;
+  }
+  @media (max-width: 600px) {
+    font-size: 1.2rem;
+  }
 `;
 
 const ImagesRow = styled.div`
@@ -37,6 +49,14 @@ const ImagesRow = styled.div`
   align-items: center;
   margin-bottom: 1.5rem;
   flex-wrap: wrap;
+  @media (max-width: 900px) {
+    gap: 1rem;
+  }
+  @media (max-width: 600px) {
+    flex-direction: column;
+    gap: 0.7rem;
+    margin-bottom: 1rem;
+  }
 `;
 
 const ImgCard = styled.div`
@@ -57,29 +77,16 @@ const ImgCard = styled.div`
     box-shadow: 0 8px 32px rgba(80, 79, 81, 0.13);
     border-color: rgb(163, 73, 198);
   }
+  @media (max-width: 900px) {
+    width: 180px;
+    height: 180px;
+  }
+  @media (max-width: 600px) {
+    width: 90vw;
+    height: 90vw;
+    max-width: 320px;
+    max-height: 320px;
+  }
 `;
 
 const Img = styled.img`
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  display: block;
-`;
-
-function ZarLogoP() {
-  return (
-    <MinimalSection id="zar-logo">
-      <Title>Logo Explorations</Title>
-      <ImagesRow>
-        {images.map((img, idx) => (
-          <ImgCard key={img + idx}>
-            <Img src={img} alt={`logo-exploration-${idx}`} loading="lazy" />
-          </ImgCard>
-        ))}
-      </ImagesRow>
-    </MinimalSection>
-  );
-}
-
-export default ZarLogoP;
