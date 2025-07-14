@@ -34,8 +34,9 @@ const PageBg = styled.div`
   position: fixed;
   inset: 0;
   z-index: 0;
-
+  padding-top: 80px;
   @media (max-width: 600px) {
+    padding-top: 60px;
     padding-left: 8px;
     padding-right: 8px;
     width: 100%;
