@@ -4,7 +4,7 @@ import strategyImg from "../../assets/zar/moodboard-zar.png";
 import { motion } from 'framer-motion';
 
 const MinimalSection = styled.section`
-  width: 100vw;
+  width: 100%;
   min-height: 100vh;
   background: #fff;
   display: flex;

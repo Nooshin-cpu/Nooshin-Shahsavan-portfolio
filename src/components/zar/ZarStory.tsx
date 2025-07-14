@@ -3,7 +3,7 @@ import styled from "styled-components";
 import storyVideo from "../../assets/zar/story-zar-1.mp4";
 
 const MinimalSection = styled.section`
-  width: 100vw;
+  width: 100%;
   background: #fff;
   display: flex;
   flex-direction: column;

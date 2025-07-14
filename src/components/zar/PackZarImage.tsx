@@ -6,7 +6,7 @@ import pzar3 from "../../assets/zar/pzar3.png";
 import pzar4 from "../../assets/zar/pzar4.jpg";
 
 const MinimalSection = styled.section`
-  width: 100vw;
+  width: 100%;
   min-height: 100vh;
   background: #fff;
   display: flex;

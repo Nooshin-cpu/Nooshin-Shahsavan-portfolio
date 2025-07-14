@@ -11,7 +11,7 @@ import img5 from '../../assets/zar/logo5.png';
 const images = [img1, img2, img3, img4, img5];
 
 const MinimalSection = styled.section`
-  width: 100vw;
+  width: 100%;
   min-height: 60vh;
   background: #fff;
   display: flex;

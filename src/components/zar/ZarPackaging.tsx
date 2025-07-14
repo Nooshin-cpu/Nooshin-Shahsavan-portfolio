@@ -3,7 +3,7 @@ import styled from "styled-components";
 import strategyImg from "../../assets/zar/box-1.jpg";
 
 const MinimalSection = styled.section`
-  width: 100vw;
+  width: 100%;
   min-height: 100vh;
   background: #fff;
   display: flex;

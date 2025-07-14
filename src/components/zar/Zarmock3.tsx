@@ -3,7 +3,7 @@ import styled from "styled-components";
 import mockImg from "../../assets/zar/box-2.jpg";
 
 const MinimalSection = styled.section`
-  width: 100vw;
+  width: 100%;
   background: #fff;
   display: flex;
   flex-direction: column;
