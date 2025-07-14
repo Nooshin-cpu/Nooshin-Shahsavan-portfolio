@@ -43,6 +43,10 @@ const PageBg = styled.div`
   position: fixed;
   inset: 0;
   z-index: 0;
+  padding-top: 80px;
+  @media (max-width: 600px) {
+    padding-top: 60px;
+  }
 `;
 
 const GlobalStyle = createGlobalStyle`
