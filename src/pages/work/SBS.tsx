@@ -72,6 +72,7 @@ const SectionTitle = styled.h2`
 const Sbs: React.FC = () => {
   return (
     <PageBg>
+       <GlobalStyle />
       <SbsStickyMenu />
       
       <div id="sbs-overview">
