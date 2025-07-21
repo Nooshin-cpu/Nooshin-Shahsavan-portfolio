@@ -8,6 +8,19 @@ const StickyWrapper = styled.div`
   top: 50%;
   transform: translateY(-50%);
   z-index: 1000;
+
+  @media (max-width: 1024px) {
+    left: 0;
+    right: 0;
+    top: auto;
+    bottom: 0;
+    width: 100vw;
+    transform: none;
+    display: flex;
+    justify-content: center;
+    background: none;
+    pointer-events: auto;
+  }
 `;
 
 const MenuBox = styled.div`
@@ -19,6 +32,18 @@ const MenuBox = styled.div`
   align-items: center;
   min-width: 48px;
   gap: 10px;
+
+  @media (max-width: 1024px) {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    min-width: unset;
+    padding: 10px 0 18px 0;
+    gap: 18px;
+    background: rgba(25,28,36,0.98);
+    border-radius: 0;
+  }
 `;
 
 const IconContainer = styled.a<{ $hovered: boolean }>`
@@ -59,6 +84,13 @@ const IconContainer = styled.a<{ $hovered: boolean }>`
 
   &:active {
     transform: scale(0.98);
+  }
+
+  @media (max-width: 1024px) {
+    margin: 0 0.5rem;
+    width: 44px;
+    height: 44px;
+    font-size: 1.25rem;
   }
 `;
 

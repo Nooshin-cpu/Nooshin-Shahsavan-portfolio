@@ -3,7 +3,7 @@ import styled, { ThemeContext } from 'styled-components';
 import { motion, AnimatePresence } from 'framer-motion';
 import DotGrid from '../components/DotGrid.tsx';
 
-import HoverImage from '../components/HoverImage';
+
 
 
 import ProjectGrid from '../components/ProjectGrid';

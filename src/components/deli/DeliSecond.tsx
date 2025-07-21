@@ -99,19 +99,20 @@ const Description = styled.p`
 
 const AccentLine = styled.div`
   color: #b48a3b;
-  font-size: 1.02rem;
+  font-size: 1.08rem;
+  font-weight: 400;
   margin: 1.5rem auto 0 auto;
   text-align: center;
   letter-spacing: 0.01em;
   width: auto;
-  white-space: nowrap;
-  overflow-x: auto;
+  /* No background, no border-radius, no extra padding */
+  box-shadow: none;
   @media (max-width: 900px) {
-    font-size: 0.98rem;
+    font-size: 1rem;
     margin-top: 1rem;
   }
   @media (max-width: 600px) {
-    font-size: 0.92rem;
+    font-size: 0.98rem;
     margin-top: 0.7rem;
   }
 `;

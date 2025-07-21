@@ -107,7 +107,7 @@ const Sbs: React.FC = () => {
       
       <div id="sbs-illustration">
         <SbsIll/>
-        <SbsIllustration />   
+       c
       </div>
       
       <div id="sbs-brand-identity">
