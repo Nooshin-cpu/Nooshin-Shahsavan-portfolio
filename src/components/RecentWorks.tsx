@@ -15,7 +15,7 @@ const items = [
     label: "Branding/Print",
     
     details: [
-      { label: "Project Title:", value: "S.B.S.Clothing brand" },
+      { label: "Project Title:", value: "S.B.S" },
       { label: "Description:", value: " S.B.S is a clothing brand based in Vancouver. Their goal is to design affordable fashion for partygoers. I designed their logo, print materials, and social media visuals. " },
       { label: "Timeline", value: "3 weeks" },
       { label: "Year", value: "2023" },
@@ -27,7 +27,7 @@ const items = [
     label: "Branding",
     
     details: [
-      { label: "Project Title:", value: "Delicato. Interior design company" },
+      { label: "Project Title:", value: "Delicato" },
       { label: "Description:", value: "Delicato is a small interior design company from Italy that relies on classical architecture in its designs. " },
       { label: "Timeline", value: "2 weeks" },
       { label: "Year", value: "2024" },
@@ -51,7 +51,7 @@ const items = [
     label: "Branding",
     
     details: [
-      { label: "Project Title", value: "Veen Photography Studio" },
+      { label: "Project Title", value: "Veen " },
       { label: "Description:", value: "Veen is a photography studio based in Vancouver, targeting families and children. I handled their social media and branding." },
       { label: "Timeline", value: "2 weeks" },
       { label: "Year", value: "2024" },
@@ -183,26 +183,37 @@ const styles = `
   left: 16px;
   right: 16px;
   bottom: 16px;
-  background: linear-gradient(135deg, rgba(255,255,255,0.62) 60%, rgba(230,245,255,0.32) 100%);
-  backdrop-filter: blur(32px) saturate(240%);
-  -webkit-backdrop-filter: blur(32px) saturate(240%);
-  border-radius: 8px;
-  border: 1.5px solid rgba(200,200,220,0.13);
-  box-shadow: 0 8px 32px rgba(60, 60, 90, 0.13);
-  padding: 18px 22px;
-  font-size: 1rem;
+  background: none;
+  border-radius: 6px;
+  border: none;
+  box-shadow: none;
+  padding: 6px 8px;
+  font-size: 0.92rem;
   z-index: 2;
   pointer-events: auto;
   opacity: 1;
   transition: none;
-  display: block;
+  display: flex;
+  flex-direction: row;
+  gap: 0.5em;
   color: #23243a;
   text-align: left;
   align-items: flex-end;
   justify-content: flex-end;
   letter-spacing: 0.01em;
-  /* Subtle inner border for glass effect */
-  box-shadow: 0 8px 32px rgba(60, 60, 90, 0.13), 0 0 0 1.5px rgba(255,255,255,0.18) inset;
+}
+@media (max-width: 600px) {
+  .work-info-box {
+    font-size: 0.78rem;
+    padding: 4px 4px;
+    gap: 0.3em;
+  }
+  .work-info-line {
+    font-size: 0.78rem;
+    max-width: 80px;
+    padding: 1.5px 4px;
+    border-radius: 4px;
+  }
 }
 .work-info-box span {
   display: block;
@@ -211,6 +222,43 @@ const styles = `
 }
 .work-info-box span b {
   font-weight: 700;
+}
+.work-info-line {
+  background: rgba(255,255,255,0.62);
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  border-radius: 8px;
+  border: 1.2px solid rgba(200,200,220,0.18);
+  box-shadow: 0 1px 4px rgba(60,60,90,0.07), 0 0 0 1px rgba(255,255,255,0.13) inset;
+  padding: 2px 12px;
+  margin-bottom: 0;
+  font-size: clamp(0.7rem, 2.5vw, 0.92rem);
+  font-weight: 400;
+}
+@media (max-width: 600px) {
+  .work-info-line {
+    font-size: clamp(0.65rem, 3vw, 0.78rem);
+    padding: 1.5px 7px;
+    border-radius: 4px;
+  }
+}
+.work-info-meta {
+  display: flex;
+  flex-direction: row;
+  gap: 0.7em;
+  margin-top: 2px;
+}
+@media (max-width: 600px) {
+  .work-info-line {
+    font-size: 0.85rem;
+    max-width: 140px;
+    padding: 2px 6px;
+    border-radius: 4px;
+  }
+  .work-info-meta {
+    flex-direction: column;
+    gap: 2px;
+  }
 }
 .work-media.workday-fit {
   width: 100%;
@@ -354,9 +402,9 @@ const RecentWorks: React.FC = () => {
                 )}
               </div>
               <div className="work-info-box">
-                <span><b>Project Title:</b> {items[0].details[0].value}</span>
-                <span><b>Timeline:</b> {items[0].details[2].value}</span>
-                <span><b>Year:</b> {items[0].details[3].value}</span>
+                <div className="work-info-line"><b>Project Title:</b> {items[0].details[0].value}</div>
+                <div className="work-info-line"><b>Timeline:</b> {items[0].details[2].value}</div>
+                <div className="work-info-line"><b>Year:</b> {items[0].details[3].value}</div>
               </div>
             </Link>
           </Tilt>
@@ -392,9 +440,9 @@ const RecentWorks: React.FC = () => {
                 )}
               </div>
               <div className="work-info-box">
-                <span><b>Project Title:</b> {items[1].details[0].value}</span>
-                <span><b>Timeline:</b> {items[1].details[2].value}</span>
-                <span><b>Year:</b> {items[1].details[3].value}</span>
+                <div className="work-info-line"><b>Project Title:</b> {items[1].details[0].value}</div>
+                <div className="work-info-line"><b>Timeline:</b> {items[1].details[2].value}</div>
+                <div className="work-info-line"><b>Year:</b> {items[1].details[3].value}</div>
               </div>
             </Link>
           </Tilt>
@@ -434,9 +482,9 @@ const RecentWorks: React.FC = () => {
                 )}
               </div>
               <div className="work-info-box">
-                <span><b>Project Title:</b> {items[2].details[0].value}</span>
-                <span><b>Timeline:</b> {items[2].details[2].value}</span>
-                <span><b>Year:</b> {items[2].details[3].value}</span>
+                <div className="work-info-line"><b>Project Title:</b> {items[2].details[0].value}</div>
+                <div className="work-info-line"><b>Timeline:</b> {items[2].details[2].value}</div>
+                <div className="work-info-line"><b>Year:</b> {items[2].details[3].value}</div>
               </div>
             </Link>
           </Tilt>
@@ -472,9 +520,9 @@ const RecentWorks: React.FC = () => {
                 )}
               </div>
               <div className="work-info-box">
-                <span><b>Project Title:</b> {items[3].details[0].value}</span>
-                <span><b>Timeline:</b> {items[3].details[2].value}</span>
-                <span><b>Year:</b> {items[3].details[3].value}</span>
+                <div className="work-info-line"><b>Project Title:</b> {items[3].details[0].value}</div>
+                <div className="work-info-line"><b>Timeline:</b> {items[3].details[2].value}</div>
+                <div className="work-info-line"><b>Year:</b> {items[3].details[3].value}</div>
               </div>
             </Link>
           </Tilt>
