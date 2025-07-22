@@ -17,7 +17,7 @@ const items = [
     label: "Fun Projects",
     
     details: [
-      { label: "Project Title:", value: "Fun Projects" },
+      { label: "Project :", value: "Fun Projects" },
       { label: "Description:", value: "A few fun projects I created for enjoyment :)" },
       { label: "Timeline", value: "No Idea" },
       { label: "Year", value: "..." },

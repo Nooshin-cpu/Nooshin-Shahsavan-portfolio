@@ -402,7 +402,7 @@ const RecentWorks: React.FC = () => {
                 )}
               </div>
               <div className="work-info-box">
-                <div className="work-info-line"><b>Project Title:</b> {items[0].details[0].value}</div>
+                <div className="work-info-line"><b>Project:</b> {items[0].details[0].value}</div>
                 <div className="work-info-line"><b>Timeline:</b> {items[0].details[2].value}</div>
                 <div className="work-info-line"><b>Year:</b> {items[0].details[3].value}</div>
               </div>
@@ -440,7 +440,7 @@ const RecentWorks: React.FC = () => {
                 )}
               </div>
               <div className="work-info-box">
-                <div className="work-info-line"><b>Project Title:</b> {items[1].details[0].value}</div>
+                <div className="work-info-line"><b>Project :</b> {items[1].details[0].value}</div>
                 <div className="work-info-line"><b>Timeline:</b> {items[1].details[2].value}</div>
                 <div className="work-info-line"><b>Year:</b> {items[1].details[3].value}</div>
               </div>
@@ -482,7 +482,7 @@ const RecentWorks: React.FC = () => {
                 )}
               </div>
               <div className="work-info-box">
-                <div className="work-info-line"><b>Project Title:</b> {items[2].details[0].value}</div>
+                <div className="work-info-line"><b>Project:</b> {items[2].details[0].value}</div>
                 <div className="work-info-line"><b>Timeline:</b> {items[2].details[2].value}</div>
                 <div className="work-info-line"><b>Year:</b> {items[2].details[3].value}</div>
               </div>
@@ -520,7 +520,7 @@ const RecentWorks: React.FC = () => {
                 )}
               </div>
               <div className="work-info-box">
-                <div className="work-info-line"><b>Project Title:</b> {items[3].details[0].value}</div>
+                <div className="work-info-line"><b>Project :</b> {items[3].details[0].value}</div>
                 <div className="work-info-line"><b>Timeline:</b> {items[3].details[2].value}</div>
                 <div className="work-info-line"><b>Year:</b> {items[3].details[3].value}</div>
               </div>

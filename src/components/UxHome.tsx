@@ -16,7 +16,7 @@ const items = [
     label: "UX-UI",
     link: "/work/savefood",
     details: [
-      { label: "Project Title:", value: "SaveFood App" },
+      { label: "Project:", value: "SaveFood App" },
       { label: "Description:", value: "SaveFood App a mobile app that helps users track food expiration dates, find recipes for their ingredients... " },
       { label: "Timeline", value: "4 weeks" },
       { label: "Year", value: "2025" },
@@ -28,7 +28,7 @@ const items = [
     label: "UX-UI",
     link: "/work/workday",
     details: [
-      { label: "Project Title:", value: "Workday App" },
+      { label: "Project :", value: "Workday App" },
       { label: "Description:", value: "Workday is a self - service portal , and Workday mobile app , designed to make it easy for employees to ac..." },
       { label: "Timeline", value: "4 weeks" },
       { label: "Year", value: "2024" },
@@ -274,7 +274,7 @@ const styles = `
 
 const detailsToString = (details: { label: string, value: string }[]) => (
   <>
-    <span><b>Project Title:</b> {details[0].value}</span>
+    <span><b>Project :</b> {details[0].value}</span>
     <span><b>Description:</b> {details[1].value}</span>
     <span><b>Timeline:</b> {details[2].value}</span>
     <span><b>Year:</b> {details[3].value}</span>
@@ -283,7 +283,7 @@ const detailsToString = (details: { label: string, value: string }[]) => (
 
 const overlayToString = (details: { label: string, value: string }[], link: string) => (
   <div style={{ textAlign: 'left', fontSize: '0.95rem', lineHeight: '1.5' }}>
-    <div><b>Project Title:</b> {details[0].value}</div>
+    <div><b>Project :</b> {details[0].value}</div>
     <div><b>Description:</b> {details[1].value}</div>
     <div><b>Timeline:</b> {details[2].value}</div>
     <div><b>Year:</b> {details[3].value}</div>
@@ -401,7 +401,7 @@ const UxHome: React.FC<{ setSelectedProject: (val: 'branding' | 'uxui' | 'funpro
                 )}
               </div>
               <div className="work-info-box">
-                <span><b>Project Title:</b> {item.details[0].value}</span>
+                <span><b>Project :</b> {item.details[0].value}</span>
                 <span><b>Timeline:</b> {item.details[2].value}</span>
                 <span><b>Year:</b> {item.details[3].value}</span>
               </div>
