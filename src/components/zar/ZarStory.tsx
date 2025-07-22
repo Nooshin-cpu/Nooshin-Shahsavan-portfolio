@@ -44,7 +44,7 @@ const VideoWrapper = styled.div`
 `;
 
 const StyledVideo = styled.video`
-  width: 100%;
+  width: 30%;
   height: auto;
   display: block;
   background: transparent;
