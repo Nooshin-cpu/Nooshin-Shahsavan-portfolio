@@ -84,11 +84,14 @@ const styles = `
     left: 10px;
   }
   .work-info-box {
-    font-size: 0.85rem;
-    padding: 10px 10px;
-    left: 8px;
-    right: 8px;
-    bottom: 8px;
+    font-size: 0.78rem;
+    padding: 4px 4px;
+    gap: 0.3em;
+  }
+  .work-info-line {
+    font-size: clamp(0.65rem, 3vw, 0.78rem);
+    padding: 1.5px 7px;
+    border-radius: 4px;
   }
 }
 .work-item {
@@ -154,32 +157,43 @@ const styles = `
   left: 16px;
   right: 16px;
   bottom: 16px;
-  background: linear-gradient(135deg, rgba(255,255,255,0.62) 60%, rgba(230,245,255,0.32) 100%);
-  backdrop-filter: blur(32px) saturate(240%);
-  -webkit-backdrop-filter: blur(32px) saturate(240%);
-  border-radius: 8px;
-  border: 1.5px solid rgba(200,200,220,0.13);
-  box-shadow: 0 8px 32px rgba(60, 60, 90, 0.13), 0 0 0 1.5px rgba(255,255,255,0.18) inset;
-  padding: 18px 22px;
-  font-size: 1rem;
+  background: none;
+  border-radius: 6px;
+  border: none;
+  box-shadow: none;
+  padding: 6px 8px;
+  font-size: 0.92rem;
   z-index: 2;
   pointer-events: auto;
   opacity: 1;
   transition: none;
-  display: block;
+  display: flex;
+  flex-direction: row;
+  gap: 0.5em;
   color: #23243a;
   text-align: left;
   align-items: flex-end;
   justify-content: flex-end;
   letter-spacing: 0.01em;
 }
-.work-info-box span {
-  display: block;
-  margin-bottom: 2px;
-  font-size: 1rem;
+.work-info-line {
+  background: rgba(255,255,255,0.62);
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  border-radius: 8px;
+  border: 1.2px solid rgba(200,200,220,0.18);
+  box-shadow: 0 1px 4px rgba(60,60,90,0.07), 0 0 0 1px rgba(255,255,255,0.13) inset;
+  padding: 2px 12px;
+  margin-bottom: 0;
+  font-size: clamp(0.7rem, 2.5vw, 0.92rem);
+  font-weight: 400;
 }
-.work-info-box span b {
-  font-weight: 700;
+@media (max-width: 600px) {
+  .work-info-line {
+    font-size: clamp(0.65rem, 3vw, 0.78rem);
+    padding: 1.5px 7px;
+    border-radius: 4px;
+  }
 }
 .overlay {
   position: absolute;
@@ -263,7 +277,7 @@ const styles = `
 
 const detailsToString = (details: { label: string, value: string }[]) => (
   <>
-    <span><b>Project Title:</b> {details[0].value}</span>
+    <span><b>Project :</b> {details[0].value}</span>
     <span><b>Description:</b> {details[1].value}</span>
     <span><b>Timeline:</b> {details[2].value}</span>
     <span><b>Year:</b> {details[3].value}</span>
@@ -272,7 +286,7 @@ const detailsToString = (details: { label: string, value: string }[]) => (
 
 const overlayToString = (details: { label: string, value: string }[], link: string) => (
   <div style={{ textAlign: 'left', fontSize: '0.95rem', lineHeight: '1.5' }}>
-    <div><b>Project Title:</b> {details[0].value}</div>
+    <div><b>Project :</b> {details[0].value}</div>
     <div><b>Description:</b> {details[1].value}</div>
     <div><b>Timeline:</b> {details[2].value}</div>
     <div><b>Year:</b> {details[3].value}</div>
@@ -390,9 +404,9 @@ const FunHome: React.FC<{ setSelectedProject: (val: 'branding' | 'uxui' | 'funpr
                 )}
               </div>
               <div className="work-info-box">
-                <span><b>Project Title:</b> {item.details[0].value}</span>
-                <span><b>Timeline:</b> {item.details[2].value}</span>
-                <span><b>Year:</b> {item.details[3].value}</span>
+                <div className="work-info-line"><b>Project :</b> {item.details[0].value}</div>
+                <div className="work-info-line"><b>Timeline:</b> {item.details[2].value}</div>
+                <div className="work-info-line"><b>Year:</b> {item.details[3].value}</div>
               </div>
             </Link>
           </Tilt>
