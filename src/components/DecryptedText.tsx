@@ -52,12 +52,16 @@ export default function DecryptedText({
     const intervalRef = useRef<NodeJS.Timeout | null>(null)
     const iterationCountRef = useRef(0)
 
-    const flipCardContext = useFlipCardContext();
-    const isFlipped = flipCardContext ? flipCardContext.isFlipped : false;
-
-    useEffect(() => {
-        console.log('DecryptedText - isFlipped changed:', isFlipped);
-    }, [isFlipped]);
+    // Safe access to FlipCardContext with error handling
+    let isFlipped = false;
+    try {
+        const flipCardContext = useFlipCardContext();
+        isFlipped = flipCardContext ? flipCardContext.isFlipped : false;
+    } catch (error) {
+        // Component can work without FlipCardContext
+        console.warn('DecryptedText: FlipCardContext not available, using default behavior');
+        isFlipped = false;
+    }
 
     const getNextIndex = (revealedSet: Set<number>): number => {
         const textLength = text.length

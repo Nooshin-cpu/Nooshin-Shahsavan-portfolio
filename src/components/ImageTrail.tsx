@@ -62,6 +62,13 @@ class ImageItem {
   private getRect() {
     this.rect = this.DOM.el.getBoundingClientRect();
   }
+
+  // Add cleanup method to remove event listener
+  public destroy() {
+    if (this.resize) {
+      window.removeEventListener("resize", this.resize);
+    }
+  }
 }
 
 class ImageTrailVariant1 {
@@ -77,6 +84,7 @@ class ImageTrailVariant1 {
   private mousePos: { x: number; y: number };
   private lastMousePos: { x: number; y: number };
   private cacheMousePos: { x: number; y: number };
+  private animationFrameId: number | null = null;
 
   constructor(container: HTMLDivElement) {
     this.container = container;
@@ -125,7 +133,16 @@ class ImageTrailVariant1 {
     if (this.isIdle && this.zIndexVal !== 1) {
       this.zIndexVal = 1;
     }
-    requestAnimationFrame(() => this.render());
+    this.animationFrameId = requestAnimationFrame(() => this.render());
+  }
+
+  // Add cleanup method to stop animation and destroy images
+  public destroy() {
+    if (this.animationFrameId) {
+      cancelAnimationFrame(this.animationFrameId);
+      this.animationFrameId = null;
+    }
+    this.images.forEach(image => image.destroy());
   }
 
   private showNextImage() {
