@@ -22,47 +22,55 @@ const MenuProjectsWrapper = styled.div`
 `;
 
 const ProjectButton = styled.button<{ $selected: boolean }>`
-  background: #000000;
-  color: #fff;
-  border: 2px solid #fff;
-  border-color: ${({ $selected }) => ($selected ? 'rgb(215, 121, 43)' : '#fff')};
-  border-radius: 12px;
-  min-width: 120px;
-  padding: 18px 32px;
-  font-size: 1.1rem;
-  font-weight: 600;
+  background: ${({ $selected }) => $selected ? 'rgba(255, 255, 255, 0.95)' : 'rgba(255, 255, 255, 0.1)'};
+  color: ${({ $selected }) => $selected ? '#000000' : '#ffffff'};
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  min-width: 140px;
+  padding: 16px 28px;
+  font-size: 1rem;
+  font-weight: 500;
   cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.18);
-  transition: all 0.2s cubic-bezier(.4,2,.6,1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: ${({ $selected }) => $selected 
+    ? '0 8px 32px rgba(255, 255, 255, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.2)' 
+    : '0 4px 16px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.1)'
+  };
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   outline: none;
   position: relative;
   z-index: 1;
+  letter-spacing: 0.02em;
   
   &:hover, &:focus {
-    background: #222222;
-    border-color: rgb(204, 204, 205);
-    transform: scale(1.08);
-    box-shadow: 0 0 16px rgba(255, 255, 255, 0.5);
+    background: ${({ $selected }) => $selected ? 'rgba(255, 255, 255, 1)' : 'rgba(255, 255, 255, 0.2)'};
+    color: ${({ $selected }) => $selected ? '#000000' : '#ffffff'};
+    transform: translateY(-2px);
+    box-shadow: ${({ $selected }) => $selected 
+      ? '0 12px 40px rgba(255, 255, 255, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.3)' 
+      : '0 8px 24px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(255, 255, 255, 0.2)'
+    };
   }
   
   &:active {
-    transform: scale(0.98);
+    transform: translateY(0);
   }
   
   /* Responsive styles */
   @media (max-width: 768px) {
-    min-width: 200px;
-    padding: 16px 24px;
-    font-size: 1rem;
+    min-width: 160px;
+    padding: 14px 24px;
+    font-size: 0.95rem;
     width: 100%;
-    max-width: 280px;
+    max-width: 260px;
   }
   
   @media (max-width: 480px) {
-    min-width: 180px;
-    padding: 14px 20px;
-    font-size: 0.95rem;
-    max-width: 240px;
+    min-width: 140px;
+    padding: 12px 20px;
+    font-size: 0.9rem;
+    max-width: 220px;
   }
 `;
 

@@ -48,42 +48,36 @@ const MenuBox = styled.div`
 
 const IconContainer = styled.a<{ $hovered: boolean }>`
   position: relative;
-  background: #000000;
-  border-radius: 12px;
-  border: 2px solid #ffffff;
+  background: ${({ $hovered }) => $hovered ? 'rgba(255, 255, 255, 0.95)' : 'rgba(255, 255, 255, 0.1)'};
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   margin: 8px 0;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 48px;
   height: 48px;
-  color: #ffffff;
-  transition: all 0.2s cubic-bezier(.4,2,.6,1);
+  color: ${({ $hovered }) => $hovered ? '#000000' : '#ffffff'};
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   box-sizing: border-box;
   cursor: pointer;
   font-size: 1.45rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.18);
-
-  ${({ $hovered }) =>
-    $hovered &&
-    `
-      background: #222222;
-      border-color: rgb(248, 174, 71);
-      transform: scale(1.08);
-      box-shadow: 0 0 16px rgba(241, 149, 20, 0.5);
-      z-index: 1;
-    `
-  }
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: ${({ $hovered }) => $hovered 
+    ? '0 8px 32px rgba(255, 255, 255, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.2)' 
+    : '0 4px 16px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.1)'
+  };
 
   &:hover {
-    background: #222222;
-    border-color:rgb(238, 125, 32);
-    transform: scale(1.08);
-    box-shadow: 0 0 16px rgba(240, 199, 18, 0.96);
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(255, 255, 255, 0.2);
   }
 
   &:active {
-    transform: scale(0.98);
+    transform: translateY(0);
   }
 
   @media (max-width: 1024px) {
@@ -100,18 +94,20 @@ const Tooltip = styled.div<{ $visible: boolean }>`
   left: 55px;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(255, 255, 255, 0.1);
   color: #ffffff;
-  padding: 8px 16px;
-  border-radius: 8px;
+  padding: 10px 18px;
+  border-radius: 12px;
   font-size: 0.9rem;
   font-weight: 500;
   white-space: nowrap;
   pointer-events: none;
   opacity: 0.96;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 `;
 
 const menu = [
