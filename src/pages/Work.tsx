@@ -15,6 +15,7 @@ import work4 from '../assets/work/work4.png';
 import work5 from '../assets/work/work5.png';
 import work7 from '../assets/work/work7.png';
 import workhome from '../assets/home/workhome.png';
+import FunProject from './work/FunProject';
 
 const HeroSection = styled.section`
   width: 100%;
@@ -171,9 +172,9 @@ const Work: React.FC = () => {
       image: 'https://picsum.photos/600/400?random=6' 
     },
     { 
-      link: '/work/project7', 
-      text: 'Fun Projects', 
-      image: 'https://picsum.photos/600/400?random=7' 
+      link: '/work/fun', 
+      text: 'School Projects', 
+      image: 'funproject' 
     },
   
   ];

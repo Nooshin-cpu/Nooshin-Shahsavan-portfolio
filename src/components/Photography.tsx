@@ -1,6 +1,6 @@
 import React from 'react';
 import videoSrc from '../assets/fun/straw1.MP4';
-import img2 from '../assets/fun/straw2.jpg';
+import img2 from '../assets/fun/funhome.jpg';
 import img3 from '../assets/fun/straw3.png';
 import img4 from '../assets/fun/straw4.jpg';
 import img5 from '../assets/fun/straw5.png';
