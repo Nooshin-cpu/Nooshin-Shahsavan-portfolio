@@ -14,7 +14,7 @@ export default defineConfig({
       '@': resolve(__dirname, './src'),
     },
   },
-  assetsInclude: ['**/*.JPG'],
+  assetsInclude: ['**/*.JPG', '**/*.MP4', '**/*.mp4'],
   build: {
     assetsInlineLimit: 0,
     rollupOptions: {

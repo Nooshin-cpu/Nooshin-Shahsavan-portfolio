@@ -2,9 +2,8 @@ import React from "react";
 import styled, { createGlobalStyle } from "styled-components";
 import pro1Video from "../../assets/work/pro1.mp4";
 
-// Montserrat font global style (kept for consistency)
+// Global style for this component
 const GlobalStyle = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap');
   body {
     font-family: 'Inter', sans-serif;
     font-size: 20px;

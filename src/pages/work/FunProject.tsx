@@ -1,10 +1,26 @@
+import React from 'react';
 import MenuWork from '../../components/MenuWork';
 import '../../components/MenuWork.css';
+import Photography from '../../components/Photography';
+import Illustrations from '../../components/Illustrations';
+import AR from '../../components/AR';
 
-// Add <MenuWork /> at the end of the component's return
-return (
+const FunProject = () => (
   <>
-    {/* ...existing FunProject content... */}
-    <MenuWork />
+    <Photography />
+    <Illustrations />
+    <AR />
+    <div style={{ backgroundColor: 'black' }}>
+      <style>
+        {`
+          .menu-work-container {
+            background: black !important;
+          }
+        `}
+      </style>
+      <MenuWork />
+    </div>
   </>
 );
+
+export default FunProject;

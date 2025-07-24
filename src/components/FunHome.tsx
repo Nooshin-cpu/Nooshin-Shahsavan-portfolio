@@ -18,7 +18,7 @@ const items = [
     
     details: [
       { label: "Project :", value: "Fun Projects" },
-      { label: "Description:", value: "A few fun projects I created for enjoyment :)" },
+      
       { label: "Timeline", value: "No Idea" },
       { label: "Year", value: "..." },
     ],
@@ -301,7 +301,7 @@ const overlayToString = (details: { label: string, value: string }[], link: stri
   </div>
 );
 
-const FunHome: React.FC<{ setSelectedProject: (val: 'branding' | 'uxui' | 'funproj') => void }> = ({ setSelectedProject }) => {
+const FunHome: React.FC<{ setSelectedProject?: (val: 'branding' | 'uxui' | 'funproj') => void }> = ({ setSelectedProject = () => {} }) => {
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -367,6 +367,7 @@ const FunHome: React.FC<{ setSelectedProject: (val: 'branding' | 'uxui' | 'funpr
   return (
     <>
       <style>{styles}</style>
+      <div className="recent-works-title">Fun Projects</div>
       <motion.div 
         className="recent-works-grid"
         variants={containerVariants}
@@ -393,7 +394,7 @@ const FunHome: React.FC<{ setSelectedProject: (val: 'branding' | 'uxui' | 'funpr
                     <img src={item.src} alt={item.label} className="work-media" />
                 ) : (
                   <video
-                      src={item.src}
+                      src={new URL('../assets/fun/straw1.MP4', import.meta.url).href}
                     className="work-media"
                     controls={false}
                     autoPlay
@@ -405,8 +406,8 @@ const FunHome: React.FC<{ setSelectedProject: (val: 'branding' | 'uxui' | 'funpr
               </div>
               <div className="work-info-box">
                 <div className="work-info-line"><b>Project :</b> {item.details[0].value}</div>
-                <div className="work-info-line"><b>Timeline:</b> {item.details[2].value}</div>
-                <div className="work-info-line"><b>Year:</b> {item.details[3].value}</div>
+                <div className="work-info-line"><b>Timeline:</b> {item.details[1].value}</div>
+                <div className="work-info-line"><b>Year:</b> {item.details[2].value}</div>
               </div>
             </Link>
           </Tilt>

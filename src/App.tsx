@@ -11,6 +11,7 @@ import Veen from './pages/work/Veen';
 import Delicato from './pages/work/Delicato';
 import Zar from './pages/work/Zar';
 import Workday from './pages/work/Workday';
+import FunProject from './pages/work/FunProject';
 
 
 const App: React.FC = () => {
@@ -28,6 +29,7 @@ const App: React.FC = () => {
             <Route path="/work/workday" element={<Workday />} />
             <Route path="/work/delicato" element={<Delicato />} />
             <Route path="/work/zar" element={<Zar />} />
+            <Route path="/work/fun" element={<FunProject />} />
           </Routes>
         </Layout>
       </Router>
