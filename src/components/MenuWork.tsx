@@ -56,8 +56,8 @@ const workItems: WorkItem[] = [
   {
     image: funImg,
     link: '/work/FUN PROJECT',
-    description: 'FUN PROJ',
-    alt: 'FUN PROJECTS',
+    description: 'School Projects',
+    alt: 'School Projects',
   },
 ];
 

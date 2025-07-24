@@ -367,7 +367,7 @@ const FunHome: React.FC<{ setSelectedProject?: (val: 'branding' | 'uxui' | 'funp
   return (
     <>
       <style>{styles}</style>
-      <div className="recent-works-title">Fun Projects</div>
+      <div className="recent-works-title">School Projects</div>
       <motion.div 
         className="recent-works-grid"
         variants={containerVariants}
