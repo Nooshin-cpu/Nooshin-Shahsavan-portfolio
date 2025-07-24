@@ -1,5 +1,6 @@
 import React from 'react';
 import vrVideo from '../assets/fun/vr.mp4';
+import CustomVideoPlayer from './CustomVideoPlayer';
 
 const styles = `
 .ar-section {
@@ -55,13 +56,7 @@ const AR: React.FC = () => (
     <style>{styles}</style>
     <div className="ar-title">AR/VR</div>
     <div className="ar-video-container">
-      <video 
-        src={vrVideo} 
-        controls 
-        playsInline 
-        className="ar-video"
-        style={{background:'#000'}}
-      />
+      <CustomVideoPlayer src={vrVideo} />
     </div>
   </section>
 );

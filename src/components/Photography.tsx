@@ -4,6 +4,7 @@ import img2 from '../assets/fun/funhome.jpg';
 import img3 from '../assets/fun/straw3.png';
 import img4 from '../assets/fun/straw4.jpg';
 import img5 from '../assets/fun/straw5.png';
+import CustomVideoPlayer from './CustomVideoPlayer';
 
 const styles = `
 .photography-section {
@@ -115,7 +116,7 @@ const Photography: React.FC = () => (
     <h2 className="photography-subtitle">Photography</h2>
     <div className="photo-grid">
       <div className="photo-item upper-row">
-        <video src={videoSrc} controls playsInline style={{background:'#000'}} />
+        <CustomVideoPlayer src={videoSrc} />
       </div>
       <div className="photo-item upper-row">
         <img src={img2} alt="Straw 1" />
