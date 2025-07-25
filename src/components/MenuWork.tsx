@@ -16,6 +16,10 @@ interface WorkItem {
   alt: string;
 }
 
+interface MenuWorkProps {
+  titleColor?: string;
+}
+
 const workItems: WorkItem[] = [
   {
     image: sbsImg,
@@ -55,13 +59,13 @@ const workItems: WorkItem[] = [
   },
   {
     image: funImg,
-    link: '/work/FUN PROJECT',
+    link: '/work/fun',
     description: 'School Projects',
     alt: 'School Projects',
   },
 ];
 
-const MenuWork: React.FC = () => {
+const MenuWork: React.FC<MenuWorkProps> = ({ titleColor = '#000000' }) => {
   const location = useLocation();
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
@@ -85,7 +89,7 @@ const MenuWork: React.FC = () => {
 
   return (
     <div className="menu-work-container">
-      <h2 className="menu-work-title">Next Project</h2>
+      <h2 className="menu-work-title" style={{ color: titleColor }}>Next Project</h2>
       <div className="menu-work-grid">
         {orderedItems.map((item, idx) => (
           <div

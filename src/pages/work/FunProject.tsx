@@ -18,7 +18,7 @@ const FunProject = () => (
           }
         `}
       </style>
-      <MenuWork />
+      <MenuWork titleColor="#ffffff" />
     </div>
   </>
 );

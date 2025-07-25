@@ -13,6 +13,7 @@ import VeenMuck5 from '../../components/veen/VeenMuck5';
 import VeenMuck6 from '../../components/veen/VeenMuck6';
 import VeenMuck7 from '../../components/veen/VeenMuck7';
 import VeenMuck8 from '../../components/veen/VeenMuck8';
+import VeenEnvelope from '../../components/veen/VeenEnvelope';
 import VeenLogoP from '../../components/veen/VeenLogoP';
 import FlipBook from '../../components/FlipBook';
 
@@ -85,6 +86,7 @@ const Veen: React.FC = () => {
         <VeenMuck2 />
         <VeenMuck3 />
         <VeenMuck8 />
+        <VeenEnvelope />
       </div>
       
   
