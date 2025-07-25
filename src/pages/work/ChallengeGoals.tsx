@@ -82,9 +82,9 @@ const ChallengeGoals: React.FC = () => (
     <Divider />
     <GoalsTitle>UX Goals</GoalsTitle>
     <GoalsList>
-      <li><span className="goal-num">1.</span>Make the weekly schedule easily viewable at a glance on a single screen.</li>
-      <li><span className="goal-num">2.</span>Simplify the time-off request process with fewer, clearer steps.</li>
-      <li><span className="goal-num">3.</span>Provide clear, immediate feedback after submitting a time-off request.</li>
+      <li><span className="goal-num"></span>Make the weekly schedule easily viewable at a glance on a single screen.</li>
+      <li><span className="goal-num"></span>Simplify the time-off request process with fewer, clearer steps.</li>
+      <li><span className="goal-num"></span>Provide clear, immediate feedback after submitting a time-off request.</li>
     </GoalsList>
   </SectionCard>
 );
