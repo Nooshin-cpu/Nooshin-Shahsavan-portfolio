@@ -4,6 +4,7 @@ import '../../components/MenuWork.css';
 import Photography from '../../components/Photography';
 import Illustrations from '../../components/Illustrations';
 import AR from '../../components/AR';
+import Animation2D from '../../components/Animation2D';
 import StickyMenu from '../../components/StickyMenu';
 
 const FunProject = () => (
@@ -12,6 +13,7 @@ const FunProject = () => (
     <Photography />
     <Illustrations />
     <AR />
+    <Animation2D />
     <div style={{ backgroundColor: '#191c24' }}>
       <style>
         {`
