@@ -10,8 +10,8 @@ const Container = styled.section`
   max-width: 1100px;
   margin: 4vw auto 2vw auto;
   font-family: 'Inter', sans-serif;
-  padding: 2.5rem 3vw 2.5rem 3vw;
-  min-height: 700px;
+  padding: 2rem 3vw 2rem 3vw;
+  min-height: 500px;
   box-sizing: border-box;
   @media (max-width: 1200px) {
     width: 80vw;
@@ -19,14 +19,14 @@ const Container = styled.section`
   @media (max-width: 900px) {
     width: 95vw;
     border-radius: 16px;
-    padding: 1.5rem 1rem 1.5rem 1rem;
+    padding: 1rem 1rem 1rem 1rem;
     max-width: 100vw;
     min-height: auto;
   }
   @media (max-width: 600px) {
     width: 98vw;
     border-radius: 12px;
-    padding: 1.2rem 0.8rem 1.2rem 0.8rem;
+    padding: 1rem 0.8rem 1rem 0.8rem;
   }
 `;
 
@@ -44,14 +44,14 @@ const FlowTitle = styled.h1`
   color: #483efc;
   font-size: 2.3rem;
   font-weight: 900;
-  margin: 0 0 2.5rem 0;
+  margin: 0 0 1.5rem 0;
   @media (max-width: 900px) {
     font-size: 2rem;
     text-align: center;
   }
   @media (max-width: 600px) {
     font-size: 1.8rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
   }
 `;
 
@@ -95,10 +95,10 @@ const VideoWrapper = styled.div`
 
 const VideoContainer = styled.div`
   width: 100%;
-  max-width: 100%;
+  max-width: 80%;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
   @media (max-width: 900px) {
     align-items: center;
   }

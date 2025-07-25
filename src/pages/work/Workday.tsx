@@ -311,9 +311,9 @@ const CardRow = styled.div`
 `;
 
 const ProblemCard = styled.div`
-  background: #f7f7fa;
-  border-radius: 18px;
-  box-shadow: 4px 8px 10px rgba(0, 0, 0, 0.05);
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
   padding: 2.2rem 1.3rem 1.5rem 1.3rem;
   width: 29%;
   min-width: 220px;
@@ -322,8 +322,16 @@ const ProblemCard = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  transition: box-shadow 0.2s;
+  transition: all 0.3s ease;
   box-sizing: border-box;
+  color: #061133;
+  min-height: 90px;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  }
+  
   @media (max-width: 1000px) {
     width: 90%;
     max-width: 340px;

@@ -194,30 +194,70 @@ const ButtonRow = styled.div`
 
 const PersonaButton = styled.button<{ active?: boolean }>`
   font-family: 'Inter', sans-serif;
-  font-weight: 700;
-  font-size: 1rem;
-  padding: 1.2rem 2.7rem;
-  background: ${({ active }) => (active ? "#3e2ffc" : "#fafaff")};
-  color: ${({ active }) => (active ? "#fff" : "#3e2ffc")};
-  border: none;
-  border-radius: 18px;
-  box-shadow: 0 4px 14px #0001;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.8rem 1.5rem;
+  background: #483efc;
+  color: white;
+  border: 2px solid #483efc;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(72, 62, 252, 0.2);
   cursor: pointer;
-  transition: background 0.16s, color 0.16s, box-shadow 0.16s;
+  transition: all 0.2s ease;
   outline: none;
+  min-height: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  
+  &:nth-child(2) {
+    background: #5a4ffc;
+    border-color: #5a4ffc;
+    box-shadow: 0 2px 8px rgba(90, 79, 252, 0.2);
+  }
+  
+  &:nth-child(3) {
+    background: #6b60fc;
+    border-color: #6b60fc;
+    box-shadow: 0 2px 8px rgba(107, 96, 252, 0.2);
+  }
+  
+  &:hover, &:focus {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(72, 62, 252, 0.3);
+    background: #3a2ffc;
+    border-color: #3a2ffc;
+  }
+  
+  &:nth-child(2):hover, &:nth-child(2):focus {
+    background: #4a3ffc;
+    border-color: #4a3ffc;
+    box-shadow: 0 4px 12px rgba(90, 79, 252, 0.3);
+  }
+  
+  &:nth-child(3):hover, &:nth-child(3):focus {
+    background: #5b50fc;
+    border-color: #5b50fc;
+    box-shadow: 0 4px 12px rgba(107, 96, 252, 0.3);
+  }
+  
+  &:active {
+    transform: translateY(0);
+    box-shadow: 0 1px 4px rgba(72, 62, 252, 0.2);
+  }
+  
   @media (max-width: 900px) {
-    width: 80%;
-    max-width: 300px;
+    width: auto;
+    max-width: none;
+    margin: 0 0.5rem;
   }
   @media (max-width: 600px) {
-    font-size: 0.9rem;
-    padding: 1rem 2rem;
-    width: 90%;
-  }
-  &:hover, &:focus {
-    background: #3e2ffc;
-    color: #fff;
-    box-shadow: 0 8px 24px #3e2ffc33;
+    font-size: 0.8rem;
+    padding: 0.7rem 1.2rem;
+    margin: 0 0.3rem;
   }
 `;
 

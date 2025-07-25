@@ -10,12 +10,12 @@ const Container = styled.section`
   max-width: 1100px;
   margin: 4vw auto 2vw auto;
   font-family: 'Inter', sans-serif;
-  padding: 2.5rem 3vw 2.5rem 3vw;
-  min-height: 700px;
+  padding: 2rem 3vw 2rem 3vw;
+  min-height: 500px;
   @media (max-width: 900px) {
     width: 95vw;
     border-radius: 16px;
-    padding: 1.2rem 0.7rem 1.2rem 0.7rem;
+    padding: 1rem 0.7rem 1rem 0.7rem;
     max-width: 100vw;
   }
 `;
@@ -31,7 +31,7 @@ const FlowTitle = styled.h1`
   color: #483efc;
   font-size: 2.3rem;
   font-weight: 900;
-  margin: 0 0 2.5rem 0;
+  margin: 0 0 1.5rem 0;
 `;
 
 const FlexRow = styled.div`
@@ -56,15 +56,15 @@ const VideoWrapper = styled.div`
   min-width: 0;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
 `;
 
 const VideoContainer = styled.div`
   width: 100%;
-  max-width: 100%;
+  max-width: 80%;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
 `;
 
 const StyledVideo = styled.video`
