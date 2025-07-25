@@ -1,5 +1,5 @@
 import React from 'react';
-import animation2dVideo from '../assets/fun/2d.mp4';
+import animation2dVideo from '../assets/fun/2D.mp4';
 
 const styles = `
 .animation2d-section {
