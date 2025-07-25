@@ -51,7 +51,6 @@ const MenuItem = styled.button<{ isActive: boolean; isClicked: boolean }>`
 
 const menuItems = [
   { id: 'overview', label: 'Overview', targetId: 'zar-first' },
-  { id: 'second', label: 'Second', targetId: 'zar-second' },
   { id: 'challenges', label: 'Key Challenges', targetId: 'zar-problem' },
   { id: 'logo', label: 'Logo Design', targetId: 'zar-logo' },
   { id: 'color', label: 'Color Palette', targetId: 'zar-color' },

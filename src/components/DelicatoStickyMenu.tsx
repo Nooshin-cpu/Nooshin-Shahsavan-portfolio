@@ -51,7 +51,6 @@ const MenuItem = styled.button<{ isActive: boolean; isClicked: boolean }>`
 
 const menuItems = [
   { id: 'overview', label: 'Overview', targetId: 'deli-first' },
-  { id: 'second', label: 'Second', targetId: 'deli-second' },
   { id: 'challenges', label: 'Key Challenges', targetId: 'deli-problem' },
   { id: 'logo', label: 'Logo Design', targetId: 'deli-logo' },
   { id: 'typography', label: 'Typography', targetId: 'deli-typography' },

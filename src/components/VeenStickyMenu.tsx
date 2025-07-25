@@ -51,7 +51,6 @@ const MenuItem = styled.button<{ isActive: boolean; isClicked: boolean }>`
 
 const menuItems = [
   { id: 'overview', label: 'Overview', targetId: 'veen-first' },
-  { id: 'second', label: 'Second', targetId: 'veen-second' },
   { id: 'challenges', label: 'Key Challenges', targetId: 'veen-problem' },
   { id: 'logo', label: 'Logo Design', targetId: 'veen-logo' },
   { id: 'color', label: 'Color Palette', targetId: 'veen-color' },
