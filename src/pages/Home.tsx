@@ -1,6 +1,7 @@
 import React, { useRef, useState, useContext, useCallback } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 import { motion, AnimatePresence } from 'framer-motion';
+import SEO from '../components/SEO';
 import DotGrid from '../components/DotGrid.tsx';
 
 
@@ -156,6 +157,30 @@ const NamePopup = styled(motion.div)<{ $x: number; $y: number }>`
   z-index: 9999;
   pointer-events: none;
   background: transparent;
+`;
+
+const MyNameIsText = styled.div`
+  font-weight: 600;
+  font-size: clamp(0.8rem, 2vw, 1rem);
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.2;
+  position: relative;
+  z-index: 3;
+  margin-bottom: 0.3em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-family: 'Inter', sans-serif;
+  text-align: left;
+  width: 100%;
+
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    font-size: clamp(0.7rem, 1.8vw, 0.9rem);
+  }
+
+  @media (max-width: 480px) {
+    font-size: clamp(0.6rem, 1.5vw, 0.8rem);
+  }
 `;
 
 const StyledNameText = styled(RotatingText)`
@@ -347,6 +372,12 @@ const Home: React.FC = () => {
 
   return (
     <PageWrapper>
+      <SEO 
+        title="Nooshin Shahsavan | Graphic Designer & UX/UI Designer Portfolio"
+        description="Professional portfolio of Nooshin Shahsavan, a talented graphic designer, brand designer, and UX/UI designer. Explore creative projects and innovative design solutions."
+        keywords="graphic design, brand design, UX/UI design, portfolio, Nooshin Shahsavan, creative designer, visual design"
+        image="/src/assets/logoweb.png"
+      />
       <StickyMenuContainer>
         <StickyMenu />
       </StickyMenuContainer>
@@ -379,6 +410,7 @@ const Home: React.FC = () => {
                 onMouseLeave={handleNameMouseLeave}
                 onMouseMove={handleNameMouseMove}
               >
+                <MyNameIsText>My name is</MyNameIsText>
                 <StyledNameText
                   texts={name}
                   onTextChange={handleRolesTextChange}

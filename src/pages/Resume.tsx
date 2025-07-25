@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import SEO from '../components/SEO';
 
 const ResumeSection = styled.section`
   padding: 4rem 2rem;
@@ -41,6 +42,12 @@ const ResumeText = styled.div`
 const Resume: React.FC = () => {
   return (
     <ResumeSection>
+      <SEO 
+        title="Resume | Nooshin Shahsavan - Professional Experience"
+        description="View Nooshin Shahsavan's professional resume and experience in graphic design, brand design, and UX/UI design. Download CV and view qualifications."
+        keywords="resume, CV, Nooshin Shahsavan, graphic designer, professional experience, qualifications, skills"
+        image="/src/assets/logoweb.png"
+      />
       <ResumeContent
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}

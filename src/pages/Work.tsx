@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 import Header from '../components/Header';
 import FlowingMenu from '../components/FlowingMenu';
 import TopScrollButton from '../components/TopScrollButton';
@@ -208,6 +209,12 @@ const Work: React.FC = () => {
 
   return (
     <>
+      <SEO 
+        title="Work Portfolio | Nooshin Shahsavan - Creative Projects"
+        description="Explore Nooshin Shahsavan's creative work portfolio featuring graphic design, brand design, UX/UI projects, and innovative design solutions."
+        keywords="work portfolio, graphic design projects, brand design, UX/UI design, creative projects, Nooshin Shahsavan"
+        image="/src/assets/home/workhome.png"
+      />
       <Header />
       <HeroSection>
         <MenuContainer>

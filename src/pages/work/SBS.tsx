@@ -1,6 +1,7 @@
 import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
 import { motion } from 'framer-motion';
+import SEO from '../../components/SEO';
 import SbsFirst from '../../components/SetbysetiComs/SbsFirst';
 import SbsOverviewDetails from '../../components/SetbysetiComs/SbsOverviewDetails';
 import ProblemSbs from '../../components/SetbysetiComs/ProblemSbs';
@@ -76,7 +77,13 @@ const SectionTitle = styled.h2`
 const Sbs: React.FC = () => {
   return (
     <PageBg>
-       <GlobalStyle />
+      <SEO 
+        title="SBS Project | Nooshin Shahsavan - Brand Design & Identity"
+        description="Explore the SBS project - a comprehensive branding and design project by Nooshin Shahsavan featuring modern visual identity, logo design, and brand strategy."
+        keywords="SBS project, brand design, logo design, visual identity, branding, Nooshin Shahsavan, design portfolio"
+        image="/src/assets/sbsimg/banner.png"
+      />
+      <GlobalStyle />
       <SbsStickyMenu />
       
       <div id="sbs-overview">

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled, { createGlobalStyle } from "styled-components";
+import SEO from "../../components/SEO";
 import workdayPhone from "../../assets/work/workday-phone.png";
 import scheduleIcon from "../../assets/work/schedule.png";
 import timeOutIcon from "../../assets/work/time-out.png";
@@ -543,6 +544,12 @@ const menuItems = [
 
 const Workday: React.FC = () => (
   <PageBg>
+    <SEO 
+      title="Workday UX/UI Project | Nooshin Shahsavan - Mobile App Design"
+      description="Explore the Workday UX/UI project - a comprehensive mobile app design by Nooshin Shahsavan focusing on employee scheduling, time-off management, and workplace communication."
+      keywords="Workday project, UX/UI design, mobile app design, user experience, interface design, Nooshin Shahsavan, design portfolio"
+      image="/src/assets/work/workday-phone.png"
+    />
     <GlobalStyle />
     <PageContainer>
       <StickyMenuWrapper>

@@ -1,6 +1,7 @@
 import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import SEO from '../components/SEO';
 import ScrambledText from '../components/ScrambledText';
 import ImageTrail from '../components/ImageTrail';
 import DecryptedText from '../components/DecryptedText';
@@ -271,6 +272,12 @@ In my free time, I enjoy caring for my plants, spending quality time with my fam
 
   return (
     <AboutContainer>
+      <SEO 
+        title="About Nooshin Shahsavan | Creative Designer & Developer"
+        description="Learn more about Nooshin Shahsavan, a passionate graphic designer and UX/UI designer with expertise in brand design, creative solutions, and innovative design thinking."
+        keywords="about Nooshin Shahsavan, graphic designer, UX/UI designer, brand designer, creative portfolio, design skills"
+        image="/src/assets/about/man-8.jpg"
+      />
       <GlobalStyle />
       <StickyMenu />
       <Section style={{ background: '#191c24', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>

@@ -1,4 +1,5 @@
 import React from "react";
+import SEO from "../../components/SEO";
 import ZarFirst from "../../components/zar/ZarFirst";
 import ZarSecond from "../../components/zar/ZarSecond";
 import ZarThird from "../../components/zar/ZarThird";
@@ -99,6 +100,12 @@ const Description = styled.p`
 
 const Zar: React.FC = () => (
   <PageBg>
+    <SEO 
+      title="Zar Project | Nooshin Shahsavan - Creative Design & Branding"
+      description="Explore the Zar project - an innovative branding and digital design project by Nooshin Shahsavan combining contemporary aesthetics with cultural elements."
+      keywords="Zar project, creative design, brand design, digital design, visual identity, Nooshin Shahsavan, design portfolio"
+      image="/src/assets/zar/banner-zar.png"
+    />
     <GlobalStyle />
     <ZarStickyMenu />
     <div id="zar-first">

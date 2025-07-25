@@ -111,10 +111,25 @@ const Cactus2: React.FC = () => {
     };
   }, []);
 
+  const handleEmailClick = () => {
+    navigator.clipboard.writeText('nooshin-shahsavan.ca@gmail.com').then(() => {
+      // Add a temporary class for feedback
+      const emailElement = document.querySelector('.cactus2-email');
+      if (emailElement) {
+        emailElement.classList.add('email-copied');
+        setTimeout(() => {
+          emailElement.classList.remove('email-copied');
+        }, 2000);
+      }
+    });
+  };
+
   return (
     <div className="cactus2-container">
       <h2 className="cactus2-title">Say Hi!</h2>
-      <p className="cactus2-email">nooshin-shahsavan.ca@gmail.com</p>
+      <p className="cactus2-email" onClick={handleEmailClick} title="Click to copy email">
+        nooshin-shahsavan.ca@gmail.com
+      </p>
       <svg 
         ref={svgRef}
         width="833px" 

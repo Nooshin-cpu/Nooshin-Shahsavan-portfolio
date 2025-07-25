@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
 import { ThemeProvider } from './context/ThemeContext';
 import Layout from './components/Layout';
 import Home from './pages/Home';
@@ -16,24 +17,26 @@ import FunProject from './pages/work/FunProject';
 
 const App: React.FC = () => {
   return (
-    <ThemeProvider>
-      <Router>
-        <Layout>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/work" element={<Work />} />
-            <Route path="/resume" element={<Resume />} />
-            <Route path="/work/sbs" element={<SBS />} />
-            <Route path="/work/veen" element={<Veen />} />
-            <Route path="/work/workday" element={<Workday />} />
-            <Route path="/work/delicato" element={<Delicato />} />
-            <Route path="/work/zar" element={<Zar />} />
-            <Route path="/work/fun" element={<FunProject />} />
-          </Routes>
-        </Layout>
-      </Router>
-    </ThemeProvider>
+    <HelmetProvider>
+      <ThemeProvider>
+        <Router>
+          <Layout>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/work" element={<Work />} />
+              <Route path="/resume" element={<Resume />} />
+              <Route path="/work/sbs" element={<SBS />} />
+              <Route path="/work/veen" element={<Veen />} />
+              <Route path="/work/workday" element={<Workday />} />
+              <Route path="/work/delicato" element={<Delicato />} />
+              <Route path="/work/zar" element={<Zar />} />
+              <Route path="/work/fun" element={<FunProject />} />
+            </Routes>
+          </Layout>
+        </Router>
+      </ThemeProvider>
+    </HelmetProvider>
   );
 };
 

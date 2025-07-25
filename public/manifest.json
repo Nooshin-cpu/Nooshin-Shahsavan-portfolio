@@ -1,0 +1,27 @@
+{
+  "name": "Nooshin Shahsavan - Creative Designer Portfolio",
+  "short_name": "Nooshin Portfolio",
+  "description": "Professional portfolio of Nooshin Shahsavan, a talented graphic designer, brand designer, and UX/UI designer",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#191c24",
+  "theme_color": "#191c24",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/src/assets/logoweb.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/src/assets/logoweb.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["design", "portfolio", "creative"],
+  "lang": "en",
+  "dir": "ltr"
+} 

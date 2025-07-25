@@ -1,6 +1,7 @@
 import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
 import { motion } from 'framer-motion';
+import SEO from '../../components/SEO';
 import VeenFirst from '../../components/veen/VeenFirst';
 import VeenSecond from '../../components/veen/VeenSecond';
 import VeenThird from '../../components/veen/VeenThird';
@@ -59,6 +60,12 @@ const GlobalStyle = createGlobalStyle`
 const Veen: React.FC = () => {
   return (
     <PageBg>
+      <SEO 
+        title="Veen Project | Nooshin Shahsavan - Brand Identity & Design"
+        description="Explore the Veen project - a sophisticated branding project by Nooshin Shahsavan creating an elegant and timeless visual identity with premium aesthetics."
+        keywords="Veen project, brand identity, logo design, visual design, branding, Nooshin Shahsavan, design portfolio"
+        image="/src/assets/veen/brand-strategy.png"
+      />
       <VeenStickyMenu />
       <div id="veen-first">
         <VeenFirst />

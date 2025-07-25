@@ -1,6 +1,7 @@
 import React from "react";
 import styled, { createGlobalStyle } from 'styled-components';
 import { motion } from 'framer-motion';
+import SEO from "../../components/SEO";
 import DeliFirst from "../../components/deli/DeliFirst";
 import DeliSecond from "../../components/deli/DeliSecond";
 import DeliThird from "../../components/deli/DeliThird";
@@ -69,6 +70,12 @@ const SectionTitle = styled.h2`
 const Delicato: React.FC = () => {
   return (
     <PageBg>
+      <SEO 
+        title="Delicato Project | Nooshin Shahsavan - Brand Design & Packaging"
+        description="Explore the Delicato project - a creative branding and packaging design project by Nooshin Shahsavan emphasizing artisanal craftsmanship and premium quality."
+        keywords="Delicato project, brand design, packaging design, logo design, visual identity, Nooshin Shahsavan, design portfolio"
+        image="/src/assets/deli/deli-home.png"
+      />
       <DelicatoStickyMenu />
       <div id="deli-first">
         <DeliFirst />
