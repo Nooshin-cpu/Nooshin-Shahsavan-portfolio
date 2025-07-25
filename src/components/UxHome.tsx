@@ -18,7 +18,7 @@ const items = [
     details: [
       { label: "Project:", value: "SaveFood App" },
       { label: "Description:", value: "SaveFood App a mobile app that helps users track food expiration dates, find recipes for their ingredients... " },
-      { label: "Timeline", value: "4 weeks" },
+      { label: "Timeline", value: "Coming soon!" },
       { label: "Year", value: "2025" },
     ],
   },

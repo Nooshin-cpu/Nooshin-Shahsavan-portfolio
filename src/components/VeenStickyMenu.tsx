@@ -20,7 +20,7 @@ const MenuContainer = styled.div`
 const MenuTitle = styled.div`
   font-size: 0.9rem;
   font-weight: 600;
-  color: #888;
+  color: #000000;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   margin-bottom: 1.5rem;
@@ -33,23 +33,26 @@ const MenuItem = styled.button<{ isActive: boolean; isClicked: boolean }>`
   text-align: left;
   background: none;
   border: none;
-  padding: 0.75rem 0;
+  padding: 0.75rem 0.5rem;
   margin: 0.25rem 0;
   font-size: 0.9rem;
   font-weight: ${props => props.isClicked ? '700' : props.isActive ? '600' : '400'};
-  color: ${props => props.isClicked ? '#000' : props.isActive ? '#000' : '#666'};
+  color: ${props => props.isClicked ? '#000000' : props.isActive ? '#000000' : '#888888'};
   cursor: pointer;
   transition: all 0.2s ease;
   position: relative;
+  border-radius: 4px;
 
   &:hover {
-    color: #000;
+    color: #000000;
+    background: rgba(0, 0, 0, 0.05);
   }
 `;
 
 const menuItems = [
-  { id: 'overview', label: 'Overview', targetId: 'veen-overview' },
-  { id: 'challenges', label: 'Key Challenges', targetId: 'veen-challenges' },
+  { id: 'overview', label: 'Overview', targetId: 'veen-first' },
+  { id: 'second', label: 'Second', targetId: 'veen-second' },
+  { id: 'challenges', label: 'Key Challenges', targetId: 'veen-problem' },
   { id: 'logo', label: 'Logo Design', targetId: 'veen-logo' },
   { id: 'color', label: 'Color Palette', targetId: 'veen-color' },
   { id: 'typography', label: 'Typography', targetId: 'veen-typography' },
@@ -59,8 +62,41 @@ const menuItems = [
 
 const VeenStickyMenu: React.FC = () => {
   const [clickedItem, setClickedItem] = useState<string | null>(null);
+  const [activeSection, setActiveSection] = useState<string>('overview');
 
+  // Use Intersection Observer for better performance and accuracy
+  React.useEffect(() => {
+    const observerOptions = {
+      root: null,
+      rootMargin: '-20% 0px -70% 0px', // Trigger when section is 20% from top
+      threshold: 0
+    };
 
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const sectionId = entry.target.id;
+          const menuItem = menuItems.find(item => item.targetId === sectionId);
+          if (menuItem) {
+            setActiveSection(menuItem.id);
+          }
+        }
+      });
+    }, observerOptions);
+
+    // Observe all sections
+    menuItems.forEach(item => {
+      const element = document.getElementById(item.targetId);
+      if (element) {
+        observer.observe(element);
+      }
+    });
+
+    // Cleanup
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
 
   const scrollToSection = (targetId: string, itemId: string) => {
     const element = document.getElementById(targetId);
@@ -81,7 +117,7 @@ const VeenStickyMenu: React.FC = () => {
       {menuItems.map((item) => (
         <MenuItem
           key={item.id}
-          isActive={false}
+          isActive={activeSection === item.id}
           isClicked={clickedItem === item.id}
           onClick={() => scrollToSection(item.targetId, item.id)}
         >

@@ -101,15 +101,29 @@ const Zar: React.FC = () => (
   <PageBg>
     <GlobalStyle />
     <ZarStickyMenu />
-    <ZarFirst />
-    <ZarSecond/>
-    <ProblemZar />
-    <ZarThird/>
-    <ZarLogoP />
-    <ZarColor/>
-    <ZarType/>
-    <ZarPackaging/>
-    <PackZarImage/>
+    <div id="zar-first">
+      <ZarFirst />
+    </div>
+    <div id="zar-second">
+      <ZarSecond/>
+    </div>
+    <div id="zar-problem">
+      <ProblemZar />
+    </div>
+    <div id="zar-logo">
+      <ZarThird/>
+      <ZarLogoP />
+    </div>
+    <div id="zar-color">
+      <ZarColor/>
+    </div>
+    <div id="zar-typography">
+      <ZarType/>
+    </div>
+    <div id="zar-packaging">
+      <ZarPackaging/>
+      <PackZarImage/>
+    </div>
     <div id="zar-mockups">
     <MockupsTitle>
       <Title>Mockups</Title>

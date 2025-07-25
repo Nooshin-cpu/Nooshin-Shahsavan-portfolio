@@ -70,16 +70,26 @@ const Delicato: React.FC = () => {
   return (
     <PageBg>
       <DelicatoStickyMenu />
-      <DeliFirst />
-      <DeliSecond />
+      <div id="deli-first">
+        <DeliFirst />
+      </div>
+      <div id="deli-second">
+        <DeliSecond />
+      </div>
       
-      <ProblemDeli/>
-      <DeliForth />
-      <DeliLogoP/>
+      <div id="deli-problem">
+        <ProblemDeli/>
+      </div>
+      <div id="deli-logo">
+        <DeliForth />
+        <DeliLogoP/>
+      </div>
       
-      <DeliGrid />
-      <DeliColor />
-      <DeliType />
+      <div id="deli-typography">
+        <DeliGrid />
+        <DeliColor />
+        <DeliType />
+      </div>
       <div id="deli-mockups">
       <SectionTitle>Mockups</SectionTitle>
       <Deli8 />

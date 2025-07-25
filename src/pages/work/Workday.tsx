@@ -628,10 +628,20 @@ const Workday: React.FC = () => (
         </div>
       </ContentWrapper>
     </PageContainer>
-    <EmailFooter />
-    <div style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
+    <div style={{ display: 'flex', justifyContent: 'center', width: '100%', background: '#191c24' }}>
+      <style>
+        {`
+          .menu-work-container {
+            background: #191c24 !important;
+          }
+          .menu-work-title {
+            color: #ffffff !important;
+          }
+        `}
+      </style>
       <MenuWork />
     </div>
+    <EmailFooter />
   </PageBg>
 );
 

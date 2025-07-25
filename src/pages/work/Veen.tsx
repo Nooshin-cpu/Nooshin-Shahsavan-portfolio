@@ -60,16 +60,30 @@ const Veen: React.FC = () => {
   return (
     <PageBg>
       <VeenStickyMenu />
-      <VeenFirst />
-      <VeenSecond />
-      <ProblemVeen />
-      <VeenThird />
-      <VeenLogoP />
-      <VeenForth />
+      <div id="veen-first">
+        <VeenFirst />
+      </div>
+      <div id="veen-second">
+        <VeenSecond />
+      </div>
+      <div id="veen-problem">
+        <ProblemVeen />
+      </div>
+      <div id="veen-logo">
+        <VeenThird />
+        <VeenLogoP />
+      </div>
+      <div id="veen-color">
+        <VeenForth />
+      </div>
     
-      <VeenMuck5 />
-      <VeenMuck6 />
-      <FlipBook />
+      <div id="veen-typography">
+        <VeenMuck5 />
+      </div>
+      <div id="veen-brand-book">
+        <VeenMuck6 />
+        <FlipBook />
+      </div>
       <div id="veen-mockups">
         <h2 style={{
           width: '70vw',
