@@ -13,6 +13,7 @@ import Skill from '../components/skill';
 import WhyCactus from '../components/WhyCactus';
 import StickyMenu from '../components/StickyMenu';
 import { ClassicFooter } from '../components/Footer';
+import TextToSpeech from '../components/TextToSpeech';
 
 // Import images for ImageTrail
 import man1 from '../assets/about/man-1.jpg';
@@ -240,12 +241,27 @@ const AboutTextContent = styled(motion.div)`
       margin-bottom: 1rem;
     }
   }
+  h3 {
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    margin-top: 2.5rem;
+    color: #ffffff;
+    z-index: 5;
+
+    @media (max-width: 768px) {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      margin-top: 2rem;
+    }
+  }
   p {
     font-size: 1.1rem;
     line-height: 1.8;
     color: #ffffff;
     opacity: 0.9;
     z-index: 5;
+    margin-bottom: 1.5rem;
   }
 `;
 
@@ -259,14 +275,29 @@ const About: React.FC = () => {
   const imageX = useTransform(scrollYProgress, [0.15, 0.25], [50, 0]);
   const imageRotate = useTransform(scrollYProgress, [0.15, 0.25], [5, 0]);
 
-  const aboutText = `Hi! I'm Nooshin.
-I'm originally from Iran and have been living in Vancouver for nearly two years. I hold both a Bachelor's and Master's degree in Graphic Design from my home country, and I recently completed a diploma in New Media Design and Web Development at BCIT.
+  const aboutContent = [
+    {
+      title: "Who I am",
+      content: "I'm a Graphic and UI/UX Designer with a strong background in visual communication and branding. My journey began with studying graphic design in high school, followed by a degree in Visual Communication and Art Research in my home country. After moving to Canada, I continued to expand my skills by training at BCIT, with a focus on usability and front-end development tools. I strive to combine creativity with functionality—designing user-centered experiences that are not only visually engaging but also fast-paced, organized, and intuitive."
+    },
+    {
+      title: "What I've Done",
+      content: "I've worked with trade companies like G_Art Brand and freelanced for small businesses such as S.B.S and VEEN. My projects have covered everything from brand identity and packaging to social campaigns and digital content. I also taught graphic design software for 10 years. These experiences taught me how to adapt designs to real world constraints, communicate clearly across different formats, and balance creativity with purpose."
+    },
+    {
+      title: "How I Work",
+      content: "My design process starts with understanding the client's mission, values, target audience, and any visual preferences. I then organize tasks in Trello to plan the project efficiently. Using research and insights, I develop a mind map in Miro or FigJam to shape the creative direction. I build a consistent visual identity by choosing colors based on color psychology, selecting typography, and designing a logo that reflects the brand's personality. Finally, I create mockups using Photoshop, Illustrator, InDesign, and After Effects, present design options to the client, and refine them based on feedback for the final delivery."
+    },
+    {
+      title: "Why I Design",
+      content: "I design to solve problems and tell stories—visually and meaningfully. Design lets me combine creativity with strategy to create experiences that not only look good but also connect with people and serve a purpose. Whether it's building a brand, improving a user's journey, or crafting visual content, I enjoy turning ideas into organized, impactful visuals that make communication clearer and more engaging."
+    }
+  ];
 
-Throughout my career, I've taught graphic design software, worked as a graphic and brand designer—both as part of a creative team and as a freelancer.
-
-My skills include graphic design, UX/UI, marketing, and web development. I'm passionate about crafting design solutions that are not only functional but also visually engaging.
-
-In my free time, I enjoy caring for my plants, spending quality time with my family, and going for walks to unwind and find inspiration.`;
+  // Create full text for audio narration
+  const fullAboutText = aboutContent.map(section => 
+    `${section.title}. ${section.content}`
+  ).join(' ');
 
   const images = [man1, man2, man3, man5, man6, man7];
 
@@ -304,17 +335,23 @@ In my free time, I enjoy caring for my plants, spending quality time with my fam
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
             >
-              <h2>Who I am?</h2>
-              {aboutText.split('\n\n').map((paragraph, idx) => (
-                <ScrambledText
-                  key={idx}
-                  radius={100}
-                  duration={1.2}
-                  speed={0.5}
-                  scrambleChars=".:"
-                >
-                  <p style={{ marginBottom: '0.7em' }}>{paragraph}</p>
-                </ScrambledText>
+              <TextToSpeech text={fullAboutText} title="About Me" />
+              {aboutContent.map((section, idx) => (
+                <div key={idx}>
+                  {idx === 0 ? (
+                    <h2>{section.title}</h2>
+                  ) : (
+                    <h3>{section.title}</h3>
+                  )}
+                  <ScrambledText
+                    radius={100}
+                    duration={1.2}
+                    speed={0.5}
+                    scrambleChars=".:"
+                  >
+                    <p>{section.content}</p>
+                  </ScrambledText>
+                </div>
               ))}
             </AboutTextContent>
           </AboutTextColumn>

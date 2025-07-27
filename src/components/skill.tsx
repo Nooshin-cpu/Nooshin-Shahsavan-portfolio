@@ -33,10 +33,10 @@ const adobeIdxs = [0, 1, 2, 3, 4, 5];         // 6 icons, biggest circle
 const officeIdxs = [10, 9, 11];            // Excel, CSS, Word (see below)
 const codeIdxs = [7, 8, 6];                // HTML, CSS, React (see below)
 
-// Make the circles bigger
-const OUTER_RADIUS = 340;
-const MIDDLE_RADIUS = 220;
-const INNER_RADIUS = 110;
+// Make the circles smaller
+const OUTER_RADIUS = 240;
+const MIDDLE_RADIUS = 160;
+const INNER_RADIUS = 80;
 
 // Helper to distribute icons around a circle (returns angle in degrees)
 function getCircleAngles(count: number, rotate: number = 0) {
@@ -128,50 +128,56 @@ const SkillBubbles: React.FC = () => {
 .skill-bubbles-outer {
   position: relative;
   width: 100%;
-  height: 120vh;
-  min-height: 1100px;
+  height: 100vh;
+  min-height: 900px;
   overflow: hidden;
   overflow-x: hidden;
   background: #191c24;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
+  padding-bottom: 10%;
   z-index: 1;
 }
 @media (max-width: 900px) {
   .skill-bubbles-outer {
-    height: 90vh;
+    height: 80vh;
     min-height: 600px;
   }
 }
 @media (max-width: 600px) {
   .skill-bubbles-outer {
     height: 70vh;
-    min-height: 400px;
+    min-height: 500px;
   }
 }
 .skills-title {
   position: absolute;
-  top: 3.5%;
+  top: 8%;
   left: 50%;
   transform: translateX(-50%);
   color: #ffffff;
-  font-size: 2.8rem;
+  font-size: 3rem;
   letter-spacing: 0.08em;
   z-index: 10;
   font-family: 'Montserrat', 'Arial', sans-serif;
   font-weight: 700;
   text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8);
   pointer-events: none;
+  margin-bottom: 2rem;
 }
 @media (max-width: 900px) {
   .skills-title {
-    font-size: 2rem;
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    top: 10%;
   }
 }
 @media (max-width: 600px) {
   .skills-title {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    top: 12%;
   }
 }
 .orbit {
@@ -188,32 +194,32 @@ const SkillBubbles: React.FC = () => {
   box-sizing: border-box;
 }
 .orbit-outer {
-  width: 680px; height: 680px;
-  border-width: 3.2px;
-  max-width: 90vw;
-  max-height: 90vw;
+  width: 480px; height: 480px;
+  border-width: 2.4px;
+  max-width: 80vw;
+  max-height: 80vw;
 }
 .orbit-middle {
-  width: 440px; height: 440px;
-  border-width: 2.2px;
-  max-width: 70vw;
-  max-height: 70vw;
+  width: 320px; height: 320px;
+  border-width: 1.8px;
+  max-width: 60vw;
+  max-height: 60vw;
 }
 .orbit-inner {
-  width: 220px; height: 220px;
-  border-width: 1.6px;
-  max-width: 50vw;
-  max-height: 50vw;
+  width: 160px; height: 160px;
+  border-width: 1.2px;
+  max-width: 40vw;
+  max-height: 40vw;
 }
 @media (max-width: 900px) {
-  .orbit-outer { width: 420px; height: 420px; }
-  .orbit-middle { width: 270px; height: 270px; }
-  .orbit-inner { width: 120px; height: 120px; }
+  .orbit-outer { width: 300px; height: 300px; }
+  .orbit-middle { width: 200px; height: 200px; }
+  .orbit-inner { width: 100px; height: 100px; }
 }
 @media (max-width: 600px) {
-  .orbit-outer { width: 220px; height: 220px; }
-  .orbit-middle { width: 140px; height: 140px; }
-  .orbit-inner { width: 60px; height: 60px; }
+  .orbit-outer { width: 160px; height: 160px; }
+  .orbit-middle { width: 100px; height: 100px; }
+  .orbit-inner { width: 50px; height: 50px; }
 }
 .orbit-parent {
   position: absolute;
@@ -236,9 +242,9 @@ const SkillBubbles: React.FC = () => {
 .bubble {
   position: absolute;
   left: 0; top: 0;
-  width: 112px; height: 112px;
+  width: 80px; height: 80px;
   border-radius: 50%;
-  box-shadow: 0 10px 44px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
   display: flex; align-items: center; justify-content: center;
   background: rgba(40, 40, 40, 0.9);
   /* Move to orbit radius */
@@ -251,10 +257,10 @@ const SkillBubbles: React.FC = () => {
   z-index: 3;
 }
 @media (max-width: 900px) {
-  .bubble { width: 64px; height: 64px; }
+  .bubble { width: 48px; height: 48px; }
 }
 @media (max-width: 600px) {
-  .bubble { width: 36px; height: 36px; }
+  .bubble { width: 28px; height: 28px; }
 }
 .bubble-img {
   width: 70%;
