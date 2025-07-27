@@ -278,7 +278,7 @@ const About: React.FC = () => {
   const aboutContent = [
     {
       title: "Who I am",
-      content: "I'm a Graphic and UI/UX Designer with a strong background in visual communication and branding. My journey began with studying graphic design in high school, followed by a degree in Visual Communication and Art Research in my home country. After moving to Canada, I continued to expand my skills by training at BCIT, with a focus on usability and front-end development tools. I strive to combine creativity with functionality—designing user-centered experiences that are not only visually engaging but also fast-paced, organized, and intuitive."
+      content: "Hey! my name is Nooshin. I'm a Graphic and UI/UX Designer with a strong background in visual communication and branding. My journey began with studying graphic design in high school, followed by a degree in Visual Communication and Art Research in my home country. After moving to Canada, I continued to expand my skills by training at BCIT, with a focus on usability and front-end development tools. I strive to combine creativity with functionality—designing user-centered experiences that are not only visually engaging but also fast-paced, organized, and intuitive."
     },
     {
       title: "What I've Done",
