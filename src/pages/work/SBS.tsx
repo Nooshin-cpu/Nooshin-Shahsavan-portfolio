@@ -113,17 +113,29 @@ const Sbs: React.FC = () => {
       </div>
       
       <div id="sbs-illustration">
-        <SbsIll/>
-       c
+        <SectionTitle>Illustration</SectionTitle>
+        <p style={{ 
+          fontSize: '1.08rem', 
+          color: '#444', 
+          fontWeight: '400', 
+          lineHeight: '1.5', 
+          maxWidth: '480px', 
+          margin: '0 auto 2.2rem auto', 
+          textAlign: 'center' 
+        }}>
+          The illustration style uses curved lines and neutral, emotionless characters to reflect Gen Z's mood and the brand's sense of movement and freedom. The logo's form is echoed in every graphic, creating a cohesive and culturally relevant visual identity.
+        </p>
+        <SbsIllustration/>
+      </div>
+      <div id="sbs-video">
+        <SbsVideo/>
       </div>
       
       <div id="sbs-brand-identity">
         <CircleSbs text="Set by Setti Brand Identity" spinDuration={18} />
       </div>
       
-      <div id="sbs-video">
-        <SbsVideo/>
-      </div>
+     
       
       <div id="sbs-mockups">
         <SbsMock1/> 
