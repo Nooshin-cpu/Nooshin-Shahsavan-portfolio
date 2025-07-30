@@ -7,6 +7,7 @@ import Illustrations from '../../components/Illustrations';
 import AR from '../../components/AR';
 import Animation2D from '../../components/Animation2D';
 import StickyMenu from '../../components/StickyMenu';
+import TopScrollButton from '../../components/TopScrollButton';
 
 const FunProject = () => (
   <>
@@ -48,6 +49,7 @@ const FunProject = () => (
       </style>
       <MenuWork titleColor="#ffffff" />
     </div>
+    <TopScrollButton />
   </>
 );
 

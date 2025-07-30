@@ -78,14 +78,14 @@ const SbsIllustration: React.FC = () => (
   <Section>
     <VideoRow>
       <VideoCol>
-        <StyledVideo
+      <StyledVideo
           src={capIntro2}
-          loop
-          muted
-          playsInline
+        loop
+        muted
+        playsInline
           controls
           aria-label="SBS Cap Intro2 Video"
-        />
+      />
       </VideoCol>
       <VideoCol>
         <StyledVideo

@@ -62,11 +62,11 @@ const NavLink = styled(Link)`
     left: 0;
     width: 0;
     height: 2px;
-    background: #e4572e;
+    background: #4CAF50;
     transition: width 0.3s ease;
   }
   &:hover {
-    color: #e4572e;
+    color: #4CAF50;
   }
   &:hover::after {
     width: 100%;

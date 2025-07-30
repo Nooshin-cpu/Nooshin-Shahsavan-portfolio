@@ -32,6 +32,7 @@ const PageBg = styled.div`
   background: #fff;
   transition: background 0.2s;
   overflow-x: hidden;
+  overflow-y: auto;
   box-sizing: border-box;
 
   @media (max-width: 600px) {
@@ -99,61 +100,64 @@ const Description = styled.p`
 `;
 
 const Zar: React.FC = () => (
-  <PageBg>
-    <SEO 
-      title="Zar Project | Nooshin Shahsavan - Creative Design & Branding"
-      description="Explore the Zar project - an innovative branding and digital design project by Nooshin Shahsavan combining contemporary aesthetics with cultural elements."
-      keywords="Zar project, creative design, brand design, digital design, visual identity, Nooshin Shahsavan, design portfolio"
-      image="/src/assets/zar/banner-zar.png"
-    />
-    <GlobalStyle />
-    <ZarStickyMenu />
-    <div id="zar-first">
-      <ZarFirst />
-    </div>
-    <div id="zar-second">
-      <ZarSecond/>
-    </div>
-    <div id="zar-problem">
-      <ProblemZar />
-    </div>
-    <div id="zar-logo">
-      <ZarThird/>
-      <ZarLogoP />
-    </div>
-    <div id="zar-color">
-      <ZarColor/>
-    </div>
-    <div id="zar-typography">
-      <ZarType/>
-    </div>
-    <div id="zar-packaging">
-      <ZarPackaging/>
-      <PackZarImage/>
-    </div>
-    <div id="zar-mockups">
-    <MockupsTitle>
-      <Title>Mockups</Title>
+  <>
+    <PageBg>
+      <SEO 
+        title="Zar Project | Nooshin Shahsavan - Creative Design & Branding"
+        description="Explore the Zar project - an innovative branding and digital design project by Nooshin Shahsavan combining contemporary aesthetics with cultural elements."
+        keywords="Zar project, creative design, brand design, digital design, visual identity, Nooshin Shahsavan, design portfolio"
+        image="/src/assets/zar/banner-zar.png"
+      />
+      <GlobalStyle />
+      <ZarStickyMenu />
+      <div id="zar-first">
+        <ZarFirst />
+      </div>
+      <div id="zar-second">
+        <ZarSecond/>
+      </div>
+      <div id="zar-problem">
+        <ProblemZar />
+      </div>
+      <div id="zar-logo">
+        <ZarThird/>
+        <ZarLogoP />
+      </div>
+      <div id="zar-color">
+        <ZarColor/>
+      </div>
+      <div id="zar-typography">
+        <ZarType/>
+      </div>
+      <div id="zar-packaging">
+        <ZarPackaging/>
+        <PackZarImage/>
+      </div>
+      <div id="zar-mockups">
+      <MockupsTitle>
+        <Title>Mockups</Title>
+        
+      </MockupsTitle>
+      <ZarStory/>
+      <ZarMock8/>
+      <Zarmock2/>
+      <Zarmock3/>
+      <Zarmock1/>
+      <ZarMock6/>
+      </div>
       
-    </MockupsTitle>
-    <ZarStory/>
-    <ZarMock8/>
-    <Zarmock2/>
-    <Zarmock3/>
-    <Zarmock1/>
-    <ZarMock6/>
-    </div>
     
-  
-   
-    <ZarMock5/>
-   
-    
-    
-   
-    <MenuWork />
-    <EmailFooter />
-  </PageBg>
+     
+      <ZarMock5/>
+     
+      
+      
+     
+      <MenuWork />
+      <EmailFooter />
+    </PageBg>
+    <TopScrollButton />
+  </>
 );
 
 export default Zar;

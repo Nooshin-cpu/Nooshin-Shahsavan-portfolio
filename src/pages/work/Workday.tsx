@@ -23,6 +23,7 @@ import MenuWork from '../../components/MenuWork';
 import '../../components/MenuWork.css';
 import WorkdayStickyMenu from '../../components/WorkdayStickyMenu';
 import { EmailFooter } from '../../components/Footer';
+import TopScrollButton from '../../components/TopScrollButton';
 
 
 // Global style with dark mode support
@@ -43,6 +44,7 @@ const PageBg = styled.div`
   background: #191c24;
   transition: background 0.2s;
   overflow-x: hidden;
+  overflow-y: auto;
 `;
 
 // Common Card container
@@ -543,121 +545,124 @@ const menuItems = [
 ];
 
 const Workday: React.FC = () => (
-  <PageBg>
-    <SEO 
-      title="Workday UX/UI Project | Nooshin Shahsavan - Mobile App Design"
-      description="Explore the Workday UX/UI project - a comprehensive mobile app design by Nooshin Shahsavan focusing on employee scheduling, time-off management, and workplace communication."
-      keywords="Workday project, UX/UI design, mobile app design, user experience, interface design, Nooshin Shahsavan, design portfolio"
-      image="/src/assets/work/workday-phone.png"
-    />
-    <GlobalStyle />
-    <PageContainer>
-      <StickyMenuWrapper>
-        <WorkdayStickyMenu />
-      </StickyMenuWrapper>
-      <ContentWrapper id="content-wrapper">
-        <div id="overview">
-          <Page1Card>
-            <PhoneMockup src={workdayPhone} alt="Workday App Mockup" />
-            <Content>
-              <Title>WORKDAY APP</Title>
-              <OverviewLabel>Overview</OverviewLabel>
-              <OverviewContainer>
-                <OverviewText>
-                  Workday is a self - service portal , and Workday mobile app , designed to make it easy for employees to access essential information about their work and manage various tasks . employees check the schedule for the upcoming week , view their recent paycheck , ensuring all hours worked are accounted for . If they need time off , they can quickly submit a request and track its status .
-                </OverviewText>
-                <Divider />
-                <RoleGrid>
-                  <RoleItem>
-                    <RoleLabel>MY ROLE</RoleLabel>
-                    <RoleValue>UX-UI designer</RoleValue>
-                  </RoleItem>
-                  <RoleItem>
-                    <RoleLabel>DURATION</RoleLabel>
-                    <RoleValue>4 weeks</RoleValue>
-                  </RoleItem>
-                  <RoleItem>
-                    <RoleLabel>TOOLS</RoleLabel>
-                    <RoleValue>
-                      Figma{'\n'}FigJam{'\n'}Photoshop
-                    </RoleValue>
-                  </RoleItem>
-                </RoleGrid>
-              </OverviewContainer>
-            </Content>
-          </Page1Card>
-        </div>
+  <>
+    <PageBg>
+      <SEO 
+        title="Workday UX/UI Project | Nooshin Shahsavan - Mobile App Design"
+        description="Explore the Workday UX/UI project - a comprehensive mobile app design by Nooshin Shahsavan focusing on employee scheduling, time-off management, and workplace communication."
+        keywords="Workday project, UX/UI design, mobile app design, user experience, interface design, Nooshin Shahsavan, design portfolio"
+        image="/src/assets/work/workday-phone.png"
+      />
+      <GlobalStyle />
+      <PageContainer>
+        <StickyMenuWrapper>
+          <WorkdayStickyMenu />
+        </StickyMenuWrapper>
+        <ContentWrapper id="content-wrapper">
+          <div id="overview">
+            <Page1Card>
+              <PhoneMockup src={workdayPhone} alt="Workday App Mockup" />
+              <Content>
+                <Title>WORKDAY APP</Title>
+                <OverviewLabel>Overview</OverviewLabel>
+                <OverviewContainer>
+                  <OverviewText>
+                    Workday is a self - service portal , and Workday mobile app , designed to make it easy for employees to access essential information about their work and manage various tasks . employees check the schedule for the upcoming week , view their recent paycheck , ensuring all hours worked are accounted for . If they need time off , they can quickly submit a request and track its status .
+                  </OverviewText>
+                  <Divider />
+                  <RoleGrid>
+                    <RoleItem>
+                      <RoleLabel>MY ROLE</RoleLabel>
+                      <RoleValue>UX-UI designer</RoleValue>
+                    </RoleItem>
+                    <RoleItem>
+                      <RoleLabel>DURATION</RoleLabel>
+                      <RoleValue>4 weeks</RoleValue>
+                    </RoleItem>
+                    <RoleItem>
+                      <RoleLabel>TOOLS</RoleLabel>
+                      <RoleValue>
+                        Figma{'\n'}FigJam{'\n'}Photoshop
+                      </RoleValue>
+                    </RoleItem>
+                  </RoleGrid>
+                </OverviewContainer>
+              </Content>
+            </Page1Card>
+          </div>
 
-        <div id="problems">
-          <Page2Card>
-            <ProblemTitle>Problem at a Glance</ProblemTitle>
-            <ProblemSubTitle>Key Issues Identified</ProblemSubTitle>
-            <ProblemDivider />
-            <CardRow>
-              <ProblemCard>
-                <CardIcon src={scheduleIcon} alt="Schedule Icon" />
-                <ProblemText>
-                  The schedule view is cluttered and hard to read, making it difficult for users to quickly understand their upcoming shifts.
-                </ProblemText>
-              </ProblemCard>
-              <ProblemCard>
-                <CardIcon src={timeOutIcon} alt="Time Off Icon" />
-                <ProblemText>
-                  Requesting time off is a multi-step process that requires navigating through multiple screens.
-                </ProblemText>
-              </ProblemCard>
-              <ProblemCard>
-                <CardIcon src={notificationIcon} alt="Notification Icon" />
-                <ProblemText>
-                  Users receive no feedback after submitting time off requests, leaving them uncertain about the status.
-                </ProblemText>
-              </ProblemCard>
-            </CardRow>
-          </Page2Card>
-          <WorkdayProblem1 />
-          <WorkdayProblem2 />
-          <WorkdayProblem3 />
-        </div>
+          <div id="problems">
+            <Page2Card>
+              <ProblemTitle>Problem at a Glance</ProblemTitle>
+              <ProblemSubTitle>Key Issues Identified</ProblemSubTitle>
+              <ProblemDivider />
+              <CardRow>
+                <ProblemCard>
+                  <CardIcon src={scheduleIcon} alt="Schedule Icon" />
+                  <ProblemText>
+                    The schedule view is cluttered and hard to read, making it difficult for users to quickly understand their upcoming shifts.
+                  </ProblemText>
+                </ProblemCard>
+                <ProblemCard>
+                  <CardIcon src={timeOutIcon} alt="Time Off Icon" />
+                  <ProblemText>
+                    Requesting time off is a multi-step process that requires navigating through multiple screens.
+                  </ProblemText>
+                </ProblemCard>
+                <ProblemCard>
+                  <CardIcon src={notificationIcon} alt="Notification Icon" />
+                  <ProblemText>
+                    Users receive no feedback after submitting time off requests, leaving them uncertain about the status.
+                  </ProblemText>
+                </ProblemCard>
+              </CardRow>
+            </Page2Card>
+            <WorkdayProblem1 />
+            <WorkdayProblem2 />
+            <WorkdayProblem3 />
+          </div>
 
-        <div id="user-insight">
-          <WorkdayPersona />
-          <UserInsight />
-        </div>
+          <div id="user-insight">
+            <WorkdayPersona />
+            <UserInsight />
+          </div>
 
-        <div id="challenge">
-          <ChallengeGoals />
-        </div>
+          <div id="challenge">
+            <ChallengeGoals />
+          </div>
 
-        <div id="solutions">
-          <SolutionMakingSchedule />
-          <SolutionDayOffNotification />
-        </div>
+          <div id="solutions">
+            <SolutionMakingSchedule />
+            <SolutionDayOffNotification />
+          </div>
 
-        <div id="final-ui">
-          <FinalLookMakingSchedule />
-          <FinalLookDayOff />
-        </div>
+          <div id="final-ui">
+            <FinalLookMakingSchedule />
+            <FinalLookDayOff />
+          </div>
 
-        <div id="takeaway">
-          <KeyTakeawaySection />
-        </div>
-      </ContentWrapper>
-    </PageContainer>
-    <div style={{ display: 'flex', justifyContent: 'center', width: '100%', background: '#191c24' }}>
-      <style>
-        {`
-          .menu-work-container {
-            background: #191c24 !important;
-          }
-          .menu-work-title {
-            color: #ffffff !important;
-          }
-        `}
-      </style>
-      <MenuWork />
-    </div>
-    <EmailFooter />
-  </PageBg>
+          <div id="takeaway">
+            <KeyTakeawaySection />
+          </div>
+        </ContentWrapper>
+      </PageContainer>
+      <div style={{ display: 'flex', justifyContent: 'center', width: '100%', background: '#191c24' }}>
+        <style>
+          {`
+            .menu-work-container {
+              background: #191c24 !important;
+            }
+            .menu-work-title {
+              color: #ffffff !important;
+            }
+          `}
+        </style>
+        <MenuWork />
+      </div>
+      <EmailFooter />
+    </PageBg>
+    <TopScrollButton />
+  </>
 );
 
 export default Workday;

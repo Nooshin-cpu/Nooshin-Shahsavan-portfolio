@@ -22,9 +22,9 @@ const MenuProjectsWrapper = styled.div`
 `;
 
 const ProjectButton = styled.button<{ $selected: boolean }>`
-  background: ${({ $selected }) => $selected ? 'rgba(255, 255, 255, 0.95)' : 'rgba(255, 255, 255, 0.1)'};
-  color: ${({ $selected }) => $selected ? '#000000' : '#ffffff'};
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border: ${({ $selected }) => $selected ? '2px solid #4CAF50' : '1px solid rgba(255, 255, 255, 0.2)'};
   border-radius: 16px;
   min-width: 140px;
   padding: 16px 28px;
@@ -34,7 +34,7 @@ const ProjectButton = styled.button<{ $selected: boolean }>`
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   box-shadow: ${({ $selected }) => $selected 
-    ? '0 8px 32px rgba(255, 255, 255, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.2)' 
+    ? '0 4px 12px rgba(76, 175, 80, 0.3), 0 0 0 1px rgba(76, 175, 80, 0.2)' 
     : '0 4px 16px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.1)'
   };
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -44,11 +44,11 @@ const ProjectButton = styled.button<{ $selected: boolean }>`
   letter-spacing: 0.02em;
   
   &:hover, &:focus {
-    background: ${({ $selected }) => $selected ? 'rgba(255, 255, 255, 1)' : 'rgba(255, 255, 255, 0.2)'};
-    color: ${({ $selected }) => $selected ? '#000000' : '#ffffff'};
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
     transform: translateY(-2px);
     box-shadow: ${({ $selected }) => $selected 
-      ? '0 12px 40px rgba(255, 255, 255, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.3)' 
+      ? '0 6px 16px rgba(76, 175, 80, 0.4), 0 0 0 1px rgba(76, 175, 80, 0.3)' 
       : '0 8px 24px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(255, 255, 255, 0.2)'
     };
   }

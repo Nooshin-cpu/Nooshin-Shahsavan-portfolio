@@ -40,6 +40,7 @@ const PageBg = styled.div`
   background: #fff;
   transition: background 0.2s;
   overflow-x: hidden;
+  overflow-y: auto;
   box-sizing: border-box;
   position: fixed;
   inset: 0;
@@ -53,9 +54,9 @@ const PageBg = styled.div`
 const GlobalStyle = createGlobalStyle`
   body {
     background: #fff;
-    overflow-x: hidden !important; /* Stronger override */
     margin: 0;
     padding: 0;
+    overflow-y: auto;
   }
 
   /* Optional: Prevent horizontal scroll on html element */
@@ -76,86 +77,89 @@ const SectionTitle = styled.h2`
 
 const Sbs: React.FC = () => {
   return (
-    <PageBg>
-      <SEO 
-        title="SBS Project | Nooshin Shahsavan - Brand Design & Identity"
-        description="Explore the SBS project - a comprehensive branding and design project by Nooshin Shahsavan featuring modern visual identity, logo design, and brand strategy."
-        keywords="SBS project, brand design, logo design, visual identity, branding, Nooshin Shahsavan, design portfolio"
-        image="/src/assets/sbsimg/banner.png"
-      />
-      <GlobalStyle />
-      <SbsStickyMenu />
+    <>
+      <PageBg>
+        <SEO 
+          title="SBS Project | Nooshin Shahsavan - Brand Design & Identity"
+          description="Explore the SBS project - a comprehensive branding and design project by Nooshin Shahsavan featuring modern visual identity, logo design, and brand strategy."
+          keywords="SBS project, brand design, logo design, visual identity, branding, Nooshin Shahsavan, design portfolio"
+          image="/src/assets/sbsimg/banner.png"
+        />
+        <GlobalStyle />
+        <SbsStickyMenu />
+        
+        <div id="sbs-overview">
+          <SbsFirst />
+          <SbsMock12/>
+          <SbsOverviewDetails />
+        </div>
+        
+        <div id="sbs-challenges">
+          <ProblemSbs />
+        </div>
+        
+        <div id="sbs-logo">
+          <SbsSecond /> 
+        </div>
+        
+        <div id="sbs-logo-process">
+          <SbsLogoP /> 
+        </div>
+        
+        <div id="sbs-color">
+          <SbsColor /> 
+        </div>
+        
+        <div id="sbs-typography">
+          <SbsType /> 
+        </div>
+        
+        <div id="sbs-illustration">
+          <SectionTitle>Illustration</SectionTitle>
+          <p style={{ 
+            fontSize: '1.08rem', 
+            color: '#444', 
+            fontWeight: '400', 
+            lineHeight: '1.5', 
+            maxWidth: '480px', 
+            margin: '0 auto 2.2rem auto', 
+            textAlign: 'center' 
+          }}>
+            The illustration style uses curved lines and neutral, emotionless characters to reflect Gen Z's mood and the brand's sense of movement and freedom. The logo's form is echoed in every graphic, creating a cohesive and culturally relevant visual identity.
+          </p>
+          <SbsIllustration/>
+        </div>
+        <div id="sbs-video">
+          <SbsVideo/>
+        </div>
+        
+        <div id="sbs-brand-identity">
+          <CircleSbs text="Set by Setti Brand Identity" spinDuration={18} />
+        </div>
+        
+       
+        
+        <div id="sbs-mockups">
+          <SbsMock1/> 
+          <SbsMock2/>
+        </div>
+        
+        <div id="sbs-social-media">
+          <SectionTitle>Social Media/Black Friday</SectionTitle>
+          <SbsSocialMedia1 />
+          <SbsSocialMedia2 />
+        </div>
       
-      <div id="sbs-overview">
-        <SbsFirst />
-        <SbsMock12/>
-        <SbsOverviewDetails />
-      </div>
-      
-      <div id="sbs-challenges">
-        <ProblemSbs />
-      </div>
-      
-      <div id="sbs-logo">
-        <SbsSecond /> 
-      </div>
-      
-      <div id="sbs-logo-process">
-        <SbsLogoP /> 
-      </div>
-      
-      <div id="sbs-color">
-        <SbsColor /> 
-      </div>
-      
-      <div id="sbs-typography">
-        <SbsType /> 
-      </div>
-      
-      <div id="sbs-illustration">
-        <SectionTitle>Illustration</SectionTitle>
-        <p style={{ 
-          fontSize: '1.08rem', 
-          color: '#444', 
-          fontWeight: '400', 
-          lineHeight: '1.5', 
-          maxWidth: '480px', 
-          margin: '0 auto 2.2rem auto', 
-          textAlign: 'center' 
-        }}>
-          The illustration style uses curved lines and neutral, emotionless characters to reflect Gen Z's mood and the brand's sense of movement and freedom. The logo's form is echoed in every graphic, creating a cohesive and culturally relevant visual identity.
-        </p>
-        <SbsIllustration/>
-      </div>
-      <div id="sbs-video">
-        <SbsVideo/>
-      </div>
-      
-      <div id="sbs-brand-identity">
-        <CircleSbs text="Set by Setti Brand Identity" spinDuration={18} />
-      </div>
-      
-     
-      
-      <div id="sbs-mockups">
-        <SbsMock1/> 
-        <SbsMock2/>
-      </div>
-      
-      <div id="sbs-social-media">
-        <SectionTitle>Social Media/Black Friday</SectionTitle>
-        <SbsSocialMedia1 />
-        <SbsSocialMedia2 />
-      </div>
-    
-      <div id="sbs-additional-mockups">
-        <SbsMock6/>
-        <SbsMock71/>
-      </div>
-      
-      <MenuWork />
-      <EmailFooter />
-    </PageBg>
+        <div id="sbs-additional-mockups">
+          <SbsMock6/>
+          <SbsMock71/>
+        </div>
+        
+        <MenuWork />
+        <EmailFooter />
+      </PageBg>
+      <TopScrollButton />
+    </>
   );
 };
 

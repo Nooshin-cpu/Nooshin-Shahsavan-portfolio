@@ -113,8 +113,8 @@
   }
   
   .menu-work-cube.active {
-    border-color: #2ee0ff;
-    box-shadow: 0 0 16px #2ee0ff80;
+    border-color: #4CAF50;
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.3);
   }
   
   .menu-work-img-wrapper {
@@ -134,9 +134,9 @@
   .menu-work-cube:hover,
   .menu-work-cube:focus {
     background: #f5f5f5;
-    border-color: #2ee0ff;
+    border-color: #4CAF50;
     transform: scale(1.08);
-    box-shadow: 0 0 16px #2ee0ff80;
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.3);
   }
   
   .menu-work-desc {
@@ -191,7 +191,7 @@
   
   .menu-work-top-btn:hover {
     background: #222;
-    border-color: #2ee0ff;
+    border-color: #4CAF50;
     transform: translateX(-50%) scale(1.08);
   }
   
@@ -292,7 +292,7 @@
   /* Remove blur */
 }
 .menu-work-overlay .menu-work-cube.active {
-  border-color: #2ee0ff;
+  border-color: #4CAF50;
   /* Remove box-shadow */
 }
 

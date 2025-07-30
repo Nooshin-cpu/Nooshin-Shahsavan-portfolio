@@ -40,6 +40,7 @@ const PageBg = styled.div`
   background: #fff;
   transition: background 0.2s;
   overflow-x: hidden;
+  overflow-y: auto;
   box-sizing: border-box;
   position: fixed;
   inset: 0;
@@ -69,55 +70,58 @@ const SectionTitle = styled.h2`
 
 const Delicato: React.FC = () => {
   return (
-    <PageBg>
-      <SEO 
-        title="Delicato Project | Nooshin Shahsavan - Brand Design & Packaging"
-        description="Explore the Delicato project - a creative branding and packaging design project by Nooshin Shahsavan emphasizing artisanal craftsmanship and premium quality."
-        keywords="Delicato project, brand design, packaging design, logo design, visual identity, Nooshin Shahsavan, design portfolio"
-        image="/src/assets/deli/deli-home.png"
-      />
-      <DelicatoStickyMenu />
-      <div id="deli-first">
-        <DeliFirst />
-      </div>
-      <div id="deli-second">
-        <DeliSecond />
-      </div>
+    <>
+      <PageBg>
+        <SEO 
+          title="Delicato Project | Nooshin Shahsavan - Brand Design & Packaging"
+          description="Explore the Delicato project - a creative branding and packaging design project by Nooshin Shahsavan emphasizing artisanal craftsmanship and premium quality."
+          keywords="Delicato project, brand design, packaging design, logo design, visual identity, Nooshin Shahsavan, design portfolio"
+          image="/src/assets/deli/deli-home.png"
+        />
+        <DelicatoStickyMenu />
+        <div id="deli-first">
+          <DeliFirst />
+        </div>
+        <div id="deli-second">
+          <DeliSecond />
+        </div>
+        
+        <div id="deli-problem">
+          <ProblemDeli/>
+        </div>
+        <div id="deli-logo">
+          <DeliForth />
+          <DeliLogoP/>
+        </div>
+        
+        <div id="deli-typography">
+          <DeliGrid />
+          <DeliColor />
+          <DeliType />
+        </div>
+        <div id="deli-mockups">
+        <SectionTitle>Mockups</SectionTitle>
+        <Deli8 />
+        <Deli15 />
+        <DeliCardImage />
+        <Deli10 />
+        <Deli11Image />
+        <Deli13Image />
+        <StoryOne/>
+        <Deli11 />
+        <Deli12 />
+        <Deli13 />
+        </div>
+        
       
-      <div id="deli-problem">
-        <ProblemDeli/>
-      </div>
-      <div id="deli-logo">
-        <DeliForth />
-        <DeliLogoP/>
-      </div>
-      
-      <div id="deli-typography">
-        <DeliGrid />
-        <DeliColor />
-        <DeliType />
-      </div>
-      <div id="deli-mockups">
-      <SectionTitle>Mockups</SectionTitle>
-      <Deli8 />
-      <Deli15 />
-      <DeliCardImage />
-      <Deli10 />
-      <Deli11Image />
-      <Deli13Image />
-      <StoryOne/>
-      <Deli11 />
-      <Deli12 />
-      <Deli13 />
-      </div>
-      
-    
-      
-      
-      
-      <MenuWork />
-      <EmailFooter />
-    </PageBg>
+        
+        
+        
+        <MenuWork />
+        <EmailFooter />
+      </PageBg>
+      <TopScrollButton />
+    </>
   );
 };
 
