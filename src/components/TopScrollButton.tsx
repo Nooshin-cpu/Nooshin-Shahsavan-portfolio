@@ -2,19 +2,15 @@ import React from 'react';
 
 const TopScrollButton: React.FC = () => {
   const scrollToTop = () => {
-    console.log('Scroll to top clicked');
-    
     // Use scrollIntoView like the sticky menus do
     const firstSection = document.querySelector('#sbs-overview, #overview, #veen-first, #deli-first, #zar-first');
     
     if (firstSection) {
-      console.log('Found first section, scrolling to it');
       firstSection.scrollIntoView({ 
         behavior: 'smooth',
         block: 'start'
       });
     } else {
-      console.log('No first section found, trying window scroll');
       // Fallback to window scroll
       window.scrollTo({
         top: 0,
@@ -42,7 +38,7 @@ const TopScrollButton: React.FC = () => {
         fontSize: '16px',
         color: '#333',
         backdropFilter: 'blur(10px)',
-        boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)',
+        boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
         transition: 'all 0.2s ease',
         border: '1px solid rgba(0, 0, 0, 0.1)'
       }}
@@ -53,7 +49,7 @@ const TopScrollButton: React.FC = () => {
       }}
       onMouseLeave={(e) => {
         e.currentTarget.style.transform = 'translateY(0)';
-        e.currentTarget.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.1)';
+        e.currentTarget.style.boxShadow = '0 2px 8px rgba(0,0,0,0.1)';
       }}
     >
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
