@@ -1,56 +1,104 @@
 import React, { useRef, useState } from "react";
 import styled from "styled-components";
+import { motion } from "framer-motion";
+import SEO from "../../components/SEO";
 import s1workday from "../../assets/work/1sol.mp4";
 
 const Container = styled.section`
-  background: #fff;
-  border-radius: 28px;
-  box-shadow: 0 8px 32px #0002, 0 2px 10px #0001;
-  width: 60vw;
-  max-width: 1100px;
-  margin: 4vw auto 2vw auto;
-  font-family: 'Inter', sans-serif;
-  padding: 2rem 3vw 2rem 3vw;
-  min-height: 500px;
-  box-sizing: border-box;
-  @media (max-width: 1200px) {
-    width: 80vw;
-  }
-  @media (max-width: 900px) {
-    width: 95vw;
-    border-radius: 16px;
-    padding: 1rem 1rem 1rem 1rem;
-    max-width: 100vw;
+  width: 100%;
+  padding: 4rem 0;
+  background: var(--background);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
+  @media (max-width: 768px) {
+    padding: 2rem 0;
     min-height: auto;
-  }
-  @media (max-width: 600px) {
-    width: 98vw;
-    border-radius: 12px;
-    padding: 1rem 0.8rem 1rem 0.8rem;
   }
 `;
 
-const Label = styled.div`
-  color: #979797;
+const SectionCard = styled(motion.section)`
+  background: var(--cardBackground);
+  border-radius: 28px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), 0 2px 10px rgba(0, 0, 0, 0.08);
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: 'Inter', sans-serif;
+  padding: 4rem 5rem;
+  border: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+  min-height: 500px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent1), var(--accent2));
+    border-radius: 28px 28px 0 0;
+  }
+
+  @media (max-width: 1024px) {
+    width: 95%;
+    border-radius: 20px;
+    padding: 3rem 3rem;
+  }
+
+  @media (max-width: 900px) {
+    width: 95%;
+    border-radius: 16px;
+    padding: 2rem 1.5rem;
+    min-height: auto;
+  }
+
+  @media (max-width: 480px) {
+    width: 98%;
+    border-radius: 12px;
+    padding: 1.5rem 1rem;
+  }
+`;
+
+const Label = styled(motion.div)`
+  color: var(--accent1);
   font-size: 1.15rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+
   @media (max-width: 600px) {
     font-size: 1rem;
   }
 `;
 
-const FlowTitle = styled.h1`
-  color: #483efc;
-  font-size: 2.3rem;
+const FlowTitle = styled(motion.h1)`
+  color: var(--text);
+  font-size: 2.8rem;
   font-weight: 900;
   margin: 0 0 1.5rem 0;
+  line-height: 1.1;
+  background: linear-gradient(135deg, var(--accent1), var(--accent2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+
+  @media (max-width: 1024px) {
+    font-size: 2.5rem;
+  }
+
   @media (max-width: 900px) {
-    font-size: 2rem;
+    font-size: 2.2rem;
     text-align: center;
   }
+
   @media (max-width: 600px) {
-    font-size: 1.8rem;
+    font-size: 2rem;
     margin-bottom: 1.5rem;
   }
 `;
@@ -61,11 +109,13 @@ const FlexRow = styled.div`
   align-items: flex-start;
   width: 100%;
   gap: 2rem;
+
   @media (max-width: 900px) {
     flex-direction: column;
     gap: 1.5rem;
     align-items: center;
   }
+
   @media (max-width: 600px) {
     gap: 1rem;
   }
@@ -74,6 +124,7 @@ const FlexRow = styled.div`
 const TextColumn = styled.div`
   flex: 1 1 0;
   min-width: 0;
+
   @media (max-width: 900px) {
     flex: none;
     width: 100%;
@@ -86,6 +137,7 @@ const VideoWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+
   @media (max-width: 900px) {
     flex: none;
     width: 100%;
@@ -99,6 +151,7 @@ const VideoContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
   @media (max-width: 900px) {
     align-items: center;
   }
@@ -107,13 +160,16 @@ const VideoContainer = styled.div`
 const StyledVideo = styled.video`
   width: 100%;
   height: auto;
-  background: #000;
-  border-radius: 0;
-  box-shadow: none;
+  background: var(--cardBackground);
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
   display: block;
+  border: 1px solid var(--border);
+
   @media (max-width: 900px) {
     max-width: 500px;
   }
+
   @media (max-width: 600px) {
     max-width: 100%;
   }
@@ -126,9 +182,11 @@ const ControlsContainer = styled.div`
   margin-top: 8px;
   gap: 12px;
   user-select: none;
+
   @media (max-width: 900px) {
     max-width: 500px;
   }
+
   @media (max-width: 600px) {
     gap: 8px;
     margin-top: 6px;
@@ -136,8 +194,8 @@ const ControlsContainer = styled.div`
 `;
 
 const PlayPauseButton = styled.button`
-  background: #483efc;
-  color: #fff;
+  background: var(--accent1);
+  color: var(--text);
   border: none;
   border-radius: 50%;
   width: 38px;
@@ -149,13 +207,15 @@ const PlayPauseButton = styled.button`
   justify-content: center;
   outline: none;
   transition: background 0.2s;
+
   @media (max-width: 600px) {
     width: 32px;
     height: 32px;
     font-size: 1.2rem;
   }
+
   &:hover {
-    background: #362bb5;
+    background: var(--accent2);
   }
 `;
 
@@ -163,8 +223,9 @@ const Slider = styled.input.attrs({ type: "range" })`
   flex: 1 1 0;
   width: 100%;
   margin: 0 8px;
-  accent-color: #483efc;
+  accent-color: var(--accent1);
   height: 4px;
+
   @media (max-width: 600px) {
     margin: 0 4px;
   }
@@ -172,9 +233,11 @@ const Slider = styled.input.attrs({ type: "range" })`
 
 const Time = styled.span`
   font-size: 0.95rem;
-  color: #333;
+  color: var(--text);
   min-width: 44px;
   text-align: right;
+  opacity: 0.8;
+
   @media (max-width: 600px) {
     font-size: 0.85rem;
     min-width: 36px;
@@ -236,42 +299,82 @@ const FinalLookMakingSchedule: React.FC = () => {
     setProgress(duration);
   };
 
+  const containerVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+        staggerChildren: 0.2
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut"
+      }
+    }
+  };
+
   return (
-    <Container>
-      <Label>Final look of Making a Schedule</Label>
-      <FlowTitle>Flow 1</FlowTitle>
-      <FlexRow>
-        <TextColumn />
-        <VideoWrapper>
-          <VideoContainer>
-            <StyledVideo
-              ref={videoRef}
-              src={s1workday}
-              onTimeUpdate={handleTimeUpdate}
-              onLoadedMetadata={handleLoadedMetadata}
-              onEnded={handleEnded}
-              playsInline
-            />
-            <ControlsContainer>
-              <PlayPauseButton onClick={handlePlayPause} aria-label={isPlaying ? "Pause" : "Play"}>
-                {isPlaying ? "❚❚" : "►"}
-              </PlayPauseButton>
-              <Slider
-                min={0}
-                max={duration}
-                step={0.1}
-                value={progress}
-                onChange={handleSliderChange}
-                aria-label="Video progress"
-              />
-              <Time>
-                {formatTime(progress)} / {formatTime(duration)}
-              </Time>
-            </ControlsContainer>
-          </VideoContainer>
-        </VideoWrapper>
-      </FlexRow>
-    </Container>
+    <>
+      <SEO 
+        title="Final Look: Making a Schedule | Workday UX Project"
+        description="See the final implementation of the improved schedule viewing experience in the Workday app with interactive video demonstration."
+        keywords="final UI, schedule design, UX implementation, mobile app, Workday app, design showcase"
+        image="/src/assets/work/final-schedule.jpg"
+      />
+      <Container>
+        <SectionCard
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+        >
+          <Label variants={itemVariants}>Final look of Making a Schedule</Label>
+          <FlowTitle variants={itemVariants}>Flow 1</FlowTitle>
+          <FlexRow>
+            <TextColumn />
+            <VideoWrapper>
+              <VideoContainer>
+                <StyledVideo
+                  ref={videoRef}
+                  src={s1workday}
+                  onTimeUpdate={handleTimeUpdate}
+                  onLoadedMetadata={handleLoadedMetadata}
+                  onEnded={handleEnded}
+                  playsInline
+                />
+                <ControlsContainer>
+                  <PlayPauseButton onClick={handlePlayPause} aria-label={isPlaying ? "Pause" : "Play"}>
+                    {isPlaying ? "❚❚" : "►"}
+                  </PlayPauseButton>
+                  <Slider
+                    min={0}
+                    max={duration}
+                    step={0.1}
+                    value={progress}
+                    onChange={handleSliderChange}
+                    aria-label="Video progress"
+                  />
+                  <Time>
+                    {formatTime(progress)} / {formatTime(duration)}
+                  </Time>
+                </ControlsContainer>
+              </VideoContainer>
+            </VideoWrapper>
+          </FlexRow>
+        </SectionCard>
+      </Container>
+    </>
   );
 };
 
