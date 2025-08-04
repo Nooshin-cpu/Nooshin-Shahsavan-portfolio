@@ -9,7 +9,7 @@ import empathyMap from "../../assets/work/empathy-map.png";
 
 const Container = styled.section`
   width: 100%;
-  padding: 4rem 0;
+  padding: 2rem 0;
   background: var(--background);
   display: flex;
   justify-content: center;
@@ -17,7 +17,7 @@ const Container = styled.section`
   min-height: 100vh;
 
   @media (max-width: 768px) {
-    padding: 2rem 0;
+    padding: 1rem 0;
     min-height: auto;
   }
 `;

@@ -53,7 +53,7 @@ const SectionCard = styled(motion.section)<{ $white?: boolean }>`
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), 0 2px 10px rgba(0, 0, 0, 0.08);
   width: 90%;
   max-width: 1200px;
-  margin: 4rem auto 2rem auto;
+  margin: 0 auto;
   font-family: 'Inter', sans-serif;
   border: 1px solid var(--border);
   position: relative;
@@ -78,7 +78,6 @@ const SectionCard = styled(motion.section)<{ $white?: boolean }>`
   @media (max-width: 768px) {
     width: 95%;
     border-radius: 16px;
-    margin: 2rem auto 1rem auto;
   }
 
   @media (max-width: 480px) {
@@ -595,6 +594,21 @@ const ContentWrapper = styled.div`
 
   @media (max-width: 600px) {
     padding: 0.5rem;
+  }
+
+  /* Consistent spacing between all components */
+  & > div {
+    margin-bottom: 4rem;
+  }
+
+  & > div:last-child {
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 768px) {
+    & > div {
+      margin-bottom: 2rem;
+    }
   }
 `;
 
