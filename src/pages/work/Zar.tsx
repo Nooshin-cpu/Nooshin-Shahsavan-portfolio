@@ -29,7 +29,7 @@ import { EmailFooter } from '../../components/Footer';
 const PageBg = styled.div`
   min-height: 100vh;
   width: 100vw;
-  background: #fff;
+  background: var(--background);
   transition: background 0.2s;
   overflow-x: hidden;
   overflow-y: auto;
@@ -44,7 +44,7 @@ const PageBg = styled.div`
 
 const GlobalStyle = createGlobalStyle`
   body {
-    background: #fff;
+    background: var(--background);
     overflow-x: hidden !important;
     margin: 0;
     padding: 0;
@@ -54,19 +54,47 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
+const ContentWrapper = styled.div`
+  flex: 1;
+  padding: 2rem;
+
+  @media (max-width: 900px) {
+    padding: 1rem;
+  }
+
+  @media (max-width: 600px) {
+    padding: 0.5rem;
+  }
+
+  /* Consistent spacing between all components */
+  & > div {
+    margin-bottom: 4rem;
+  }
+
+  & > div:last-child {
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 768px) {
+    & > div {
+      margin-bottom: 2rem;
+    }
+  }
+`;
+
 const MockupsTitle = styled.section`
   width: 100vw;
-  background: #fff;
+  background: var(--background);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 2.5rem 0;
+  margin: 0 auto;
   @media (max-width: 900px) {
-    margin: 1.5rem 0;
+    margin: 0 auto;
   }
   @media (max-width: 600px) {
-    margin: 1rem 0;
+    margin: 0 auto;
     padding: 0 0.5rem;
     width: 100%;
   }
@@ -75,7 +103,7 @@ const MockupsTitle = styled.section`
 const Title = styled.h1`
   font-size: 2.2rem;
   font-weight: 600;
-  color: #181818;
+  color: var(--text);
   margin-bottom: 2rem;
   letter-spacing: 0.04em;
   text-align: center;
@@ -91,7 +119,7 @@ const Title = styled.h1`
 
 const Description = styled.p`
   font-size: 1.08rem;
-  color: #444;
+  color: var(--text);
   font-weight: 400;
   line-height: 1.5;
   max-width: 480px;
@@ -110,49 +138,43 @@ const Zar: React.FC = () => (
       />
       <GlobalStyle />
       <ZarStickyMenu />
-      <div id="zar-first">
-        <ZarFirst />
-      </div>
-      <div id="zar-second">
-        <ZarSecond/>
-      </div>
-      <div id="zar-problem">
-        <ProblemZar />
-      </div>
-      <div id="zar-logo">
-        <ZarThird/>
-        <ZarLogoP />
-      </div>
-      <div id="zar-color">
-        <ZarColor/>
-      </div>
-      <div id="zar-typography">
-        <ZarType/>
-      </div>
-      <div id="zar-packaging">
-        <ZarPackaging/>
-        <PackZarImage/>
-      </div>
-      <div id="zar-mockups">
-      <MockupsTitle>
-        <Title>Mockups</Title>
-        
-      </MockupsTitle>
-      <ZarStory/>
-      <ZarMock8/>
-      <Zarmock2/>
-      <Zarmock3/>
-      <Zarmock1/>
-      <ZarMock6/>
-      </div>
-      
-    
-     
-      <ZarMock5/>
-     
-      
-      
-     
+      <ContentWrapper>
+        <div id="zar-first">
+          <ZarFirst />
+        </div>
+        <div id="zar-second">
+          <ZarSecond/>
+        </div>
+        <div id="zar-problem">
+          <ProblemZar />
+        </div>
+        <div id="zar-logo">
+          <ZarThird/>
+          <ZarLogoP />
+        </div>
+        <div id="zar-color">
+          <ZarColor/>
+        </div>
+        <div id="zar-typography">
+          <ZarType/>
+        </div>
+        <div id="zar-packaging">
+          <ZarPackaging/>
+          <PackZarImage/>
+        </div>
+        <div id="zar-mockups">
+          <MockupsTitle>
+            <Title>Mockups</Title>
+          </MockupsTitle>
+          <ZarStory/>
+          <ZarMock8/>
+          <Zarmock2/>
+          <Zarmock3/>
+          <Zarmock1/>
+          <ZarMock6/>
+        </div>
+        <ZarMock5/>
+      </ContentWrapper>
       <MenuWork />
       <EmailFooter />
     </PageBg>
