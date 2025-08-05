@@ -29,7 +29,7 @@ import { EmailFooter } from '../../components/Footer';
 const PageBg = styled.div`
   min-height: 100vh;
   width: 100vw;
-  background: var(--background);
+  background: #fff;
   transition: background 0.2s;
   overflow-x: hidden;
   overflow-y: auto;
@@ -44,7 +44,7 @@ const PageBg = styled.div`
 
 const GlobalStyle = createGlobalStyle`
   body {
-    background: var(--background);
+    background: #fff;
     overflow-x: hidden !important;
     margin: 0;
     padding: 0;
@@ -84,7 +84,7 @@ const ContentWrapper = styled.div`
 
 const MockupsTitle = styled.section`
   width: 100vw;
-  background: var(--background);
+  background: #fff;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -103,7 +103,7 @@ const MockupsTitle = styled.section`
 const Title = styled.h1`
   font-size: 2.2rem;
   font-weight: 600;
-  color: var(--text);
+  color: #181818;
   margin-bottom: 2rem;
   letter-spacing: 0.04em;
   text-align: center;
@@ -119,7 +119,7 @@ const Title = styled.h1`
 
 const Description = styled.p`
   font-size: 1.08rem;
-  color: var(--text);
+  color: #444;
   font-weight: 400;
   line-height: 1.5;
   max-width: 480px;

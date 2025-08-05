@@ -44,7 +44,7 @@ const challenges = [
 const MinimalSection = styled.section`
   width: 100%;
   min-height: 100vh;
-  background: var(--background);
+  background: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -61,7 +61,7 @@ const MinimalSection = styled.section`
 const Title = styled.h2`
   font-size: 2.1rem;
   font-weight: 600;
-  color: #ffffff;
+  color: #181818;
   margin-bottom: 1.2rem;
   letter-spacing: -1px;
   text-align: center;
@@ -75,7 +75,7 @@ const Title = styled.h2`
 
 const Description = styled.p`
   font-size: 1.08rem;
-  color: #e0e0e0;
+  color: #444;
   font-weight: 400;
   line-height: 1.5;
   max-width: 480px;
@@ -110,7 +110,7 @@ const ChallengesGrid = styled.div`
 const ChallengeCard = styled.div`
   min-width: 180px;
   max-width: 240px;
-  background: var(--cardBackground);
+  background: #f8f9fa;
   border-radius: 1.2rem;
   border: 2px solid rgb(163, 73, 198);
   box-shadow: none;
@@ -145,7 +145,7 @@ const ChallengeTitle = styled.div`
 `;
 
 const ChallengeDescription = styled.div`
-  color: #e0e0e0;
+  color: #333;
   font-size: 0.9rem;
   line-height: 1.4;
   text-align: center;
