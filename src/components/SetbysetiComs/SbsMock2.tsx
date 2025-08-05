@@ -10,11 +10,21 @@ const MockupSection = styled.section`
   flex-direction: column;
   align-items: center;
   padding: 48px 0 32px 0;
+  
+  @media (max-width: 1200px) {
+    padding: 40px 0 28px 0;
+  }
+  
   @media (max-width: 900px) {
     padding: 32px 0 24px 0;
   }
+  
   @media (max-width: 600px) {
-    padding: 18px 0 12px 0;
+    padding: 24px 0 16px 0;
+  }
+  
+  @media (max-width: 480px) {
+    padding: 20px 0 12px 0;
   }
 `;
 
@@ -23,34 +33,64 @@ const TwoColumnGrid = styled.div`
   gap: 2rem;
   justify-content: center;
   flex-wrap: wrap;
-  width: 70vw;
-  max-width: 70vw;
+  width: 100%;
+  max-width: 1200px;
+  
+  @media (max-width: 1200px) {
+    max-width: 95vw;
+    gap: 1.5rem;
+  }
+  
   @media (max-width: 900px) {
     gap: 1rem;
     width: 90vw;
     max-width: 90vw;
   }
+  
   @media (max-width: 600px) {
     flex-direction: column;
     gap: 0.8rem;
+    width: 95vw;
+    max-width: 95vw;
+    align-items: center;
+  }
+  
+  @media (max-width: 480px) {
     width: 98vw;
     max-width: 98vw;
-    align-items: center;
+    gap: 0.6rem;
   }
 `;
 
 const PairedMockup = styled.img`
-  width: calc(35vw - 1rem);
-  max-width: calc(35vw - 1rem);
+  width: calc(50% - 1rem);
+  max-width: calc(50% - 1rem);
   border-radius: 1.5rem;
   box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  object-fit: contain;
+  
+  @media (max-width: 1200px) {
+    width: calc(50% - 0.75rem);
+    max-width: calc(50% - 0.75rem);
+    border-radius: 1.2rem;
+  }
+  
   @media (max-width: 900px) {
     width: 44vw;
     max-width: 44vw;
+    border-radius: 1rem;
   }
+  
   @media (max-width: 600px) {
+    width: 95vw;
+    max-width: 95vw;
+    border-radius: 0.8rem;
+  }
+  
+  @media (max-width: 480px) {
     width: 98vw;
     max-width: 98vw;
+    border-radius: 0.6rem;
   }
 `;
 
