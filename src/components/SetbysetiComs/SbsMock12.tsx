@@ -28,8 +28,8 @@ const MockupSection = styled.section`
 `;
 
 const IndividualMockup = styled.video`
-  width: 70vw;
-  max-width: 70vw;
+  width: 100%;
+  max-width: 1200px;
   border-radius: 1.5rem;
   box-shadow: 0 2px 12px rgba(0,0,0,0.04);
   object-fit: contain;
@@ -38,8 +38,7 @@ const IndividualMockup = styled.video`
   display: block;
   
   @media (max-width: 1200px) {
-    width: 80vw;
-    max-width: 80vw;
+    max-width: 95vw;
     border-radius: 1.2rem;
   }
   
