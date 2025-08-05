@@ -110,7 +110,7 @@ const ChallengesGrid = styled.div`
 const ChallengeCard = styled.div`
   min-width: 180px;
   max-width: 240px;
-  background: #fff;
+  background: #f8f9fa;
   border-radius: 1.2rem;
   border: 2px solid rgb(163, 73, 198);
   box-shadow: none;
@@ -144,6 +144,13 @@ const ChallengeTitle = styled.div`
   text-align: center;
 `;
 
+const ChallengeDescription = styled.div`
+  color: #333;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  text-align: center;
+`;
+
 const ProblemZar: React.FC = () => (
   <MinimalSection>
     <Title>Branding Challenges</Title>
@@ -154,7 +161,7 @@ const ProblemZar: React.FC = () => (
       {challenges.map((challenge, idx) => (
         <ChallengeCard key={challenge.title}>
           <ChallengeTitle>{challenge.title}</ChallengeTitle>
-          <div>{challenge.description}</div>
+          <ChallengeDescription>{challenge.description}</ChallengeDescription>
         </ChallengeCard>
       ))}
     </ChallengesGrid>
