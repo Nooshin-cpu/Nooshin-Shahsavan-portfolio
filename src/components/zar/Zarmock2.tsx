@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import mockImg from "../../assets/zar/zarbag.jpg";
+import mockImg from "../../assets/zar/box-2.jpg";
 
 const MinimalSection = styled.section`
   width: 100vw;
