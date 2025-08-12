@@ -42,7 +42,7 @@ const challenges = [
 ];
 
 const MinimalSection = styled.section`
-  width: 100%;
+  width: 100vw;
   min-height: 100vh;
   background: #fff;
   display: flex;
@@ -54,7 +54,7 @@ const MinimalSection = styled.section`
     padding: 32px 0 24px 0;
   }
   @media (max-width: 600px) {
-    padding: 24px 0 16px 0;
+    padding: 18px 0 12px 0;
   }
 `;
 
@@ -83,11 +83,11 @@ const Description = styled.p`
   text-align: center;
   @media (max-width: 900px) {
     font-size: 1rem;
-    margin-bottom: 1.2rem;
+    max-width: 90vw;
   }
   @media (max-width: 600px) {
     font-size: 0.98rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.2rem;
   }
 `;
 
@@ -110,7 +110,7 @@ const ChallengesGrid = styled.div`
 const ChallengeCard = styled.div`
   min-width: 180px;
   max-width: 240px;
-  background: #f8f9fa;
+  background: #fff;
   border-radius: 1.2rem;
   border: 2px solid rgb(163, 73, 198);
   box-shadow: none;
@@ -145,7 +145,7 @@ const ChallengeTitle = styled.div`
 `;
 
 const ChallengeDescription = styled.div`
-  color: #333;
+  color: #444;
   font-size: 0.9rem;
   line-height: 1.4;
   text-align: center;
