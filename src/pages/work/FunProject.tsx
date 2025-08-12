@@ -423,7 +423,12 @@ const FunProject = () => (
         </CategoryDescription>
         <ModernGrid>
           <VideoCard gridArea="1 / 2 / 3 / 5" aspectRatio="1/1.4" category="photography">
-            <CustomVideoPlayer src={videoSrc} />
+            <video 
+              src={vrVideo} 
+              controls 
+              style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+              controlsList="nodownload"
+            />
           </VideoCard>
           <ModernCard gridArea="1 / 5 / 3 / 8" aspectRatio="1/1.4" category="photography">
             <img src={funhome} alt="Photography 1" />
