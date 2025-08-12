@@ -424,7 +424,7 @@ const FunProject = () => (
         <ModernGrid>
           <VideoCard gridArea="1 / 2 / 3 / 5" aspectRatio="1/1.4" category="photography">
             <video 
-              src={vrVideo} 
+              src={videoSrc} 
               controls 
               style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
               controlsList="nodownload"
