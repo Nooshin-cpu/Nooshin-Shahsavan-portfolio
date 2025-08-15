@@ -7,7 +7,7 @@ import s2workday from "../../assets/work/2sol.mp4";
 const Container = styled.section`
   width: 100%;
   padding: 2rem 0;
-  background: var(--background);
+  background: #ffffff;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -20,29 +20,18 @@ const Container = styled.section`
 `;
 
 const SectionCard = styled(motion.section)`
-  background: var(--cardBackground);
+  background: #ffffff;
   border-radius: 28px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), 0 2px 10px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
   width: 90%;
   max-width: 1200px;
   margin: 0 auto;
   font-family: 'Inter', sans-serif;
   padding: 4rem 5rem;
-  border: 1px solid var(--border);
+  border: 1px solid #f0f0f0;
   position: relative;
   overflow: hidden;
   min-height: 500px;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, var(--accent1), var(--accent2));
-    border-radius: 28px 28px 0 0;
-  }
 
   @media (max-width: 1024px) {
     width: 95%;
@@ -65,41 +54,33 @@ const SectionCard = styled(motion.section)`
 `;
 
 const Label = styled(motion.div)`
-  color: var(--accent1);
-  font-size: 1.15rem;
+  color: #3e2ffc;
+  font-size: 1rem;
   font-weight: 700;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
 
   @media (max-width: 600px) {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 `;
 
 const FlowTitle = styled(motion.h1)`
-  color: var(--text);
-  font-size: 2.8rem;
-  font-weight: 900;
-  margin: 0 0 1.5rem 0;
+  color: #181818;
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 0 1.6rem 0;
   line-height: 1.1;
-  background: linear-gradient(135deg, var(--accent1), var(--accent2));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-
-  @media (max-width: 1024px) {
-    font-size: 2.5rem;
-  }
 
   @media (max-width: 900px) {
-    font-size: 2.2rem;
+    font-size: 1.8rem;
     text-align: center;
   }
 
   @media (max-width: 600px) {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
+    font-size: 1.6rem;
+    margin-bottom: 1.2rem;
   }
 `;
 
@@ -116,35 +97,67 @@ const FlexRow = styled.div`
   }
 `;
 
-const TextColumn = styled.div`
-  flex: 1 1 0;
-  min-width: 0;
-`;
-
-const VideoWrapper = styled.div`
+const VideoColumn = styled.div`
   flex: 1 1 0;
   min-width: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media (max-width: 900px) {
+    flex: none;
+    width: 100%;
+  }
+`;
+
+const VideoTitle = styled(motion.h2)`
+  color: #3e2ffc;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-align: center;
+
+  @media (max-width: 900px) {
+    font-size: 1.6rem;
+  }
+
+  @media (max-width: 600px) {
+    font-size: 1.4rem;
+  }
 `;
 
 const VideoContainer = styled.div`
   width: 100%;
-  max-width: 80%;
+  max-width: 60%;
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media (max-width: 900px) {
+    max-width: 80%;
+  }
+
+  @media (max-width: 600px) {
+    max-width: 100%;
+  }
 `;
 
 const StyledVideo = styled.video`
   width: 100%;
   height: auto;
-  background: var(--cardBackground);
+  background: #ffffff;
   border-radius: 12px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
   display: block;
-  border: 1px solid var(--border);
+  border: 1px solid #f0f0f0;
+
+  @media (max-width: 900px) {
+    max-width: 400px;
+  }
+
+  @media (max-width: 600px) {
+    max-width: 100%;
+  }
 `;
 
 const ControlsContainer = styled.div`
@@ -154,11 +167,20 @@ const ControlsContainer = styled.div`
   margin-top: 8px;
   gap: 12px;
   user-select: none;
+
+  @media (max-width: 900px) {
+    max-width: 400px;
+  }
+
+  @media (max-width: 600px) {
+    gap: 8px;
+    margin-top: 6px;
+  }
 `;
 
 const PlayPauseButton = styled.button`
-  background: var(--accent1);
-  color: var(--text);
+  background: #3e2ffc;
+  color: #ffffff;
   border: none;
   border-radius: 50%;
   width: 38px;
@@ -171,8 +193,14 @@ const PlayPauseButton = styled.button`
   outline: none;
   transition: background 0.2s;
 
+  @media (max-width: 600px) {
+    width: 32px;
+    height: 32px;
+    font-size: 1.2rem;
+  }
+
   &:hover {
-    background: var(--accent2);
+    background: #2196f3;
   }
 `;
 
@@ -180,16 +208,25 @@ const Slider = styled.input.attrs({ type: "range" })`
   flex: 1 1 0;
   width: 100%;
   margin: 0 8px;
-  accent-color: var(--accent1);
+  accent-color: #3e2ffc;
   height: 4px;
+
+  @media (max-width: 600px) {
+    margin: 0 4px;
+  }
 `;
 
 const Time = styled.span`
   font-size: 0.95rem;
-  color: var(--text);
+  color: #444;
   min-width: 44px;
   text-align: right;
   opacity: 0.8;
+
+  @media (max-width: 600px) {
+    font-size: 0.85rem;
+    min-width: 36px;
+  }
 `;
 
 function formatTime(sec: number) {
@@ -290,8 +327,8 @@ const FinalLookDayOff: React.FC = () => {
           <Label variants={itemVariants}>Final look of Making a Day Off</Label>
           <FlowTitle variants={itemVariants}>Flow 2</FlowTitle>
           <FlexRow>
-            <TextColumn />
-            <VideoWrapper>
+            <VideoColumn>
+              <VideoTitle variants={itemVariants}>Time Off Flow</VideoTitle>
               <VideoContainer>
                 <StyledVideo
                   ref={videoRef}
@@ -318,7 +355,7 @@ const FinalLookDayOff: React.FC = () => {
                   </Time>
                 </ControlsContainer>
               </VideoContainer>
-            </VideoWrapper>
+            </VideoColumn>
           </FlexRow>
         </SectionCard>
       </Container>

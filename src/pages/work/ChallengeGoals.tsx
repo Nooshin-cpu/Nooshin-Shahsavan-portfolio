@@ -6,7 +6,7 @@ import SEO from "../../components/SEO";
 const Container = styled.section`
   width: 100%;
   padding: 2rem 0;
-  background: var(--background);
+  background: #ffffff;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -19,113 +19,83 @@ const Container = styled.section`
 `;
 
 const SectionCard = styled(motion.section)`
-  background: var(--cardBackground);
-  border-radius: 28px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), 0 2px 10px rgba(0, 0, 0, 0.08);
+  background: transparent;
   width: 90%;
   max-width: 1200px;
   margin: 0 auto;
   font-family: 'Inter', sans-serif;
   padding: 4rem 5rem;
-  border: 1px solid var(--border);
   position: relative;
-  overflow: hidden;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, var(--accent1), var(--accent2));
-    border-radius: 28px 28px 0 0;
-  }
 
   @media (max-width: 1024px) {
     width: 95%;
     padding: 3rem 3rem;
-    border-radius: 20px;
   }
 
   @media (max-width: 768px) {
     width: 95%;
     padding: 2rem 1.5rem;
-    border-radius: 16px;
   }
 
   @media (max-width: 480px) {
     width: 98%;
     padding: 1.5rem 1rem;
-    border-radius: 12px;
   }
 `;
 
 const Title = styled(motion.h1)`
-  color: var(--text);
-  font-size: 3.5rem;
-  font-weight: 900;
-  margin: 0 0 2.2rem 0;
+  color: #181818;
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 0 1.6rem 0;
   line-height: 1.1;
-  background: linear-gradient(135deg, var(--accent1), var(--accent2));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
 
-  @media (max-width: 1024px) {
-    font-size: 3rem;
-    margin-bottom: 1.8rem;
+  @media (max-width: 900px) {
+    font-size: 1.8rem;
+    text-align: center;
   }
 
-  @media (max-width: 768px) {
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
-  }
-
-  @media (max-width: 480px) {
-    font-size: 2rem;
+  @media (max-width: 600px) {
+    font-size: 1.6rem;
     margin-bottom: 1.2rem;
   }
 `;
 
 const ChallengeText = styled(motion.p)`
-  color: var(--text);
-  font-size: 1.3rem;
-  margin-bottom: 0.4rem;
-  max-width: 900px;
-  line-height: 1.7;
-  font-weight: 500;
+  color: #444;
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 1.6;
+  margin-bottom: 1.2rem;
+  margin-top: 0;
+  text-align: left;
   opacity: 0.9;
 
   b {
-    color: var(--accent1);
+    color: #3e2ffc;
     font-weight: 700;
   }
 
   .highlight {
-    color: var(--accent2);
+    color: #2196f3;
     font-weight: 700;
   }
 
-  @media (max-width: 1024px) {
-    font-size: 1.2rem;
-    line-height: 1.6;
-  }
-
-  @media (max-width: 768px) {
-    font-size: 1.1rem;
-    line-height: 1.6;
-  }
-
-  @media (max-width: 480px) {
+  @media (max-width: 900px) {
     font-size: 1rem;
-    line-height: 1.5;
+    text-align: center;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 600px) {
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
   }
 `;
 
 const Divider = styled(motion.hr)`
   border: none;
-  border-top: 2px solid var(--border);
+  border-top: 2px solid #e0e0e0;
   margin: 3.3rem 0 2.7rem 0;
   width: 100%;
   opacity: 0.6;
@@ -140,51 +110,42 @@ const Divider = styled(motion.hr)`
 `;
 
 const GoalsTitle = styled(motion.h2)`
-  color: var(--text);
-  font-size: 2.8rem;
-  font-weight: 900;
-  margin: 0 0 1.5rem 0;
-  line-height: 1.1;
-  background: linear-gradient(135deg, var(--accent1), var(--accent2));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #181818;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 0.65rem;
+  margin-top: 0;
+  text-align: left;
 
-  @media (max-width: 1024px) {
-    font-size: 2.5rem;
-    margin-bottom: 1.2rem;
+  @media (max-width: 900px) {
+    font-size: 1.6rem;
+    text-align: center;
   }
 
-  @media (max-width: 768px) {
-    font-size: 2.2rem;
-    margin-bottom: 1rem;
-  }
-
-  @media (max-width: 480px) {
-    font-size: 1.8rem;
-    margin-bottom: 0.8rem;
+  @media (max-width: 600px) {
+    font-size: 1.4rem;
   }
 `;
 
 const GoalsList = styled(motion.ol)`
-  padding-left: 1.5em;
-  font-size: 1.2rem;
-  color: var(--text);
-  font-weight: 500;
-  line-height: 1.8;
+  padding-left: 1.1em;
+  margin: 0.1em 0 0.7em 0;
+  font-size: 1.1rem;
+  color: #444;
+  line-height: 1.6;
   opacity: 0.9;
 
   li {
-    margin-bottom: 1em;
+    margin-bottom: 2px;
     position: relative;
     
     &::marker {
-      color: var(--accent1);
+      color: #3e2ffc;
       font-weight: 700;
     }
 
     b, .goal-num {
-      color: var(--accent2);
+      color: #2196f3;
       font-weight: 700;
       margin-right: 0.3em;
     }
@@ -194,28 +155,14 @@ const GoalsList = styled(motion.ol)`
     }
   }
 
-  @media (max-width: 1024px) {
-    font-size: 1.1rem;
-    line-height: 1.7;
-    padding-left: 1.3em;
-  }
-
-  @media (max-width: 768px) {
-    font-size: 1rem;
-    line-height: 1.6;
-    padding-left: 1.2em;
-  }
-
-  @media (max-width: 480px) {
-    font-size: 0.95rem;
-    line-height: 1.5;
-    padding-left: 1.1em;
+  @media (max-width: 600px) {
+    font-size: 0.9rem;
   }
 `;
 
 const GoalCard = styled(motion.div)`
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid var(--border);
+  background: rgba(248, 248, 248, 0.8);
+  border: 1px solid #f0f0f0;
   border-radius: 12px;
   padding: 1.5rem;
   margin-bottom: 1rem;
@@ -223,8 +170,8 @@ const GoalCard = styled(motion.div)`
 
   &:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-    border-color: var(--accent1);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    border-color: #3e2ffc;
   }
 
   @media (max-width: 768px) {
@@ -237,15 +184,21 @@ const GoalCard = styled(motion.div)`
 `;
 
 const GoalNumber = styled.span`
-  color: var(--accent1);
+  color: #3e2ffc;
   font-weight: 700;
-  font-size: 1.1rem;
+  font-size: 1rem;
   margin-right: 0.5rem;
 `;
 
 const GoalText = styled.span`
-  color: var(--text);
+  color: #444;
+  font-size: 14px;
+  font-weight: 400;
   opacity: 0.9;
+
+  @media (max-width: 600px) {
+    font-size: 13px;
+  }
 `;
 
 const ChallengeGoals: React.FC = () => {

@@ -25,64 +25,46 @@ import WorkdayStickyMenu from '../../components/WorkdayStickyMenu';
 import { EmailFooter } from '../../components/Footer';
 import TopScrollButton from '../../components/TopScrollButton';
 
-// Global style with dark mode support
+// Global style with white background
 const GlobalStyle = createGlobalStyle`
   body {
     font-family: 'Inter', sans-serif;
     font-size: 10px;
     font-weight: 400;
-    background: var(--background);
+    background: #ffffff;
     transition: background 0.6s;
   }
 `;
 
-// Page background: white in light mode, dark in dark mode
+// Page background: white
 const PageBg = styled.div`
   min-height: 100vh;
   width: 100vw;
-  background: var(--background);
+  background: #ffffff;
   transition: background 0.2s;
   overflow-x: hidden;
   overflow-y: auto;
 `;
 
-// Common Card container - Updated to match new design pattern
+// Common Card container - Updated to white background
 const SectionCard = styled(motion.section)<{ $white?: boolean }>`
-  background: var(--cardBackground);
-  border-radius: 28px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), 0 2px 10px rgba(0, 0, 0, 0.08);
+  background: transparent;
   width: 90%;
   max-width: 1200px;
   margin: 0 auto;
   font-family: 'Inter', sans-serif;
-  border: 1px solid var(--border);
   position: relative;
-  overflow: hidden;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, var(--accent1), var(--accent2));
-    border-radius: 28px 28px 0 0;
-  }
 
   @media (max-width: 1024px) {
     width: 95%;
-    border-radius: 20px;
   }
 
   @media (max-width: 768px) {
     width: 95%;
-    border-radius: 16px;
   }
 
   @media (max-width: 480px) {
     width: 98%;
-    border-radius: 12px;
   }
 `;
 
@@ -122,7 +104,7 @@ const PhoneMockup = styled.img`
   height: auto;
   border-radius: 32px;
   box-shadow: 0 8px 40px rgba(0, 0, 0, 0.12), 0 2px 6px rgba(0, 0, 0, 0.08);
-  background: var(--cardBackground);
+  background: #ffffff;
   flex-shrink: 0;
 
   @media (max-width: 900px) {
@@ -153,7 +135,7 @@ const Content = styled.div`
 `;
 
 const Title = styled.h1`
-  color: var(--accent1);
+  color: #3e2ffc;
   font-size: 2rem;
   font-weight: 700;
   letter-spacing: 1px;
@@ -171,7 +153,7 @@ const Title = styled.h1`
 `;
 
 const OverviewLabel = styled.h2`
-  color: var(--text);
+  color: #181818;
   font-size: 1.8rem;
   font-weight: 700;
   margin-bottom: 0.65rem;
@@ -197,7 +179,7 @@ const OverviewContainer = styled.div`
 `;
 
 const OverviewText = styled.p`
-  color: var(--text);
+  color: #444;
   font-size: 16px;
   font-weight: 400;
   line-height: 1.7;
@@ -220,7 +202,7 @@ const OverviewText = styled.p`
 
 const Divider = styled.hr`
   border: none;
-  border-top: 2px solid var(--border);
+  border-top: 2px solid #e0e0e0;
   margin-bottom: 1.3rem;
   margin-top: 0;
   width: 100%;
@@ -255,7 +237,7 @@ const RoleItem = styled.div`
 const RoleLabel = styled.span`
   font-size: 1rem;
   font-weight: 700;
-  color: var(--accent1);
+  color: #3e2ffc;
   letter-spacing: 0.5px;
   margin-bottom: 0.16rem;
 
@@ -265,7 +247,7 @@ const RoleLabel = styled.span`
 `;
 
 const RoleValue = styled.span`
-  color: var(--text);
+  color: #444;
   font-size: 14px;
   font-weight: 400;
   white-space: pre-line;
@@ -302,7 +284,7 @@ const Page2Card = styled(SectionCard)`
 `;
 
 const ProblemTitle = styled.h2`
-  color: var(--text);
+  color: #181818;
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 0.6rem;
@@ -319,7 +301,7 @@ const ProblemTitle = styled.h2`
 `;
 
 const ProblemSubTitle = styled.h3`
-  color: var(--text);
+  color: #666;
   font-size: 1rem;
   font-weight: 700;
   margin-bottom: 2.2rem;
@@ -335,7 +317,7 @@ const ProblemSubTitle = styled.h3`
 
 const ProblemDivider = styled.hr`
   border: none;
-  border-top: 2px solid var(--accent1);
+  border-top: 2px solid #3e2ffc;
   width: 60%;
   margin: 0 auto 2rem auto;
   opacity: 0.6;
@@ -367,10 +349,10 @@ const CardRow = styled.div`
 `;
 
 const ProblemCard = styled.div`
-  background: var(--cardBackground);
-  border: 1px solid var(--border);
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
   border-radius: 12px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
   padding: 2.2rem 1.3rem 1.5rem 1.3rem;
   width: 29%;
   min-width: 220px;
@@ -381,13 +363,13 @@ const ProblemCard = styled.div`
   justify-content: center;
   transition: all 0.3s ease;
   box-sizing: border-box;
-  color: var(--text);
+  color: #444;
   min-height: 90px;
   
   &:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-    border-color: var(--accent1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    border-color: #3e2ffc;
   }
   
   @media (max-width: 1000px) {
@@ -418,7 +400,7 @@ const CardIcon = styled.img`
 `;
 
 const CardText = styled.div`
-  color: var(--text);
+  color: #444;
   font-size: 0.8rem;
   font-weight: 700;
   text-align: center;
@@ -515,7 +497,7 @@ const ProblemDetailTitle = styled.h2`
 `;
 
 const ProblemText = styled.p`
-  color: #222;
+  color: #444;
   font-size: 1.05rem;
   font-weight: 400;
   margin: 0;
@@ -535,16 +517,16 @@ const ProblemText = styled.p`
 `;
 
 const VideoPlaceholder = styled.div`
-  background: #fff;
+  background: #ffffff;
   border-radius: 18px;
-  box-shadow: 0 4px 24px #0001;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
   width: 260px;
   height: 540px;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  border: 1.5px solid #eee;
+  border: 1.5px solid #f0f0f0;
   @media (max-width: 900px) {
     width: 200px;
     height: 420px;
@@ -725,7 +707,6 @@ const Workday: React.FC = () => (
 
           <div id="final-ui">
             <FinalLookMakingSchedule />
-            <FinalLookDayOff />
           </div>
 
           <div id="takeaway">
@@ -733,14 +714,14 @@ const Workday: React.FC = () => (
           </div>
         </ContentWrapper>
       </PageContainer>
-      <div style={{ display: 'flex', justifyContent: 'center', width: '100%', background: 'var(--background)' }}>
+      <div style={{ display: 'flex', justifyContent: 'center', width: '100%', background: '#ffffff' }}>
         <style>
           {`
             .menu-work-container {
-              background: var(--background) !important;
+              background: #ffffff !important;
             }
             .menu-work-title {
-              color: var(--text) !important;
+              color: #181818 !important;
             }
           `}
         </style>

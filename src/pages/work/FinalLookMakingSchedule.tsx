@@ -3,11 +3,12 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 import SEO from "../../components/SEO";
 import s1workday from "../../assets/work/1sol.mp4";
+import s2workday from "../../assets/work/2sol.mp4";
 
 const Container = styled.section`
   width: 100%;
   padding: 2rem 0;
-  background: var(--background);
+  background: #ffffff;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -20,158 +21,129 @@ const Container = styled.section`
 `;
 
 const SectionCard = styled(motion.section)`
-  background: var(--cardBackground);
-  border-radius: 28px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), 0 2px 10px rgba(0, 0, 0, 0.08);
+  background: transparent;
   width: 90%;
   max-width: 1200px;
   margin: 0 auto;
   font-family: 'Inter', sans-serif;
   padding: 4rem 5rem;
-  border: 1px solid var(--border);
   position: relative;
-  overflow: hidden;
   min-height: 500px;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, var(--accent1), var(--accent2));
-    border-radius: 28px 28px 0 0;
-  }
 
   @media (max-width: 1024px) {
     width: 95%;
-    border-radius: 20px;
     padding: 3rem 3rem;
   }
 
   @media (max-width: 900px) {
     width: 95%;
-    border-radius: 16px;
     padding: 2rem 1.5rem;
     min-height: auto;
   }
 
   @media (max-width: 480px) {
     width: 98%;
-    border-radius: 12px;
     padding: 1.5rem 1rem;
   }
 `;
 
 const Label = styled(motion.div)`
-  color: var(--accent1);
-  font-size: 1.15rem;
+  color: #3e2ffc;
+  font-size: 1rem;
   font-weight: 700;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
 
   @media (max-width: 600px) {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 `;
 
 const FlowTitle = styled(motion.h1)`
-  color: var(--text);
-  font-size: 2.8rem;
-  font-weight: 900;
-  margin: 0 0 1.5rem 0;
+  color: #181818;
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 0 1.6rem 0;
   line-height: 1.1;
-  background: linear-gradient(135deg, var(--accent1), var(--accent2));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-
-  @media (max-width: 1024px) {
-    font-size: 2.5rem;
-  }
 
   @media (max-width: 900px) {
-    font-size: 2.2rem;
+    font-size: 1.8rem;
     text-align: center;
   }
 
   @media (max-width: 600px) {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
+    font-size: 1.6rem;
+    margin-bottom: 1.2rem;
   }
 `;
 
-const FlexRow = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  width: 100%;
+const VideoGrid = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 2rem;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
 
   @media (max-width: 900px) {
-    flex-direction: column;
+    grid-template-columns: 1fr;
     gap: 1.5rem;
-    align-items: center;
+    max-width: 500px;
   }
 
   @media (max-width: 600px) {
     gap: 1rem;
+    max-width: 400px;
   }
 `;
 
-const TextColumn = styled.div`
-  flex: 1 1 0;
-  min-width: 0;
-
-  @media (max-width: 900px) {
-    flex: none;
-    width: 100%;
-  }
-`;
-
-const VideoWrapper = styled.div`
-  flex: 1 1 0;
-  min-width: 0;
+const VideoColumn = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
+`;
+
+const VideoTitle = styled(motion.h2)`
+  color: #3e2ffc;
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-align: center;
 
   @media (max-width: 900px) {
-    flex: none;
-    width: 100%;
-    align-items: center;
+    font-size: 1.3rem;
+  }
+
+  @media (max-width: 600px) {
+    font-size: 1.2rem;
   }
 `;
 
 const VideoContainer = styled.div`
   width: 100%;
-  max-width: 80%;
+  max-width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  @media (max-width: 900px) {
-    align-items: center;
-  }
 `;
 
 const StyledVideo = styled.video`
   width: 100%;
   height: auto;
-  background: var(--cardBackground);
+  background: #ffffff;
   border-radius: 12px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
   display: block;
-  border: 1px solid var(--border);
+  border: 1px solid #f0f0f0;
+  max-width: 300px;
 
   @media (max-width: 900px) {
-    max-width: 500px;
+    max-width: 250px;
   }
 
   @media (max-width: 600px) {
-    max-width: 100%;
+    max-width: 200px;
   }
 `;
 
@@ -182,25 +154,27 @@ const ControlsContainer = styled.div`
   margin-top: 8px;
   gap: 12px;
   user-select: none;
+  max-width: 300px;
 
   @media (max-width: 900px) {
-    max-width: 500px;
+    max-width: 250px;
   }
 
   @media (max-width: 600px) {
     gap: 8px;
     margin-top: 6px;
+    max-width: 200px;
   }
 `;
 
 const PlayPauseButton = styled.button`
-  background: var(--accent1);
-  color: var(--text);
+  background: #3e2ffc;
+  color: #ffffff;
   border: none;
   border-radius: 50%;
-  width: 38px;
-  height: 38px;
-  font-size: 1.4rem;
+  width: 32px;
+  height: 32px;
+  font-size: 1.2rem;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -209,13 +183,13 @@ const PlayPauseButton = styled.button`
   transition: background 0.2s;
 
   @media (max-width: 600px) {
-    width: 32px;
-    height: 32px;
-    font-size: 1.2rem;
+    width: 28px;
+    height: 28px;
+    font-size: 1rem;
   }
 
   &:hover {
-    background: var(--accent2);
+    background: #2196f3;
   }
 `;
 
@@ -223,7 +197,7 @@ const Slider = styled.input.attrs({ type: "range" })`
   flex: 1 1 0;
   width: 100%;
   margin: 0 8px;
-  accent-color: var(--accent1);
+  accent-color: #3e2ffc;
   height: 4px;
 
   @media (max-width: 600px) {
@@ -232,15 +206,15 @@ const Slider = styled.input.attrs({ type: "range" })`
 `;
 
 const Time = styled.span`
-  font-size: 0.95rem;
-  color: var(--text);
-  min-width: 44px;
+  font-size: 0.85rem;
+  color: #444;
+  min-width: 40px;
   text-align: right;
   opacity: 0.8;
 
   @media (max-width: 600px) {
-    font-size: 0.85rem;
-    min-width: 36px;
+    font-size: 0.8rem;
+    min-width: 32px;
   }
 `;
 
@@ -255,48 +229,83 @@ function formatTime(sec: number) {
 }
 
 const FinalLookMakingSchedule: React.FC = () => {
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [progress, setProgress] = useState(0);
-  const [duration, setDuration] = useState(0);
+  const video1Ref = useRef<HTMLVideoElement>(null);
+  const video2Ref = useRef<HTMLVideoElement>(null);
+  const [isPlaying1, setIsPlaying1] = useState(false);
+  const [isPlaying2, setIsPlaying2] = useState(false);
+  const [progress1, setProgress1] = useState(0);
+  const [progress2, setProgress2] = useState(0);
+  const [duration1, setDuration1] = useState(0);
+  const [duration2, setDuration2] = useState(0);
 
-  // Play/Pause Handler
-  const handlePlayPause = () => {
-    if (!videoRef.current) return;
-    if (videoRef.current.paused) {
-      videoRef.current.play();
-      setIsPlaying(true);
+  // Video 1 handlers
+  const handlePlayPause1 = () => {
+    if (!video1Ref.current) return;
+    if (video1Ref.current.paused) {
+      video1Ref.current.play();
+      setIsPlaying1(true);
     } else {
-      videoRef.current.pause();
-      setIsPlaying(false);
+      video1Ref.current.pause();
+      setIsPlaying1(false);
     }
   };
 
-  // Update progress as video plays
-  const handleTimeUpdate = () => {
-    if (!videoRef.current) return;
-    setProgress(videoRef.current.currentTime);
+  const handleTimeUpdate1 = () => {
+    if (!video1Ref.current) return;
+    setProgress1(video1Ref.current.currentTime);
   };
 
-  // When loaded, set the duration
-  const handleLoadedMetadata = () => {
-    if (!videoRef.current) return;
-    setDuration(videoRef.current.duration);
+  const handleLoadedMetadata1 = () => {
+    if (!video1Ref.current) return;
+    setDuration1(video1Ref.current.duration);
   };
 
-  // Slider change
-  const handleSliderChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleSliderChange1 = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = parseFloat(e.target.value);
-    if (videoRef.current) {
-      videoRef.current.currentTime = value;
-      setProgress(value);
+    if (video1Ref.current) {
+      video1Ref.current.currentTime = value;
+      setProgress1(value);
     }
   };
 
-  // Handle video end
-  const handleEnded = () => {
-    setIsPlaying(false);
-    setProgress(duration);
+  const handleEnded1 = () => {
+    setIsPlaying1(false);
+    setProgress1(duration1);
+  };
+
+  // Video 2 handlers
+  const handlePlayPause2 = () => {
+    if (!video2Ref.current) return;
+    if (video2Ref.current.paused) {
+      video2Ref.current.play();
+      setIsPlaying2(true);
+    } else {
+      video2Ref.current.pause();
+      setIsPlaying2(false);
+    }
+  };
+
+  const handleTimeUpdate2 = () => {
+    if (!video2Ref.current) return;
+    setProgress2(video2Ref.current.currentTime);
+  };
+
+  const handleLoadedMetadata2 = () => {
+    if (!video2Ref.current) return;
+    setDuration2(video2Ref.current.duration);
+  };
+
+  const handleSliderChange2 = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = parseFloat(e.target.value);
+    if (video2Ref.current) {
+      video2Ref.current.currentTime = value;
+      setProgress2(value);
+    }
+  };
+
+  const handleEnded2 = () => {
+    setIsPlaying2(false);
+    setProgress2(duration2);
   };
 
   const containerVariants = {
@@ -341,37 +350,66 @@ const FinalLookMakingSchedule: React.FC = () => {
         >
           <Label variants={itemVariants}>Final look of Making a Schedule</Label>
           <FlowTitle variants={itemVariants}>Flow 1</FlowTitle>
-          <FlexRow>
-            <TextColumn />
-            <VideoWrapper>
+          <VideoGrid>
+            <VideoColumn>
+              <VideoTitle variants={itemVariants}>Schedule Flow</VideoTitle>
               <VideoContainer>
                 <StyledVideo
-                  ref={videoRef}
+                  ref={video1Ref}
                   src={s1workday}
-                  onTimeUpdate={handleTimeUpdate}
-                  onLoadedMetadata={handleLoadedMetadata}
-                  onEnded={handleEnded}
+                  onTimeUpdate={handleTimeUpdate1}
+                  onLoadedMetadata={handleLoadedMetadata1}
+                  onEnded={handleEnded1}
                   playsInline
                 />
                 <ControlsContainer>
-                  <PlayPauseButton onClick={handlePlayPause} aria-label={isPlaying ? "Pause" : "Play"}>
-                    {isPlaying ? "❚❚" : "►"}
+                  <PlayPauseButton onClick={handlePlayPause1} aria-label={isPlaying1 ? "Pause" : "Play"}>
+                    {isPlaying1 ? "❚❚" : "►"}
                   </PlayPauseButton>
                   <Slider
                     min={0}
-                    max={duration}
+                    max={duration1}
                     step={0.1}
-                    value={progress}
-                    onChange={handleSliderChange}
-                    aria-label="Video progress"
+                    value={progress1}
+                    onChange={handleSliderChange1}
+                    aria-label="Video 1 progress"
                   />
                   <Time>
-                    {formatTime(progress)} / {formatTime(duration)}
+                    {formatTime(progress1)} / {formatTime(duration1)}
                   </Time>
                 </ControlsContainer>
               </VideoContainer>
-            </VideoWrapper>
-          </FlexRow>
+            </VideoColumn>
+            <VideoColumn>
+              <VideoTitle variants={itemVariants}>Time Off Flow</VideoTitle>
+              <VideoContainer>
+                <StyledVideo
+                  ref={video2Ref}
+                  src={s2workday}
+                  onTimeUpdate={handleTimeUpdate2}
+                  onLoadedMetadata={handleLoadedMetadata2}
+                  onEnded={handleEnded2}
+                  playsInline
+                />
+                <ControlsContainer>
+                  <PlayPauseButton onClick={handlePlayPause2} aria-label={isPlaying2 ? "Pause" : "Play"}>
+                    {isPlaying2 ? "❚❚" : "►"}
+                  </PlayPauseButton>
+                  <Slider
+                    min={0}
+                    max={duration2}
+                    step={0.1}
+                    value={progress2}
+                    onChange={handleSliderChange2}
+                    aria-label="Video 2 progress"
+                  />
+                  <Time>
+                    {formatTime(progress2)} / {formatTime(duration2)}
+                  </Time>
+                </ControlsContainer>
+              </VideoContainer>
+            </VideoColumn>
+          </VideoGrid>
         </SectionCard>
       </Container>
     </>

@@ -7,7 +7,7 @@ import pro1Video from "../../assets/work/pro1.mp4";
 const Container = styled.section`
   width: 100%;
   padding: 2rem 0;
-  background: var(--background);
+  background: #ffffff;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -20,9 +20,7 @@ const Container = styled.section`
 `;
 
 const SectionCard = styled(motion.section)`
-  background: var(--cardBackground);
-  border-radius: 28px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), 0 2px 10px rgba(0, 0, 0, 0.08);
+  background: transparent;
   width: 90%;
   max-width: 1200px;
   margin: 0 auto;
@@ -32,37 +30,21 @@ const SectionCard = styled(motion.section)`
   justify-content: center;
   padding: 0;
   font-family: 'Inter', sans-serif;
-  border: 1px solid var(--border);
   position: relative;
-  overflow: hidden;
   min-height: 400px;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, var(--accent1), var(--accent2));
-    border-radius: 28px 28px 0 0;
-  }
 
   @media (max-width: 1024px) {
     width: 95%;
-    border-radius: 20px;
   }
 
   @media (max-width: 900px) {
     width: 95%;
     flex-direction: column;
-    border-radius: 16px;
     min-height: auto;
   }
 
   @media (max-width: 480px) {
     width: 98%;
-    border-radius: 12px;
   }
 `;
 
@@ -119,7 +101,7 @@ const RightContent = styled.div`
 `;
 
 const ProblemIndex = styled(motion.div)`
-  color: var(--accent1);
+  color: #3e2ffc;
   font-size: 1rem;
   font-weight: 700;
   margin-bottom: 0.8rem;
@@ -133,36 +115,31 @@ const ProblemIndex = styled(motion.div)`
 `;
 
 const ProblemTitle = styled(motion.h2)`
-  color: var(--text);
-  font-size: 2.2rem;
+  color: #181818;
+  font-size: 1.8rem;
   font-weight: 700;
-  margin: 0 0 1.2rem 0;
+  margin: 0 0 0.65rem 0;
   font-family: 'Inter', sans-serif;
   text-align: left;
   line-height: 1.1;
 
-  @media (max-width: 1024px) {
-    font-size: 2rem;
-  }
-
   @media (max-width: 900px) {
     text-align: center;
     width: 100%;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
 
   @media (max-width: 600px) {
-    font-size: 1.6rem;
-    margin-bottom: 1rem;
+    font-size: 1.4rem;
   }
 `;
 
 const ProblemText = styled(motion.p)`
-  color: var(--text);
+  color: #444;
   font-size: 1.1rem;
   font-weight: 400;
   margin: 0;
-  line-height: 1.7;
+  line-height: 1.6;
   font-family: 'Inter', sans-serif;
   max-width: 420px;
   text-align: left;
@@ -175,7 +152,7 @@ const ProblemText = styled(motion.p)`
 
   @media (max-width: 900px) {
     text-align: center;
-    font-size: 0.98rem;
+    font-size: 0.95rem;
     max-width: 100%;
   }
 
@@ -186,10 +163,10 @@ const ProblemText = styled(motion.p)`
 `;
 
 const VideoPlaceholder = styled.div`
-  background: var(--cardBackground);
-  border: 1px solid var(--border);
+  background: #ffffff;
+  border: 1px solid #f0f0f0;
   border-radius: 18px;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
   width: 260px;
   height: 540px;
   display: flex;
@@ -221,69 +198,63 @@ const StyledVideo = styled.video`
 `;
 
 const WorkdayProblem1: React.FC = () => {
-  const containerVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.8,
-        ease: "easeOut",
-        staggerChildren: 0.2
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut"
-      }
-    }
-  };
-
   return (
-    <>
+    <Container>
       <SEO 
-        title="Problem 1: Inefficient Schedule Viewing | Workday UX Project"
-        description="Explore the first problem identified in the Workday app - inefficient schedule viewing that requires users to manually open each day's tab multiple times."
-        keywords="schedule viewing, UX problem, mobile app design, user experience, Workday app"
-        image="/src/assets/work/problem1-schedule.jpg"
+        title="Workday Problem 1 - Schedule View Issues | Nooshin Shahsavan"
+        description="Explore the first problem identified in the Workday UX/UI project - schedule view cluttering and readability issues."
+        keywords="Workday problem, schedule view, UX issues, mobile app design, Nooshin Shahsavan"
+        image="/src/assets/work/workday-phone.png"
       />
-      <Container>
-        <SectionCard
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-        >
-          <LeftContent>
-            <ProblemIndex variants={itemVariants}>Problem 1</ProblemIndex>
-            <ProblemTitle variants={itemVariants}>Inefficient Schedule Viewing</ProblemTitle>
-            <ProblemText variants={itemVariants}>
-              Part-time employees need to check their schedules weekly, but the app only shows one day at a time. To see a full week (or month), users must manually open and close each day's tab — up to 30 times for a month. This repetitive process is frustrating, time-consuming, and not practical for mobile use.
-            </ProblemText>
-          </LeftContent>
-          <RightContent>
-            <VideoPlaceholder>
-              <StyledVideo
-                src={pro1Video}
-                autoPlay
-                loop
-                muted
-                playsInline
-                controls={false}
-                aria-label="Inefficient Schedule Viewing demo"
-              />
-            </VideoPlaceholder>
-          </RightContent>
-        </SectionCard>
-      </Container>
-    </>
+      <SectionCard
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
+        <LeftContent>
+          <ProblemIndex
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+          >
+            Problem 01
+          </ProblemIndex>
+          <ProblemTitle
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
+          >
+            Schedule View is Cluttered and Hard to Read
+          </ProblemTitle>
+          <ProblemText
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.6 }}
+          >
+            The current schedule interface presents information in a dense, overwhelming format. Users struggle to quickly identify their upcoming shifts, making it difficult to plan their week effectively. The lack of visual hierarchy and poor information organization creates unnecessary cognitive load.
+          </ProblemText>
+        </LeftContent>
+        <RightContent>
+          <VideoPlaceholder
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.8 }}
+          >
+            <StyledVideo
+              src={pro1Video}
+              controls
+              controlsList="nodownload"
+              style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+            />
+          </VideoPlaceholder>
+        </RightContent>
+      </SectionCard>
+    </Container>
   );
 };
 

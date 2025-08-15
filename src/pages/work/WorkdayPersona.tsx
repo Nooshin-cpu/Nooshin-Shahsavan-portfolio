@@ -10,7 +10,7 @@ import empathyMap from "../../assets/work/empathy-map.png";
 const Container = styled.section`
   width: 100%;
   padding: 2rem 0;
-  background: var(--background);
+  background: #ffffff;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -23,9 +23,7 @@ const Container = styled.section`
 `;
 
 const SectionCard = styled(motion.section)`
-  background: var(--cardBackground);
-  border-radius: 28px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), 0 2px 10px rgba(0, 0, 0, 0.08);
+  background: transparent;
   width: 90%;
   max-width: 1200px;
   margin: 0 auto;
@@ -35,38 +33,22 @@ const SectionCard = styled(motion.section)`
   justify-content: center;
   padding: 4rem 5rem;
   font-family: 'Inter', sans-serif;
-  border: 1px solid var(--border);
   position: relative;
-  overflow: hidden;
   min-height: 400px;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, var(--accent1), var(--accent2));
-    border-radius: 28px 28px 0 0;
-  }
 
   @media (max-width: 1024px) {
     width: 95%;
-    border-radius: 20px;
     padding: 3rem 3rem;
   }
 
   @media (max-width: 900px) {
     width: 95%;
-    border-radius: 16px;
     min-height: auto;
     padding: 2rem 1.5rem;
   }
 
   @media (max-width: 480px) {
     width: 98%;
-    border-radius: 12px;
     padding: 1.5rem 1rem;
   }
 `;
@@ -153,7 +135,7 @@ const AgeText = styled(motion.div)`
 `;
 
 const ScenarioTitle = styled(motion.h2)`
-  color: var(--text);
+  color: #181818;
   font-size: 2.2rem;
   font-weight: 700;
   margin: 0 0 1.6rem 0;
@@ -175,7 +157,7 @@ const ScenarioTitle = styled(motion.h2)`
 `;
 
 const ScenarioDescription = styled(motion.p)`
-  color: var(--text);
+  color: #444;
   font-size: 1.1rem;
   font-weight: 400;
   margin: 0 0 2.5rem 0;
@@ -203,15 +185,15 @@ const ScenarioDescription = styled(motion.p)`
 
 const ThoughtBox = styled(motion.div)`
   margin-top: 1.4rem;
-  background: rgba(255, 255, 255, 0.05);
-  color: var(--text);
+  background: rgba(248, 248, 248, 0.8);
+  color: #444;
   font-size: 0.9rem;
   padding: 1rem 1.4rem;
   border-radius: 12px;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
   max-width: 510px;
   font-style: italic;
-  border: 1px solid var(--border);
+  border: 1px solid #f0f0f0;
   opacity: 0.8;
 
   @media (max-width: 900px) {
@@ -256,11 +238,11 @@ const PersonaButton = styled(motion.button)<{ active?: boolean }>`
   font-weight: 600;
   font-size: 0.9rem;
   padding: 0.8rem 1.5rem;
-  background: var(--accent1);
-  color: var(--text);
-  border: 2px solid var(--accent1);
+  background: #3e2ffc;
+  color: #ffffff;
+  border: 2px solid #3e2ffc;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(76, 175, 80, 0.2);
+  box-shadow: 0 2px 8px rgba(62, 47, 252, 0.2);
   cursor: pointer;
   transition: all 0.2s ease;
   outline: none;
@@ -273,39 +255,39 @@ const PersonaButton = styled(motion.button)<{ active?: boolean }>`
   letter-spacing: 0.5px;
   
   &:nth-child(2) {
-    background: var(--accent2);
-    border-color: var(--accent2);
+    background: #2196f3;
+    border-color: #2196f3;
     box-shadow: 0 2px 8px rgba(33, 150, 243, 0.2);
   }
   
   &:nth-child(3) {
-    background: var(--accent1);
-    border-color: var(--accent1);
-    box-shadow: 0 2px 8px rgba(76, 175, 80, 0.2);
+    background: #3e2ffc;
+    border-color: #3e2ffc;
+    box-shadow: 0 2px 8px rgba(62, 47, 252, 0.2);
   }
   
   &:hover, &:focus {
     transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
-    background: var(--accent1);
-    border-color: var(--accent1);
+    box-shadow: 0 4px 12px rgba(62, 47, 252, 0.3);
+    background: #3e2ffc;
+    border-color: #3e2ffc;
   }
   
   &:nth-child(2):hover, &:nth-child(2):focus {
-    background: var(--accent2);
-    border-color: var(--accent2);
+    background: #2196f3;
+    border-color: #2196f3;
     box-shadow: 0 4px 12px rgba(33, 150, 243, 0.3);
   }
   
   &:nth-child(3):hover, &:nth-child(3):focus {
-    background: var(--accent1);
-    border-color: var(--accent1);
-    box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+    background: #3e2ffc;
+    border-color: #3e2ffc;
+    box-shadow: 0 4px 12px rgba(62, 47, 252, 0.3);
   }
   
   &:active {
     transform: translateY(0);
-    box-shadow: 0 1px 4px rgba(76, 175, 80, 0.2);
+    box-shadow: 0 1px 4px rgba(62, 47, 252, 0.2);
   }
   
   @media (max-width: 900px) {
@@ -341,9 +323,9 @@ const ModalContent = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: var(--cardBackground);
+  background: #ffffff;
   border-radius: 22px;
-  box-shadow: 0 16px 60px rgba(0, 0, 0, 0.3), 0 2px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 16px 60px rgba(0, 0, 0, 0.15), 0 2px 12px rgba(0, 0, 0, 0.08);
   max-width: 92vw;
   max-height: 90vh;
   padding: 2vw 2vw 1vw 2vw;

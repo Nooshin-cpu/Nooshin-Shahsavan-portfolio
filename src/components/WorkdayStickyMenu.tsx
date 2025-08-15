@@ -20,7 +20,7 @@ const MenuContainer = styled.div`
 const MenuTitle = styled.div`
   font-size: 0.9rem;
   font-weight: 600;
-  color: #ffffff;
+  color: #181818;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   margin-bottom: 1.5rem;
@@ -37,15 +37,15 @@ const MenuItem = styled.button<{ isActive: boolean; isClicked: boolean }>`
   margin: 0.25rem 0;
   font-size: 0.9rem;
   font-weight: ${props => props.isClicked ? '700' : props.isActive ? '600' : '400'};
-  color: ${props => props.isClicked ? '#483efc' : props.isActive ? '#483efc' : '#ffffff'};
+  color: ${props => props.isClicked ? '#3e2ffc' : props.isActive ? '#3e2ffc' : '#444'};
   cursor: pointer;
   transition: all 0.2s ease;
   position: relative;
   border-radius: 4px;
 
   &:hover {
-    color: #483efc;
-    background: rgba(72, 62, 252, 0.05);
+    color: #3e2ffc;
+    background: rgba(62, 47, 252, 0.05);
   }
 `;
 
