@@ -127,55 +127,29 @@ const VideoTitle = styled(motion.h2)`
 `;
 
 const VideoContainer = styled.div`
-  width: 100%;
-  max-width: 60%;
+  width: 400px;
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  @media (max-width: 900px) {
-    max-width: 80%;
-  }
-
-  @media (max-width: 600px) {
-    max-width: 100%;
-  }
 `;
 
 const StyledVideo = styled.video`
-  width: 100%;
+  width: 400px;
   height: auto;
   background: #ffffff;
   border-radius: 12px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
   display: block;
   border: 1px solid #f0f0f0;
-
-  @media (max-width: 900px) {
-    max-width: 400px;
-  }
-
-  @media (max-width: 600px) {
-    max-width: 100%;
-  }
 `;
 
 const ControlsContainer = styled.div`
-  width: 100%;
+  width: 400px;
   display: flex;
   align-items: center;
   margin-top: 8px;
   gap: 12px;
   user-select: none;
-
-  @media (max-width: 900px) {
-    max-width: 400px;
-  }
-
-  @media (max-width: 600px) {
-    gap: 8px;
-    margin-top: 6px;
-  }
 `;
 
 const PlayPauseButton = styled.button`
