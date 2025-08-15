@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import SEO from "../../components/SEO";
-import pro1Video from "../../assets/work/pro1.mp4";
+import errorImage from "../../assets/work/error.png";
 
 const Container = styled.section`
   width: 100%;
@@ -162,35 +162,34 @@ const ProblemText = styled(motion.p)`
   }
 `;
 
-const VideoPlaceholder = styled(motion.div)`
+const ImagePlaceholder = styled(motion.div)`
   background: #ffffff;
   border: 1px solid #f0f0f0;
   border-radius: 18px;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
-  width: 260px;
-  height: 540px;
+  width: 400px;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
 
   @media (max-width: 900px) {
-    width: 200px;
-    height: 420px;
+    width: 300px;
   }
 
   @media (max-width: 600px) {
-    width: 170px;
-    height: 350px;
+    width: 250px;
     border-radius: 12px;
   }
 `;
 
-const StyledVideo = styled.video`
+const StyledImage = styled.img`
   width: 100%;
-  height: 100%;
+  height: auto;
   object-fit: cover;
   border-radius: 18px;
+  display: block;
 
   @media (max-width: 600px) {
     border-radius: 12px;
@@ -239,19 +238,18 @@ const WorkdayProblem3: React.FC = () => {
           </ProblemText>
         </LeftContent>
         <RightContent>
-          <VideoPlaceholder
+          <ImagePlaceholder
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.8 }}
           >
-            <StyledVideo
-              src={pro1Video}
-              controls
-              controlsList="nodownload"
+            <StyledImage
+              src={errorImage}
+              alt="No Feedback After Time Off Requests"
               style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
             />
-          </VideoPlaceholder>
+          </ImagePlaceholder>
         </RightContent>
       </SectionCard>
     </Container>

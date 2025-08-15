@@ -201,6 +201,8 @@ const GoalText = styled.span`
   }
 `;
 
+
+
 const ChallengeGoals: React.FC = () => {
   const containerVariants = {
     hidden: { opacity: 0, y: 50 },
