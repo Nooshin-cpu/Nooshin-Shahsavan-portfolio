@@ -131,6 +131,14 @@ const VideoContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media (max-width: 768px) {
+    width: 300px;
+  }
+
+  @media (max-width: 480px) {
+    width: 250px;
+  }
 `;
 
 const StyledVideo = styled.video`
@@ -141,6 +149,14 @@ const StyledVideo = styled.video`
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
   display: block;
   border: 1px solid #f0f0f0;
+
+  @media (max-width: 768px) {
+    width: 300px;
+  }
+
+  @media (max-width: 480px) {
+    width: 250px;
+  }
 `;
 
 const ControlsContainer = styled.div`
@@ -150,6 +166,14 @@ const ControlsContainer = styled.div`
   margin-top: 8px;
   gap: 12px;
   user-select: none;
+
+  @media (max-width: 768px) {
+    width: 300px;
+  }
+
+  @media (max-width: 480px) {
+    width: 250px;
+  }
 `;
 
 const PlayPauseButton = styled.button`

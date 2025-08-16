@@ -136,6 +136,14 @@ const StyledVideo = styled.video`
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
   display: block;
   border: 1px solid #f0f0f0;
+
+  @media (max-width: 768px) {
+    width: 250px;
+  }
+
+  @media (max-width: 480px) {
+    width: 200px;
+  }
 `;
 
 const ControlsContainer = styled.div`
@@ -145,6 +153,14 @@ const ControlsContainer = styled.div`
   margin-top: 8px;
   gap: 12px;
   user-select: none;
+
+  @media (max-width: 768px) {
+    width: 250px;
+  }
+
+  @media (max-width: 480px) {
+    width: 200px;
+  }
 `;
 
 const PlayPauseButton = styled.button`
