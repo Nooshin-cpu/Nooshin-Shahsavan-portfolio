@@ -127,22 +127,23 @@ const VideoTitle = styled(motion.h2)`
 `;
 
 const VideoContainer = styled.div`
-  width: 400px;
+  width: 100%;
+  max-width: 60%;
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  @media (max-width: 768px) {
-    width: 300px;
+  @media (max-width: 900px) {
+    max-width: 80%;
   }
 
-  @media (max-width: 480px) {
-    width: 250px;
+  @media (max-width: 600px) {
+    max-width: 100%;
   }
 `;
 
 const StyledVideo = styled.video`
-  width: 400px;
+  width: 100%;
   height: auto;
   background: #ffffff;
   border-radius: 12px;
@@ -150,29 +151,30 @@ const StyledVideo = styled.video`
   display: block;
   border: 1px solid #f0f0f0;
 
-  @media (max-width: 768px) {
-    width: 300px;
+  @media (max-width: 900px) {
+    max-width: 400px;
   }
 
-  @media (max-width: 480px) {
-    width: 250px;
+  @media (max-width: 600px) {
+    max-width: 100%;
   }
 `;
 
 const ControlsContainer = styled.div`
-  width: 400px;
+  width: 100%;
   display: flex;
   align-items: center;
   margin-top: 8px;
   gap: 12px;
   user-select: none;
 
-  @media (max-width: 768px) {
-    width: 300px;
+  @media (max-width: 900px) {
+    max-width: 400px;
   }
 
-  @media (max-width: 480px) {
-    width: 250px;
+  @media (max-width: 600px) {
+    gap: 8px;
+    margin-top: 6px;
   }
 `;
 

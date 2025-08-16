@@ -129,37 +129,41 @@ const VideoContainer = styled.div`
 `;
 
 const StyledVideo = styled.video`
-  width: 300px;
+  width: 100%;
   height: auto;
   background: #ffffff;
   border-radius: 12px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
   display: block;
   border: 1px solid #f0f0f0;
+  max-width: 300px;
 
-  @media (max-width: 768px) {
-    width: 250px;
+  @media (max-width: 900px) {
+    max-width: 250px;
   }
 
-  @media (max-width: 480px) {
-    width: 200px;
+  @media (max-width: 600px) {
+    max-width: 200px;
   }
 `;
 
 const ControlsContainer = styled.div`
-  width: 300px;
+  width: 100%;
   display: flex;
   align-items: center;
   margin-top: 8px;
   gap: 12px;
   user-select: none;
+  max-width: 300px;
 
-  @media (max-width: 768px) {
-    width: 250px;
+  @media (max-width: 900px) {
+    max-width: 250px;
   }
 
-  @media (max-width: 480px) {
-    width: 200px;
+  @media (max-width: 600px) {
+    gap: 8px;
+    margin-top: 6px;
+    max-width: 200px;
   }
 `;
 
