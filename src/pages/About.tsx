@@ -30,7 +30,7 @@ const GlobalStyle = createGlobalStyle`
     overflow-x: hidden !important;
     margin: 0;
     padding: 0;
-    background:rgb(56, 90, 184);
+    background: #191c24;
   }
 `;
 
