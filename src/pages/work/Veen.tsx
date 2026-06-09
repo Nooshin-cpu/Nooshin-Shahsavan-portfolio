@@ -23,7 +23,7 @@ import MenuWork from '../../components/MenuWork';
 import VeenStickyMenu from '../../components/VeenStickyMenu';
 import '../../components/MenuWork.css';
 import { EmailFooter } from '../../components/Footer';
-import TopScrollButton from '../../components/TopScrollButton';
+import VeenScrollButton from '../../components/VeenScrollButton';
 import BottomScrollButton from '../../components/BottomScrollButton';
 
 const PageBg = styled.div`
@@ -32,6 +32,7 @@ const PageBg = styled.div`
   background: #fff;
   transition: background 0.2s;
   overflow-x: hidden;
+  overflow-y: auto;
   box-sizing: border-box;
   position: fixed;
   inset: 0;
@@ -48,9 +49,9 @@ const PageBg = styled.div`
 const GlobalStyle = createGlobalStyle`
   body {
     background: #fff;
-    overflow-x: hidden !important;
     margin: 0;
     padding: 0;
+    overflow-y: auto;
   }
   html {
     overflow-x: hidden;
@@ -59,61 +60,64 @@ const GlobalStyle = createGlobalStyle`
 
 const Veen: React.FC = () => {
   return (
-    <PageBg>
-      <SEO 
-        title="Veen Project | Nooshin Shahsavan - Brand Identity & Design"
-        description="Explore the Veen project - a sophisticated branding project by Nooshin Shahsavan creating an elegant and timeless visual identity with premium aesthetics."
-        keywords="Veen project, brand identity, logo design, visual design, branding, Nooshin Shahsavan, design portfolio"
-        image="/src/assets/veen/brand-strategy.png"
-      />
-      <VeenStickyMenu />
-      <div id="veen-first">
-        <VeenFirst />
-      </div>
-      <div id="veen-second">
-        <VeenSecond />
-      </div>
-      <div id="veen-problem">
-        <ProblemVeen />
-      </div>
-      <div id="veen-logo">
-        <VeenThird />
-        <VeenLogoP />
-      </div>
-      <div id="veen-color">
-        <VeenForth />
-      </div>
-    
-      <div id="veen-typography">
-        <VeenMuck5 />
-      </div>
-      <div id="veen-brand-book">
-        <VeenMuck6 />
-        <FlipBook />
-      </div>
-      <div id="veen-mockups">
-        <h2 style={{
-          width: '70vw',
-          margin: '2.5rem auto 1.5rem auto',
-          textAlign: 'center',
-          fontSize: '2.5rem',
-          fontWeight: 700,
-          letterSpacing: '0.04em',
-          color: '#222',
-          background: 'transparent',
-          border: 'none',
-        }}>Mockups</h2>
-        
-        <VeenMuck2 />
-        <VeenMuck3 />
-        <VeenMuck8 />
-        <VeenEnvelope />
-      </div>
+    <>
+      <PageBg>
+        <SEO 
+          title="Veen Project | Nooshin Shahsavan - Brand Identity & Design"
+          description="Explore the Veen project - a sophisticated branding project by Nooshin Shahsavan creating an elegant and timeless visual identity with premium aesthetics."
+          keywords="Veen project, brand identity, logo design, visual design, branding, Nooshin Shahsavan, design portfolio"
+          image="/src/assets/veen/brand-strategy.png"
+        />
+        <VeenStickyMenu />
+        <div id="veen-first">
+          <VeenFirst />
+        </div>
+        <div id="veen-second">
+          <VeenSecond />
+        </div>
+        <div id="veen-problem">
+          <ProblemVeen />
+        </div>
+        <div id="veen-logo">
+          <VeenThird />
+          <VeenLogoP />
+        </div>
+        <div id="veen-color">
+          <VeenForth />
+        </div>
       
-  
-      <MenuWork />
-      <EmailFooter />
-    </PageBg>
+        <div id="veen-typography">
+          <VeenMuck5 />
+        </div>
+        <div id="veen-brand-book">
+          <VeenMuck6 />
+          <FlipBook />
+        </div>
+        <div id="veen-mockups">
+          <h2 style={{
+            width: '70vw',
+            margin: '2.5rem auto 1.5rem auto',
+            textAlign: 'center',
+            fontSize: '2.5rem',
+            fontWeight: 700,
+            letterSpacing: '0.04em',
+            color: '#222',
+            background: 'transparent',
+            border: 'none',
+          }}>Mockups</h2>
+          
+          <VeenMuck2 />
+          <VeenMuck3 />
+          <VeenMuck8 />
+          <VeenEnvelope />
+        </div>
+        
+      
+        <MenuWork />
+        <EmailFooter />
+      </PageBg>
+      <VeenScrollButton />
+    </>
   );
 };
 
