@@ -11,6 +11,7 @@ import veenImage from '../assets/home/veen-home.jpg';
 import sbsVideo from '../assets/home/sbs-home.mp4';
 import delicatoImage from '../assets/home/deli-home.png';
 import zarImage from '../assets/home/zar-home.jpg';
+import bcitImage from '../assets/bcitenergy/moodboard-bcit.png';
 
 // Import software icons
 import photoshopIcon from '../assets/home/photoshop.png';
@@ -224,6 +225,21 @@ const projects = [
       { name: 'Illustrator', icon: illustratorIcon },
       { name: 'After Effects', icon: aftereffectsIcon },
       { name: 'Photoshop', icon: photoshopIcon }
+    ]
+  },
+  {
+    id: 'bcit',
+    title: 'BCIT Energy Campaign',
+    subtitle: 'Brand Identity & Campaign Design',
+    media: {
+      type: 'image',
+      src: bcitImage
+    },
+    path: '/work/bcit',
+    software: [
+      { name: 'Illustrator', icon: illustratorIcon },
+      { name: 'Photoshop', icon: photoshopIcon },
+      { name: 'After Effects', icon: aftereffectsIcon }
     ]
   }
 ];
