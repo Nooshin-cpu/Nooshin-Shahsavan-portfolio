@@ -3,25 +3,10 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import Tilt from "react-parallax-tilt";
 
-import foodHomeImg from '../assets/food/foodhome.png';
-
 import workdayPhoneImg from '../assets/home/workhome.png';
 
 // Images and videos should be placed in src/assets/home
 const items = [
- 
-  {
-    type: "image",
-    src: foodHomeImg,
-    label: "UX-UI",
-    link: "/work/savefood",
-    details: [
-      { label: "Project:", value: "SaveFood App" },
-      { label: "Description:", value: "SaveFood App a mobile app that helps users track food expiration dates, find recipes for their ingredients... " },
-      { label: "Timeline", value: "Coming soon!" },
-      { label: "Year", value: "2025" },
-    ],
-  },
   {
     type: "image",
     src: workdayPhoneImg,
@@ -34,7 +19,6 @@ const items = [
       { label: "Year", value: "2024" },
     ],
   },
-
 ];
 
 const styles = `
