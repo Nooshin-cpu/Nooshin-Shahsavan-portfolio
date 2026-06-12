@@ -6,6 +6,7 @@ import sbsHomeVideo from '../assets/home/sbs-home.mp4';
 import deli12Img from '../assets/home/deli12.jpg';
 import veenHomeVideo from '../assets/home/veen-home.mp4';
 import box2Img from '../assets/zar/box-2.jpg';
+import bcitStickerImg from '../assets/bcitenergy/sticker-bcit2.png';
 
 // Images and videos should be placed in src/assets/home
 const items = [
@@ -73,7 +74,6 @@ const styles = `
 .recent-works-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
   gap: 32px;
   width: 100%;
   max-width: 960px;
@@ -373,6 +373,32 @@ const RecentWorks: React.FC = () => {
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
       >
+        {/* BCIT — first position */}
+        <motion.div variants={itemVariants}>
+          <Tilt
+            tiltMaxAngleX={20}
+            tiltMaxAngleY={20}
+            scale={1.08}
+            glareEnable={true}
+            glareMaxOpacity={0.4}
+            glareColor="#ffffff"
+            glarePosition="all"
+            glareBorderRadius="8px"
+          >
+            <Link to="/work/savefood" className="work-item" tabIndex={0}>
+              <div className="work-label">Campaign</div>
+              <div className="work-media-container">
+                <img src={bcitStickerImg} alt="BCIT Energy Awareness" className="work-media" />
+              </div>
+              <div className="work-info-box">
+                <div className="work-info-line"><b>Project:</b> BCIT Energy Awareness</div>
+                <div className="work-info-line"><b>Timeline:</b> 4 weeks</div>
+                <div className="work-info-line"><b>Year:</b> 2025</div>
+              </div>
+            </Link>
+          </Tilt>
+        </motion.div>
+
         {/* Top left: SBS */}
         <motion.div variants={itemVariants}>
           <Tilt
