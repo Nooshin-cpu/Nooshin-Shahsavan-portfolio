@@ -333,28 +333,31 @@ const BannerLabel = styled.div`
 // ─── Stickers ─────────────────────────────────────────────────────────────────
 const StickerGrid = styled.div`
   display: grid;
-  grid-template-columns: 1.6fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
   gap: 1.5rem;
-  @media (max-width: 900px) { grid-template-columns: repeat(2, 1fr); }
-  @media (max-width: 500px)  { grid-template-columns: 1fr; }
+  max-width: 700px;
+  margin: 0 auto;
+  @media (max-width: 500px) { gap: 1rem; }
 `;
 
-const StickerCard = styled(motion.div)<{ $wide?: boolean }>`
-  grid-column: ${p => p.$wide ? '1 / 2' : 'auto'};
+const StickerCard = styled(motion.div)`
+  aspect-ratio: 1 / 1;
   border-radius: 18px;
   overflow: hidden;
   background: #f8f8f8;
   box-shadow: 0 8px 28px rgba(0,0,0,0.07);
   img { width: 100%; height: 100%; object-fit: cover; display: block; }
-  @media (max-width: 900px) { grid-column: auto; }
 `;
 
 // ─── Poster ───────────────────────────────────────────────────────────────────
 const PosterWrap = styled(motion.div)`
   width: 100%;
-  border-radius: 24px;
+  max-width: 560px;
+  margin: 0 auto;
+  border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 32px 80px rgba(0,0,0,0.13);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.13);
   img { width: 100%; height: auto; display: block; }
 `;
 
@@ -721,7 +724,7 @@ const Bcit: React.FC = () => {
 
               <Reveal variants={revealScale}>
                 <StickerGrid>
-                  <StickerCard $wide variants={revealScale} initial="hidden" animate="visible">
+                  <StickerCard variants={revealY} initial="hidden" animate="visible">
                     <img src={stickersAll} alt="BCIT Energy Sticker Collection" />
                   </StickerCard>
                   <StickerCard variants={revealY} initial="hidden" animate="visible">
