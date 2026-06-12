@@ -1,6 +1,6 @@
-import React from 'react';
-import styled, { createGlobalStyle, keyframes } from 'styled-components';
-import { motion } from 'framer-motion';
+import React, { useRef } from 'react';
+import styled, { createGlobalStyle } from 'styled-components';
+import { motion, useInView, type Variants } from 'framer-motion';
 import SEO from '../../components/SEO';
 import MenuWork from '../../components/MenuWork';
 import '../../components/MenuWork.css';
@@ -9,39 +9,40 @@ import TopScrollButton from '../../components/TopScrollButton';
 import BcitStickyMenu from '../../components/BcitStickyMenu';
 
 // ─── Asset imports ────────────────────────────────────────────────────────────
-const wordmark   = new URL('../../assets/bcitenergy/wordmark-bcit.png',   import.meta.url).href;
-const moodboard  = new URL('../../assets/bcitenergy/moodboard-bcit.png',  import.meta.url).href;
-const banner1    = new URL('../../assets/bcitenergy/banner-bcit1.png',    import.meta.url).href;
-const banner2    = new URL('../../assets/bcitenergy/banner-bcit2.png',    import.meta.url).href;
-const stickersAll= new URL('../../assets/bcitenergy/stickers-bcit.jpg',   import.meta.url).href;
-const sticker1   = new URL('../../assets/bcitenergy/sticker-bcit1.png',   import.meta.url).href;
-const sticker2   = new URL('../../assets/bcitenergy/sticker-bcit2.png',   import.meta.url).href;
-const sticker3   = new URL('../../assets/bcitenergy/sticker-bcit3.png',   import.meta.url).href;
-const poster     = new URL('../../assets/bcitenergy/poster-bcit.png',     import.meta.url).href;
-const igVideo1   = new URL('../../assets/bcitenergy/ig-bcit1.mp4',        import.meta.url).href;
-const igVideo2   = new URL('../../assets/bcitenergy/ig-bcit2.mp4',        import.meta.url).href;
-
-// ─── Animations ───────────────────────────────────────────────────────────────
-const fadeUp = keyframes`
-  from { opacity: 0; transform: translateY(28px); }
-  to   { opacity: 1; transform: translateY(0); }
-`;
+const wordmark    = new URL('../../assets/bcitenergy/wordmark-bcit.png',   import.meta.url).href;
+const moodboard   = new URL('../../assets/bcitenergy/moodboard-bcit.png',  import.meta.url).href;
+const banner1     = new URL('../../assets/bcitenergy/banner-bcit1.png',    import.meta.url).href;
+const banner2     = new URL('../../assets/bcitenergy/banner-bcit2.png',    import.meta.url).href;
+const stickersAll = new URL('../../assets/bcitenergy/stickers-bcit.jpg',   import.meta.url).href;
+const sticker1    = new URL('../../assets/bcitenergy/sticker-bcit1.png',   import.meta.url).href;
+const sticker2    = new URL('../../assets/bcitenergy/sticker-bcit2.png',   import.meta.url).href;
+const sticker3    = new URL('../../assets/bcitenergy/sticker-bcit3.png',   import.meta.url).href;
+const poster      = new URL('../../assets/bcitenergy/poster-bcit.png',     import.meta.url).href;
+const igVideo1    = new URL('../../assets/bcitenergy/ig-bcit1.mp4',        import.meta.url).href;
+const igVideo2    = new URL('../../assets/bcitenergy/ig-bcit2.mp4',        import.meta.url).href;
 
 // ─── Framer variants ──────────────────────────────────────────────────────────
 const revealY = {
-  hidden:  { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.75, ease: [0.22, 1, 0.36, 1] } },
+  hidden:  { opacity: 0, y: 36 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] } },
 };
 
 const revealScale = {
-  hidden:  { opacity: 0, scale: 0.96 },
+  hidden:  { opacity: 0, scale: 0.97 },
   visible: { opacity: 1, scale: 1, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } },
 };
 
-const staggerContainer = {
-  hidden:  {},
-  visible: { transition: { staggerChildren: 0.12 } },
+const staggerContainer: Variants = {
+  hidden:  { opacity: 1 },
+  visible: { opacity: 1, transition: { staggerChildren: 0.14 } },
 };
+
+// ─── Scroll-aware reveal hook (works inside fixed scroll containers) ──────────
+function useReveal() {
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useInView(ref, { once: true, amount: 0.15 });
+  return { ref, animate: inView ? 'visible' : 'hidden' };
+}
 
 // ─── Global ───────────────────────────────────────────────────────────────────
 const GlobalStyle = createGlobalStyle`
@@ -63,7 +64,7 @@ const PageBg = styled.div`
   @media (max-width: 600px) { padding-top: 60px; }
 `;
 
-// ─── Layout helpers ────────────────────────────────────────────────────────────
+// ─── Layout ───────────────────────────────────────────────────────────────────
 const Container = styled.div`
   width: 100%;
   max-width: 1080px;
@@ -92,15 +93,6 @@ const Overline = styled.span`
   margin-bottom: 1rem;
 `;
 
-const H1 = styled.h1`
-  font-size: clamp(2.4rem, 5vw, 4rem);
-  font-weight: 900;
-  color: #0d0d0d;
-  letter-spacing: -0.03em;
-  line-height: 1.08;
-  margin: 0 0 1.4rem;
-`;
-
 const H2 = styled.h2`
   font-size: clamp(1.8rem, 3.5vw, 2.6rem);
   font-weight: 800;
@@ -111,7 +103,7 @@ const H2 = styled.h2`
 `;
 
 const Lead = styled.p`
-  font-size: clamp(1rem, 1.5vw, 1.15rem);
+  font-size: clamp(1rem, 1.5vw, 1.12rem);
   color: #555;
   line-height: 1.82;
   max-width: 680px;
@@ -131,6 +123,16 @@ const SectionRule = styled.div`
   background: #5a8a3c;
   border-radius: 2px;
   margin-bottom: 2rem;
+`;
+
+const SectionHeader = styled.div`
+  margin-bottom: 3.5rem;
+`;
+
+const Divider = styled.div`
+  width: 100%;
+  height: 1px;
+  background: #ebebeb;
 `;
 
 // ─── HERO ─────────────────────────────────────────────────────────────────────
@@ -173,7 +175,6 @@ const HeroSubtitle = styled(motion.p)`
 const MetaGrid = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 0;
   border: 1px solid #e8e8e8;
   border-radius: 16px;
   overflow: hidden;
@@ -211,12 +212,7 @@ const MetaValue = styled.p`
   line-height: 1.4;
 `;
 
-// ─── Section header ───────────────────────────────────────────────────────────
-const SectionHeader = styled.div`
-  margin-bottom: 3.5rem;
-`;
-
-// ─── Overview two-col ─────────────────────────────────────────────────────────
+// ─── Overview ─────────────────────────────────────────────────────────────────
 const TwoCol = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -225,17 +221,16 @@ const TwoCol = styled.div`
   @media (max-width: 768px) { grid-template-columns: 1fr; gap: 2.5rem; }
 `;
 
-// ─── Challenge callout ────────────────────────────────────────────────────────
+// ─── Challenge ────────────────────────────────────────────────────────────────
 const ChallengeBlock = styled(motion.div)`
   background: #0d0d0d;
   border-radius: 24px;
   padding: 3.5rem 4rem;
-  color: #fff;
   @media (max-width: 768px) { padding: 2.5rem 2rem; }
 `;
 
 const ChallengeQ = styled.p`
-  font-size: clamp(1.3rem, 2.5vw, 1.75rem);
+  font-size: clamp(1.2rem, 2.5vw, 1.7rem);
   font-weight: 700;
   line-height: 1.5;
   color: #fff;
@@ -244,27 +239,21 @@ const ChallengeQ = styled.p`
 
 const ChallengeAnswer = styled.p`
   font-size: 1rem;
-  color: rgba(255,255,255,0.72);
+  color: rgba(255,255,255,0.68);
   line-height: 1.82;
   margin: 0;
 `;
 
-// ─── Full-bleed image ─────────────────────────────────────────────────────────
+// ─── Images ───────────────────────────────────────────────────────────────────
 const FullBleedImg = styled(motion.div)`
   width: 100%;
   overflow: hidden;
   border-radius: 20px;
   box-shadow: 0 24px 64px rgba(0,0,0,0.1);
-  img {
-    width: 100%;
-    height: auto;
-    display: block;
-    transition: transform 0.6s ease;
-  }
-  &:hover img { transform: scale(1.015); }
+  img { width: 100%; height: auto; display: block; }
 `;
 
-// ─── Moodboard colour callouts ─────────────────────────────────────────────────
+// ─── Colour cards ─────────────────────────────────────────────────────────────
 const ColorCards = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -273,35 +262,17 @@ const ColorCards = styled(motion.div)`
   @media (max-width: 600px) { grid-template-columns: 1fr; }
 `;
 
-const ColorCard = styled(motion.div)<{ accent: string }>`
+const ColorCard = styled(motion.div)<{ $accent: string }>`
   border-radius: 16px;
   overflow: hidden;
   border: 1px solid #eee;
-
-  .swatch {
-    height: 80px;
-    background: ${p => p.accent};
-  }
-  .body {
-    padding: 1.2rem 1.4rem;
-  }
-  h4 {
-    font-size: 0.85rem;
-    font-weight: 700;
-    color: #111;
-    margin: 0 0 0.4rem;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-  }
-  p {
-    font-size: 0.85rem;
-    color: #666;
-    margin: 0;
-    line-height: 1.5;
-  }
+  .swatch { height: 80px; background: ${p => p.$accent}; }
+  .body { padding: 1.2rem 1.4rem; }
+  h4 { font-size: 0.85rem; font-weight: 700; color: #111; margin: 0 0 0.4rem; text-transform: uppercase; letter-spacing: 0.06em; }
+  p  { font-size: 0.85rem; color: #666; margin: 0; line-height: 1.5; }
 `;
 
-// ─── Wordmark spotlight ────────────────────────────────────────────────────────
+// ─── Wordmark ─────────────────────────────────────────────────────────────────
 const WordmarkSpotlight = styled(motion.div)`
   background: #f5f5f5;
   border-radius: 24px;
@@ -310,11 +281,7 @@ const WordmarkSpotlight = styled(motion.div)`
   justify-content: center;
   padding: 5rem 3rem;
   margin-bottom: 4rem;
-  img {
-    width: min(380px, 70%);
-    height: auto;
-    display: block;
-  }
+  img { width: min(380px, 70%); height: auto; display: block; }
 `;
 
 const WordmarkDetails = styled.div`
@@ -329,20 +296,8 @@ const DetailCard = styled(motion.div)`
   border: 1px solid #eee;
   border-radius: 14px;
   padding: 1.6rem 1.8rem;
-  h4 {
-    font-size: 0.78rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: #5a8a3c;
-    margin: 0 0 0.6rem;
-  }
-  p {
-    font-size: 0.92rem;
-    color: #555;
-    line-height: 1.65;
-    margin: 0;
-  }
+  h4 { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #5a8a3c; margin: 0 0 0.6rem; }
+  p  { font-size: 0.92rem; color: #555; line-height: 1.65; margin: 0; }
 `;
 
 // ─── Banners ──────────────────────────────────────────────────────────────────
@@ -358,13 +313,7 @@ const BannerCard = styled(motion.div)`
   overflow: hidden;
   box-shadow: 0 16px 48px rgba(0,0,0,0.1);
   position: relative;
-  img {
-    width: 100%;
-    height: auto;
-    display: block;
-    transition: transform 0.55s ease;
-  }
-  &:hover img { transform: scale(1.03); }
+  img { width: 100%; height: auto; display: block; }
 `;
 
 const BannerLabel = styled.div`
@@ -379,33 +328,24 @@ const BannerLabel = styled.div`
   text-transform: uppercase;
   padding: 0.35rem 0.8rem;
   border-radius: 6px;
-  backdrop-filter: blur(6px);
 `;
 
 // ─── Stickers ─────────────────────────────────────────────────────────────────
 const StickerGrid = styled.div`
   display: grid;
   grid-template-columns: 1.6fr 1fr 1fr 1fr;
-  grid-template-rows: auto auto;
   gap: 1.5rem;
   @media (max-width: 900px) { grid-template-columns: repeat(2, 1fr); }
-  @media (max-width: 500px) { grid-template-columns: 1fr; }
+  @media (max-width: 500px)  { grid-template-columns: 1fr; }
 `;
 
-const StickerCard = styled(motion.div)<{ span?: string }>`
-  grid-column: ${p => p.span || 'auto'};
+const StickerCard = styled(motion.div)<{ $wide?: boolean }>`
+  grid-column: ${p => p.$wide ? '1 / 2' : 'auto'};
   border-radius: 18px;
   overflow: hidden;
   background: #f8f8f8;
   box-shadow: 0 8px 28px rgba(0,0,0,0.07);
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.5s ease;
-  }
-  &:hover img { transform: scale(1.04); }
+  img { width: 100%; height: 100%; object-fit: cover; display: block; }
   @media (max-width: 900px) { grid-column: auto; }
 `;
 
@@ -415,16 +355,10 @@ const PosterWrap = styled(motion.div)`
   border-radius: 24px;
   overflow: hidden;
   box-shadow: 0 32px 80px rgba(0,0,0,0.13);
-  img {
-    width: 100%;
-    height: auto;
-    display: block;
-    transition: transform 0.6s ease;
-  }
-  &:hover img { transform: scale(1.01); }
+  img { width: 100%; height: auto; display: block; }
 `;
 
-// ─── Video cards ───────────────────────────────────────────────────────────────
+// ─── Videos ───────────────────────────────────────────────────────────────────
 const VideoGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -435,13 +369,9 @@ const VideoGrid = styled.div`
 const VideoCard = styled(motion.div)`
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 20px 56px rgba(0,0,0,0.12);
+  box-shadow: 0 20px 56px rgba(0,0,0,0.2);
   background: #000;
-  video {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
+  video { width: 100%; height: auto; display: block; }
 `;
 
 const VideoLabel = styled.p`
@@ -449,7 +379,7 @@ const VideoLabel = styled.p`
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #aaa;
+  color: rgba(255,255,255,0.4);
   text-align: center;
   margin: 0.9rem 0 0;
 `;
@@ -459,16 +389,16 @@ const ReflectionGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 5rem;
-  align-items: center;
+  align-items: start;
   @media (max-width: 768px) { grid-template-columns: 1fr; gap: 3rem; }
 `;
 
-const ReflectionQuote = styled(motion.blockquote)`
+const ReflectionQuote = styled.blockquote`
   font-size: clamp(1.2rem, 2.2vw, 1.6rem);
   font-weight: 700;
   color: #0d0d0d;
   line-height: 1.5;
-  margin: 0 0 2.5rem;
+  margin: 0 0 2rem;
   padding-left: 1.5rem;
   border-left: 4px solid #5a8a3c;
 `;
@@ -480,20 +410,14 @@ const SkillsWrap = styled.div`
   gap: 0.75rem;
 `;
 
-const Tag = styled(motion.span)<{ accent?: boolean }>`
+const Tag = styled.span<{ $accent?: boolean }>`
   display: inline-block;
   padding: 0.5rem 1.1rem;
   border-radius: 100px;
   font-size: 0.82rem;
   font-weight: 600;
-  letter-spacing: 0.02em;
-  background: ${p => p.accent ? '#5a8a3c' : '#f2f2f2'};
-  color: ${p => p.accent ? '#fff' : '#333'};
-  transition: background 0.2s, color 0.2s;
-  cursor: default;
-  &:hover {
-    background: ${p => p.accent ? '#4a7530' : '#e8e8e8'};
-  }
+  background: ${p => p.$accent ? '#5a8a3c' : '#f2f2f2'};
+  color: ${p => p.$accent ? '#fff' : '#333'};
 `;
 
 const skills = [
@@ -509,15 +433,32 @@ const skills = [
   { label: 'Visual Communication',   accent: false },
 ];
 
-// ─── Divider ──────────────────────────────────────────────────────────────────
-const Divider = styled.div`
-  width: 100%;
-  height: 1px;
-  background: #ebebeb;
-`;
+// ─── Reveal wrapper (works inside fixed scroll containers) ────────────────────
+const Reveal: React.FC<{
+  children: React.ReactNode;
+  variants?: Variants;
+  delay?: number;
+  style?: React.CSSProperties;
+}> = ({ children, variants = revealY, delay = 0, style }) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useInView(ref, { once: true, amount: 0.1 });
+
+  return (
+    <motion.div
+      ref={ref}
+      variants={variants}
+      initial="hidden"
+      animate={inView ? 'visible' : 'hidden'}
+      transition={delay ? { delay } : undefined}
+      style={style}
+    >
+      {children}
+    </motion.div>
+  );
+};
 
 // ─────────────────────────────────────────────────────────────────────────────
-// Component
+// Page component
 // ─────────────────────────────────────────────────────────────────────────────
 const Bcit: React.FC = () => {
   return (
@@ -525,7 +466,7 @@ const Bcit: React.FC = () => {
       <PageBg>
         <SEO
           title="BCIT Energy Awareness Campaign | Nooshin Shahsavan"
-          description="A full-scope awareness campaign developed for the BCIT Green Team — branding, posters, banners, stickers, and social media motion graphics by Nooshin Shahsavan."
+          description="A full-scope awareness campaign for the BCIT Green Team — branding, posters, banners, stickers, and social media motion graphics."
           keywords="BCIT, energy awareness, green team, campaign design, brand identity, poster design, motion graphics, Nooshin Shahsavan"
           image="/src/assets/bcitenergy/wordmark-bcit.png"
         />
@@ -544,13 +485,13 @@ const Bcit: React.FC = () => {
           <motion.div variants={revealY} initial="hidden" animate="visible" style={{ textAlign: 'center' }}>
             <Overline>BCIT Green Team — 2024</Overline>
           </motion.div>
-          <HeroTitle variants={revealY} initial="hidden" animate="visible" transition={{ delay: 0.1 }}>
+          <HeroTitle variants={revealY} initial="hidden" animate="visible">
             BCIT Energy<br />Awareness Campaign
           </HeroTitle>
-          <HeroSubtitle variants={revealY} initial="hidden" animate="visible" transition={{ delay: 0.2 }}>
+          <HeroSubtitle variants={revealY} initial="hidden" animate="visible">
             Encouraging sustainable energy habits through a friendly and engaging visual campaign.
           </HeroSubtitle>
-          <MetaGrid variants={revealY} initial="hidden" animate="visible" transition={{ delay: 0.3 }}>
+          <MetaGrid variants={revealY} initial="hidden" animate="visible">
             <MetaCell>
               <MetaLabel>Client</MetaLabel>
               <MetaValue>BCIT Green Team</MetaValue>
@@ -577,14 +518,14 @@ const Bcit: React.FC = () => {
           <Section>
             <Container>
               <TwoCol>
-                <motion.div variants={revealY} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+                <Reveal>
                   <SectionHeader>
                     <Overline>Project Overview</Overline>
                     <H2>A campaign built from<br />concept to production.</H2>
                     <SectionRule />
                   </SectionHeader>
-                </motion.div>
-                <motion.div variants={revealY} initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-60px' }}>
+                </Reveal>
+                <Reveal delay={0.1}>
                   <Lead>
                     The BCIT Energy Awareness Campaign was created to encourage students, faculty, and staff to adopt energy-saving habits during the colder months.
                   </Lead>
@@ -594,7 +535,7 @@ const Bcit: React.FC = () => {
                   <BodyText>
                     The campaign was deployed across multiple touchpoints including banners, posters, stickers, and social media content, ensuring a consistent message across both physical and digital environments.
                   </BodyText>
-                </motion.div>
+                </Reveal>
               </TwoCol>
             </Container>
           </Section>
@@ -606,17 +547,17 @@ const Bcit: React.FC = () => {
         <div id="bcit-challenge">
           <Section>
             <Container>
-              <motion.div variants={revealY} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-                <Overline>The Challenge</Overline>
-              </motion.div>
-              <ChallengeBlock variants={revealY} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-                <ChallengeQ>
-                  "Environmental campaigns often feel technical, dry, and overly serious — how do you make sustainability feel approachable?"
-                </ChallengeQ>
-                <ChallengeAnswer>
-                  Environmental messaging can easily fall flat when it leans too heavily on obligation and severity. The challenge here was to create a visual identity that felt welcoming and engaging while clearly communicating the importance of reducing energy consumption. The visual language needed to appeal to a broad campus audience — from students to faculty — while maintaining a strong connection to sustainability and energy efficiency.
-                </ChallengeAnswer>
-              </ChallengeBlock>
+              <Reveal>
+                <div style={{ marginBottom: '1.5rem' }}><Overline>The Challenge</Overline></div>
+                <ChallengeBlock variants={revealY} initial="hidden" animate="visible">
+                  <ChallengeQ>
+                    "Environmental campaigns often feel technical, dry, and overly serious — how do you make sustainability feel approachable?"
+                  </ChallengeQ>
+                  <ChallengeAnswer>
+                    Environmental messaging can easily fall flat when it leans too heavily on obligation and severity. The challenge was to create a visual identity that felt welcoming and engaging while clearly communicating the importance of reducing energy consumption. The visual language needed to appeal to a broad campus audience while maintaining a strong connection to sustainability and energy efficiency.
+                  </ChallengeAnswer>
+                </ChallengeBlock>
+              </Reveal>
             </Container>
           </Section>
         </div>
@@ -627,7 +568,7 @@ const Bcit: React.FC = () => {
         <div id="bcit-moodboard">
           <Section>
             <Container>
-              <motion.div variants={revealY} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+              <Reveal>
                 <SectionHeader>
                   <Overline>Moodboard & Visual Direction</Overline>
                   <H2>A visual language rooted<br />in nature and efficiency.</H2>
@@ -639,35 +580,39 @@ const Bcit: React.FC = () => {
                     The letter <strong>"A"</strong> was integrated into the concept because it represents the highest rating within energy efficiency labelling systems. Combining the leaf with the letter A established a direct visual relationship between smart energy use and environmental stewardship.
                   </BodyText>
                 </SectionHeader>
-              </motion.div>
+              </Reveal>
 
-              <FullBleedImg variants={revealScale} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-                <img src={moodboard} alt="BCIT Energy Campaign Moodboard" />
-              </FullBleedImg>
+              <Reveal variants={revealScale}>
+                <FullBleedImg variants={revealScale} initial="hidden" animate="visible">
+                  <img src={moodboard} alt="BCIT Energy Campaign Moodboard" />
+                </FullBleedImg>
+              </Reveal>
 
-              <ColorCards variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-                <ColorCard accent="#5a8a3c" variants={revealY}>
-                  <div className="swatch" />
-                  <div className="body">
-                    <h4>Green</h4>
-                    <p>Represents nature, sustainability, and growth — the core identity colour of the campaign.</p>
-                  </div>
-                </ColorCard>
-                <ColorCard accent="#2e6fa3" variants={revealY}>
-                  <div className="swatch" />
-                  <div className="body">
-                    <h4>Blue</h4>
-                    <p>Represents winter, cold weather, and the seasonal context of heating consumption.</p>
-                  </div>
-                </ColorCard>
-                <ColorCard accent="#f0b429" variants={revealY}>
-                  <div className="swatch" />
-                  <div className="body">
-                    <h4>Yellow</h4>
-                    <p>Represents warmth, energy, and the positive action the campaign encourages.</p>
-                  </div>
-                </ColorCard>
-              </ColorCards>
+              <Reveal>
+                <ColorCards variants={staggerContainer} initial="hidden" animate="visible">
+                  <ColorCard $accent="#5a8a3c" variants={revealY}>
+                    <div className="swatch" />
+                    <div className="body">
+                      <h4>Green</h4>
+                      <p>Represents nature, sustainability, and growth — the core identity colour of the campaign.</p>
+                    </div>
+                  </ColorCard>
+                  <ColorCard $accent="#2e6fa3" variants={revealY}>
+                    <div className="swatch" />
+                    <div className="body">
+                      <h4>Blue</h4>
+                      <p>Represents winter, cold weather, and the seasonal context of heating consumption.</p>
+                    </div>
+                  </ColorCard>
+                  <ColorCard $accent="#f0b429" variants={revealY}>
+                    <div className="swatch" />
+                    <div className="body">
+                      <h4>Yellow</h4>
+                      <p>Represents warmth, energy, and the positive action the campaign encourages.</p>
+                    </div>
+                  </ColorCard>
+                </ColorCards>
+              </Reveal>
             </Container>
           </Section>
         </div>
@@ -678,36 +623,40 @@ const Bcit: React.FC = () => {
         <div id="bcit-wordmark">
           <Section bg="#fafafa">
             <Container>
-              <motion.div variants={revealY} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+              <Reveal>
                 <SectionHeader>
                   <Overline>Wordmark Design</Overline>
                   <H2>Where nature meets<br />energy efficiency.</H2>
                   <SectionRule />
                 </SectionHeader>
-              </motion.div>
+              </Reveal>
 
-              <WordmarkSpotlight variants={revealScale} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-                <img src={wordmark} alt="BCIT Energy Awareness Campaign Wordmark" />
-              </WordmarkSpotlight>
+              <Reveal variants={revealScale}>
+                <WordmarkSpotlight variants={revealScale} initial="hidden" animate="visible">
+                  <img src={wordmark} alt="BCIT Energy Awareness Campaign Wordmark" />
+                </WordmarkSpotlight>
+              </Reveal>
 
-              <WordmarkDetails>
-                <DetailCard variants={revealY} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-                  <h4>Concept</h4>
-                  <p>The wordmark combines a leaf motif with the letter A, creating an immediate visual connection between environmental awareness and energy efficiency ratings.</p>
-                </DetailCard>
-                <DetailCard variants={revealY} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-                  <h4>Symbolism</h4>
-                  <p>The letter A references the top tier of energy efficiency labelling systems, linking responsible energy use to the campaign identity through a single recognisable mark.</p>
-                </DetailCard>
-                <DetailCard variants={revealY} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-                  <h4>Application</h4>
-                  <p>The wordmark was applied consistently across all campaign materials — from large-format banners and posters to stickers and digital social media assets.</p>
-                </DetailCard>
-                <DetailCard variants={revealY} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-                  <h4>Foundation</h4>
-                  <p>As the anchor of the visual system, the wordmark established the tone and personality of the entire campaign — approachable, modern, and purposeful.</p>
-                </DetailCard>
-              </WordmarkDetails>
+              <Reveal>
+                <WordmarkDetails>
+                  <DetailCard variants={revealY} initial="hidden" animate="visible">
+                    <h4>Concept</h4>
+                    <p>The wordmark combines a leaf motif with the letter A, creating an immediate visual connection between environmental awareness and energy efficiency ratings.</p>
+                  </DetailCard>
+                  <DetailCard variants={revealY} initial="hidden" animate="visible">
+                    <h4>Symbolism</h4>
+                    <p>The letter A references the top tier of energy efficiency labelling systems, linking responsible energy use to the campaign identity through a single recognisable mark.</p>
+                  </DetailCard>
+                  <DetailCard variants={revealY} initial="hidden" animate="visible">
+                    <h4>Application</h4>
+                    <p>The wordmark was applied consistently across all campaign materials — from large-format banners and posters to stickers and digital social media assets.</p>
+                  </DetailCard>
+                  <DetailCard variants={revealY} initial="hidden" animate="visible">
+                    <h4>Foundation</h4>
+                    <p>As the anchor of the visual system, the wordmark established the tone and personality of the entire campaign — approachable, modern, and purposeful.</p>
+                  </DetailCard>
+                </WordmarkDetails>
+              </Reveal>
             </Container>
           </Section>
         </div>
@@ -718,29 +667,33 @@ const Bcit: React.FC = () => {
         <div id="bcit-banners">
           <Section>
             <Container>
-              <motion.div variants={revealY} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+              <Reveal>
                 <SectionHeader>
                   <Overline>Campus Banner System</Overline>
                   <H2>Bold, visible, and<br />impossible to ignore.</H2>
                   <SectionRule />
                   <Lead>
-                    Large-format banners were designed to maximise visibility in campus environments and reinforce the campaign's key message. Both images represent the same banner design displayed in different mockup environments.
+                    Large-format banners were designed to maximise visibility in campus environments. Both images represent the same banner design displayed in different mockup environments.
                   </Lead>
                   <BodyText>
-                    The banner system uses bold typography, recognisable campaign branding, and clear visual hierarchy to quickly communicate energy-saving behaviours — meeting people where they already are in their daily campus routines.
+                    The banner system uses bold typography, recognisable campaign branding, and clear visual hierarchy to quickly communicate energy-saving behaviours.
                   </BodyText>
                 </SectionHeader>
-              </motion.div>
+              </Reveal>
 
               <BannerGrid>
-                <BannerCard variants={revealY} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-                  <img src={banner1} alt="BCIT Energy Campaign Banner – Mockup 1" />
-                  <BannerLabel>Environment 01</BannerLabel>
-                </BannerCard>
-                <BannerCard variants={revealY} initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-40px' }}>
-                  <img src={banner2} alt="BCIT Energy Campaign Banner – Mockup 2" />
-                  <BannerLabel>Environment 02</BannerLabel>
-                </BannerCard>
+                <Reveal>
+                  <BannerCard variants={revealY} initial="hidden" animate="visible">
+                    <img src={banner1} alt="BCIT Energy Campaign Banner – Mockup 1" />
+                    <BannerLabel>Environment 01</BannerLabel>
+                  </BannerCard>
+                </Reveal>
+                <Reveal delay={0.12}>
+                  <BannerCard variants={revealY} initial="hidden" animate="visible">
+                    <img src={banner2} alt="BCIT Energy Campaign Banner – Mockup 2" />
+                    <BannerLabel>Environment 02</BannerLabel>
+                  </BannerCard>
+                </Reveal>
               </BannerGrid>
             </Container>
           </Section>
@@ -752,34 +705,36 @@ const Bcit: React.FC = () => {
         <div id="bcit-stickers">
           <Section bg="#fafafa">
             <Container>
-              <motion.div variants={revealY} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+              <Reveal>
                 <SectionHeader>
                   <Overline>Sticker Design</Overline>
                   <H2>Small reminders,<br />big impact.</H2>
                   <SectionRule />
                   <Lead>
-                    Stickers were developed as a playful extension of the campaign identity — transforming key campaign messages into small, memorable visual reminders placed throughout campus environments.
+                    Stickers were developed as a playful extension of the campaign identity — transforming key messages into small, memorable visual reminders placed throughout campus.
                   </Lead>
                   <BodyText>
-                    Using friendly illustrations and recognisable branding helped increase campaign visibility while making sustainability feel approachable and engaging rather than instructional or demanding.
+                    Friendly illustrations and recognisable branding made sustainability feel approachable and engaging rather than instructional or demanding.
                   </BodyText>
                 </SectionHeader>
-              </motion.div>
+              </Reveal>
 
-              <StickerGrid>
-                <StickerCard span="1 / 2" variants={revealScale} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-                  <img src={stickersAll} alt="BCIT Energy Sticker Collection" />
-                </StickerCard>
-                <StickerCard variants={revealY} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-                  <img src={sticker1} alt="BCIT Energy Sticker 1" />
-                </StickerCard>
-                <StickerCard variants={revealY} initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-30px' }}>
-                  <img src={sticker2} alt="BCIT Energy Sticker 2" />
-                </StickerCard>
-                <StickerCard variants={revealY} initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-30px' }}>
-                  <img src={sticker3} alt="BCIT Energy Sticker 3" />
-                </StickerCard>
-              </StickerGrid>
+              <Reveal variants={revealScale}>
+                <StickerGrid>
+                  <StickerCard $wide variants={revealScale} initial="hidden" animate="visible">
+                    <img src={stickersAll} alt="BCIT Energy Sticker Collection" />
+                  </StickerCard>
+                  <StickerCard variants={revealY} initial="hidden" animate="visible">
+                    <img src={sticker1} alt="BCIT Energy Sticker 1" />
+                  </StickerCard>
+                  <StickerCard variants={revealY} initial="hidden" animate="visible">
+                    <img src={sticker2} alt="BCIT Energy Sticker 2" />
+                  </StickerCard>
+                  <StickerCard variants={revealY} initial="hidden" animate="visible">
+                    <img src={sticker3} alt="BCIT Energy Sticker 3" />
+                  </StickerCard>
+                </StickerGrid>
+              </Reveal>
             </Container>
           </Section>
         </div>
@@ -790,7 +745,7 @@ const Bcit: React.FC = () => {
         <div id="bcit-poster">
           <Section>
             <Container>
-              <motion.div variants={revealY} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+              <Reveal>
                 <SectionHeader>
                   <Overline>Poster Campaign</Overline>
                   <H2>Strong typography.<br />Clear message.</H2>
@@ -799,14 +754,16 @@ const Bcit: React.FC = () => {
                     The poster system was designed to capture attention quickly while delivering clear and actionable energy-saving messages across campus.
                   </Lead>
                   <BodyText>
-                    Strong typography, bold visuals, and consistent branding helped communicate the campaign message effectively. The posters served as a key awareness tool, reinforcing the campaign identity and encouraging energy-conscious behaviours through a direct and confident visual approach.
+                    Strong typography, bold visuals, and consistent branding communicated the campaign message effectively through a direct and confident visual approach.
                   </BodyText>
                 </SectionHeader>
-              </motion.div>
+              </Reveal>
 
-              <PosterWrap variants={revealScale} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-                <img src={poster} alt="BCIT Energy Awareness Campaign Poster" />
-              </PosterWrap>
+              <Reveal variants={revealScale}>
+                <PosterWrap variants={revealScale} initial="hidden" animate="visible">
+                  <img src={poster} alt="BCIT Energy Awareness Campaign Poster" />
+                </PosterWrap>
+              </Reveal>
             </Container>
           </Section>
         </div>
@@ -817,44 +774,30 @@ const Bcit: React.FC = () => {
         <div id="bcit-motion">
           <Section bg="#0d0d0d">
             <Container>
-              <motion.div variants={revealY} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+              <Reveal>
                 <SectionHeader>
                   <Overline style={{ color: '#8bc34a' }}>Social Media Motion Graphics</Overline>
                   <H2 style={{ color: '#fff' }}>Bringing the campaign<br />to life digitally.</H2>
                   <SectionRule style={{ background: '#8bc34a' }} />
                   <Lead style={{ color: 'rgba(255,255,255,0.65)', maxWidth: '620px' }}>
-                    To extend the campaign beyond physical spaces, short-form social media videos were created for Instagram. The motion graphics translated the campaign's visual identity into engaging digital content, helping increase reach and reinforce energy-saving behaviours through dynamic storytelling.
+                    Short-form social media videos were created for Instagram, translating the campaign's visual identity into engaging digital content and reinforcing energy-saving behaviours through dynamic storytelling.
                   </Lead>
                 </SectionHeader>
-              </motion.div>
+              </Reveal>
 
               <VideoGrid>
-                <motion.div variants={revealY} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-                  <VideoCard>
-                    <video
-                      src={igVideo1}
-                      controls
-                      playsInline
-                      loop
-                      preload="metadata"
-                      controlsList="nodownload"
-                    />
+                <Reveal>
+                  <VideoCard variants={revealY} initial="hidden" animate="visible">
+                    <video src={igVideo1} controls playsInline loop preload="metadata" controlsList="nodownload" />
                   </VideoCard>
-                  <VideoLabel style={{ color: 'rgba(255,255,255,0.45)' }}>Motion Graphic — 01</VideoLabel>
-                </motion.div>
-                <motion.div variants={revealY} initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-40px' }}>
-                  <VideoCard>
-                    <video
-                      src={igVideo2}
-                      controls
-                      playsInline
-                      loop
-                      preload="metadata"
-                      controlsList="nodownload"
-                    />
+                  <VideoLabel>Motion Graphic — 01</VideoLabel>
+                </Reveal>
+                <Reveal delay={0.12}>
+                  <VideoCard variants={revealY} initial="hidden" animate="visible">
+                    <video src={igVideo2} controls playsInline loop preload="metadata" controlsList="nodownload" />
                   </VideoCard>
-                  <VideoLabel style={{ color: 'rgba(255,255,255,0.45)' }}>Motion Graphic — 02</VideoLabel>
-                </motion.div>
+                  <VideoLabel>Motion Graphic — 02</VideoLabel>
+                </Reveal>
               </VideoGrid>
             </Container>
           </Section>
@@ -867,7 +810,7 @@ const Bcit: React.FC = () => {
           <Section>
             <Container>
               <ReflectionGrid>
-                <motion.div variants={revealY} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+                <Reveal>
                   <Overline>Reflection</Overline>
                   <ReflectionQuote>
                     "A unified visual identity, applied with consistency across every touchpoint, is what turns a campaign into a movement."
@@ -876,28 +819,19 @@ const Bcit: React.FC = () => {
                     This project provided an opportunity to develop and execute a complete awareness campaign from concept through production. By creating a unified visual identity and applying it consistently across print, environmental graphics, and digital media, the campaign successfully communicated energy-saving messages in a way that felt approachable, positive, and memorable.
                   </BodyText>
                   <BodyText>
-                    The project strengthened skills in branding, campaign design, visual storytelling, and multi-channel communication — and reinforced the value of a strong, flexible visual system that can scale across formats without losing coherence.
+                    The project strengthened skills in branding, campaign design, visual storytelling, and multi-channel communication.
                   </BodyText>
-                </motion.div>
+                </Reveal>
 
-                <motion.div variants={revealY} initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-60px' }}>
+                <Reveal delay={0.1}>
                   <Overline>Skills & Tools</Overline>
                   <H2 style={{ marginBottom: '2rem' }}>Disciplines applied.</H2>
                   <SkillsWrap>
-                    {skills.map((s, i) => (
-                      <Tag
-                        key={s.label}
-                        accent={s.accent}
-                        initial={{ opacity: 0, y: 10 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ delay: i * 0.05, duration: 0.4 }}
-                        viewport={{ once: true }}
-                      >
-                        {s.label}
-                      </Tag>
+                    {skills.map(s => (
+                      <Tag key={s.label} $accent={s.accent}>{s.label}</Tag>
                     ))}
                   </SkillsWrap>
-                </motion.div>
+                </Reveal>
               </ReflectionGrid>
             </Container>
           </Section>
