@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { SlEnvolope, SlSocialLinkedin, SlSocialInstagram } from 'react-icons/sl';
 // @ts-ignore
 import logoWeb from '../assets/home/logoweb.png';
 
@@ -70,6 +71,38 @@ const NavLink = styled(Link)`
   }
   &:hover::after {
     width: 100%;
+  }
+`;
+
+const SocialRow = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: 1.5rem;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;
+
+const SocialIcon = styled.a`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  color: #181818;
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.2s;
+
+  &:hover {
+    background: #181818;
+    color: #fff;
+    border-color: #181818;
+    transform: translateY(-2px);
   }
 `;
 
@@ -204,6 +237,17 @@ const Header: React.FC = () => {
           <NavLink to="/work">Work</NavLink>
           <NavLink to="/resume">Resume</NavLink>
         </NavLinks>
+        <SocialRow>
+          <SocialIcon href="https://mail.google.com/mail/?view=cm&to=nooshin.shahsavan.ca@gmail.com&su=Contact%20from%20my%20website" target="_blank" rel="noopener noreferrer" title="Email">
+            <SlEnvolope />
+          </SocialIcon>
+          <SocialIcon href="https://linkedin.com/in/nooshin-shahsavan" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+            <SlSocialLinkedin />
+          </SocialIcon>
+          <SocialIcon href="https://instagram.com/its.nooshin_/" target="_blank" rel="noopener noreferrer" title="Instagram">
+            <SlSocialInstagram />
+          </SocialIcon>
+        </SocialRow>
         <Hamburger aria-label="Open menu" onClick={handleMenuToggle}>
           <Bar style={{ transform: menuOpen ? 'rotate(45deg) translate(5px, 6px)' : 'none' }} />
           <Bar style={{ opacity: menuOpen ? 0 : 1 }} />

@@ -378,9 +378,6 @@ const Home: React.FC = () => {
         keywords="graphic design, brand design, UX/UI design, portfolio, Nooshin Shahsavan, creative designer, visual design"
         image="/src/assets/logoweb.png"
       />
-      <StickyMenuContainer>
-        <StickyMenu />
-      </StickyMenuContainer>
       
       <HeroSection onMouseMove={handleMouseMove}>
         <DotGrid
