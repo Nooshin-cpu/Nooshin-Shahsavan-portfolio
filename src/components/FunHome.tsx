@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import Tilt from "react-parallax-tilt";
+import LazyVideo from './LazyVideo';
 
 
 
@@ -406,14 +407,11 @@ const FunHome: React.FC<{ setSelectedProject?: (val: 'branding' | 'uxui' | 'funp
                   {item.type === "image" ? (
                     <img src={item.src} alt={item.label} className="work-media" />
                 ) : (
-                  <video
-                      src={new URL('../assets/fun/straw1.MP4', import.meta.url).href}
-                    className="work-media"
-                    controls={false}
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
+                  <LazyVideo
+                    src={new URL('../assets/fun/straw1.MP4', import.meta.url).href}
+                    autoPlay loop muted playsInline
+                    objectFit="cover"
+                    style={{ width: '100%', height: '100%' }}
                   />
                 )}
               </div>

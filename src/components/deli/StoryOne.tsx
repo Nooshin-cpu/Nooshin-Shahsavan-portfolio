@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import LazyVideo from '../LazyVideo';
 import video from "../../assets/deli/story-1-deli.mp4";
 
 const Section = styled.section`
@@ -37,13 +38,6 @@ const VideoContainer = styled.div`
   }
 `;
 
-const StyledVideo = styled.video`
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 1.2rem;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
-`;
 
 const FullWrapper = styled.div`
   width: 100%;
@@ -54,14 +48,12 @@ const FullWrapper = styled.div`
 const StoryOne: React.FC = () => (
   <Section>
     <VideoContainer>
-      <StyledVideo
+      <LazyVideo
         src={video}
-        autoPlay
-        loop
-        muted
-        playsInline
-        controls={false}
-        aria-label="Delicato video"
+        autoPlay loop muted playsInline
+        objectFit="cover"
+        style={{ width: '100%', height: '100%' }}
+        aria-label="Delicato story video"
       />
     </VideoContainer>
   </Section>

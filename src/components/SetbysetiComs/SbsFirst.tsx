@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import LazyVideo from '../LazyVideo';
 import pinkiVideo from "../../assets/sbsimg/pinki.mp4";
 import { motion } from 'framer-motion';
 import SbsOverviewDetails from "src/components/SetbysetiComs/SbsOverviewDetails";
@@ -73,12 +74,6 @@ const VideoWrapper = styled.div`
   }
 `;
 
-const StyledVideo = styled.video`
-  width: 100%;
-  height: auto;
-  display: block;
-  background: transparent;
-`;
 
 const InfoGrid = styled.div`
   display: flex;
@@ -124,13 +119,10 @@ const SbsFirst: React.FC = () => (
     </Description>
     
     <VideoWrapper>
-            <StyledVideo
+            <LazyVideo
               src={pinkiVideo}
-              autoPlay
-              loop
-              muted
-              playsInline
-              controls={false}
+              autoPlay loop muted playsInline
+              skeletonAspectRatio="9/16"
               aria-label="S.B.S project video"
             />
     </VideoWrapper>

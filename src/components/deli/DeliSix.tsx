@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import LazyVideo from '../LazyVideo';
 import typeVideo from "../../assets/deli/deli6.mp4";
 
 const Section = styled.section`
@@ -54,14 +55,6 @@ const VideoContainer = styled.div`
   background: #dddddd;
 `;
 
-const StyledVideo = styled.video`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-`;
 
 const TopLabel = styled.div`
   font-size: 1.01rem;
@@ -106,9 +99,12 @@ const DeliSix: React.FC = () => (
       </TextContainer>
       <VideoWrapper>
         <VideoContainer>
-          <StyledVideo autoPlay loop muted playsInline>
-            <source src={typeVideo} type="video/mp4" />
-          </StyledVideo>
+          <LazyVideo
+            src={typeVideo}
+            autoPlay loop muted playsInline
+            objectFit="cover"
+            style={{ width: '100%', height: '100%' }}
+          />
         </VideoContainer>
       </VideoWrapper>
     </GridContainer>

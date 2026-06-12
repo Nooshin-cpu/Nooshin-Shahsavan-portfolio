@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import LazyVideo from '../LazyVideo';
 import deli4 from '../../assets/deli/deli4.mp4';
 import deli5 from '../../assets/deli/deli5.mp4';
 
@@ -69,14 +70,6 @@ const VideoContainer = styled.div`
   }
 `;
 
-const StyledVideo = styled.video`
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  border-radius: 16px;
-  box-sizing: border-box;
-`;
 
 const DeliGrid: React.FC = () => {
   return (
@@ -84,26 +77,22 @@ const DeliGrid: React.FC = () => {
       <GridContainer>
         <VideoWrapper>
           <VideoContainer>
-            <StyledVideo
+            <LazyVideo
               src={deli4}
-              autoPlay
-              loop
-              muted
-              playsInline
-              controls={false}
+              autoPlay loop muted playsInline
+              objectFit="cover"
+              style={{ width: '100%', height: '100%', borderRadius: '16px' }}
               aria-label="Deli video 4"
             />
           </VideoContainer>
         </VideoWrapper>
         <VideoWrapper>
           <VideoContainer>
-            <StyledVideo
+            <LazyVideo
               src={deli5}
-              autoPlay
-              loop
-              muted
-              playsInline
-              controls={false}
+              autoPlay loop muted playsInline
+              objectFit="cover"
+              style={{ width: '100%', height: '100%', borderRadius: '16px' }}
               aria-label="Deli video 5"
             />
           </VideoContainer>

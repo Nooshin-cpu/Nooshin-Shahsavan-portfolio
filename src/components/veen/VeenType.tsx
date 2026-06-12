@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import LazyVideo from '../LazyVideo';
 import typeVideo from "../../assets/veen/vv.mp4";
 
 const Section = styled.section`
@@ -58,27 +59,6 @@ const VideoBlock = styled.div`
   }
 `;
 
-const StyledVideo = styled.video`
-  width: 100%;
-  height: 100%;
-  object-fit: fill;
-  background: transparent;
-  border: none;
-  box-shadow: none;
-  display: block;
-  margin-bottom: 0;
-  @media (max-width: 900px) {
-    width: 100vw;
-    max-width: 100vw;
-    height: auto;
-    max-height: 60vw;
-    object-fit: contain;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    overflow-x: hidden;
-  }
-`;
 
 const RightTextBlock = styled.div`
   flex: none;
@@ -127,13 +107,11 @@ const VeenType: React.FC = () => (
   <Section>
     <ContentRow>
       <VideoBlock>
-        <StyledVideo
+        <LazyVideo
           src={typeVideo}
-          autoPlay
-          loop
-          muted
-          playsInline
-          controls={false}
+          autoPlay loop muted playsInline
+          objectFit="cover"
+          style={{ width: '100%', height: '100%' }}
           aria-label="Typography video"
         />
       </VideoBlock>

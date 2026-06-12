@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import SEO from "../../components/SEO";
@@ -229,14 +229,31 @@ function formatTime(sec: number) {
 }
 
 const FinalLookMakingSchedule: React.FC = () => {
+  const containerRef = useRef<HTMLElement>(null);
   const video1Ref = useRef<HTMLVideoElement>(null);
   const video2Ref = useRef<HTMLVideoElement>(null);
+  const [activeSrc1, setActiveSrc1] = useState<string | undefined>();
+  const [activeSrc2, setActiveSrc2] = useState<string | undefined>();
   const [isPlaying1, setIsPlaying1] = useState(false);
   const [isPlaying2, setIsPlaying2] = useState(false);
   const [progress1, setProgress1] = useState(0);
   const [progress2, setProgress2] = useState(0);
   const [duration1, setDuration1] = useState(0);
   const [duration2, setDuration2] = useState(0);
+
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(([e]) => {
+      if (e.isIntersecting) {
+        setActiveSrc1(s1workday);
+        setActiveSrc2(s2workday);
+        obs.disconnect();
+      }
+    }, { rootMargin: '300px 0px' });
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
 
   // Video 1 handlers
   const handlePlayPause1 = () => {
@@ -341,7 +358,7 @@ const FinalLookMakingSchedule: React.FC = () => {
         keywords="final UI, schedule design, UX implementation, mobile app, Workday app, design showcase"
         image="/src/assets/work/final-schedule.jpg"
       />
-      <Container>
+      <Container ref={containerRef}>
         <SectionCard
           variants={containerVariants}
           initial="hidden"
@@ -356,7 +373,8 @@ const FinalLookMakingSchedule: React.FC = () => {
               <VideoContainer>
                 <StyledVideo
                   ref={video1Ref}
-                  src={s1workday}
+                  src={activeSrc1}
+                  preload={activeSrc1 ? 'metadata' : 'none'}
                   onTimeUpdate={handleTimeUpdate1}
                   onLoadedMetadata={handleLoadedMetadata1}
                   onEnded={handleEnded1}
@@ -385,7 +403,8 @@ const FinalLookMakingSchedule: React.FC = () => {
               <VideoContainer>
                 <StyledVideo
                   ref={video2Ref}
-                  src={s2workday}
+                  src={activeSrc2}
+                  preload={activeSrc2 ? 'metadata' : 'none'}
                   onTimeUpdate={handleTimeUpdate2}
                   onLoadedMetadata={handleLoadedMetadata2}
                   onEnded={handleEnded2}

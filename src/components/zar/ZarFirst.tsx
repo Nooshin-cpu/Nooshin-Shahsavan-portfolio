@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import LazyVideo from '../LazyVideo';
 import story from "../../assets/zar/zar-logoline.mp4";
 
 const MinimalSection = styled.section`
@@ -71,12 +72,6 @@ const VideoWrapper = styled.div`
   }
 `;
 
-const StyledVideo = styled.video`
-  width: 100%;
-  height: auto;
-  display: block;
-  background: transparent;
-`;
 
 const InfoGrid = styled.div`
   display: flex;
@@ -122,13 +117,10 @@ const ZarFirst: React.FC = () => (
     </Description>
     
     <VideoWrapper>
-      <StyledVideo
+      <LazyVideo
         src={story}
-        autoPlay
-        loop
-        muted
-        playsInline
-        controls={false}
+        autoPlay loop muted playsInline
+        skeletonAspectRatio="9/16"
         aria-label="Zar project video"
       />
     </VideoWrapper>

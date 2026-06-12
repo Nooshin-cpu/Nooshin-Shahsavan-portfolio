@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import LazyVideo from '../LazyVideo';
 import colorVideo from "../../assets/zar/zar-color.mp4";
 
 const MinimalSection = styled.section`
@@ -71,12 +72,6 @@ const VideoWrapper = styled.div`
   }
 `;
 
-const StyledVideo = styled.video`
-  width: 100%;
-  height: auto;
-  display: block;
-  background: transparent;
-`;
 
 const InfoGrid = styled.div`
   display: flex;
@@ -123,13 +118,10 @@ const ZarColor: React.FC = () => (
     </Description>
     
     <VideoWrapper>
-      <StyledVideo
+      <LazyVideo
         src={colorVideo}
-        autoPlay
-        loop
-        muted
-        playsInline
-        controls={false}
+        autoPlay loop muted playsInline
+        skeletonAspectRatio="9/16"
         aria-label="Color palette video"
       />
     </VideoWrapper>

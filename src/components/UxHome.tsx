@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import Tilt from "react-parallax-tilt";
+import LazyVideo from './LazyVideo';
 
 import workdayPhoneImg from '../assets/home/workhome.png';
 
@@ -408,14 +409,11 @@ const UxHome: React.FC<{ setSelectedProject: (val: 'branding' | 'uxui' | 'funpro
                   {item.type === "image" ? (
                     <img src={item.src} alt={item.label} className="work-media" />
                 ) : (
-                  <video
-                      src={item.src}
-                    className="work-media"
-                    controls={false}
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
+                  <LazyVideo
+                    src={item.src}
+                    autoPlay loop muted playsInline
+                    objectFit="cover"
+                    style={{ width: '100%', height: '100%' }}
                   />
                 )}
               </div>

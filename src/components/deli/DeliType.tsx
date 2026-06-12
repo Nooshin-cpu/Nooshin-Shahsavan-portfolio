@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import LazyVideo from '../LazyVideo';
 import typeVideo from "../../assets/deli/deli7.mp4";
 
 const MinimalSection = styled.section`
@@ -71,12 +72,6 @@ const VideoWrapper = styled.div`
   }
 `;
 
-const StyledVideo = styled.video`
-  width: 100%;
-  height: auto;
-  display: block;
-  background: transparent;
-`;
 
 const DeliType: React.FC = () => (
   <MinimalSection id="deli-typography">
@@ -85,12 +80,10 @@ const DeliType: React.FC = () => (
     I chose Gyst Variable for its contemporary yet classic feel, and paired it with Roc Grotesk a clean, highly legible sans-serif ideal for web use.
     </Description>
     <VideoWrapper>
-      <StyledVideo
+      <LazyVideo
         src={typeVideo}
-        loop
-        muted
-        playsInline
-        controls
+        loop muted playsInline controls
+        skeletonAspectRatio="9/16"
         aria-label="Typography video"
       />
     </VideoWrapper>

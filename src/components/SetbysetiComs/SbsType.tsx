@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import LazyVideo from '../LazyVideo';
 import typeVideo from "../../assets/sbsimg/sbs-type.mp4";
 import { motion } from 'framer-motion';
 
@@ -72,12 +73,6 @@ const VideoWrapper = styled.div`
   }
 `;
 
-const StyledVideo = styled.video`
-  width: 100%;
-  height: auto;
-  display: block;
-  background: transparent;
-`;
 
 const SbsType: React.FC = () => (
   <MinimalSection>
@@ -86,12 +81,10 @@ const SbsType: React.FC = () => (
       The primary typeface, Gyst Variable, visually connects with the logo's curves and is used for headers and expressive brand moments. Noto Sans is used for body text, ensuring clarity and legibility across all platforms.
     </Description>
     <VideoWrapper>
-        <StyledVideo
+        <LazyVideo
           src={typeVideo}
-          loop
-          muted
-          playsInline
-        controls
+          loop muted playsInline controls
+          skeletonAspectRatio="9/16"
           aria-label="Typography video"
         />
     </VideoWrapper>

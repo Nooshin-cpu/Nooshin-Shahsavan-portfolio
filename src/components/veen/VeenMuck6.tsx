@@ -1,5 +1,6 @@
-import React, { useRef, useEffect, useState } from "react";
+import React from "react";
 import styled from "styled-components";
+import LazyVideo from '../LazyVideo';
 import typeVideo from "../../assets/veen/vv.mp4";
 
 const MinimalSection = styled.section`
@@ -42,51 +43,21 @@ const VideoWrapper = styled.div`
   box-shadow: 0 2px 16px rgba(0,0,0,0.06);
 `;
 
-const StyledVideo = styled.video`
-  width: 100%;
-  height: auto;
-  display: block;
-  background: transparent;
-`;
-
-const VeenMuck6: React.FC = () => {
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const [autoplayed, setAutoplayed] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!autoplayed && videoRef.current) {
-        const rect = videoRef.current.getBoundingClientRect();
-        if (rect.top < window.innerHeight && rect.bottom > 0) {
-          videoRef.current.play();
-          setAutoplayed(true);
-        }
-      }
-    };
-    window.addEventListener('scroll', handleScroll);
-    handleScroll();
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [autoplayed]);
-
-  return (
-    <MinimalSection>
-      <Title>Typography</Title>
-      <Description>
+const VeenMuck6: React.FC = () => (
+  <MinimalSection>
+    <Title>Typography</Title>
+    <Description>
       The typography system was carefully chosen to reflect warmth and professionalism, ensuring excellent readability across all applications.
-      </Description>
-      <VideoWrapper>
-        <StyledVideo
-          ref={videoRef}
-          src={typeVideo}
-          loop
-          muted
-          playsInline
-          controls
-          aria-label="Typography video"
-        />
-      </VideoWrapper>
-    </MinimalSection>
-  );
-};
+    </Description>
+    <VideoWrapper>
+      <LazyVideo
+        src={typeVideo}
+        loop muted playsInline controls
+        skeletonAspectRatio="9/16"
+        aria-label="Typography video"
+      />
+    </VideoWrapper>
+  </MinimalSection>
+);
 
 export default VeenMuck6;

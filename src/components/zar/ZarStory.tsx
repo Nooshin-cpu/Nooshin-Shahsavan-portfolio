@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import LazyVideo from '../LazyVideo';
 import storyVideo from "../../assets/zar/story-zar-1.mp4";
 
 const MinimalSection = styled.section`
@@ -51,28 +52,16 @@ const VideoWrapper = styled.div`
   }
 `;
 
-const StyledVideo = styled.video`
-  width: 30%;
-  height: auto;
-  display: block;
-  background: transparent;
-  @media (max-width: 600px) {
-    width: 100%;
-  }
-`;
 
 const ZarStory: React.FC = () => (
   <MinimalSection>
     <VideoWrapper>
-      <StyledVideo
+      <LazyVideo
         src={storyVideo}
-        autoPlay
-        loop
-        muted
-        playsInline
-        controls={true}
+        autoPlay loop muted playsInline controls
+        style={{ width: '30%' }}
+        skeletonAspectRatio="9/16"
         aria-label="Zar Story Video"
-        preload="metadata"
       />
     </VideoWrapper>
   </MinimalSection>

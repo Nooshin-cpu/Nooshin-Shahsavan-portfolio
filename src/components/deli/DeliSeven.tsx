@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import LazyVideo from '../LazyVideo';
 import centeredImg from "../../assets/deli/deli7.mp4";
 
 const Section = styled.section`
@@ -24,21 +25,16 @@ const ImageContainer = styled.div`
   }
 `;
 
-const StyledImage = styled.img`
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  background: #dddddd;
-  display: block;
-  @media (max-width: 900px) {
-    height: auto;
-  }
-`;
-
 const DeliSeven: React.FC = () => (
   <Section>
     <ImageContainer>
-      <StyledImage src={centeredImg} alt="Centered Image" />
+      <LazyVideo
+        src={centeredImg}
+        autoPlay loop muted playsInline
+        objectFit="cover"
+        style={{ width: '100%', height: '100%' }}
+        aria-label="Delicato showcase"
+      />
     </ImageContainer>
   </Section>
 );

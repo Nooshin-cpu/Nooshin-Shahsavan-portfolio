@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import LazyVideo from './LazyVideo';
 
 // Import media files
 import veenVideo from '../assets/home/veen-home.mp4';
@@ -290,13 +291,12 @@ const ProjectGrid: React.FC = () => {
         >
           <CardMedia>
             {project.media.type === 'video' ? (
-              <video
+              <LazyVideo
                 src={project.media.src}
                 poster={project.media.poster}
-                autoPlay
-                muted
-                loop
-                playsInline
+                autoPlay muted loop playsInline
+                objectFit="cover"
+                style={{ width: '100%', height: '100%' }}
               />
             ) : (
               <img

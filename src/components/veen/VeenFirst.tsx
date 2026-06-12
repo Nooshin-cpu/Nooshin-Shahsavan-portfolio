@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import LazyVideo from '../LazyVideo';
 import story from "../../assets/veen/story.mp4";
 import { motion } from 'framer-motion';
 
@@ -43,12 +44,6 @@ const VideoWrapper = styled.div`
   box-shadow: 0 2px 16px rgba(0,0,0,0.06);
 `;
 
-const StyledVideo = styled.video`
-  width: 100%;
-  height: auto;
-  display: block;
-  background: transparent;
-`;
 
 const InfoGrid = styled.div`
   display: flex;
@@ -85,13 +80,10 @@ const VeenFirst: React.FC = () => (
     VEEN Studio is a newly established photography brand based in Vancouver, specializing in family and child photography. The goal of this project was to create a professional, heartfelt brand identity that reflects warmth, trust, creativity, and joy. 
     </Description>
     <VideoWrapper>
-      <StyledVideo
+      <LazyVideo
         src={story}
-        autoPlay
-        loop
-        muted
-        playsInline
-        controls={false}
+        autoPlay loop muted playsInline
+        skeletonAspectRatio="9/16"
         aria-label="Veen project video"
       />
     </VideoWrapper>

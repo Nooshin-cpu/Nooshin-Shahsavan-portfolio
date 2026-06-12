@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import SEO from "../../components/SEO";
@@ -240,10 +240,22 @@ function formatTime(sec: number) {
 }
 
 const FinalLookDayOff: React.FC = () => {
+  const containerRef = useRef<HTMLElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const [activeSrc, setActiveSrc] = useState<string | undefined>();
   const [isPlaying, setIsPlaying] = useState(false);
   const [progress, setProgress] = useState(0);
   const [duration, setDuration] = useState(0);
+
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(([e]) => {
+      if (e.isIntersecting) { setActiveSrc(s2workday); obs.disconnect(); }
+    }, { rootMargin: '300px 0px' });
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
 
   // Play/Pause Handler
   const handlePlayPause = () => {
@@ -317,7 +329,7 @@ const FinalLookDayOff: React.FC = () => {
         keywords="final UI, time off design, UX implementation, mobile app, Workday app, design showcase"
         image="/src/assets/work/final-timeoff.jpg"
       />
-      <Container>
+      <Container ref={containerRef}>
         <SectionCard
           variants={containerVariants}
           initial="hidden"
@@ -332,7 +344,8 @@ const FinalLookDayOff: React.FC = () => {
               <VideoContainer>
                 <StyledVideo
                   ref={videoRef}
-                  src={s2workday}
+                  src={activeSrc}
+                  preload={activeSrc ? 'metadata' : 'none'}
                   onTimeUpdate={handleTimeUpdate}
                   onLoadedMetadata={handleLoadedMetadata}
                   onEnded={handleEnded}

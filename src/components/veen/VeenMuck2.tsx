@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import LazyVideo from '../LazyVideo';
 import finalVideo from "../../assets/veen/final.mp4";
 
 const Section = styled.section`
@@ -76,53 +77,14 @@ const VideoContainer = styled.div`
   }
 `;
 
-const StyledVideo = styled.video`
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  display: block;
-  border-radius: 12px;
-  
-  @media (max-width: 1200px) {
-    border-radius: 10px;
-  }
-  
-  @media (max-width: 900px) {
-    width: 100vw;
-    height: auto;
-    max-width: 100vw;
-    max-height: 70vh;
-    object-fit: contain;
-    margin: 0;
-    padding: 0;
-    border-radius: 8px;
-  }
-  
-  @media (max-width: 600px) {
-    width: 98vw;
-    max-width: 98vw;
-    max-height: 60vh;
-    border-radius: 6px;
-  }
-  
-  @media (max-width: 480px) {
-    width: 100vw;
-    max-width: 100vw;
-    max-height: 50vh;
-    border-radius: 4px;
-  }
-`;
 
 const VeenMuck2: React.FC = () => (
   <Section>
     <VideoContainer>
-      <StyledVideo
+      <LazyVideo
         src={finalVideo}
-        autoPlay
-        loop
-        muted
-        playsInline
-        controls={false}
+        autoPlay loop muted playsInline
+        skeletonAspectRatio="16/9"
         aria-label="Final video"
       />
     </VideoContainer>

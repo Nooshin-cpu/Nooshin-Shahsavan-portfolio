@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import LazyVideo from '../LazyVideo';
 import typeVideo from "../../assets/zar/zar-type.mp4";
 
 const MinimalSection = styled.section`
@@ -71,12 +72,6 @@ const VideoWrapper = styled.div`
   }
 `;
 
-const StyledVideo = styled.video`
-  width: 100%;
-  height: auto;
-  display: block;
-  background: transparent;
-`;
 
 const InfoGrid = styled.div`
   display: flex;
@@ -122,13 +117,10 @@ const ZarType: React.FC = () => (
     </Description>
     
     <VideoWrapper>
-      <StyledVideo
+      <LazyVideo
         src={typeVideo}
-        autoPlay
-        loop
-        muted
-        playsInline
-        controls={true}
+        autoPlay loop muted playsInline controls
+        skeletonAspectRatio="9/16"
         aria-label="Typography video"
       />
     </VideoWrapper>

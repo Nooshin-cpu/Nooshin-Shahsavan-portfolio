@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import LazyVideo from '../LazyVideo';
 import story from "../../assets/deli/deli1.mp4";
 
 const MinimalSection = styled.section`
@@ -71,12 +72,6 @@ const VideoWrapper = styled.div`
   }
 `;
 
-const StyledVideo = styled.video`
-  width: 100%;
-  height: auto;
-  display: block;
-  background: transparent;
-`;
 
 const InfoGrid = styled.div`
   display: flex;
@@ -121,13 +116,10 @@ const DeliFirst: React.FC = () => (
     Delicato is a small interior design company from Italy, inspired by the classical architecture of ancient Rome. The brand’s core value is to create spaces that blend the richness of historical elements with modern aesthetics, bringing timeless elegance into contemporary living.
     </Description>
     <VideoWrapper>
-      <StyledVideo
+      <LazyVideo
         src={story}
-        autoPlay
-        loop
-        muted
-        playsInline
-        controls={false}
+        autoPlay loop muted playsInline
+        skeletonAspectRatio="9/16"
         aria-label="Delicato project video"
       />
     </VideoWrapper>

@@ -1,5 +1,6 @@
-import React, { useRef, useEffect, useState } from "react";
+import React from "react";
 import styled from "styled-components";
+import LazyVideo from '../LazyVideo';
 import colorVideo from "../../assets/veen/veencolor.mp4";
 
 const MinimalSection = styled.section`
@@ -42,51 +43,21 @@ const VideoWrapper = styled.div`
   box-shadow: 0 2px 16px rgba(0,0,0,0.06);
 `;
 
-const StyledVideo = styled.video`
-  width: 100%;
-  height: auto;
-  display: block;
-  background: transparent;
-`;
-
-const VeenMuck5: React.FC = () => {
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const [autoplayed, setAutoplayed] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!autoplayed && videoRef.current) {
-        const rect = videoRef.current.getBoundingClientRect();
-        if (rect.top < window.innerHeight && rect.bottom > 0) {
-          videoRef.current.play();
-          setAutoplayed(true);
-        }
-      }
-    };
-    window.addEventListener('scroll', handleScroll);
-    handleScroll();
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [autoplayed]);
-
-  return (
-    <MinimalSection>
-      <Title>Color Palette</Title>
-      <Description>
+const VeenMuck5: React.FC = () => (
+  <MinimalSection>
+    <Title>Color Palette</Title>
+    <Description>
       A soft, modern color system designed to evoke warmth, trust, and joy perfect for family photography. Calming teals symbolize connection, balanced with peach, cream, and coral for a gentle yet vibrant emotional tone.
-      </Description>
-      <VideoWrapper>
-        <StyledVideo
-          ref={videoRef}
-          src={colorVideo}
-          loop
-          muted
-          playsInline
-          controls
-          aria-label="Color palette video"
-        />
-      </VideoWrapper>
-    </MinimalSection>
-  );
-};
+    </Description>
+    <VideoWrapper>
+      <LazyVideo
+        src={colorVideo}
+        loop muted playsInline controls
+        skeletonAspectRatio="9/16"
+        aria-label="Color palette video"
+      />
+    </VideoWrapper>
+  </MinimalSection>
+);
 
 export default VeenMuck5;

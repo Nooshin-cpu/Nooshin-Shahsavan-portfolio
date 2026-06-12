@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import LazyVideo from '../LazyVideo';
 import allin1Video from "../../assets/sbsimg/allin1.mp4";
 
 const VideoSection = styled.section`
@@ -77,24 +78,15 @@ const VideoContainer = styled.div`
   }
 `;
 
-const Video = styled.video`
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: contain;
-`;
 
 const SbsVideo: React.FC = () => (
   <VideoSection>
     <VideoContainer>
-      <Video
+      <LazyVideo
         src={allin1Video}
-        autoPlay
-        loop
-        muted
-        playsInline
+        autoPlay loop muted playsInline
+        skeletonAspectRatio="16/9"
         aria-label="SBS All-in-One Video"
-        preload="metadata"
       />
     </VideoContainer>
   </VideoSection>

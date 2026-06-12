@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import LazyVideo from '../LazyVideo';
 import deliVideo from "../../assets/deli/delistory.mp4";
 
 const Section = styled.section`
@@ -41,24 +42,16 @@ const VideoContainer = styled.div`
   }
 `;
 
-const Video = styled.video`
-  width: 40%;
-  height: auto;
-  display: block;
-  background: transparent;
-`;
 
 const Deli11: React.FC = () => {
   return (
     <Section>
       <VideoContainer>
-        <Video
+        <LazyVideo
           src={deliVideo}
-          autoPlay
-          loop
-          muted
-          playsInline
-          controls={true}
+          autoPlay loop muted playsInline controls
+          style={{ width: '40%' }}
+          skeletonAspectRatio="9/16"
         />
       </VideoContainer>
     </Section>

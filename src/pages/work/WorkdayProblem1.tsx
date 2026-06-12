@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import SEO from "../../components/SEO";
+import LazyVideo from '../../components/LazyVideo';
 import pro1Video from "../../assets/work/pro1.mp4";
 
 const Container = styled.section`
@@ -186,16 +187,6 @@ const VideoPlaceholder = styled.div`
   }
 `;
 
-const StyledVideo = styled.video`
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 18px;
-
-  @media (max-width: 600px) {
-    border-radius: 12px;
-  }
-`;
 
 const WorkdayProblem1: React.FC = () => {
   return (
@@ -245,11 +236,13 @@ const WorkdayProblem1: React.FC = () => {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.8 }}
           >
-            <StyledVideo
+            <LazyVideo
               src={pro1Video}
               controls
               controlsList="nodownload"
-              style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+              objectFit="cover"
+              style={{ width: '100%', height: '100%' }}
+              aria-label="Problem 1 video"
             />
           </VideoPlaceholder>
         </RightContent>

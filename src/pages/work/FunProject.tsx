@@ -22,6 +22,7 @@ import g3 from '../../assets/fun/g3.png';
 import vrVideo from '../../assets/fun/vr.mp4';
 import animation2dVideo from '../../assets/fun/2D.mp4';
 import CustomVideoPlayer from '../../components/CustomVideoPlayer';
+import LazyVideo from '../../components/LazyVideo';
 
 // Animations
 const float = keyframes`
@@ -423,11 +424,13 @@ const FunProject = () => (
         </CategoryDescription>
         <ModernGrid>
           <VideoCard gridArea="1 / 2 / 3 / 5" aspectRatio="1/1.4" category="photography">
-            <video 
-              src={videoSrc} 
-              controls 
-              style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+            <LazyVideo
+              src={videoSrc}
+              controls
               controlsList="nodownload"
+              objectFit="cover"
+              style={{ width: '100%', height: '100%' }}
+              aria-label="Photography showcase video"
             />
           </VideoCard>
           <ModernCard gridArea="1 / 5 / 3 / 8" aspectRatio="1/1.4" category="photography">
@@ -494,11 +497,13 @@ const FunProject = () => (
           Creative animation work demonstrating motion design and storytelling through animated graphics.
         </CategoryDescription>
         <VideoContainer>
-          <video 
-            src={animation2dVideo} 
-            controls 
-            style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+          <LazyVideo
+            src={animation2dVideo}
+            controls
             controlsList="nodownload"
+            objectFit="cover"
+            style={{ width: '100%', height: '100%' }}
+            aria-label="2D Animation video"
           />
         </VideoContainer>
       </ProjectSection>

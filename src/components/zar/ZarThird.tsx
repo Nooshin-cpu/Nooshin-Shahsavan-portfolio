@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import LazyVideo from '../LazyVideo';
 import logo1 from '../../assets/zar/logo-zar-1.png';
 import logo2 from '../../assets/zar/zar-logo.mp4';
 import logo3 from '../../assets/zar/logo-zar-2.png';
@@ -90,13 +91,6 @@ const ImageRow = styled.div`
   }
 `;
 
-const StyledVideo = styled.video`
-  width: 100%;
-  height: auto;
-  display: block;
-  background: transparent;
-  border-radius: 8px;
-`;
 
 const StyledImage = styled.img`
   width: 50%;
@@ -117,13 +111,10 @@ const ZarThird: React.FC = () => (
     </Description>
     
     <MediaWrapper>
-      <StyledVideo
+      <LazyVideo
         src={logo2}
-        autoPlay
-        loop
-        muted
-        playsInline
-        controls={false}
+        autoPlay loop muted playsInline
+        skeletonAspectRatio="16/9"
         aria-label="ZAR logo animation"
       />
       <ImageRow>

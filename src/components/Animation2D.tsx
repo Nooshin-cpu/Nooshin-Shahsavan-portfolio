@@ -1,4 +1,5 @@
 import React from 'react';
+import LazyVideo from './LazyVideo';
 import animation2dVideo from '../assets/fun/2D.mp4';
 
 const styles = `
@@ -23,30 +24,17 @@ const styles = `
   width: 100%;
   max-width: 900px;
   aspect-ratio: 16/9;
-  background: #f7f7f7;
+  background: #e0e0e0;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 2px 12px rgba(60,60,90,0.07);
 }
-.animation2d-video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
 @media (max-width: 900px) {
-  .animation2d-video-container {
-    max-width: 98vw;
-  }
+  .animation2d-video-container { max-width: 98vw; }
 }
 @media (max-width: 600px) {
-  .animation2d-title {
-    font-size: 1.2rem;
-    margin-bottom: 1.2rem;
-  }
-  .animation2d-video-container {
-    border-radius: 7px;
-  }
+  .animation2d-title { font-size: 1.2rem; margin-bottom: 1.2rem; }
+  .animation2d-video-container { border-radius: 7px; }
 }
 `;
 
@@ -55,14 +43,16 @@ const Animation2D: React.FC = () => (
     <style>{styles}</style>
     <div className="animation2d-title">2D Animation</div>
     <div className="animation2d-video-container">
-      <video 
-        src={animation2dVideo} 
-        controls 
-        className="animation2d-video"
+      <LazyVideo
+        src={animation2dVideo}
+        controls
         controlsList="nodownload"
+        objectFit="cover"
+        style={{ width: '100%', height: '100%' }}
+        aria-label="2D Animation video"
       />
     </div>
   </section>
 );
 
-export default Animation2D; 
+export default Animation2D;

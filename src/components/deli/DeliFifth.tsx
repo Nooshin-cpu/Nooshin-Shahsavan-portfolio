@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import LazyVideo from '../LazyVideo';
 import colorVideo from "../../assets/deli/deli5.mp4";
 
 const FullWrapper = styled.div`
@@ -57,14 +58,6 @@ const VideoContainer = styled.div`
   background: #dddddd;
 `;
 
-const StyledVideo = styled.video`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-`;
 
 const TopLabel = styled.div`
   font-size: 1.01rem;
@@ -109,9 +102,12 @@ const DeliFifth: React.FC = () => (
       </TextContainer>
       <VideoWrapper>
         <VideoContainer>
-          <StyledVideo autoPlay loop muted playsInline>
-            <source src={colorVideo} type="video/mp4" />
-          </StyledVideo>
+          <LazyVideo
+            src={colorVideo}
+            autoPlay loop muted playsInline
+            objectFit="cover"
+            style={{ width: '100%', height: '100%' }}
+          />
         </VideoContainer>
       </VideoWrapper>
     </GridContainer>

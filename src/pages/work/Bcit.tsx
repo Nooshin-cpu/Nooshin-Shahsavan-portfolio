@@ -7,6 +7,7 @@ import '../../components/MenuWork.css';
 import { EmailFooter } from '../../components/Footer';
 import TopScrollButton from '../../components/TopScrollButton';
 import BcitStickyMenu from '../../components/BcitStickyMenu';
+import LazyVideo from '../../components/LazyVideo';
 
 // ─── Asset imports ────────────────────────────────────────────────────────────
 const wordmark    = new URL('../../assets/bcitenergy/wordmark-bcit.png',   import.meta.url).href;
@@ -791,13 +792,13 @@ const Bcit: React.FC = () => {
               <VideoGrid>
                 <Reveal>
                   <VideoCard variants={revealY} initial="hidden" animate="visible">
-                    <video src={igVideo1} controls playsInline loop preload="metadata" controlsList="nodownload" />
+                    <LazyVideo src={igVideo1} controls playsInline loop controlsList="nodownload" objectFit="contain" style={{ width: '100%', height: '100%' }} aria-label="Motion Graphic 01" />
                   </VideoCard>
                   <VideoLabel>Motion Graphic — 01</VideoLabel>
                 </Reveal>
                 <Reveal delay={0.12}>
                   <VideoCard variants={revealY} initial="hidden" animate="visible">
-                    <video src={igVideo2} controls playsInline loop preload="metadata" controlsList="nodownload" />
+                    <LazyVideo src={igVideo2} controls playsInline loop controlsList="nodownload" objectFit="contain" style={{ width: '100%', height: '100%' }} aria-label="Motion Graphic 02" />
                   </VideoCard>
                   <VideoLabel>Motion Graphic — 02</VideoLabel>
                 </Reveal>

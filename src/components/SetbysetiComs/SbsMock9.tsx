@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import LazyVideo from '../LazyVideo';
 import mockVideo from "../../assets/sbsimg/sbsillustration.mp4";
 import bagImg from "../../assets/sbsimg/tag-2.png";
 
@@ -29,29 +30,26 @@ const PairedMockup = styled.img`
     object-fit: contain;
 `;
 
-const PairedVideo = styled.video`
+const PairedVideo = styled.div`
   width: calc(35vw - 1rem);
   max-width: calc(35vw - 1rem);
   border-radius: 1.5rem;
   box-shadow: 0 2px 12px rgba(0,0,0,0.04);
-  object-fit: contain;
-  background: transparent;
-  border: none;
-  display: block;
+  overflow: hidden;
 `;
 
 const SbsMock9: React.FC = () => (
   <MockupSection>
     <TwoColumnGrid>
       <PairedMockup src={bagImg} alt="SBS Bag Mockup" />
-      <PairedVideo
-        src={mockVideo}
-        loop
-        muted
-        playsInline
-        controls
-        aria-label="SBS Story Video"
-      />
+      <PairedVideo>
+        <LazyVideo
+          src={mockVideo}
+          loop muted playsInline controls
+          skeletonAspectRatio="9/16"
+          aria-label="SBS Story Video"
+        />
+      </PairedVideo>
     </TwoColumnGrid>
   </MockupSection>
 );

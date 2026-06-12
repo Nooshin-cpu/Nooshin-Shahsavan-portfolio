@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import LazyVideo from '../LazyVideo';
 import capIntroVideo from "../../assets/sbsimg/cap-intro2.mp4";
 
 const MinimalSection = styled.section`
@@ -45,16 +46,6 @@ const VideoWrapper = styled.div`
   justify-content: center;
 `;
 
-const StyledVideo = styled.video`
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  background: transparent;
-  border: none;
-  box-shadow: none;
-  display: block;
-  border-radius: 1.5rem;
-`;
 
 const SbsIll: React.FC = () => (
   <MinimalSection>
@@ -63,14 +54,13 @@ const SbsIll: React.FC = () => (
       The illustration style uses curved lines and neutral, emotionless characters to reflect Gen Z’s mood and the brand’s sense of movement and freedom. The logo’s form is echoed in every graphic, creating a cohesive and culturally relevant visual identity.
     </Description>
     <VideoWrapper>
-          <StyledVideo
-            src={capIntroVideo}
-            loop
-            muted
-            playsInline
-        controls
-            aria-label="Cap intro video"
-          />
+      <LazyVideo
+        src={capIntroVideo}
+        loop muted playsInline controls
+        objectFit="contain"
+        style={{ width: '100%', height: '100%' }}
+        aria-label="Cap intro video"
+      />
     </VideoWrapper>
   </MinimalSection>
 );

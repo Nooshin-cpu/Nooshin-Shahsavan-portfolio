@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import LazyVideo from '../LazyVideo';
 import logo1 from '../../assets/sbsimg/s-logo1.png';
 import logo2 from '../../assets/sbsimg/s-logo2.mp4';
 import logo3 from '../../assets/sbsimg/s-logo3.png';
@@ -81,26 +82,17 @@ const LogoMedia = styled.div`
   }
 `;
 
-const MainLogoVideo = styled.video`
+const MainLogoVideo = styled.div`
   width: 320px;
   height: 320px;
   max-width: 90vw;
   max-height: 60vw;
-  object-fit: contain;
   border-radius: 1.5rem;
   background: #f7f7f7;
   box-shadow: 0 2px 16px rgba(0,0,0,0.06);
-    display: block;
-  @media (max-width: 900px) {
-    width: 220px;
-    height: 220px;
-  }
-  @media (max-width: 600px) {
-    width: 98vw;
-    height: 180px;
-    max-width: 98vw;
-    max-height: 40vw;
-  }
+  overflow: hidden;
+  @media (max-width: 900px) { width: 220px; height: 220px; }
+  @media (max-width: 600px) { width: 98vw; height: 180px; max-width: 98vw; max-height: 40vw; }
 `;
 
 const LogoRow = styled.div`
@@ -159,15 +151,15 @@ const SbsSecond: React.FC = () => (
     </Description>
     <LogoMedia>
       <div style={{display:'flex', flexDirection:'column', alignItems:'center'}}>
-        <MainLogoVideo
+        <MainLogoVideo>
+          <LazyVideo
             src={logo2}
-            autoPlay
-            loop
-            muted
-            playsInline
-            controls={false}
-          aria-label="S.B.S Main Logo Animation"
+            autoPlay loop muted playsInline
+            objectFit="contain"
+            style={{ width: '100%', height: '100%' }}
+            aria-label="S.B.S Main Logo Animation"
           />
+        </MainLogoVideo>
         <LogoCaption>Main Logo (Animated)</LogoCaption>
       </div>
       <LogoRow>

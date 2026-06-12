@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import LazyVideo from '../LazyVideo';
 import deliVideo from "../../assets/deli/deliweb.mp4";
 
 const Section = styled.section`
@@ -39,25 +40,16 @@ const VideoContainer = styled.div`
   }
 `;
 
-const Video = styled.video`
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 1.2rem;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
-`;
 
 const Deli13: React.FC = () => {
   return (
     <Section>
       <VideoContainer>
-        <Video
+        <LazyVideo
           src={deliVideo}
-          autoPlay
-          loop
-          muted
-          playsInline
-          controls={false}
+          autoPlay loop muted playsInline
+          skeletonAspectRatio="16/9"
+          aria-label="Delicato web showcase"
         />
       </VideoContainer>
     </Section>

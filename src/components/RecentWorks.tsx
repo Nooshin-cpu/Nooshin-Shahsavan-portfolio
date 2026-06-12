@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import Tilt from "react-parallax-tilt";
+import LazyVideo from './LazyVideo';
 import sbsHomeVideo from '../assets/home/sbs-home.mp4';
 import deli12Img from '../assets/home/deli12.jpg';
 import veenHomeVideo from '../assets/home/veen-home.mp4';
@@ -417,14 +418,11 @@ const RecentWorks: React.FC = () => {
                 {items[0].type === "image" ? (
                   <img src={items[0].src} alt={items[0].label} className="work-media" />
                 ) : (
-                  <video
+                  <LazyVideo
                     src={items[0].src}
-                    className="work-media"
-                    controls={false}
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
+                    autoPlay loop muted playsInline
+                    objectFit="cover"
+                    style={{ width: '100%', height: '100%' }}
                   />
                 )}
               </div>
@@ -455,14 +453,11 @@ const RecentWorks: React.FC = () => {
                 {items[1].type === "image" ? (
                   <img src={items[1].src} alt={items[1].label} className="work-media" />
                 ) : (
-                  <video
+                  <LazyVideo
                     src={items[1].src}
-                    className="work-media"
-                    controls={false}
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
+                    autoPlay loop muted playsInline
+                    objectFit="cover"
+                    style={{ width: '100%', height: '100%' }}
                   />
                 )}
               </div>
@@ -497,14 +492,11 @@ const RecentWorks: React.FC = () => {
                     className="work-media cover-fit"
                   />
                 ) : (
-                  <video
+                  <LazyVideo
                     src={items[2].src}
-                    className="work-media"
-                    controls={false}
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
+                    autoPlay loop muted playsInline
+                    objectFit="cover"
+                    style={{ width: '100%', height: '100%' }}
                   />
                 )}
               </div>
@@ -535,14 +527,11 @@ const RecentWorks: React.FC = () => {
                 {items[3].type === "image" ? (
                   <img src={items[3].src} alt={items[3].label} className="work-media" />
                 ) : (
-                  <video
+                  <LazyVideo
                     src={items[3].src}
-                    className="work-media"
-                    controls={false}
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
+                    autoPlay loop muted playsInline
+                    objectFit="cover"
+                    style={{ width: '100%', height: '100%' }}
                   />
                 )}
               </div>
