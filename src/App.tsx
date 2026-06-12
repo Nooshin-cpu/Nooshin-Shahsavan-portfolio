@@ -20,7 +20,7 @@ const App: React.FC = () => {
   return (
     <HelmetProvider>
       <ThemeProvider>
-        <Router basename={import.meta.env.BASE_URL}>
+        <Router>
           <Layout>
             <Routes>
               <Route path="/" element={<Home />} />
@@ -34,6 +34,7 @@ const App: React.FC = () => {
               <Route path="/work/zar" element={<Zar />} />
               <Route path="/work/fun" element={<FunProject />} />
               <Route path="/work/bcit" element={<Bcit />} />
+              <Route path="/work/savefood" element={<Bcit />} />
             </Routes>
           </Layout>
         </Router>
