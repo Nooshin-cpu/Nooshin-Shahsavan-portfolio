@@ -17,6 +17,7 @@ const Workday   = lazy(() => import('./pages/work/Workday'));
 const FunProject = lazy(() => import('./pages/work/FunProject'));
 const Bcit           = lazy(() => import('./pages/work/Bcit'));
 const BcitMarketing  = lazy(() => import('./pages/work/BcitMarketing'));
+const AiStuff        = lazy(() => import('./pages/AiStuff'));
 
 const PageLoader: React.FC = () => (
   <div style={{
@@ -52,6 +53,7 @@ const App: React.FC = () => {
                 <Route path="/work/fun"     element={<FunProject />} />
                 <Route path="/work/bcit"            element={<Bcit />} />
                 <Route path="/work/bcit-marketing"  element={<BcitMarketing />} />
+                <Route path="/ai"                   element={<AiStuff />} />
               </Routes>
             </Suspense>
           </Layout>
