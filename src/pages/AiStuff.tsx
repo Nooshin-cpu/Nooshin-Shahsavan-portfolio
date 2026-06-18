@@ -733,17 +733,25 @@ const AiStuff: React.FC = () => {
 
               {/* Email marketing asset */}
               <Reveal variants={revealScale}>
-                <ClickableImg
-                  variants={revealScale}
-                  initial="hidden"
-                  animate="visible"
-                  onClick={() => openLightbox(emailMarketing)}
-                  role="button"
-                  aria-label="View email marketing design full size"
-                >
-                  <img src={emailMarketing} alt="MirrorMei Email Marketing Design" loading="lazy" />
-                  <ZoomHint>Click to enlarge</ZoomHint>
-                </ClickableImg>
+                <div style={{ display: 'flex', justifyContent: 'center' }}>
+                  <ClickableImg
+                    variants={revealScale}
+                    initial="hidden"
+                    animate="visible"
+                    onClick={() => openLightbox(emailMarketing)}
+                    role="button"
+                    aria-label="View email marketing design full size"
+                    style={{ maxWidth: '320px' }}
+                  >
+                    <img
+                      src={emailMarketing}
+                      alt="MirrorMei Email Marketing Design"
+                      loading="lazy"
+                      style={{ maxHeight: '50vh', objectFit: 'contain' }}
+                    />
+                    <ZoomHint>Click to enlarge</ZoomHint>
+                  </ClickableImg>
+                </div>
               </Reveal>
               <VideoLabel>Email Marketing Asset</VideoLabel>
 
