@@ -8,6 +8,7 @@ import deli12Img from '../assets/home/deli12.jpg';
 import veenHomeVideo from '../assets/home/veen-home.mp4';
 import box2Img from '../assets/zar/box-2.jpg';
 import bcitStickerImg from '../assets/bcitenergy/sticker-bcit2.png';
+import bcitMarcomVideo from '../assets/bcit-marcom/video-m.mp4';
 
 // Images and videos should be placed in src/assets/home
 const items = [
@@ -84,7 +85,7 @@ const styles = `
 @media (max-width: 900px) {
   .recent-works-grid {
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(4, 1fr);
+    grid-template-rows: auto;
     gap: 24px;
     padding: 24px 0;
   }
@@ -386,7 +387,7 @@ const RecentWorks: React.FC = () => {
             glarePosition="all"
             glareBorderRadius="8px"
           >
-            <Link to="/work/savefood" className="work-item" tabIndex={0}>
+            <Link to="/work/bcit" className="work-item" tabIndex={0}>
               <div className="work-label">Campaign</div>
               <div className="work-media-container">
                 <img src={bcitStickerImg} alt="BCIT Energy Awareness" className="work-media" />
@@ -394,6 +395,37 @@ const RecentWorks: React.FC = () => {
               <div className="work-info-box">
                 <div className="work-info-line"><b>Project:</b> BCIT Energy Awareness</div>
                 <div className="work-info-line"><b>Timeline:</b> 4 weeks</div>
+                <div className="work-info-line"><b>Year:</b> 2025</div>
+              </div>
+            </Link>
+          </Tilt>
+        </motion.div>
+
+        {/* BCIT Marketing — beside BCIT Energy */}
+        <motion.div variants={itemVariants}>
+          <Tilt
+            tiltMaxAngleX={20}
+            tiltMaxAngleY={20}
+            scale={1.08}
+            glareEnable={true}
+            glareMaxOpacity={0.4}
+            glareColor="#ffffff"
+            glarePosition="all"
+            glareBorderRadius="8px"
+          >
+            <Link to="/work/bcit-marketing" className="work-item" tabIndex={0}>
+              <div className="work-label">Branding</div>
+              <div className="work-media-container">
+                <LazyVideo
+                  src={bcitMarcomVideo}
+                  autoPlay loop muted playsInline
+                  objectFit="cover"
+                  style={{ width: '100%', height: '100%' }}
+                />
+              </div>
+              <div className="work-info-box">
+                <div className="work-info-line"><b>Project:</b> BCIT Marketing team</div>
+                <div className="work-info-line"><b>Timeline:</b> 5 weeks</div>
                 <div className="work-info-line"><b>Year:</b> 2025</div>
               </div>
             </Link>

@@ -236,7 +236,7 @@ const projects = [
       type: 'image',
       src: bcitImage
     },
-    path: '/work/savefood',
+    path: '/work/bcit',
     software: [
       { name: 'Illustrator', icon: illustratorIcon },
       { name: 'Photoshop', icon: photoshopIcon },
