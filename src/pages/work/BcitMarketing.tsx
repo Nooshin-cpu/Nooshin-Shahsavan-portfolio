@@ -532,7 +532,7 @@ const VideoLabel = styled.p`
   color: rgba(255,255,255,0.5);
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  text-align: center;
+  text-align: left;
   margin: 1rem 0 0;
 `;
 

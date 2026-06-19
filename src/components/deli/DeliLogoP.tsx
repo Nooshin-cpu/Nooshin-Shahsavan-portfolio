@@ -29,7 +29,7 @@ const Title = styled.h2`
   color: #181818;
   margin-bottom: 1.2rem;
   letter-spacing: -0.03em;
-  text-align: left;
+  text-align: center;
   @media (max-width: 900px) {
     font-size: 1.6rem;
   }

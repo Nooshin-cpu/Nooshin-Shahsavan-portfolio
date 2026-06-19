@@ -8,7 +8,7 @@ const MockupSection = styled.section`
   background: #fafaf8;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   padding: 100px clamp(1.5rem, 5vw, 4rem) 80px;
   
   @media (max-width: 1200px) {

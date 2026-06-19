@@ -28,11 +28,11 @@ const MenuContainer = styled.div`
 `;
 
 const MenuTitle = styled.div`
-  font-size: 0.75rem;
-  font-weight: 900;
+  font-size: 0.7rem;
+  font-weight: 700;
   color: #000;
   text-transform: uppercase;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.12em;
   margin-bottom: 1.2rem;
 `;
 
@@ -77,7 +77,7 @@ const WorksNavMenu: React.FC = () => {
 
   return (
     <MenuContainer>
-      <MenuTitle>List of Projects</MenuTitle>
+      <MenuTitle>Works</MenuTitle>
       {projects.map(p => {
         const active = pathname === p.path;
         return (

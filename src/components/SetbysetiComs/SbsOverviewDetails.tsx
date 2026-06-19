@@ -6,7 +6,7 @@ const DetailsSection = styled.section`
   background: #fafaf8;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   padding: 60px clamp(0.75rem, 2vw, 1.5rem) 40px;
   @media (max-width: 900px) {
     padding: 16px 0 8px 0;
@@ -23,7 +23,7 @@ const DetailsText = styled.p`
   line-height: 1.82;
   max-width: 680px;
   margin: 0 auto;
-  text-align: left;
+  text-align: center;
   @media (max-width: 900px) {
     max-width: 90vw;
   }
@@ -37,7 +37,7 @@ const AimLine = styled.div`
   color: #fabfb7;
   font-weight: 400;
   margin-top: 1.2rem;
-  text-align: left;
+  text-align: center;
   letter-spacing: 0.01em;
   @media (max-width: 900px) {
     font-size: 1rem;

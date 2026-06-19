@@ -44,6 +44,7 @@ const PageBg = styled.div`
   inset: 0;
   z-index: 0;
   padding-top: 80px;
+  text-align: center;
   @media (max-width: 600px) {
     padding-top: 60px;
   }
@@ -53,6 +54,9 @@ const GlobalStyle = createGlobalStyle`
   body {
     background: #fff;
     overflow-x: hidden;
+  }
+  p, h1, h2, h3, h4, h5, h6, li {
+    text-align: center !important;
   }
 `;
 

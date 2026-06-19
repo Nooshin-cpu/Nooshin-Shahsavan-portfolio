@@ -6,7 +6,7 @@ const MinimalSection = styled.section`
   #fafaf8;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   justify-content: flex-start;
   padding: 100px clamp(1.5rem, 5vw, 4rem) 80px;
 `;
@@ -17,7 +17,7 @@ const Title = styled.h1`
   color: #181818;
   margin-bottom: 1.2rem;
   letter-spacing: -0.03em;
-  text-align: left;
+  text-align: center;
 `;
 
 const Description = styled.p`
@@ -27,7 +27,7 @@ const Description = styled.p`
   line-height: 1.82;
   max-width: 680px;
   margin: 0 0 2.2rem 0;
-  text-align: left;
+  text-align: center;
 `;
 
 const ImageWrapper = styled.div`
@@ -55,7 +55,7 @@ const SectionLabel = styled.span`
   text-transform: uppercase;
   letter-spacing: 0.05em;
   margin-bottom: 0.35em;
-  text-align: left;
+  text-align: center;
 `;
 
 const BodyText = styled.p`
@@ -65,7 +65,7 @@ const BodyText = styled.p`
   line-height: 1.82;
   max-width: 680px;
   margin: 0 0 2.2rem 0;
-  text-align: left;
+  text-align: center;
 `;
 
 const Highlight = styled.span`

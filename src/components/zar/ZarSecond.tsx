@@ -8,7 +8,7 @@ const MinimalSection = styled.section`
   background: #fafaf8;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   justify-content: flex-start;
   padding: 100px clamp(1.5rem, 5vw, 4rem) 80px;
   @media (max-width: 900px) {
@@ -25,7 +25,7 @@ const Title = styled.h1`
   color: #181818;
   margin-bottom: 1.2rem;
   letter-spacing: -0.03em;
-  text-align: left;
+  text-align: center;
 `;
 
 const Description = styled.p`
@@ -35,7 +35,7 @@ const Description = styled.p`
   line-height: 1.82;
   max-width: 680px;
   margin: 0 0 2.2rem 0;
-  text-align: left;
+  text-align: center;
   @media (max-width: 900px) {
     max-width: 90vw;
   }
@@ -74,7 +74,7 @@ const AccentLine = styled.div`
   color: rgb(177, 67, 220);
   font-size: 1.02rem;
   margin: 2.2rem auto 0 auto;
-  text-align: left;
+  text-align: center;
   letter-spacing: 0.01em;
   width: auto;
   white-space: nowrap;

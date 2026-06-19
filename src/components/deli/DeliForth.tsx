@@ -7,7 +7,7 @@ const MinimalSection = styled.section`
   background: #fafaf8;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   justify-content: flex-start;
   padding: 100px clamp(1.5rem, 5vw, 4rem) 80px;
   @media (max-width: 900px) {
@@ -24,7 +24,7 @@ const Title = styled.h2`
   color: #181818;
   margin-bottom: 1.2rem;
   letter-spacing: -0.03em;
-  text-align: left;
+  text-align: center;
   @media (max-width: 900px) {
     font-size: 1.6rem;
   }
@@ -40,7 +40,7 @@ const Description = styled.div`
   line-height: 1.82;
   max-width: 680px;
   margin: 0 0 2.2rem 0;
-  text-align: left;
+  text-align: center;
   @media (max-width: 900px) {
     max-width: 90vw;
   }

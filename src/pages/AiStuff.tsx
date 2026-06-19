@@ -506,7 +506,7 @@ const FocusItem = styled.li`
 const ReflectionWrap = styled.div`
   max-width: 760px;
   margin: 0 auto;
-  text-align: center;
+  text-align: left;
 `;
 
 const ReflectionQuote = styled.blockquote`
@@ -534,7 +534,7 @@ const SkillsWrap = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 0.7rem;
-  justify-content: center;
+  justify-content: flex-start;
   margin-top: 2.5rem;
 `;
 
@@ -950,18 +950,18 @@ const AiStuff: React.FC = () => {
             <Container>
               <Reveal>
                 <ReflectionWrap>
-                  <Overline style={{ display: 'block', textAlign: 'center', marginBottom: '2rem' }}>
+                  <Overline style={{ display: 'block', textAlign: 'left', marginBottom: '2rem' }}>
                     AI + Creativity
                   </Overline>
                   <ReflectionQuote>
                     AI accelerates ideation — but storytelling, design thinking, and creative judgment remain irreplaceable.
                   </ReflectionQuote>
-                  <BodyText style={{ textAlign: 'center', margin: '0 auto 1.2rem', maxWidth: '640px' }}>
+                  <BodyText style={{ textAlign: 'left', margin: '0 0 1.2rem', maxWidth: '640px' }}>
                     Artificial Intelligence has become a valuable tool within my creative workflow,
                     allowing me to rapidly prototype ideas, generate visual concepts, and explore
                     multiple creative directions efficiently.
                   </BodyText>
-                  <BodyText style={{ textAlign: 'center', margin: '0 auto 3rem', maxWidth: '640px' }}>
+                  <BodyText style={{ textAlign: 'left', margin: '0 0 3rem', maxWidth: '640px' }}>
                     While AI accelerates production and ideation, the success of each project still
                     relies on strong design thinking, storytelling, editing, and creative
                     decision-making. These projects demonstrate how AI can be combined with

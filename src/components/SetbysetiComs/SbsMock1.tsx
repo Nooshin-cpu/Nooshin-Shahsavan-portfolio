@@ -7,7 +7,7 @@ const MockupSection = styled.section`
   background: #fafaf8;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   padding: 100px clamp(1.5rem, 5vw, 4rem) 80px;
   
   @media (max-width: 1200px) {
@@ -33,7 +33,7 @@ const SectionTitle = styled.h2`
   color: #181818;
   margin-bottom: 2.2rem;
   letter-spacing: -0.03em;
-  text-align: left;
+  text-align: center;
   
   @media (max-width: 900px) {
     margin-bottom: 1.8rem;
