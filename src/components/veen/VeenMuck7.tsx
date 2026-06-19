@@ -5,7 +5,7 @@ import veen3Img from "../../assets/veen/veen3.jpg";
 const Section = styled.section`
   width: 70vw;
   height: auto;
-  background: #fff;
+  background: #fafaf8;
   display: flex;
   justify-content: center;
   align-items: center;

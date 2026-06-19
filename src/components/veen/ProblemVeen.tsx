@@ -42,33 +42,31 @@ const challenges = [
 ];
 
 const MinimalSection = styled.section`
-  width: 100%;
-  min-height: 100vh;
-  background: #fff;
+  #fafaf8;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 48px 0 32px 0;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 100px clamp(1.5rem, 5vw, 4rem) 80px;
 `;
 
 const Title = styled.h2`
-  font-size: 2.1rem;
-  font-weight: 600;
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-weight: 700;
   color: #181818;
   margin-bottom: 1.2rem;
-  letter-spacing: -1px;
-  text-align: center;
+  letter-spacing: -0.03em;
+  text-align: left;
 `;
 
 const Description = styled.p`
-  font-size: 1.08rem;
+  font-size: clamp(1rem, 1.5vw, 1.12rem);
   color: #444;
   font-weight: 400;
-  line-height: 1.5;
-  max-width: 480px;
-  margin: 0 auto 2.2rem auto;
-  text-align: center;
+  line-height: 1.82;
+  max-width: 680px;
+  margin: 0 0 2.2rem 0;
+  text-align: left;
 `;
 
 const ChallengesGrid = styled.div`
@@ -82,8 +80,8 @@ const ChallengesGrid = styled.div`
 const ChallengeCard = styled.div`
   min-width: 180px;
   max-width: 240px;
-  background: #fff;
-  border-radius: 1.2rem;
+  background: #fafaf8;
+  border-radius: 16px;
   border: 2px solid #9ed4d1;
   box-shadow: none;
   padding: 1.5rem 1.2rem;
@@ -104,16 +102,16 @@ const ChallengeTitle = styled.div`
   margin-bottom: 0.5em;
   text-transform: uppercase;
   letter-spacing: 0.04em;
-  text-align: center;
+  text-align: left;
 `;
 
 const ChallengeDesc = styled.div`
   font-weight: 400;
-  font-size: 1.08rem;
+  font-size: clamp(1rem, 1.5vw, 1.12rem);
   color: #222;
-  line-height: 1.5;
+  line-height: 1.82;
   letter-spacing: -0.1px;
-  text-align: center;
+  text-align: left;
 `;
 
 function ProblemVeen() {

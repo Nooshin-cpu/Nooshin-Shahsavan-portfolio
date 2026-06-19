@@ -23,7 +23,7 @@ const video2     = new URL('../../assets/bcit-marcom/bcit-video-m2.mp4',   impor
 // ─── Accent ───────────────────────────────────────────────────────────────────
 const ACCENT = '#1b3a6e';
 
-// ─── Framer variants (shared design system) ───────────────────────────────────
+// ─── Framer variants ──────────────────────────────────────────────────────────
 const revealY: Variants = {
   hidden:  { opacity: 0, y: 40 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.75, ease: [0.22, 1, 0.36, 1] } },
@@ -200,7 +200,7 @@ const HeroEyebrowText = styled.span`
 `;
 
 const HeroTitle = styled(motion.h1)`
-  font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+  font-size: clamp(2.2rem, 5vw, 4rem);
   font-weight: 900;
   color: #0d0d0d;
   letter-spacing: -0.03em;

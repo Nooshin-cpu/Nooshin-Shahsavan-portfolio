@@ -4,50 +4,42 @@ import strategyImg from "../../assets/zar/moodboard-zar.png";
 
 const MinimalSection = styled.section`
   width: 100vw;
-  min-height: 100vh;
-  background: #fff;
+  min-height: auto;
+  background: #fafaf8;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 48px 0 32px 0;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 100px clamp(1.5rem, 5vw, 4rem) 80px;
   @media (max-width: 900px) {
-    padding: 32px 0 24px 0;
+    padding: 80px clamp(1rem, 3vw, 2rem) 60px;
   }
   @media (max-width: 600px) {
-    padding: 18px 0 12px 0;
+    padding: 60px clamp(0.75rem, 2vw, 1.5rem) 40px;
   }
 `;
 
 const Title = styled.h1`
-  font-size: 2.4rem;
-  font-weight: 600;
+  font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+  font-weight: 700;
   color: #181818;
   margin-bottom: 1.2rem;
-  letter-spacing: -1px;
-  text-align: center;
-  @media (max-width: 900px) {
-    font-size: 2rem;
-  }
-  @media (max-width: 600px) {
-    font-size: 1.4rem;
-  }
+  letter-spacing: -0.03em;
+  text-align: left;
 `;
 
 const Description = styled.p`
-  font-size: 1.08rem;
+  font-size: clamp(1rem, 1.5vw, 1.12rem);
   color: #444;
   font-weight: 400;
-  line-height: 1.5;
-  max-width: 480px;
-  margin: 0 auto 2.2rem auto;
-  text-align: center;
+  line-height: 1.82;
+  max-width: 680px;
+  margin: 0 0 2.2rem 0;
+  text-align: left;
   @media (max-width: 900px) {
-    font-size: 1rem;
     max-width: 90vw;
   }
   @media (max-width: 600px) {
-    font-size: 0.98rem;
     margin-bottom: 1.2rem;
   }
 `;
@@ -55,11 +47,11 @@ const Description = styled.p`
 const ImageWrapper = styled.div`
   width: 340px;
   max-width: 90vw;
-  margin: 0 auto 2.2rem auto;
+  margin: 0 0 2.2rem 0;
   border-radius: 16px;
   overflow: hidden;
   background: #f3f3f3;
-  box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.07);
   @media (max-width: 900px) {
     width: 250px;
     max-width: 95vw;
@@ -82,7 +74,7 @@ const AccentLine = styled.div`
   color: rgb(177, 67, 220);
   font-size: 1.02rem;
   margin: 2.2rem auto 0 auto;
-  text-align: center;
+  text-align: left;
   letter-spacing: 0.01em;
   width: auto;
   white-space: nowrap;

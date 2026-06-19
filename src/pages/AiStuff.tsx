@@ -44,7 +44,7 @@ const revealScale: Variants = {
 
 const stagger: Variants = {
   hidden:  {},
-  visible: { transition: { staggerChildren: 0.13 } },
+  visible: { transition: { staggerChildren: 0.12 } },
 };
 
 // ─── Reveal wrapper ──────────────────────────────────────────────────────────
@@ -283,7 +283,7 @@ const HeroTagDot = styled.span`
 `;
 
 const HeroTitle = styled(motion.h1)`
-  font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+  font-size: clamp(2.4rem, 6vw, 4.4rem);
   font-weight: 900;
   color: #0d0d0d;
   letter-spacing: -0.04em;

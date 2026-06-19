@@ -4,9 +4,7 @@ import styled from 'styled-components';
 import envelopImg from '../../assets/veen/envelop.png';
 
 const EnvelopeContainer = styled.div`
-  width: 100%;
-  height: auto;
-  background: #fff;
+  #fafaf8;
   display: flex;
   justify-content: center;
   align-items: center;

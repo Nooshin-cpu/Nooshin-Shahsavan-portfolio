@@ -5,26 +5,26 @@ import mockupImg2 from "../../assets/sbsimg/sbs-box.jpg";
 
 const MockupSection = styled.section`
   width: 100vw;
-  background: #fff;
+  background: #fafaf8;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 48px 0 32px 0;
+  align-items: flex-start;
+  padding: 100px clamp(1.5rem, 5vw, 4rem) 80px;
   
   @media (max-width: 1200px) {
-    padding: 40px 0 28px 0;
+    padding: 80px clamp(1rem, 3vw, 2rem) 60px;
   }
   
   @media (max-width: 900px) {
-    padding: 32px 0 24px 0;
+    padding: 80px clamp(1rem, 3vw, 2rem) 60px;
   }
   
   @media (max-width: 600px) {
-    padding: 24px 0 16px 0;
+    padding: 60px clamp(0.75rem, 2vw, 1.5rem) 40px;
   }
   
   @media (max-width: 480px) {
-    padding: 20px 0 12px 0;
+    padding: 40px clamp(0.75rem, 2vw, 1.5rem) 30px;
   }
 `;
 
@@ -65,20 +65,20 @@ const TwoColumnGrid = styled.div`
 const PairedMockup = styled.img`
   width: calc(50% - 1rem);
   max-width: calc(50% - 1rem);
-  border-radius: 1.5rem;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.07);
   object-fit: contain;
   
   @media (max-width: 1200px) {
     width: calc(50% - 0.75rem);
     max-width: calc(50% - 0.75rem);
-    border-radius: 1.2rem;
+    border-radius: 16px;
   }
   
   @media (max-width: 900px) {
     width: 44vw;
     max-width: 44vw;
-    border-radius: 1rem;
+    border-radius: 16px;
   }
   
   @media (max-width: 600px) {

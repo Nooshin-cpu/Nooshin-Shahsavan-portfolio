@@ -35,7 +35,7 @@ const CircleContainer = styled(motion.div)`
   font-family: 'Inter', Arial, Helvetica, sans-serif;
   font-weight: 800;
   color: #000;
-  text-align: center;
+  text-align: left;
   cursor: pointer;
   transform-origin: 50% 50%;
   -webkit-transform-origin: 50% 50%;

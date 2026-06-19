@@ -6,7 +6,7 @@ import card from "../../assets/veen/card.png";
 const Section = styled.section`
   width: 70vw;
   height: auto;
-  background: #fff;
+  background: #fafaf8;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -39,7 +39,7 @@ const GridContainer = styled.div`
 
 const ImageContainer = styled.div`
   width: 100%;
-  height: 100vh;
+  height: auto;
   overflow: hidden;
   @media (max-width: 900px) {
     height: auto;
@@ -54,7 +54,7 @@ const StyledImage = styled.img`
   height: 100%;
   object-fit: cover;
   display: block;
-  border-radius: 1.2rem;
+  border-radius: 16px;
   @media (max-width: 900px) {
     width: 100vw;
     height: auto;

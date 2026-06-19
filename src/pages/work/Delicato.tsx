@@ -60,7 +60,7 @@ const SectionTitle = styled.h2`
   width: 100vw;
   text-align: center;
   color: #111;
-  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-size: 2.4rem;
   font-weight: 700;
   margin: 4rem 0 2rem 0;
   letter-spacing: 0.04em;

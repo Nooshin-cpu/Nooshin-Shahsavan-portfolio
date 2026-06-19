@@ -66,7 +66,7 @@ const GlobalStyle = createGlobalStyle`
 const SectionTitle = styled.h2`
   width: 100vw;
   text-align: center;
-  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-size: 2.1rem;
   font-weight: 700;
   color: #181818;
   margin: 2.5rem 0 1.5rem 0;

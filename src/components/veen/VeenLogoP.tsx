@@ -21,7 +21,7 @@ const BG = styled.div`
 
 const Title = styled.h2`
   width: 100%;
-  text-align: center;
+  text-align: left;
   color: #181818;
   font-size: 2.2rem;
   font-weight: 700;
@@ -64,7 +64,7 @@ const ImgCard = styled.div`
   width: 260px;
   height: 260px;
   background: #fff;
-  border-radius: 1.2rem;
+  border-radius: 16px;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -96,10 +96,10 @@ const Explanation = styled.p`
   font-size: 1rem;
   color: #444;
   font-weight: 400;
-  line-height: 1.5;
-  max-width: 480px;
+  line-height: 1.82;
+  max-width: 680px;
   margin: 2.2rem auto 0 auto;
-  text-align: center;
+  text-align: left;
 `;
 
 function VeenLogoP() {

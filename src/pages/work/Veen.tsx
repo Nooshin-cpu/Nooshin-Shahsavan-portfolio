@@ -96,7 +96,7 @@ const Veen: React.FC = () => {
             width: '70vw',
             margin: '2.5rem auto 1.5rem auto',
             textAlign: 'center',
-            fontSize: 'clamp(1.8rem, 3.5vw, 2.6rem)',
+            fontSize: '2.5rem',
             fontWeight: 700,
             letterSpacing: '0.04em',
             color: '#222',

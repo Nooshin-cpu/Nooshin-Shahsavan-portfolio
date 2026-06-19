@@ -3,9 +3,7 @@ import styled from "styled-components";
 import mveen1Img from "../../assets/veen/mveen1.jpg";
 
 const Section = styled.section`
-  width: 100%;
-  height: auto;
-  background: #fff;
+  #fafaf8;
   display: flex;
   justify-content: center;
   align-items: center;

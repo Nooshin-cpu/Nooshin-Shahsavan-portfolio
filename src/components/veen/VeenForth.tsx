@@ -5,9 +5,7 @@ import logo2 from "../../assets/veen/veenlogo-2.jpg";
 import logo3 from "../../assets/veen/veenlogo-3.jpg";
 
 const Section = styled.section`
-  width: 100%;
-  min-height: 100vh;
-  background: #fff;
+  #fafaf8;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -30,7 +28,7 @@ const ImgBox = styled.img`
   height: 260px;
   object-fit: cover;
   background: #dadada;
-  border-radius: 1.2rem;
+  border-radius: 16px;
   display: block;
   transition: transform 0.18s, box-shadow 0.18s;
   box-shadow: 0 2px 16px rgba(80, 79, 81, 0.08);

@@ -3,8 +3,7 @@ import styled from "styled-components";
 import cardImg from "../../assets/deli/carrd.png";
 
 const Section = styled.section`
-  width: 100vw;
-  background: #fff;
+  #fafaf8;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -40,8 +39,8 @@ const Image = styled.img`
   width: 100%;
   height: auto;
   object-fit: cover;
-  border-radius: 1.2rem;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.07);
 `;
 
 const DeliCardImage: React.FC = () => {

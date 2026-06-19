@@ -82,7 +82,7 @@ const GlobalStyle = createGlobalStyle`
 const SectionTitle = styled.h2`
   width: 100vw;
   text-align: center;
-  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-size: 2.5rem;
   font-weight: 800;
   color: #181818;
   margin: 3rem 0 2rem 0;
@@ -122,7 +122,7 @@ const ProjectSection = styled.section`
 `;
 
 const MainTitle = styled.h1`
-  font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+  font-size: 4rem;
   font-weight: 900;
   background: linear-gradient(135deg, #181818 0%, #374151 100%);
   -webkit-background-clip: text;
@@ -132,38 +132,49 @@ const MainTitle = styled.h1`
   letter-spacing: -2px;
   text-align: center;
   animation: ${scaleIn} 1s ease-out;
+  
+  @media (max-width: 900px) {
+    font-size: 3rem;
+  }
+  @media (max-width: 600px) {
+    font-size: 2.5rem;
+  }
 `;
 
 const MainDescription = styled.p`
-  font-size: clamp(1rem, 1.5vw, 1.12rem);
+  font-size: 1.2rem;
   color: #6b7280;
   margin-bottom: 4rem;
   text-align: center;
-  line-height: 1.82;
+  line-height: 1.7;
   max-width: 700px;
   font-weight: 400;
   
   @media (max-width: 900px) {
+    font-size: 1.1rem;
     max-width: 90vw;
   }
   @media (max-width: 600px) {
+    font-size: 1rem;
     margin-bottom: 3rem;
   }
 `;
 
 const CategoryDescription = styled.p`
-  font-size: clamp(1rem, 1.5vw, 1.12rem);
+  font-size: 1.1rem;
   color: #6b7280;
   font-weight: 500;
-  line-height: 1.82;
+  line-height: 1.6;
   max-width: 600px;
   margin: 0 auto 3rem auto;
   text-align: center;
   
   @media (max-width: 900px) {
+    font-size: 1rem;
     max-width: 90vw;
   }
   @media (max-width: 600px) {
+    font-size: 0.95rem;
     margin-bottom: 2rem;
   }
 `;

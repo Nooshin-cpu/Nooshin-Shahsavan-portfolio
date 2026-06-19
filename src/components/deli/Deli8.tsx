@@ -4,7 +4,7 @@ import deliImage from "../../assets/deli/deli9.jpg";
 
 const Section = styled.section`
   width: 100vw;
-  background: #fff;
+  background: #fafaf8;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -43,8 +43,8 @@ const Image = styled.img`
   object-fit: cover;
   display: block;
   margin: 0 auto;
-  border-radius: 1.2rem;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.07);
   @media (max-width: 900px) {
     width: 90vw;
     max-width: 90vw;

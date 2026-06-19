@@ -10,7 +10,7 @@ const Container = styled.div`
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
   overflow: hidden;
-  background: #fff;
+  background: #fafaf8;
   margin: 2.5rem auto;
   @media (max-width: 900px) {
     width: 98vw;

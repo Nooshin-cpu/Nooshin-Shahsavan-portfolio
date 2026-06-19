@@ -3,43 +3,41 @@ import styled from "styled-components";
 import strategyImg from "../../assets/veen/brand-strategy.png";
 
 const MinimalSection = styled.section`
-  width: 100%;
-  min-height: 100vh;
-  background: #fff;
+  #fafaf8;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 48px 0 32px 0;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 100px clamp(1.5rem, 5vw, 4rem) 80px;
 `;
 
 const Title = styled.h1`
-  font-size: 2.4rem;
-  font-weight: 600;
+  font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+  font-weight: 700;
   color: #181818;
   margin-bottom: 1.2rem;
-  letter-spacing: -1px;
-  text-align: center;
+  letter-spacing: -0.03em;
+  text-align: left;
 `;
 
 const Description = styled.p`
-  font-size: 1.08rem;
+  font-size: clamp(1rem, 1.5vw, 1.12rem);
   color: #444;
   font-weight: 400;
-  line-height: 1.5;
-  max-width: 480px;
-  margin: 0 auto 2.2rem auto;
-  text-align: center;
+  line-height: 1.82;
+  max-width: 680px;
+  margin: 0 0 2.2rem 0;
+  text-align: left;
 `;
 
 const ImageWrapper = styled.div`
   width: 340px;
   max-width: 90vw;
-  margin: 0 auto 2.2rem auto;
+  margin: 0 0 2.2rem 0;
   border-radius: 16px;
   overflow: hidden;
   background: #f3f3f3;
-  box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.07);
 `;
 
 const StyledImg = styled.img`

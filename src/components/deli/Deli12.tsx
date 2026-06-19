@@ -4,7 +4,7 @@ import deliImage from "../../assets/deli/delistory2.png";
 
 const Section = styled.section`
   width: 100vw;
-  background: #fff;
+  background: #fafaf8;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -43,8 +43,8 @@ const Image = styled.img`
   width: 100%;
   height: auto;
   object-fit: cover;
-  border-radius: 1.2rem;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.07);
 `;
 
 const Deli12: React.FC = () => {
