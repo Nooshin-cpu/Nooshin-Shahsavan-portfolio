@@ -16,7 +16,7 @@ const items = [
   {
     type: "video",
     src: sbsHomeVideo,
-    label: "Branding/Print",
+    label: "Fashion",
     
     details: [
       { label: "Project Title:", value: "S.B.S" },
@@ -111,9 +111,10 @@ const styles = `
     margin-bottom: 1.2rem;
   }
   .work-label {
-    font-size: 0.85rem;
+    font-size: 0.72rem;
     top: 10px;
     left: 10px;
+    padding: 0.25rem 0.6rem;
   }
   .work-info-box {
     font-size: 0.85rem;
@@ -141,14 +142,19 @@ const styles = `
 }
 .work-label {
   position: absolute;
-  top: 16px;
-  left: 16px;
+  top: 14px;
+  left: 14px;
   z-index: 2;
-  font-size: 1rem;
-  font-weight: 400;
-  color: #222;
-  letter-spacing: 0.04em;
-  background: transparent;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #111;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  padding: 0.3rem 0.75rem;
+  border-radius: 100px;
   pointer-events: none;
 }
 .work-media-container {
@@ -415,7 +421,7 @@ const RecentWorks: React.FC = () => {
             glareBorderRadius="8px"
           >
             <Link to="/work/bcit-marketing" className="work-item" tabIndex={0}>
-              <div className="work-label">Branding</div>
+              <div className="work-label">Marketing</div>
               <div className="work-media-container">
                 <LazyVideo
                   src={bcitMarcomVideo}
@@ -446,7 +452,7 @@ const RecentWorks: React.FC = () => {
             glareBorderRadius="8px"
           >
             <Link to="/ai" className="work-item" tabIndex={0}>
-              <div className="work-label">Branding</div>
+              <div className="work-label">AI</div>
               <div className="work-media-container">
                 <img src={aiThumbnail} alt="AI Experience" className="work-media" />
               </div>
