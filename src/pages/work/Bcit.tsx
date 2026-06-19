@@ -2,11 +2,9 @@ import React, { useRef } from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
 import { motion, useInView, type Variants } from 'framer-motion';
 import SEO from '../../components/SEO';
-import MenuWork from '../../components/MenuWork';
-import '../../components/MenuWork.css';
 import { EmailFooter } from '../../components/Footer';
 import TopScrollButton from '../../components/TopScrollButton';
-import BcitStickyMenu from '../../components/BcitStickyMenu';
+import WorksNavMenu from '../../components/WorksNavMenu';
 import LazyVideo from '../../components/LazyVideo';
 
 // ─── Asset imports ────────────────────────────────────────────────────────────
@@ -22,20 +20,20 @@ const poster      = new URL('../../assets/bcitenergy/poster-bcit.png',     impor
 const igVideo1    = new URL('../../assets/bcitenergy/ig-bcit1.mp4',        import.meta.url).href;
 const igVideo2    = new URL('../../assets/bcitenergy/ig-bcit2.mp4',        import.meta.url).href;
 
-// ─── Framer variants ──────────────────────────────────────────────────────────
+// ─── Framer variants (shared design system) ───────────────────────────────────
 const revealY = {
-  hidden:  { opacity: 0, y: 36 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] } },
+  hidden:  { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.75, ease: [0.22, 1, 0.36, 1] } },
 };
 
 const revealScale = {
-  hidden:  { opacity: 0, scale: 0.97 },
-  visible: { opacity: 1, scale: 1, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } },
+  hidden:  { opacity: 0, scale: 0.96 },
+  visible: { opacity: 1, scale: 1, transition: { duration: 0.85, ease: [0.22, 1, 0.36, 1] } },
 };
 
 const staggerContainer: Variants = {
   hidden:  { opacity: 1 },
-  visible: { opacity: 1, transition: { staggerChildren: 0.14 } },
+  visible: { opacity: 1, transition: { staggerChildren: 0.13 } },
 };
 
 // ─── Scroll-aware reveal hook (works inside fixed scroll containers) ──────────
@@ -156,7 +154,7 @@ const HeroWordmark = styled(motion.img)`
 `;
 
 const HeroTitle = styled(motion.h1)`
-  font-size: clamp(2rem, 4.5vw, 3.6rem);
+  font-size: clamp(2.2rem, 4.5vw, 3.8rem);
   font-weight: 900;
   color: #0d0d0d;
   letter-spacing: -0.03em;
@@ -475,7 +473,7 @@ const Bcit: React.FC = () => {
           image="/src/assets/bcitenergy/wordmark-bcit.png"
         />
         <GlobalStyle />
-        <BcitStickyMenu />
+        <WorksNavMenu />
 
         {/* ── HERO ─────────────────────────────────────────────────────────── */}
         <HeroWrap>
@@ -840,8 +838,6 @@ const Bcit: React.FC = () => {
             </Container>
           </Section>
         </div>
-
-        <MenuWork />
         <EmailFooter />
       </PageBg>
       <TopScrollButton />

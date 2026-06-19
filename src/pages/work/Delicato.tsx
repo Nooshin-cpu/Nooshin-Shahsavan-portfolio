@@ -27,9 +27,7 @@ import Deli14 from '../../components/deli/Deli14';
 import Deli15 from '../../components/deli/Deli15';
 
 
-import MenuWork from '../../components/MenuWork';
-import DelicatoStickyMenu from '../../components/DelicatoStickyMenu';
-import '../../components/MenuWork.css';
+import WorksNavMenu from '../../components/WorksNavMenu';
 import { EmailFooter } from '../../components/Footer';
 import TopScrollButton from '../../components/TopScrollButton';
 import BottomScrollButton from '../../components/BottomScrollButton';
@@ -62,7 +60,7 @@ const SectionTitle = styled.h2`
   width: 100vw;
   text-align: center;
   color: #111;
-  font-size: 2.4rem;
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
   font-weight: 700;
   margin: 4rem 0 2rem 0;
   letter-spacing: 0.04em;
@@ -78,7 +76,7 @@ const Delicato: React.FC = () => {
           keywords="Delicato project, brand design, packaging design, logo design, visual identity, Nooshin Shahsavan, design portfolio"
           image="/src/assets/deli/deli-home.png"
         />
-        <DelicatoStickyMenu />
+        <WorksNavMenu />
         <div id="deli-first">
           <DeliFirst />
         </div>
@@ -112,12 +110,6 @@ const Delicato: React.FC = () => {
         <Deli12 />
         <Deli13 />
         </div>
-        
-      
-        
-        
-        
-        <MenuWork />
         <EmailFooter />
       </PageBg>
       <TopScrollButton />

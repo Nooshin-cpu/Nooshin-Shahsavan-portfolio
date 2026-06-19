@@ -19,8 +19,6 @@ import SolutionDayOffNotification from "./SolutionDayOffNotification";
 import FinalLookMakingSchedule from "./FinalLookMakingSchedule";
 import FinalLookDayOff from "./FinalLookDayOff";
 import KeyTakeawaySection from "./KeyTakeawaySection";
-import MenuWork from '../../components/MenuWork';
-import '../../components/MenuWork.css';
 import WorkdayStickyMenu from '../../components/WorkdayStickyMenu';
 import { EmailFooter } from '../../components/Footer';
 import TopScrollButton from '../../components/TopScrollButton';
@@ -725,7 +723,6 @@ const Workday: React.FC = () => (
             }
           `}
         </style>
-        <MenuWork />
       </div>
       <EmailFooter />
     </PageBg>

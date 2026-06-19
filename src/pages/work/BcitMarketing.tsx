@@ -2,11 +2,9 @@ import React, { useRef } from 'react';
 import styled, { createGlobalStyle, keyframes } from 'styled-components';
 import { motion, useInView, type Variants } from 'framer-motion';
 import SEO from '../../components/SEO';
-import MenuWork from '../../components/MenuWork';
-import '../../components/MenuWork.css';
 import { EmailFooter } from '../../components/Footer';
 import TopScrollButton from '../../components/TopScrollButton';
-import BcitMarketingStickyMenu from '../../components/BcitMarketingStickyMenu';
+import WorksNavMenu from '../../components/WorksNavMenu';
 import LazyVideo from '../../components/LazyVideo';
 
 // ─── Asset imports ────────────────────────────────────────────────────────────
@@ -25,7 +23,7 @@ const video2     = new URL('../../assets/bcit-marcom/bcit-video-m2.mp4',   impor
 // ─── Accent ───────────────────────────────────────────────────────────────────
 const ACCENT = '#1b3a6e';
 
-// ─── Framer variants ──────────────────────────────────────────────────────────
+// ─── Framer variants (shared design system) ───────────────────────────────────
 const revealY: Variants = {
   hidden:  { opacity: 0, y: 40 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.75, ease: [0.22, 1, 0.36, 1] } },
@@ -202,7 +200,7 @@ const HeroEyebrowText = styled.span`
 `;
 
 const HeroTitle = styled(motion.h1)`
-  font-size: clamp(2.2rem, 5vw, 4rem);
+  font-size: clamp(2.2rem, 4.5vw, 3.8rem);
   font-weight: 900;
   color: #0d0d0d;
   letter-spacing: -0.03em;
@@ -616,7 +614,7 @@ const BcitMarketing: React.FC = () => {
         image={bannerImg}
       />
 
-      <BcitMarketingStickyMenu />
+      <WorksNavMenu />
 
       <PageBg data-page-scroll>
 
@@ -1055,8 +1053,6 @@ const BcitMarketing: React.FC = () => {
             </Container>
           </Section>
         </div>
-
-        <MenuWork />
         <EmailFooter />
       </PageBg>
 

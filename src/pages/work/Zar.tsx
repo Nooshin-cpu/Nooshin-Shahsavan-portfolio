@@ -18,11 +18,9 @@ import ZarMock8 from "../../components/zar/Zarmock8";
 import ZarLogoP from "../../components/zar/ZarLogoP";
 import ProblemZar from "../../components/zar/ProblemZar";
 import PackZarImage from "../../components/zar/PackZarImage";
-import MenuWork from '../../components/MenuWork';
-import ZarStickyMenu from '../../components/ZarStickyMenu';
+import WorksNavMenu from '../../components/WorksNavMenu';
 import TopScrollButton from '../../components/TopScrollButton';
 import BottomScrollButton from '../../components/BottomScrollButton';
-import '../../components/MenuWork.css';
 import styled, { createGlobalStyle } from 'styled-components';
 import { EmailFooter } from '../../components/Footer';
 
@@ -60,7 +58,7 @@ const GlobalStyle = createGlobalStyle`
 const SectionTitle = styled.h2`
   width: 100vw;
   text-align: center;
-  font-size: 2.1rem;
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
   font-weight: 700;
   color: #181818;
   margin: 2.5rem 0 1.5rem 0;
@@ -77,7 +75,7 @@ const Zar: React.FC = () => (
         image="/src/assets/zar/banner-zar.png"
       />
       <GlobalStyle />
-      <ZarStickyMenu />
+      <WorksNavMenu />
       
       <div id="zar-overview">
         <ZarFirst />
@@ -123,8 +121,6 @@ const Zar: React.FC = () => (
         <ZarMock6/>
         <ZarMock5/>
       </div>
-      
-      <MenuWork />
       <EmailFooter />
     </PageBg>
     <TopScrollButton />

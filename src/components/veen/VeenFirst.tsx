@@ -16,7 +16,7 @@ const MinimalSection = styled.section`
 `;
 
 const Title = styled.h1`
-  font-size: 2.4rem;
+  font-size: clamp(2.2rem, 4.5vw, 3.8rem);
   font-weight: 600;
   color: #181818;
   margin-bottom: 1.2rem;
@@ -25,7 +25,7 @@ const Title = styled.h1`
 `;
 
 const Description = styled.p`
-  font-size: 1.08rem;
+  font-size: clamp(1rem, 1.5vw, 1.12rem);
   color: #444;
   font-weight: 400;
   line-height: 1.5;

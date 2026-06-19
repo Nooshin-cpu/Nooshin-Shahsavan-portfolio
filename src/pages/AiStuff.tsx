@@ -2,11 +2,9 @@ import React, { useRef, useState, useCallback } from 'react';
 import styled, { createGlobalStyle, keyframes } from 'styled-components';
 import { motion, useInView, type Variants } from 'framer-motion';
 import SEO from '../components/SEO';
-import MenuWork from '../components/MenuWork';
-import '../components/MenuWork.css';
 import { EmailFooter } from '../components/Footer';
 import TopScrollButton from '../components/TopScrollButton';
-import AiStickyMenu from '../components/AiStickyMenu';
+import WorksNavMenu from '../components/WorksNavMenu';
 import LazyVideo from '../components/LazyVideo';
 
 // ─── Assets ──────────────────────────────────────────────────────────────────
@@ -46,7 +44,7 @@ const revealScale: Variants = {
 
 const stagger: Variants = {
   hidden:  {},
-  visible: { transition: { staggerChildren: 0.12 } },
+  visible: { transition: { staggerChildren: 0.13 } },
 };
 
 // ─── Reveal wrapper ──────────────────────────────────────────────────────────
@@ -285,7 +283,7 @@ const HeroTagDot = styled.span`
 `;
 
 const HeroTitle = styled(motion.h1)`
-  font-size: clamp(2.4rem, 6vw, 4.4rem);
+  font-size: clamp(2.2rem, 4.5vw, 3.8rem);
   font-weight: 900;
   color: #0d0d0d;
   letter-spacing: -0.04em;
@@ -589,7 +587,7 @@ const AiStuff: React.FC = () => {
         image={emailMarketing}
       />
 
-      <AiStickyMenu />
+      <WorksNavMenu />
 
       {/* Lightbox */}
       {lightboxSrc && (
@@ -986,8 +984,6 @@ const AiStuff: React.FC = () => {
             </Container>
           </Section>
         </div>
-
-        <MenuWork />
         <EmailFooter />
       </PageBg>
 

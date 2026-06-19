@@ -1,8 +1,6 @@
 import React from 'react';
 import styled, { createGlobalStyle, keyframes } from 'styled-components';
 import SEO from '../../components/SEO';
-import MenuWork from '../../components/MenuWork';
-import '../../components/MenuWork.css';
 import TopScrollButton from '../../components/TopScrollButton';
 import { EmailFooter } from '../../components/Footer';
 import FunProjectStickyMenu from '../../components/FunProjectStickyMenu';
@@ -84,7 +82,7 @@ const GlobalStyle = createGlobalStyle`
 const SectionTitle = styled.h2`
   width: 100vw;
   text-align: center;
-  font-size: 2.5rem;
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
   font-weight: 800;
   color: #181818;
   margin: 3rem 0 2rem 0;
@@ -124,7 +122,7 @@ const ProjectSection = styled.section`
 `;
 
 const MainTitle = styled.h1`
-  font-size: 4rem;
+  font-size: clamp(2.2rem, 4.5vw, 3.8rem);
   font-weight: 900;
   background: linear-gradient(135deg, #181818 0%, #374151 100%);
   -webkit-background-clip: text;
@@ -134,49 +132,38 @@ const MainTitle = styled.h1`
   letter-spacing: -2px;
   text-align: center;
   animation: ${scaleIn} 1s ease-out;
-  
-  @media (max-width: 900px) {
-    font-size: 3rem;
-  }
-  @media (max-width: 600px) {
-    font-size: 2.5rem;
-  }
 `;
 
 const MainDescription = styled.p`
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 1.5vw, 1.12rem);
   color: #6b7280;
   margin-bottom: 4rem;
   text-align: center;
-  line-height: 1.7;
+  line-height: 1.82;
   max-width: 700px;
   font-weight: 400;
   
   @media (max-width: 900px) {
-    font-size: 1.1rem;
     max-width: 90vw;
   }
   @media (max-width: 600px) {
-    font-size: 1rem;
     margin-bottom: 3rem;
   }
 `;
 
 const CategoryDescription = styled.p`
-  font-size: 1.1rem;
+  font-size: clamp(1rem, 1.5vw, 1.12rem);
   color: #6b7280;
   font-weight: 500;
-  line-height: 1.6;
+  line-height: 1.82;
   max-width: 600px;
   margin: 0 auto 3rem auto;
   text-align: center;
   
   @media (max-width: 900px) {
-    font-size: 1rem;
     max-width: 90vw;
   }
   @media (max-width: 600px) {
-    font-size: 0.95rem;
     margin-bottom: 2rem;
   }
 `;
@@ -507,8 +494,6 @@ const FunProject = () => (
           />
         </VideoContainer>
       </ProjectSection>
-      
-      <MenuWork />
       <EmailFooter />
     </PageBg>
     <TopScrollButton />

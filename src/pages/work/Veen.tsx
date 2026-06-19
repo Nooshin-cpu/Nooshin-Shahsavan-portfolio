@@ -19,9 +19,7 @@ import VeenLogoP from '../../components/veen/VeenLogoP';
 import FlipBook from '../../components/FlipBook';
 
 import ProblemVeen from '../../components/veen/ProblemVeen';
-import MenuWork from '../../components/MenuWork';
-import VeenStickyMenu from '../../components/VeenStickyMenu';
-import '../../components/MenuWork.css';
+import WorksNavMenu from '../../components/WorksNavMenu';
 import { EmailFooter } from '../../components/Footer';
 import VeenScrollButton from '../../components/VeenScrollButton';
 import BottomScrollButton from '../../components/BottomScrollButton';
@@ -68,7 +66,7 @@ const Veen: React.FC = () => {
           keywords="Veen project, brand identity, logo design, visual design, branding, Nooshin Shahsavan, design portfolio"
           image="/src/assets/veen/brand-strategy.png"
         />
-        <VeenStickyMenu />
+        <WorksNavMenu />
         <div id="veen-first">
           <VeenFirst />
         </div>
@@ -98,7 +96,7 @@ const Veen: React.FC = () => {
             width: '70vw',
             margin: '2.5rem auto 1.5rem auto',
             textAlign: 'center',
-            fontSize: '2.5rem',
+            fontSize: 'clamp(1.8rem, 3.5vw, 2.6rem)',
             fontWeight: 700,
             letterSpacing: '0.04em',
             color: '#222',
@@ -111,9 +109,6 @@ const Veen: React.FC = () => {
           <VeenMuck8 />
           <VeenEnvelope />
         </div>
-        
-      
-        <MenuWork />
         <EmailFooter />
       </PageBg>
       <VeenScrollButton />

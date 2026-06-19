@@ -19,8 +19,6 @@ import SbsMock7 from '../../components/SetbysetiComs/SbsMock7';
 import SbsMock71 from '../../components/SetbysetiComs/SbsMock71';
 import SbsIll from '../../components/SetbysetiComs/SbsIll';
 import SbsLogoP from '../../components/SetbysetiComs/SbsLogoP';
-import MenuWork from '../../components/MenuWork';
-import '../../components/MenuWork.css';
 import SbsMock8 from '../../components/SetbysetiComs/SbsMock8';
 import SbsMock9 from '../../components/SetbysetiComs/SbsMock9';
 import SbsMock10 from '../../components/SetbysetiComs/SbsMock10';
@@ -29,7 +27,7 @@ import SbsSocialMedia1 from '../../components/SetbysetiComs/SbsSocialMedia1';
 import SbsSocialMedia2 from '../../components/SetbysetiComs/SbsSocialMedia2';
 import CircleSbs from '../../components/SetbysetiComs/CircleSbs';
 import { EmailFooter } from '../../components/Footer';
-import SbsStickyMenu from '../../components/SbsStickyMenu';
+import WorksNavMenu from '../../components/WorksNavMenu';
 import TopScrollButton from '../../components/TopScrollButton';
 import BottomScrollButton from '../../components/BottomScrollButton';
 
@@ -68,7 +66,7 @@ const GlobalStyle = createGlobalStyle`
 const SectionTitle = styled.h2`
   width: 100vw;
   text-align: center;
-  font-size: 2.1rem;
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
   font-weight: 700;
   color: #181818;
   margin: 2.5rem 0 1.5rem 0;
@@ -86,7 +84,7 @@ const Sbs: React.FC = () => {
           image="/src/assets/sbsimg/banner.png"
         />
         <GlobalStyle />
-        <SbsStickyMenu />
+        <WorksNavMenu />
         
         <div id="sbs-overview">
           <SbsFirst />
@@ -154,8 +152,6 @@ const Sbs: React.FC = () => {
           <SbsMock6/>
           <SbsMock71/>
         </div>
-        
-        <MenuWork />
         <EmailFooter />
       </PageBg>
       <TopScrollButton />
