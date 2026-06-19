@@ -5,7 +5,6 @@ import { ThemeProvider } from './context/ThemeContext';
 import Layout from './components/Layout';
 import Home from './pages/Home';
 import About from './pages/About';
-import Work from './pages/Work';
 import Resume from './pages/Resume';
 
 // Project pages — code-split so their heavy assets only load on demand
@@ -43,7 +42,6 @@ const App: React.FC = () => {
               <Routes>
                 <Route path="/"             element={<Home />} />
                 <Route path="/about"        element={<About />} />
-                <Route path="/work"         element={<Work />} />
                 <Route path="/resume"       element={<Resume />} />
                 <Route path="/work/sbs"     element={<SBS />} />
                 <Route path="/work/veen"    element={<Veen />} />

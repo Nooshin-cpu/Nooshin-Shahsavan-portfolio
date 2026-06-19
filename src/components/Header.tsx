@@ -234,7 +234,6 @@ const Header: React.FC = () => {
         <NavLinks>
           <NavLink to="/">Home</NavLink>
           <NavLink to="/about">About</NavLink>
-          <NavLink to="/work">Work</NavLink>
           <NavLink to="/resume">Resume</NavLink>
         </NavLinks>
         <SocialRow>
@@ -258,8 +257,7 @@ const Header: React.FC = () => {
           <CloseButton aria-label="Close menu" onClick={handleClose}>&times;</CloseButton>
           <MobileNavLink to="/" onClick={handleClose} style={{ '--delay': '0.1s' } as React.CSSProperties}>Home</MobileNavLink>
           <MobileNavLink to="/about" onClick={handleClose} style={{ '--delay': '0.25s' } as React.CSSProperties}>About</MobileNavLink>
-          <MobileNavLink to="/work" onClick={handleClose} style={{ '--delay': '0.4s' } as React.CSSProperties}>Work</MobileNavLink>
-          <MobileNavLink to="/resume" onClick={handleClose} style={{ '--delay': '0.55s' } as React.CSSProperties}>Resume</MobileNavLink>
+          <MobileNavLink to="/resume" onClick={handleClose} style={{ '--delay': '0.4s' } as React.CSSProperties}>Resume</MobileNavLink>
         </MobileMenu>
       </Nav>
     </HeaderContainer>
