@@ -584,9 +584,9 @@ const Bcit: React.FC = () => {
               </Reveal>
 
               <Reveal variants={revealScale}>
-                <FullBleedImg variants={revealScale} initial="hidden" animate="visible">
+                <PosterWrap variants={revealScale} initial="hidden" animate="visible">
                   <img src={moodboard} alt="BCIT Energy Campaign Moodboard" />
-                </FullBleedImg>
+                </PosterWrap>
               </Reveal>
 
               <Reveal>
