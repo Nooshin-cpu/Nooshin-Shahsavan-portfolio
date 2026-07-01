@@ -10,12 +10,11 @@ import LazyVideo from '../../components/LazyVideo';
 // ─── Asset imports ────────────────────────────────────────────────────────────
 const wordmark    = new URL('../../assets/bcitenergy/wordmark-bcit.png',   import.meta.url).href;
 const moodboard   = new URL('../../assets/bcitenergy/moodboard-bcit.png',  import.meta.url).href;
-const banner1     = new URL('../../assets/bcitenergy/banner-bcit1.png',    import.meta.url).href;
 const banner2     = new URL('../../assets/bcitenergy/banner-bcit2.png',    import.meta.url).href;
 const stickersAll = new URL('../../assets/bcitenergy/stickers-bcit.jpg',   import.meta.url).href;
-const sticker1    = new URL('../../assets/bcitenergy/sticker-bcit1.png',   import.meta.url).href;
-const sticker2    = new URL('../../assets/bcitenergy/sticker-bcit2.png',   import.meta.url).href;
-const sticker3    = new URL('../../assets/bcitenergy/sticker-bcit3.png',   import.meta.url).href;
+const sticker1    = new URL('../../assets/bcitenergy/s-bcit1.jpg',         import.meta.url).href;
+const sticker2    = new URL('../../assets/bcitenergy/s-bcit2.jpg',         import.meta.url).href;
+const sticker3    = new URL('../../assets/bcitenergy/s-bcit3.jpg',         import.meta.url).href;
 const poster      = new URL('../../assets/bcitenergy/poster-bcit.png',     import.meta.url).href;
 const igVideo1    = new URL('../../assets/bcitenergy/ig-bcit1.mp4',        import.meta.url).href;
 const igVideo2    = new URL('../../assets/bcitenergy/ig-bcit2.mp4',        import.meta.url).href;
@@ -683,20 +682,11 @@ const Bcit: React.FC = () => {
                 </SectionHeader>
               </Reveal>
 
-              <BannerGrid>
-                <Reveal>
-                  <BannerCard variants={revealY} initial="hidden" animate="visible">
-                    <img src={banner1} alt="BCIT Energy Campaign Banner – Mockup 1" />
-                    <BannerLabel>Environment 01</BannerLabel>
-                  </BannerCard>
-                </Reveal>
-                <Reveal delay={0.12}>
-                  <BannerCard variants={revealY} initial="hidden" animate="visible">
-                    <img src={banner2} alt="BCIT Energy Campaign Banner – Mockup 2" />
-                    <BannerLabel>Environment 02</BannerLabel>
-                  </BannerCard>
-                </Reveal>
-              </BannerGrid>
+              <Reveal variants={revealScale}>
+                <PosterWrap variants={revealScale} initial="hidden" animate="visible">
+                  <img src={banner2} alt="BCIT Energy Campaign Banner" />
+                </PosterWrap>
+              </Reveal>
             </Container>
           </Section>
         </div>
