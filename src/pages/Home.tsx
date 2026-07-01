@@ -440,7 +440,6 @@ const Home: React.FC = () => {
       <HeaderRecentWork text="Recent Projects" />
       {selectedProject === 'branding' && <RecentWorks />}
       {selectedProject === 'uxui' && <UxHome setSelectedProject={setSelectedProject} />}
-      {selectedProject === 'funproj' && <FunHome setSelectedProject={setSelectedProject} />}
       <CactusSection>
         <Cactus2 />
       </CactusSection>

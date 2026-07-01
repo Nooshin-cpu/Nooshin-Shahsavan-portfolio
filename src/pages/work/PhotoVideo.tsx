@@ -13,15 +13,15 @@ const straw2      = new URL('../../assets/fun/straw2.jpg',        import.meta.ur
 const straw3      = new URL('../../assets/fun/straw3.png',        import.meta.url).href;
 const straw4      = new URL('../../assets/fun/straw4.jpg',        import.meta.url).href;
 const straw5      = new URL('../../assets/fun/straw5.png',        import.meta.url).href;
-const g41         = new URL('../../assets/fun/41.jpg',            import.meta.url).href;
-const g51         = new URL('../../assets/fun/51.jpg',            import.meta.url).href;
-const g61         = new URL('../../assets/fun/61.jpg',            import.meta.url).href;
+const g41         = new URL('../../assets/fun/41.jpeg',           import.meta.url).href;
+const g51         = new URL('../../assets/fun/51.jpeg',           import.meta.url).href;
+const g61         = new URL('../../assets/fun/61.jpeg',           import.meta.url).href;
 const g71         = new URL('../../assets/fun/71.jpg',            import.meta.url).href;
 const g81         = new URL('../../assets/fun/81.jpg',            import.meta.url).href;
-const g91         = new URL('../../assets/fun/91.jpg',            import.meta.url).href;
-const g10         = new URL('../../assets/fun/10.jpg',            import.meta.url).href;
-const g11         = new URL('../../assets/fun/11.jpg',            import.meta.url).href;
-const g12         = new URL('../../assets/fun/12.jpg',            import.meta.url).href;
+const g91         = new URL('../../assets/fun/91.jpeg',           import.meta.url).href;
+const g10         = new URL('../../assets/fun/10.jpeg',           import.meta.url).href;
+const g11         = new URL('../../assets/fun/11.jpeg',           import.meta.url).href;
+const g12         = new URL('../../assets/fun/12.jpeg',           import.meta.url).href;
 const before1     = new URL('../../assets/fun/1-1before.jpg',     import.meta.url).href;
 const after1      = new URL('../../assets/fun/1-2after.jpg',      import.meta.url).href;
 const before2     = new URL('../../assets/fun/5-1.png',           import.meta.url).href;
@@ -250,10 +250,11 @@ const InfoValue = styled.p`
 // ─── Featured image ───────────────────────────────────────────────────────────
 const FeaturedImg = styled(motion.div)`
   width: 100%;
+  max-width: 560px;
+  margin: 0 auto 2.5rem;
   overflow: hidden;
   border-radius: 20px;
   box-shadow: 0 24px 64px rgba(0,0,0,0.1);
-  margin-bottom: 2.5rem;
   img {
     width: 100%;
     height: auto;

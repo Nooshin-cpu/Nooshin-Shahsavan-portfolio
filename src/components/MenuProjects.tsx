@@ -123,9 +123,6 @@ const MenuProjects: React.FC<MenuProjectsProps> = ({ onSelect, selected }) => {
       <ProjectButton $selected={selected === 'uxui'} onClick={() => onSelect('uxui')}>
         UX-UI
       </ProjectButton>
-      <ProjectButton $selected={selected === 'funproj'} onClick={() => onSelect('funproj')}>
-        School Proj
-      </ProjectButton>
     </MenuProjectsWrapper>
   </div>
 );
