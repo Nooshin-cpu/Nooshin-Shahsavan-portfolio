@@ -10,6 +10,7 @@ const projects = [
   { label: 'S.B.S',               path: '/work/sbs' },
   { label: 'Zar',                  path: '/work/zar' },
   { label: 'AI Experience',        path: '/ai' },
+  { label: 'Photo & Videography',  path: '/work/photo-video' },
 ];
 
 const MenuContainer = styled.div`

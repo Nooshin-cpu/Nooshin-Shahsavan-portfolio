@@ -13,7 +13,8 @@ const Veen      = lazy(() => import('./pages/work/Veen'));
 const Delicato  = lazy(() => import('./pages/work/Delicato'));
 const Zar       = lazy(() => import('./pages/work/Zar'));
 const Workday   = lazy(() => import('./pages/work/Workday'));
-const FunProject = lazy(() => import('./pages/work/FunProject'));
+const FunProject  = lazy(() => import('./pages/work/FunProject'));
+const PhotoVideo  = lazy(() => import('./pages/work/PhotoVideo'));
 const Bcit           = lazy(() => import('./pages/work/Bcit'));
 const BcitMarketing  = lazy(() => import('./pages/work/BcitMarketing'));
 const AiStuff        = lazy(() => import('./pages/AiStuff'));
@@ -48,7 +49,8 @@ const App: React.FC = () => {
                 <Route path="/work/workday" element={<Workday />} />
                 <Route path="/work/delicato" element={<Delicato />} />
                 <Route path="/work/zar"     element={<Zar />} />
-                <Route path="/work/fun"     element={<FunProject />} />
+                <Route path="/work/fun"          element={<FunProject />} />
+                <Route path="/work/photo-video" element={<PhotoVideo />} />
                 <Route path="/work/bcit"            element={<Bcit />} />
                 <Route path="/work/bcit-marketing"  element={<BcitMarketing />} />
                 <Route path="/ai"                   element={<AiStuff />} />

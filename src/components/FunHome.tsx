@@ -15,13 +15,13 @@ const items = [
   {
     type: "image",
     src: funHomeImg,
-    label: "Fun Projects",
+    label: "Photography",
     
     details: [
-      { label: "Project :", value: "Fun Projects" },
+      { label: "Project :", value: "Photo & Videography" },
       
-      { label: "Timeline", value: "No Idea" },
-      { label: "Year", value: "..." },
+      { label: "Timeline", value: "Ongoing" },
+      { label: "Year", value: "2024" },
     ],
   },
 
@@ -401,7 +401,7 @@ const FunHome: React.FC<{ setSelectedProject?: (val: 'branding' | 'uxui' | 'funp
             glarePosition="all"
             glareBorderRadius="8px"
           >
-              <Link to="/work/fun" className="work-item" tabIndex={0}>
+              <Link to="/work/photo-video" className="work-item" tabIndex={0}>
                 <div className="work-label">{item.label}</div>
               <div className="work-media-container">
                   {item.type === "image" ? (

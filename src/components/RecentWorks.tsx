@@ -10,6 +10,7 @@ import box2Img from '../assets/zar/box-2.jpg';
 import bcitStickerImg from '../assets/bcitenergy/sticker-bcit2.png';
 import bcitMarcomVideo from '../assets/bcit-marcom/video-m.mp4';
 import aiThumbnail from '../assets/AI-videos/ai-timenail.png';
+import photoThumb from '../assets/fun/funhome.jpg';
 
 // Images and videos should be placed in src/assets/home
 const items = [
@@ -460,6 +461,32 @@ const RecentWorks: React.FC = () => {
                 <div className="work-info-line"><b>Project:</b> AI Experience</div>
                 <div className="work-info-line"><b>Timeline:</b> —</div>
                 <div className="work-info-line"><b>Year:</b> 2025–2026</div>
+              </div>
+            </Link>
+          </Tilt>
+        </motion.div>
+
+        {/* Photo & Videography — beside AI */}
+        <motion.div variants={itemVariants}>
+          <Tilt
+            tiltMaxAngleX={20}
+            tiltMaxAngleY={20}
+            scale={1.08}
+            glareEnable={true}
+            glareMaxOpacity={0.4}
+            glareColor="#ffffff"
+            glarePosition="all"
+            glareBorderRadius="8px"
+          >
+            <Link to="/work/photo-video" className="work-item" tabIndex={0}>
+              <div className="work-label">Photography</div>
+              <div className="work-media-container">
+                <img src={photoThumb} alt="Photo & Videography" className="work-media" />
+              </div>
+              <div className="work-info-box">
+                <div className="work-info-line"><b>Project:</b> Photo &amp; Videography</div>
+                <div className="work-info-line"><b>Timeline:</b> Ongoing</div>
+                <div className="work-info-line"><b>Year:</b> 2024</div>
               </div>
             </Link>
           </Tilt>
